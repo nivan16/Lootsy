@@ -29,7 +29,7 @@ class Api::UsersController < ApplicationController
         elsif @user != current_user
             render json: ["You don't have permission to delete this user!"], status: 404
         else
-            render json: ["User not found!"], status: 404
+            render json: @user.errors.full_messages, status: 404
         end
     end
 
