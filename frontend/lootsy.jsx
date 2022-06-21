@@ -10,6 +10,7 @@ import Root from './components/root';
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
     
+    //configuring the redux store
     let store;
     if (window.currentUser) {
         const preloadedState = {
@@ -17,16 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 users: {
                     [window.currentUser.id]: window.currentUser
                 }
+            },
+            session: {
+                currentUserId: window.currentUser.id
             }
-        }
-        // will need to add a session slice of state later session: {currentUser: window.currentUser.id }
+        };
+
         delete window.currentUser;
         store = configureStore(preloadedState);
     }
     else {
         store = configureStore();
-    }
-        
+    };
+    //end of store config
+
+    
     ReactDOM.render(<Root store={store}/>, root);
     window.getState = store.getState;
 });
