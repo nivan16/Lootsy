@@ -1,0 +1,104 @@
+.session-modal-background{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    left: 0em;
+    right: 0em;
+    top: 0em;
+    bottom: 0em;
+    z-index: 20;
+}
+
+/* This is the white background of the form! 
+    This might be changed down the line however */
+.session-modal-wrapper{
+    box-sizing: border-box;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30em;
+    width: 24em;
+    background-color: white;
+    padding: 2em;
+    border-radius: 1em;
+}
+
+/* The beginning of the magic */
+.session-modal-form{
+    display: flex;
+    flex-direction: column;
+    box-sizing: inherit;
+}
+
+/* Header!!! (Sign in and Register Wrap) --------------------------------------------*/
+.session-modal-header-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5em;
+}
+
+/* This is the h1 tag Sign in */
+.session-modal-header{
+    font-size: 1.3em;
+    font-weight: 520;
+}
+
+/* The Register Button */
+.session-modal-register-button{
+    height: 2.5em;
+    background: none;
+    border: 2px solid black;
+    border-radius: 2em;
+    width: 6em;
+    transition: 100ms;
+}
+.session-modal-register-button:hover{
+    transform: scale(1.1,1.1);
+    box-shadow: papayawhip, 0.1;
+}
+
+
+/* A wrap for all of the input fields & labels -------------------------------------*/
+.session-modal-input-wrap{
+    box-sizing: inherit;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5em;
+}
+
+/* Refers specifically to the input tags */
+#session-modal-email, #session-modal-password{
+    margin-top: 0.5em;
+    border: 1px solid lightgray;
+    border-radius: 0.5em;
+    height: 2.75em;
+    outline: 1px solid transparent;
+    transition: 350ms;
+}
+
+#session-modal-email:hover, #session-modal-password:hover{
+    border: 1px solid gray;
+}
+
+/* Shows a change if an input field is being 
+    focused on */
+#session-modal-email:focus, #session-modal-password:focus{
+    border: 1px solid black;
+    outline-offset: 0.2em;
+    outline: 1px solid blue;
+}
+
+
+/* This is the form submission button ----------------------------------------------*/
+.session-modal-form-button{
+    height: 3em;
+    margin-top: 1em;
+    border-radius: 2em;
+    border: 1px solid black;
+    background-color: rgba(30, 30, 30, 1); /* This is pretty close to the perfect color */
+    font-size: 1em;
+    font-family: sans-serif;
+    /* font-weight: 500; */
+    color: white;
+}

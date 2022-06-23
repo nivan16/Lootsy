@@ -1,7 +1,7 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
 const _nullUser = {
-    id: null
+    currentUserId: null
 };
 
 const sessionReducer = (state=_nullUser, action) => {
