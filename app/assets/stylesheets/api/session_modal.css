@@ -30,6 +30,24 @@
     box-sizing: inherit;
 }
 
+/* Modal close button*/
+.session-modal-close-button{
+
+    position: absolute;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: none;
+    right: -2.25em;
+    top: 0.25em;
+    font-size: x-large;
+    z-index: 21;
+}
+.session-modal-close-button:hover{
+    box-shadow: 0px, 0px, 10px, 10px black;
+}
+
+
 /* Header!!! (Sign in and Register Wrap) --------------------------------------------*/
 .session-modal-header-wrap{
     display: flex;
@@ -51,10 +69,12 @@
     border: 2px solid black;
     border-radius: 2em;
     width: 6em;
-    transition: 100ms;
+    transition: 200ms;
+    z-index: 21;
 }
 .session-modal-register-button:hover{
-    transform: scale(1.1,1.1);
+    /* transform: scale(1.1,1.1); */
+    border-spacing: 1em;
     box-shadow: papayawhip, 0.1;
 }
 

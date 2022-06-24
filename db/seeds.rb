@@ -9,6 +9,7 @@
 User.destroy_all
 
 u1 = User.create([
+    {email: 'looter@loot.com', name: 'jojo', password: 'password'},
     {email: 'dio@stands.com', name: 'jojo', password: 'starplat'},
     {email: 'stonefree@stands.com', name: 'jolyne', password: 'madeinheaven'},
 ])

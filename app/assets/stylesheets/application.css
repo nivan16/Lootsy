@@ -85,6 +85,7 @@ table {
     
     border: 2px solid black;
     border-radius: 20px;
+    box-shadow: 10px, 10px, 10000000px, 100px purple;
  }
 
  body > a{

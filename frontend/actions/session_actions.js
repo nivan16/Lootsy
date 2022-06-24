@@ -8,8 +8,9 @@ const receiveCurrentUser = user => ({
     user
 });
 
-const removeCurrentUser = () => ({
-    type: REMOVE_CURRENT_USER
+const removeCurrentUser = currentUserId => ({
+    type: REMOVE_CURRENT_USER,
+    currentUserId
 });
 
 export const signupCurrentUser = user => dispatch => (
@@ -18,10 +19,12 @@ export const signupCurrentUser = user => dispatch => (
 );
 export const loginCurrentUser = user => dispatch => (
     SessionUtil.login(user)
-        .then( currentUser => dispatch(receiveCurrentUser(currentUser)))
+        .then( currentUser => { 
+            return dispatch(receiveCurrentUser(currentUser)) 
+        })
 );
 
-export const logoutCurrentUser = () => dispatch => (
+export const logoutCurrentUser = currentUserId => dispatch => (
     SessionUtil.logout()
-        .then( () => dispatch(removeCurrentUser()))
+        .then( () => dispatch(removeCurrentUser(currentUserId)))
 )

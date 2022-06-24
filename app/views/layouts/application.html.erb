@@ -3,16 +3,17 @@
   <head>
     <title>Lootsy</title>
 
+  <% if logged_in? %>
+    <script type='text/javascript'>
+    window.currentUser = <%= render(
+        "/api/users/user.json.jbuilder",
+        user: current_user
+    ).html_safe %>
+    </script>
+  <% end %>
 
 
-    <% if logged_in? %>
-      <script type='text/javascript'>
-        <%= window.currentUser = render(
-          "/api/users/user.json.jbuilder",
-          user: current_user
-        ).html_safe %>
-      </script>
-    <% end %>
+
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
