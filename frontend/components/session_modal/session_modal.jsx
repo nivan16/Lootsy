@@ -8,14 +8,31 @@ class SessionModal extends React.Component{
             password: ""
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleModalSwitch = this.handleModalSwitch.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.closeSessionModal = this.closeSessionModal.bind(this);
     }
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.loginCurrentUser(this.state)
-            .then(() => this.props.closeModal());
+        this.props.loginCurrentUser(this.state) 
+            .then(() => this.props.closeModal()) //these two async functions might be able to just be one
+            .then( () => this.setState({
+                email: "",
+                password: ""
+            }) );
+    }
+
+    handleModalSwitch(){
+        // debugger;
+        //first
+
+        // this.setState({name: ''})
+        // debugger;
+        // // ss
+
+        this.setState(null)
+  
     }
 
     handleChange(field){
@@ -26,7 +43,7 @@ class SessionModal extends React.Component{
 
     closeSessionModal(e){
         e.stopPropagation();
-        debugger;
+
         const targetClass = e.target.className; //this is so that the event object isnt queried twice
         if (targetClass === 'session-modal-background' || targetClass === 'session-modal-close-button'){
             this.props.closeModal();
@@ -34,6 +51,7 @@ class SessionModal extends React.Component{
     }
 
     render(){ 
+        debugger;
         // I think this particular conditional will be handled by the nav bar in the future,
         //  as it will either render a signing/signup button or one specific to the user with a drop down
         return this.props.isOpen ? (
@@ -48,7 +66,7 @@ class SessionModal extends React.Component{
 
                         <div className='session-modal-header-wrap'>
                             <h1 className='session-modal-header'>Sign in</h1> 
-                            {/* <button className='session-modal-register-button'>Register</button> This is a dummy button for now */}
+                            <button className='session-modal-register-button' type='button' onClick={this.handleModalSwitch}>Register</button>
                         </div>
 
                         <div className='session-modal-input-wrap'>

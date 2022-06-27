@@ -8,7 +8,7 @@ import SessionModalContainer from './session_modal/session_modal_container';
 
 const App = () => (
     <div>
-        <header>
+        <header className='nav-bar-wrapper'>
             <Route path="/" component={NavBarContainer}/>
         </header>
 

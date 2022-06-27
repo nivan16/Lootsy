@@ -1,30 +1,105 @@
-
-.nav-bar{
-    display: flex;
-    justify-content: space-around;
-    padding-top: 15px;
-    padding-bottom: 15px;
-
-}
-
-.search-bar-container{
-    width: 500px;
-    justify-content: stretch;
-    align-items: stretch;
-}
-
-.search-bar-container input{
-    width: 100%;
-    height: 100%;
-
-    border: 2px solid black;
-    border-radius: 20px;
-    box-shadow: 10px, 10px, 10000000px, 100px purple;
-}
-
-body > a{
-    margin-top: 15px;
+.nav-bar-wrapper{
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
+    margin-top: 12px;
+    padding: 0 2em;
 }
- 
+
+.nav-bar{
+    /* Although seemingly repetitive, the above display and justify-content 
+        centers the nav-bar, and the below centers the items in the nav-bar! */
+    display: flex;
+    /* the reason this should be space-between is so that the logo
+        and the signin/cart buttons are truly at the ends of the navbar,
+        and also would make it easier to refactor if the viewport falls 
+        below the 900px width.  */
+    justify-content: space-between; 
+    align-items: center;
+    box-sizing: border-box;
+    /* this specifies the stretching or shrinking of the nav-bar within the bounds of
+        max & min */
+    width: 100%; 
+
+    /* (top, bottom) , (left, right)*/
+    
+
+}
+
+/* */
+.nav-bar > a{
+    font-size: 2em;
+    text-decoration: none;
+    
+}
+
+
+/* Search Bar--------------------------------------------------------------------------*/
+.nav-bar-search-bar-container{
+    margin: 0 1em; /* left and right margin for the search bar */
+    width: 100%;
+}
+
+.nav-bar-search-form{
+    display: flex;
+}
+
+.nav-bar-search-bar{
+    height: 2.85em;
+    width: 95%;
+
+    border: 2px solid black;
+    border-radius: 20px 0 0 20px;
+    border-right: none;
+
+    background-color: rgba(200, 200, 200, 0.5);
+}
+
+.nav-bar-search-button{
+    width: 70px;
+    border: 2px solid black;
+    border-radius: 0 20px 20px 0;
+    border-left: none;
+    background-color: rgba(200, 200, 200, 0.5);
+    cursor: pointer;
+}
+
+.nav-bar-search-icon{
+    /* height: 100%; */
+    font-size: 1.5em;
+}
+
+/* Sign In and Cart button!-------------------------------------------------------------------*/
+.nav-bar-button-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 150px;
+}
+
+.nav-bar-session-button-container{
+    
+    /* margin-right: 1em; */
+    
+}
+
+/* top right bottom left*/
+.nav-bar-login{
+    /* font-size: 1em; */
+    width: 100%;
+    padding: 0.75em;
+    border: none;
+    background-color: transparent;
+}
+
+.nav-bar-cart-icon{
+    padding: 0.5em;
+    font-size: 1.25em;
+}
+
+.nav-bar-login:hover, .nav-bar-cart-icon:hover{
+    transition: 200ms;
+    background-color: rgba(200, 200, 200, 0.4);
+    border-radius: 20px;
+}
+
