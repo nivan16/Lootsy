@@ -17,14 +17,20 @@ class NavBar extends React.Component{
     }
 
     render(){
-        debugger;
         return (
             <div className='nav-bar'>
                 <Link to='/'>Lootsy</Link>
                 <span className='search-bar-container'>
                     <input type="text" />
                 </span>
-                { this.props.currentUser ? <button className='nav-bar-login' onClick={this.handleLogout}>Log out</button> : <button className='nav-bar-login' onClick={this.handleLogin}>Sign in</button> }
+                { //this renders either a Login button or a (soon to be) drop down functional component with unique profile things
+                    this.props.currentUser ? (
+                        <button className='nav-bar-login' onClick={this.handleLogout}>Log out</button> 
+                    ) : (
+                        <button className='nav-bar-login' onClick={this.handleLogin}>Sign in</button> 
+                    )
+                
+                }
                 <span className='nav-bar-cart'>cart</span>
             </div>
         )
