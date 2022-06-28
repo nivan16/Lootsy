@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             session: {
                 currentUserId: window.currentUser.id
+            },
+            errors: {
+                session: []
             }
         };
 

@@ -26,6 +26,8 @@ class User < ApplicationRecord
 
         if @user && @user.is_password?(password)
             @user
+        elsif @user #if only the email is accurate
+            false
         else
             nil
         end

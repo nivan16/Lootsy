@@ -52,7 +52,7 @@
     border-radius: 20px 0 0 20px;
     border-right: none;
 
-    background-color: rgba(200, 200, 200, 0.5);
+    background-color: rgba(200, 200, 200, 0.3);
 }
 
 .nav-bar-search-button{
@@ -60,7 +60,7 @@
     border: 2px solid black;
     border-radius: 0 20px 20px 0;
     border-left: none;
-    background-color: rgba(200, 200, 200, 0.5);
+    background-color: rgba(200, 200, 200, 0.3);
     cursor: pointer;
 }
 

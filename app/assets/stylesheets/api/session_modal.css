@@ -88,7 +88,7 @@
 }
 
 /* Refers specifically to the input tags */
-#session-modal-email, #session-modal-password{
+.session-modal-email-input, .session-modal-password-input, .session-modal-name-input{
     margin-top: 0.5em;
     border: 1px solid lightgray;
     border-radius: 0.5em;
@@ -97,17 +97,19 @@
     transition: 350ms;
 }
 
-#session-modal-email:hover, #session-modal-password:hover{
+.session-modal-email-input:hover, .session-modal-password-input:hover, .session-modal-name-input:hover{
     border: 1px solid gray;
 }
 
 /* Shows a change if an input field is being 
     focused on */
-#session-modal-email:focus, #session-modal-password:focus{
+.session-modal-email-input:focus, .session-modal-password-input:focus{
     border: 1px solid black;
     outline-offset: 0.2em;
     outline: 1px solid blue;
 }
+
+
 
 
 /* This is the form submission button ----------------------------------------------*/
