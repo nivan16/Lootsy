@@ -33,15 +33,18 @@ class SessionModal extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         if(this.state.register){
-            this.props.signupCurrentUser(this.state.user);
-            this.resetState();
+            this.props.signupCurrentUser(this.state.user)
+                .then(() => {
+                    this.props.closeModal() 
+                    this.resetState();
+                }); //only on successfull submission!
         }
         else {
             this.props.loginCurrentUser(this.state.user) 
-            .then(() => {
-                this.props.closeModal() 
-                this.resetState();
-            }); //only on successfull submission!
+                .then(() => {
+                    this.props.closeModal() 
+                    this.resetState();
+                }); //only on successfull submission!
         }
     }
 
@@ -80,12 +83,12 @@ class SessionModal extends React.Component{
 
     renderErrorMessage(error){
         return (
-        <div className='session-modal-input-error'>{error}</div>
+            <div className='session-modal-input-error'>{error}</div>
         ) 
     }
 
     render(){
-        debugger;
+        // debugger;
         const emailError = this.props.errors['email'];
         const passwordError = this.props.errors['password'];
         const nameError = this.props.errors['name'];
@@ -108,7 +111,7 @@ class SessionModal extends React.Component{
 
                         <div className='session-modal-input-wrap'>
                             <label htmlFor='session-modal-email'>Email address</label>
-                            <input type="text" id='session-modal-email' className='session-modal-email-input'  value={this.state.email} onChange={this.handleChange('email')} />
+                            <input type="text" id='session-modal-email' className='session-modal-email-input'  value={this.state.user.email} onChange={this.handleChange('email')} />
                         </div>
 
                         { 
@@ -121,7 +124,7 @@ class SessionModal extends React.Component{
                                 <>
                                     <div className='session-modal-input-wrap'>
                                         <label htmlFor='session-modal-name'>Name</label>
-                                        <input type="text" id='session-modal-name' className='session-modal-name-input'  value={this.state.email} onChange={this.handleChange('email')} />
+                                        <input type="text" id='session-modal-name' className='session-modal-name-input'  value={this.state.user.name} onChange={this.handleChange('name')} />
                                     </div>
 
                                     { nameError ? this.renderErrorMessage(nameError) : null }
@@ -131,11 +134,17 @@ class SessionModal extends React.Component{
                         
                         <div className='session-modal-input-wrap'>
                             <label htmlFor='session-modal-password'>Password</label>
-                            <input type="password" id='session-modal-password' className='session-modal-password-input' value={this.state.password} onChange={this.handleChange('password')} />
+                            <input type="password" id='session-modal-password' className='session-modal-password-input' value={this.state.user.password} onChange={this.handleChange('password')} />
                         </div>
 
                         {
                             passwordError ? this.renderErrorMessage(passwordError) : null
+                        }
+
+                        {/*  this is a terrible line of code, must refactor backend to send more specific errors or have frontend select this better!!! (selector.js file??) */ }
+                        {/*  there are still fringe cases yet unresolved with the model validations returning pure errs (kinda) */ }
+                        {
+                            this.props.errors instanceof Array ? this.props.errors.map( err => this.renderErrorMessage(err)) : null
                         }
 
                         <button type="submit" className='session-modal-form-button'>{this.state.register ? 'Register' : 'Sign In'}</button>
