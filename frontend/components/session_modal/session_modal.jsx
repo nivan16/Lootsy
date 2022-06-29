@@ -103,12 +103,19 @@ class SessionModal extends React.Component{
                             <button className='session-modal-close-button'>X</button>
                         </span>
                      
-
-                        <div className='session-modal-header-wrap'>
-                            <h1 className='session-modal-header'>Sign in</h1> 
-                            <button className='session-modal-register-button' type='button' onClick={this.handleModalSwitch}>Register</button>
-                        </div>
-
+                        {
+                            this.state.register ? (
+                                <div className='session-modal-register-header-wrap'>
+                                    <h1 className='session-modal-register-header'>Create your account</h1>
+                                    <div className='session-modal-register-header-extra'>Registration is easy.</div>
+                                </div>
+                            ) : (
+                                <div className='session-modal-login-header-wrap'>
+                                    <h1 className='session-modal-login-header'>Sign in</h1> 
+                                    <button className='session-modal-register-button' type='button' onClick={this.handleModalSwitch}>Register</button>
+                                </div>
+                            )
+                        }
                         <div className='session-modal-input-wrap'>
                             <label htmlFor='session-modal-email'>Email address</label>
                             <input type="text" id='session-modal-email' className='session-modal-email-input'  value={this.state.user.email} onChange={this.handleChange('email')} />

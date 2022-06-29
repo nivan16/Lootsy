@@ -51,7 +51,9 @@
     border: 2px solid black;
     border-radius: 20px 0 0 20px;
     border-right: none;
+    outline: none;
 
+    cursor: text;
     background-color: rgba(200, 200, 200, 0.3);
 }
 
@@ -90,11 +92,13 @@
     padding: 0.75em;
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .nav-bar-cart-icon{
     padding: 0.5em;
     font-size: 1.25em;
+    cursor: pointer;
 }
 
 .nav-bar-login:hover, .nav-bar-cart-icon:hover{

@@ -1,3 +1,10 @@
+/* These are for all errors, must be refactored in the future*/
+.session-modal-input-error{
+    margin-top: 0.5em;
+    color: crimson;
+}
+
+
 .session-modal-background{
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
@@ -21,6 +28,7 @@
     background-color: white;
     padding: 2em;
     border-radius: 1em;
+    transition: 300ms;
 }
 
 /* The beginning of the magic */
@@ -48,8 +56,8 @@
 }
 
 
-/* Header!!! (Sign in and Register Wrap) --------------------------------------------*/
-.session-modal-header-wrap{
+/* Header!!! (Sign in and Register Button Wrap) --------------------------------------------*/
+.session-modal-login-header-wrap{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,7 +65,7 @@
 }
 
 /* This is the h1 tag Sign in */
-.session-modal-header{
+.session-modal-login-header{
     font-size: 1.3em;
     font-weight: 520;
 }
@@ -77,6 +85,23 @@
     border-spacing: 1em;
     box-shadow: papayawhip, 0.1;
 }
+
+/* Header!!! (Sign in and Register Button Wrap) --------------------------------------------*/
+.session-modal-register-header-wrap{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Actual Registration header "Create Your Account" */
+.session-modal-register-header{
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+}
+
+.session-modal-register-header-extra{
+    margin-bottom: 0.5em;
+}
+
 
 
 /* A wrap for all of the input fields & labels -------------------------------------*/
