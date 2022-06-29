@@ -18,7 +18,8 @@ const usersReducer = (state = {}, action) => {
             return newState;
         case REMOVE_CURRENT_USER:
             newState = Object.assign({}, state);
-            delete newState[action.currentUserId]
+            delete newState[action.currentUserId];
+            return newState;
         case REMOVE_USER:
             newState = Object.assign({}, state);
             delete newState[action.userId];

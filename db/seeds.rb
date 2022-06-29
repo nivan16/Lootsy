@@ -7,9 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Product.destroy_all
 
-u1 = User.create([
-    {email: 'looter@loot.com', name: 'jojo', password: 'password'},
-    {email: 'dio@stands.com', name: 'jojo', password: 'starplat'},
-    {email: 'stonefree@stands.com', name: 'jolyne', password: 'madeinheaven'},
-])
+u1 = User.create!(email: 'looter@loot.com', name: 'anon', password: 'password')
+u2 = User.create!(email: 'bizarre@adventure.com', name: 'Kars', password: 'ultimatelifeform')
+u3 = User.create!(email: 'roamingseller@hyrule.com', name: 'Beetle', password: 'madeinheaven')
+
+
+# p# = Product.create!(name: , description: , price: , user_id: )
+stand_arrow = Product.create!(name: 'Arrow', description: 'A random arrow I found in Egypt', price: 130.00, user_id: u2.id)
+dios_diary = Product.create!(name: 'Old diary', description: 'Completely non-sensical diary, but it could lead to treasure', price: 14.00, user_id: u2.id)
+vampire_mask = Product.create!(name: 'Weird mask', description: 'A mask carbon dated to be several thousand years old I got in a cave', price: 30000.00, user_id: u2.id)
+master_sword = Product.create!(name: 'Blue sword', description: 'A sword I pulled out of a rock, that has a strange triangle pattern on the hilt and a large handguard.', price: 127, user_id: u3.id)
+ocarina_of_time = Product.create!(name: 'Ocarina', description: 'An ocarina found at the moat of a castle, still works though!', price: 25.00, user_id: u3.id)
