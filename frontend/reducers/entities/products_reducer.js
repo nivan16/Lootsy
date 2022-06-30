@@ -7,12 +7,15 @@ const productsReducer = (state={}, action) => {
         case RECEIVE_PRODUCTS:
             return action.products;
         case RECEIVE_PRODUCT:
-            return Object.assign({}, state, {[action.product.id]: action.product} ) //is this better?
+            return Object.assign({}, state, {[action.product.id]: action.product} ); //is this better?
+        case REMOVE_PRODUCT:
+            newState = Object.assign({}, state);
+            delete newState[action.productId];
+            return newState;
         default:
-            break;
+            return state;
     }
-
-}
+};
 
 
 export default productsReducer;
