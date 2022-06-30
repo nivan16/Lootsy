@@ -23,4 +23,4 @@ master_sword = Product.create!(name: 'Blue sword', description: 'A sword I pulle
 ocarina_of_time = Product.create!(name: 'Ocarina', description: 'An ocarina found at the moat of a castle, still works though!', price: 25.00, user_id: u3.id)
 pokeball = Product.create!(name: 'Strong pouches', description: "I found these in a field of tall grass, they're made out of a really tough material.", price: 100.00, user_id: u4.id)
 rengoku = Product.create!(name: 'Beautiful restored blade', description: "Looted (the pieces of) this blade in a forest, but the material is very sturdy and I've never seen metal like this before.", price: 20000.00, user_id: u4.id)
-#create a new user for demon slayer items!
+#create a new user for demon slayer items! 
