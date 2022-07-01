@@ -21,7 +21,7 @@ class HomePageItem extends React.Component{
             case 'Strong pouches':
                 return  ['https://i.etsystatic.com/34463826/r/il/353034/3782570637/il_794xN.3782570637_8ici.jpg', 'Pokeballs!']
             case 'Beautiful restored blade':
-                return ['https://www.japantrendshop.com/img/products/5802/5802-proplica-kyojuro-rengoku-replica-demon-slayer-sword-8.jpg', "Rengoku's nichirin blade"]
+                return ['https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTx-0jtFcgNS-JTHFCauX9X-QcN5nVQr_75ztn26lNkLWu2GoSMh98lhbRVaMr-nMdKcaakMKeYmPaAi2MxyV858p4VYouaku4Hu0Z4vsdDEUK_McGhzB9tbg&usqp=CAE', "Rengoku's nichirin blade"]
             default:
                 break;
         }

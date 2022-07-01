@@ -18,12 +18,14 @@ class HomePageIndex extends React.Component{
             return null;
         }
         return (
-            <div>
-                {
-                    this.props.products.map( (product, idx) => (
-                        <HomePageItem key={product.id} product={product} idx={idx}/>
-                    ))
-                }
+            <div className='home-page-grid-wrapper'>
+                <div className='home-page-grid'>
+                    {
+                        this.props.products.map( (product, idx) => (
+                            <HomePageItem key={product.id} product={product} idx={idx}/>
+                        ))
+                    }
+                </div>
             </div>
         )
     }
