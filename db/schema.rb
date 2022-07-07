@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 2022_06_29_164345) do
     t.string "name", null: false
     t.text "description", null: false
     t.float "price", null: false
-    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
