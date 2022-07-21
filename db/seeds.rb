@@ -23,4 +23,36 @@ master_sword = Product.create!(name: 'Blue sword', description: 'A sword I pulle
 ocarina_of_time = Product.create!(name: 'Ocarina', description: 'An ocarina found at the moat of a castle, still works though!', price: 25.00, user_id: u3.id)
 pokeball = Product.create!(name: 'Strong pouches', description: "I found these in a field of tall grass, they're made out of a really tough material.", price: 100.00, user_id: u4.id)
 rengoku = Product.create!(name: 'Beautiful restored blade', description: "Looted (the pieces of) this blade in a forest, but the material is very sturdy and I've never seen metal like this before.", price: 20000.00, user_id: u4.id)
-#create a new user for demon slayer items! 
+#create a new user for demon slayer items!
+
+# Harry Potter:
+#   Elder wand
+#   Horcruxes
+#   Tom riddle's diary
+
+Game of Thrones:
+    Daenerys dragon eggs (Found in field, tried to cook them but its fireproof)
+
+Super Mario:
+    Mushroom
+    Mario Hat
+    Coin Box Sometimes i hit it and it gives me some loose change
+
+Super Smash Bros
+    Smash Ball: Gives weird powers, regens every few mins
+
+Legend Of Zelda:
+    Heart Container: Blend into smoothie for revitalizing effects
+    Sheikah Slate
+    ParaGlider
+
+Naruto:
+    Rogue Headband
+    Akatsuki cloak
+    Minato Kunai
+
+# Avatar:
+#     Katara's Necklace (thick Choker)
+
+
+
