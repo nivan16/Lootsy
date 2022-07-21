@@ -30,26 +30,26 @@ rengoku = Product.create!(name: 'Beautiful restored blade', description: "Looted
 #   Horcruxes
 #   Tom riddle's diary
 
-Game of Thrones:
-    Daenerys dragon eggs (Found in field, tried to cook them but its fireproof)
+# Game of Thrones:
+#     Daenerys dragon eggs (Found in field, tried to cook them but its fireproof)
 
-Super Mario:
-    Mushroom
-    Mario Hat
-    Coin Box Sometimes i hit it and it gives me some loose change
+# Super Mario:
+#     Mushroom
+#     Mario Hat
+#     Coin Box Sometimes i hit it and it gives me some loose change
 
-Super Smash Bros
-    Smash Ball: Gives weird powers, regens every few mins
+# Super Smash Bros
+#     Smash Ball: Gives weird powers, regens every few mins
 
-Legend Of Zelda:
-    Heart Container: Blend into smoothie for revitalizing effects
-    Sheikah Slate
-    ParaGlider
+# Legend Of Zelda:
+#     Heart Container: Blend into smoothie for revitalizing effects
+#     Sheikah Slate
+#     ParaGlider
 
-Naruto:
-    Rogue Headband
-    Akatsuki cloak
-    Minato Kunai
+# Naruto:
+#     Rogue Headband
+#     Akatsuki cloak
+#     Minato Kunai
 
 # Avatar:
 #     Katara's Necklace (thick Choker)
