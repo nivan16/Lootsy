@@ -64,16 +64,22 @@ table {
 }
 
 /* adds a specificity to body for styling precedence*/
-.body{
+body{
 	
 	/* min-width sets the minimum width of the centered items, yet for 
 	some reason max-width negates the justify-content: center */    
 	margin: 0 auto;
-	min-width: 900px; 
 	max-width: 1400px;
 	/* this specifies the stretching or shrinking of the body within the bounds of
 		max & min*/
 	
+}
+html {
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
 }
 
 

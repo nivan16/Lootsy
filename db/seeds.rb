@@ -50,9 +50,23 @@ rengoku = Product.create!(name: 'Beautiful restored blade', description: "Looted
 #     Rogue Headband
 #     Akatsuki cloak
 #     Minato Kunai
+#     Obito Mask
 
 # Avatar:
 #     Katara's Necklace (thick Choker)
+
+# Attack on Titan
+#     Freedom Jackets
+
+# Sailor Moon
+#     Moon Stick
+
+# Card Captor Sakura
+#     Dream Staff
+
+# Demon Slayer
+#     Kanao Clip
+#     Shinobu Clip
 
 
 

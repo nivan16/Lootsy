@@ -7,7 +7,12 @@ const usersReducer = (state = {}, action) => {
     let newState;
     switch (action.type) {
         case RECEIVE_USERS:
-            return action.users;
+            newState = Object.assign({}, state);
+            action.users.forEach(user => {
+                newState[user.id] = user
+            });
+            
+            return newState;
         case RECEIVE_USER:
             newState = Object.assign({}, state);
             newState[action.user.id] = action.user;

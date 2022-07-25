@@ -25,7 +25,7 @@ class NavBar extends React.Component{
                 <Link to='/'>Lootsy</Link>
                 
                 
-                <span className='nav-bar-search-bar-container'>
+                <div className='nav-bar-search-bar-container'>
                     <form className='nav-bar-search-form'>
                         <input className='nav-bar-search-bar' type="text" />
 
@@ -33,9 +33,9 @@ class NavBar extends React.Component{
                             <FontAwesomeIcon icon={faMagnifyingGlass} className='nav-bar-search-icon'/>
                         </button>
                     </form>
-                </span>
+                </div>
 
-                <span className='nav-bar-button-container'>
+                <div className='nav-bar-button-container'>
                     <div className='nav-bar-session-button-container'>
                         { //this renders either a Login button or a (soon to be) drop down functional component with unique profile things
                             this.props.currentUser ? (
@@ -46,10 +46,10 @@ class NavBar extends React.Component{
                         
                         }
                     </div>
-                    <span className='nav-bar-cart'>
+                    <div className='nav-bar-cart'>
                         <FontAwesomeIcon icon={faCartShopping} className='nav-bar-cart-icon' />
-                    </span>
-                </span>
+                    </div>
+                </div>
             </div>
         )
     }

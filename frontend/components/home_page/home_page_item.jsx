@@ -21,7 +21,8 @@ class HomePageItem extends React.Component{
             case 'Strong pouches':
                 return  ['https://i.etsystatic.com/36072165/r/il/e3e930/3927057514/il_340x270.3927057514_eb9z.jpg', 'Pokeballs!']
             case 'Beautiful restored blade':
-                return ['https://i.etsystatic.com/25575518/r/il/dbe664/3163817916/il_794xN.3163817916_qniz.jpg', "Rengoku's nichirin blade"]
+                // Katara Necklace img below
+                return ['https://i.etsystatic.com/23464188/c/3000/1688/0/0/il/40527b/2342132028/il_340x270.2342132028_buhs.jpg', "Rengoku's nichirin blade"]
             default:
                 break;
         }
