@@ -33,7 +33,12 @@ class HomePageItem extends React.Component{
         return (
             <div className={`grid-brick grid-brick-${this.props.idx}`}>
                 <Link to='/'>
-                    <img src={imgAndAlt[0]} alt={imgAndAlt[1]} />
+                    <div className="grid-image">
+                        <img src={imgAndAlt[0]} alt={imgAndAlt[1]} />
+                    </div>
+                    <p className="grid-item-price">
+                        {'$'+this.props.product.price}
+                    </p>
                 </Link>
             </div>
         )

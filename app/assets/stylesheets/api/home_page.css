@@ -1,22 +1,66 @@
 .home-page-grid-wrapper{
     /* max-height: 100%; */
-    margin-top: 2em;
-    max-width: 100%;
+    /* margin-top: 2em;
+    max-width: 100%; */
 }
 
 .home-page-grid{
     display: grid;
-    grid-template-rows: repeat(5, 50px);
     grid-template-columns: repeat(4, 1fr);
-    row-gap: 1em;
-    column-gap: 0.5em;
+    grid-template-rows: auto;
+    row-gap: 10px;
+    column-gap: 10px;
 }
-
-.grid-brick > a > img{
+ 
+.grid-brick {
     height: 100%;
     width: 100%;
-    object-fit: fill;
+    position: relative;
 }
+
+/* Note: the A tags are the link class in react */
+.grid-brick > a{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.grid-image{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.grid-image > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: 325ms;
+}
+
+.grid-brick:hover > a > .grid-image > img{
+    transform: scale(1.05);
+}
+
+.grid-item-price {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+
+    font-size: 0.75rem;
+    padding: 2px 5px;
+    border: 1px solid rgba(40, 40, 40, 0.1);
+    border-radius: 20px;
+    color: black;
+    background-color: white;
+    z-index: 5;
+}
+
+
+
+
+
+
 .grid-brick-0{
     grid-column-start: 1;
     grid-column-end: 2;
