@@ -1,13 +1,45 @@
 import React from 'react';
-import HomePageContainer from './home_page_container';
-class HomePage extends React.Component{
+import { Link } from 'react-router-dom';
+
+class HomePageCategories extends React.Component{
     constructor(props){
         super(props);
     }
 
     render(){
-        <HomePageContainer />
+
+        return (
+            <div className='category-bar-wrapper max-body-width body-padding'>
+                <nav className='category-bar'>
+                    <Link to='/'>
+                        <span className='category-bar-type'>
+                            Weapons
+                        </span>
+                    </Link>
+                    <Link to='/'>
+                        <span className='category-bar-type'>
+                           Jewelry & Accessories 
+                        </span>
+                    </Link>
+                    <Link to='/'>
+                        <span className='category-bar-type'>
+                            Clothing & Armor
+                        </span>
+                    </Link>
+                    <Link to='/'>
+                        <span className='category-bar-type'>
+                            Art & Collectables
+                        </span>
+                    </Link>
+                    <Link to='/'>
+                        <span className='category-bar-type'>
+                            Miscellaneous
+                        </span>
+                    </Link>
+                </nav>
+            </div>
+        )
     }
 }
 
-export default HomePage;
+export default HomePageCategories;

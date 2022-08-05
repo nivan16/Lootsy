@@ -6,6 +6,12 @@
     padding-bottom: 12px;
 }
 
+.category{
+    background-color: black;
+    color: white;
+    border: 1px solid aqua;
+}
+
 .nav-bar{
     /* Although seemingly repetitive, the above display and justify-content 
         centers the nav-bar, and the below centers the items in the nav-bar! */
