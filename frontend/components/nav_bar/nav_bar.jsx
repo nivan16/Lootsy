@@ -21,36 +21,38 @@ class NavBar extends React.Component{
 
     render(){
         return (
-            <div className='nav-bar'>
-                <Link to='/'>Lootsy</Link>
-                
-                
-                <div className='nav-bar-search-bar-container'>
-                    <form className='nav-bar-search-form'>
-                        <input className='nav-bar-search-bar' type="text" />
+            <header className='nav-bar-wrapper max-body-width body-padding'>
+                <div className='nav-bar'>
+                    <Link to='/'>Lootsy</Link>
+                    
+                    
+                    <div className='nav-bar-search-bar-container'>
+                        <form className='nav-bar-search-form'>
+                            <input className='nav-bar-search-bar' type="text" />
 
-                        <button className='nav-bar-search-button'>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} className='nav-bar-search-icon'/>
-                        </button>
-                    </form>
-                </div>
+                            <button className='nav-bar-search-button'>
+                                <FontAwesomeIcon icon={faMagnifyingGlass} className='nav-bar-search-icon'/>
+                            </button>
+                        </form>
+                    </div>
 
-                <div className='nav-bar-button-container'>
-                    <div className='nav-bar-session-button-container'>
-                        { //this renders either a Login button or a (soon to be) drop down functional component with unique profile things
-                            this.props.currentUser ? (
-                                <button className='nav-bar-login' onClick={this.handleLogout}>Log out</button> 
-                            ) : (
-                                <button className='nav-bar-login' onClick={this.handleLogin}>Sign in</button> 
-                            )
-                        
-                        }
-                    </div>
-                    <div className='nav-bar-cart'>
-                        <FontAwesomeIcon icon={faCartShopping} className='nav-bar-cart-icon' />
+                    <div className='nav-bar-button-container'>
+                        <div className='nav-bar-session-button-container'>
+                            { //this renders either a Login button or a (soon to be) drop down functional component with unique profile things
+                                this.props.currentUser ? (
+                                    <button className='nav-bar-login' onClick={this.handleLogout}>Log out</button> 
+                                ) : (
+                                    <button className='nav-bar-login' onClick={this.handleLogin}>Sign in</button> 
+                                )
+                            
+                            }
+                        </div>
+                        <div className='nav-bar-cart'>
+                            <FontAwesomeIcon icon={faCartShopping} className='nav-bar-cart-icon' />
+                        </div>
                     </div>
                 </div>
-            </div>
+            </header>
         )
     }
 }

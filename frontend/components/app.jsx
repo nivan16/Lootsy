@@ -6,17 +6,15 @@ import SessionModalContainer from './session_modal/session_modal_container';
 import HomePageContainer from './home_page/home_page_container';
 
 const App = () => (
-    <div>
-        <header className='nav-bar-wrapper max-body-width body-padding'>
-            <Route path="/" component={NavBarContainer}/>
-        </header>
-
+    <>
+        <Route path="/" component={NavBarContainer}/>
+        
         <Switch>
             <Route exact path='/' component={HomePageContainer}/>
         </Switch>
         
         <SessionModalContainer />
-    </div>
+    </>
 );
 
 export default App;
