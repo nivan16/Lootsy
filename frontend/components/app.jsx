@@ -7,7 +7,7 @@ import HomePageContainer from './home_page/home_page_container';
 
 const App = () => (
     <div>
-        <header className='nav-bar-wrapper'>
+        <header className='nav-bar-wrapper max-body-width body-padding'>
             <Route path="/" component={NavBarContainer}/>
         </header>
 

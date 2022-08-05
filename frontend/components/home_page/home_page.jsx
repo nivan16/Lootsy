@@ -18,7 +18,7 @@ class HomePage extends React.Component{
 
 
 
-            <div className='home-page-grid-wrapper'>
+            <div className='home-page-grid-wrapper max-body-width body-padding'>
                 <div className='home-page-grid'>
                     {
                         this.props.products.map( (product, idx) => (

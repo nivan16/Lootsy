@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-    margin-top: 12px;
-    padding: 0 2em;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .nav-bar{
