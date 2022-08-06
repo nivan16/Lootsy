@@ -6,12 +6,6 @@
     padding-bottom: 12px;
 }
 
-.category{
-    background-color: black;
-    color: white;
-    border: 1px solid aqua;
-}
-
 .nav-bar{
     /* Although seemingly repetitive, the above display and justify-content 
         centers the nav-bar, and the below centers the items in the nav-bar! */
@@ -113,3 +107,20 @@
     border-radius: 20px;
 }
 
+/* Navigation Category Bar */
+.category-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.category-bar-border{
+    border-bottom: 2px solid rgba(33, 33, 33, 0.2);
+}
+
+.category-bar a, .category-bar a:visited{
+    text-decoration: none;
+    color: rgb(56, 55, 55);
+    font-size: 16px;
+
+    padding-bottom: 12px;
+}

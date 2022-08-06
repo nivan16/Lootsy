@@ -1,3 +1,31 @@
+.home-page-category-wrapper{
+    background-color: #f7e5de;
+    position: relative;
+    height: 15vh;
+}
+
+.home-page-title-wrapper{
+    padding: 15px;
+}
+
+.home-page-title{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 100;
+    letter-spacing: 0.25px;
+}
+
+.home-page-categories {
+    display: flex;
+}
+
+
+
+
+
+
+
+
 .home-page-grid-wrapper{
     /* max-height: 100%; */
     /* margin-top: 2em;
