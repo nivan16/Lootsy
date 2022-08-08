@@ -15,14 +15,14 @@ u3 = User.create!(email: 'roamingseller@hyrule.com', name: 'Beetle', password: '
 u4 = User.create!(email: 'doctor@regions.com', name: 'Oak', password: 'ketchup')
 
 
-# p# = Product.create!(name: , description: , price: , user_id: )
-stand_arrow = Product.create!(name: 'Arrow', description: 'A random arrow I found in Egypt', price: 130.00, user_id: u2.id)
-dios_diary = Product.create!(name: 'Old diary', description: 'Completely non-sensical diary, but it could lead to treasure', price: 14.00, user_id: u2.id)
-vampire_mask = Product.create!(name: 'Weird mask', description: 'A mask carbon dated to be several thousand years old I got in a cave', price: 30000.00, user_id: u2.id)
-master_sword = Product.create!(name: 'Blue sword', description: 'A sword I pulled out of a rock, that has a strange triangle pattern on the hilt and a large handguard.', price: 127, user_id: u3.id)
-ocarina_of_time = Product.create!(name: 'Ocarina', description: 'An ocarina found at the moat of a castle, still works though!', price: 25.00, user_id: u3.id)
-pokeball = Product.create!(name: 'Strong pouches', description: "I found these in a field of tall grass, they're made out of a really tough material.", price: 100.00, user_id: u4.id)
-rengoku = Product.create!(name: 'Beautiful restored blade', description: "Looted (the pieces of) this blade in a forest, but the material is very sturdy and I've never seen metal like this before.", price: 20000.00, user_id: u4.id)
+# product = Product.create!(name: , description: , category: '', price: , user_id: )
+stand_arrow = Product.create!(name: 'Arrow', description: 'A random arrow I found in Egypt', category: 'Art & Collectables', price: 130.00, user_id: u2.id)
+dios_diary = Product.create!(name: 'Old diary', description: 'Completely non-sensical diary, but it could lead to treasure', category: 'Miscellaneous', price: 14.00, user_id: u2.id)
+vampire_mask = Product.create!(name: 'Weird mask', description: 'A mask carbon dated to be several thousand years old I got in a cave', category: 'Art & Collectables', price: 30000.00, user_id: u2.id)
+master_sword = Product.create!(name: 'Blue sword', description: 'A sword I pulled out of a rock, that has a strange triangle pattern on the hilt and a large handguard.', category: 'Weapons', price: 127, user_id: u3.id)
+ocarina_of_time = Product.create!(name: 'Ocarina', description: 'An ocarina found at the moat of a castle, still works though!', category: 'Art & Collectables', price: 25.00, user_id: u3.id)
+pokeball = Product.create!(name: 'Strong pouches', description: "I found these in a field of tall grass, they're made out of a really tough material.", category: 'Jewelery & Accessories', price: 100.00, user_id: u4.id)
+rengoku = Product.create!(name: 'Beautiful restored blade', description: "Looted (the pieces of) this blade in a forest, but the material is very sturdy and I've never seen metal like this before.", category: 'Weapons', price: 20000.00, user_id: u4.id)
 #create a new user for demon slayer items!
 
 # Harry Potter:

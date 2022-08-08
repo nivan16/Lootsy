@@ -19,6 +19,7 @@ class HomePage extends React.Component{
             <>
 
                 <div className='home-page-category-wrapper'>
+
                     <div className='home-page-title-wrapper max-body-width body-padding'>
                         <h1 className='home-page-title'>Loot that is meant for you.</h1>
                     </div>
@@ -27,30 +28,45 @@ class HomePage extends React.Component{
                         
                         <div className='home-page-category'>
                             <Link to='/'>
-                                <div className='home-page-category-image'>
+                                <div className='home-page-category-img-container'>
                                     Image Here!
+                                </div>
+                                <div className='home-page-category-img-description-container'>
+                                    <p className='home-page-category-img-description'>
+                                        Description Here!
+                                    </p>
                                 </div>
                             </Link>
                         </div>
 
                         <div className='home-page-category'>
                             <Link to='/'>
-                                <div className='home-page-category-image'>
+                                <div className='home-page-category-img-container'>
                                     Image Here!
+                                </div>
+                                <div className='home-page-category-img-description-container'>
+                                    <p className='home-page-category-img-description'>
+                                        Description Here!
+                                    </p>
                                 </div>
                             </Link>
                         </div>
 
                         <div className='home-page-category'>
                             <Link to='/'>
-                                
+                                <div className='home-page-category-img-container'>
                                     Image Here!
-                                
+                                </div>
+                                <div className='home-page-category-img-description-container'>
+                                    <p className='home-page-category-img-description'>
+                                        Description Here!
+                                    </p>
+                                </div>
                             </Link>
                         </div>
+
                     </div>
-
-                </div>
+                </div> 
 
                 <div className='home-page-grid-wrapper max-body-width body-padding'>
                     <div className='home-page-grid'>

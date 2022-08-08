@@ -2,6 +2,7 @@
     background-color: #f7e5de;
     position: relative;
     height: 15vh;
+    margin-bottom: 7.5rem;
 }
 
 .home-page-title-wrapper{
@@ -21,18 +22,22 @@
 
 }
 
-.home-page-category{
+
+.home-page-category-img-container{
     text-align: center;
     background-color: rgb(147, 224, 147);
+    border-radius: 100px;
     height: 110px;
     max-width: 110px;
     width: 110px;
-
-    border-radius: 100px;
 }
 /* Use media queries to change the width and height of the bubbles*/
 
-.home-page-category > a 
+/* YOU CAN SCALE DOWN IMAGES BUT RETAIN QUALITY!! */
+.home-page-category > a, .home-page-category > a:visited{
+    text-decoration: none;
+    color: black;
+}
 
 
 
