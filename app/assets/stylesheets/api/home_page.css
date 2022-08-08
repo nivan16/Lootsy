@@ -17,19 +17,30 @@
 
 .home-page-categories {
     display: flex;
+    justify-content: space-around;
+
 }
 
+.home-page-category{
+    text-align: center;
+    background-color: rgb(147, 224, 147);
+    height: 110px;
+    max-width: 110px;
+    width: 110px;
 
+    border-radius: 100px;
+}
+/* Use media queries to change the width and height of the bubbles*/
 
-
+.home-page-category > a 
 
 
 
 
 .home-page-grid-wrapper{
     /* max-height: 100%; */
-    /* margin-top: 2em;
-    max-width: 100%; */
+    margin-top: 2rem !important;
+    /* max-width: 100%; */
 }
 
 .home-page-grid{

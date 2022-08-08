@@ -24,7 +24,30 @@ class HomePage extends React.Component{
                     </div>
 
                     <div className='home-page-categories max-body-width body-padding'>
-                    
+                        
+                        <div className='home-page-category'>
+                            <Link to='/'>
+                                <div className='home-page-category-image'>
+                                    Image Here!
+                                </div>
+                            </Link>
+                        </div>
+
+                        <div className='home-page-category'>
+                            <Link to='/'>
+                                <div className='home-page-category-image'>
+                                    Image Here!
+                                </div>
+                            </Link>
+                        </div>
+
+                        <div className='home-page-category'>
+                            <Link to='/'>
+                                
+                                    Image Here!
+                                
+                            </Link>
+                        </div>
                     </div>
 
                 </div>
