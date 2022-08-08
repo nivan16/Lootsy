@@ -25,8 +25,8 @@ const receiveProductErrors = errors => ({
     errors
 })
 
-export const requestProducts = () => dispatch => (
-    ProductUtils.fetchProducts()
+export const requestProducts = (category) => dispatch => (
+    ProductUtils.fetchProducts(category)
         .then ( 
             products => dispatch(receiveAllProducts(products)),
             err => dispatch(receiveProductErrors(err.responseJSON))
@@ -42,7 +42,7 @@ export const requestProduct = productId => dispatch => (
 );
 
 export const createProduct = product => dispatch => (
-    ProductUtils.updateProduct(product)
+    ProductUtils.createProduct(product)
         .then ( 
             product => dispatch(receiveProduct(product)),
             err => dispatch(receiveProductErrors(err.responseJSON))

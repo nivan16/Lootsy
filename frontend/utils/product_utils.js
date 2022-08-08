@@ -14,6 +14,14 @@ export const fetchProduct = productId => (
     })
 );
 
+export const createProduct = product => (
+    $.ajax({
+        method: 'POST',
+        url: '/api/products',
+        data: { product }
+    })
+)
+
 export const updateProduct = product => (
     $.ajax({
         method: 'PATCH',
