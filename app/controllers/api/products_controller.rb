@@ -20,13 +20,22 @@ class Api::ProductsController < ApplicationController
     end
 
     def index
-        @products = Product.all
-        render :index
+        # might change nil to "all", depending on frontend development
+        if params[:category] == nil
+            @products = Product.all
+            render :index
+        else
+            @products = Product
+                .select(:id, :name, :category, :description, :price, :user_id)
+                .where(category: params[:category])
+            render :index
+        end
     end
 
     def update
+        #should i just check if current_user[:id] == product[:user_id]
         @product = Product.find_by(id: params[:id])
-        if @product
+        if @product # && (current_user[:id] == @product[:user_id])
             if @product.update(product_params)
                 render :show
             else
@@ -44,7 +53,7 @@ class Api::ProductsController < ApplicationController
 
     private
     def product_params
-        params.require(:product).permit(:name, :description, :price, :user_id)
+        params.require(:product).permit(:name, :category, :description, :price, :user_id)
     end
 
 end

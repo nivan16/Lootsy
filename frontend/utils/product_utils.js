@@ -1,8 +1,9 @@
 
-export const fetchProducts = () => (
+export const fetchProducts = (category) => (
     $.ajax({
         method: "GET",
-        url: '/api/products'
+        url: '/api/products',
+        data: { category }
     })
 );
 
@@ -16,7 +17,8 @@ export const fetchProduct = productId => (
 export const updateProduct = product => (
     $.ajax({
         method: 'PATCH',
-        url: `/api/products/${product.id}`
+        url: `/api/products/${product.id}`,
+        data: { product }
     })
 );
 
