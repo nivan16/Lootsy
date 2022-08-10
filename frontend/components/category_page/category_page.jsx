@@ -15,7 +15,6 @@ class CategoryPage extends React.Component{
     render(){
         //Figure out why the product isnt rendering even though it exists in the state
         if(!this.props.products[0]) return null;
-        debugger;
         return (
             <div className='category-page-wrapper'>
                 {
