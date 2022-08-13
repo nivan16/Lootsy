@@ -10,9 +10,9 @@ class Product < ApplicationRecord
         foreign_key: :owner_id,
         class_name: :User
 
-    has_many :carts,
+    has_many :cart_items,
         primary_key: :id,
         foreign_key: :product_id,
-        class_name: :Cart,
+        class_name: :CartItem,
         dependent: :destroy
 end

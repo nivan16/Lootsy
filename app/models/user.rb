@@ -6,21 +6,21 @@ class User < ApplicationRecord
     
     before_validation :ensure_session_token
     
+    #this refers to items being sold
     has_many :products,
         primary_key: :id,
         foreign_key: :owner_id,
         class_name: :Product,
         dependent: :destroy
 
-    #should this be has one or has many???
-    has_many :carts,
+    has_many :cart_products,
         primary_key: :id,
-        foreign_key: :user_id,
-        class_name: :Cart,
+        foreign_key: :shopper_id,
+        class_name: :CartItem,
         dependent: :destroy
 
     #Note: The source :product refers to belongs_to association in Cart model!
-    has_many :cart_items, through: :carts, 
+    has_many :cart_items, through: :cart_products, 
         source: :product,
         dependent: :destroy
 

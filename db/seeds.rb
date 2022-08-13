@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Cart.destroy_all
+CartItem.destroy_all
 Product.destroy_all
 User.destroy_all
 
@@ -27,9 +27,9 @@ rengoku = Product.create!(name: 'Beautiful restored blade', description: "Looted
 #create a new user for demon slayer items!
 
 #if quantity changes to 0 (is removed from cart, then it would just be the destroy method!!)
-# cart1 = Cart.create!(user_id: u1.id, product_id: ocarina_of_time.id, quantity: 1)
-# cart2 = Cart.create!(user_id: u1.id, product_id: master_sword.id, quantity: 1)
-
+cart_item1 = CartItem.create!(shopper_id: u1.id, product_id: ocarina_of_time.id, quantity: 1)
+cart_item2 = CartItem.create!(shopper_id: u1.id, product_id: master_sword.id, quantity: 1)
+cart_item3 = CartItem.create!(shopper_id: u2.id, product_id: rengoku.id, quantity: 4)
 
 # Harry Potter:
 #   Elder wand
