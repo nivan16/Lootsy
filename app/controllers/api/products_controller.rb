@@ -1,5 +1,7 @@
 class Api::ProductsController < ApplicationController
 
+    before_action :ensure_logged_in, only: [:create, :update, :destroy]
+
     def create
         @product = Product.new(product_params)
         
@@ -26,16 +28,16 @@ class Api::ProductsController < ApplicationController
             render :index
         else
             @products = Product
-                .select(:id, :name, :category, :description, :price, :user_id)
+                .select(:id, :name, :category, :description, :price, :owner_id)
                 .where(category: params[:category])
             render :index
         end
     end
 
     def update
-        #should i just check if current_user[:id] == product[:user_id]
+        #should i just check if current_user[:id] == product[:owner_id]
         @product = Product.find_by(id: params[:id])
-        if @product # && (current_user[:id] == @product[:user_id])
+        if @product # && (current_user[:id] == @product[:owner_id])
             if @product.update(product_params)
                 render :show
             else
@@ -52,8 +54,9 @@ class Api::ProductsController < ApplicationController
 
 
     private
+    
     def product_params
-        params.require(:product).permit(:name, :category, :description, :price, :user_id)
+        params.require(:product).permit(:name, :category, :description, :price, :owner_id)
     end
 
 end

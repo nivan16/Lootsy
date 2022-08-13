@@ -22,4 +22,13 @@ class ApplicationController < ActionController::Base
         current_user = nil
     end
 
+    def ensure_logged_in
+        render json: ["Must be logged in!"], status: 404 unless logged_in?
+    end
+
+    def ensure_logged_out
+        render json: ["Must be logged out!"], status: 404 if logged_in?
+    end
+
+
 end

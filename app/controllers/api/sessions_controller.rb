@@ -1,5 +1,8 @@
 class Api::SessionsController < ApplicationController
 
+    before_action :ensure_logged_in, only: [:destroy]
+    before_action :ensure_logged_out, only: [:create]
+    
     def create
         @user = User.find_by_credentials(params[:user][:email], params[:user][:password]) #i think its id? i def need to ask
         if @user.nil? #no user matches email given

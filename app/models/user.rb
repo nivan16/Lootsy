@@ -1,10 +1,29 @@
 class User < ApplicationRecord
     validates :email, :name, :password_digest, :session_token, presence: true
     validates :email, :session_token, uniqueness: true
-
+    
     validates :password, length: {minimum: 6, allow_nil: true}
-
+    
     before_validation :ensure_session_token
+    
+    has_many :products,
+        primary_key: :id,
+        foreign_key: :owner_id,
+        class_name: :Product,
+        dependent: :destroy
+
+    #should this be has one or has many???
+    has_many :carts,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Cart,
+        dependent: :destroy
+
+    #Note: The source :product refers to belongs_to association in Cart model!
+    has_many :cart_items, through: :carts, 
+        source: :product,
+        dependent: :destroy
+
 
     def password
         @password
@@ -48,10 +67,6 @@ class User < ApplicationRecord
         self.session_token
     end
     
-    has_many :products,
-        primary_key: :id,
-        foreign_key: :user_id,
-        class_name: :Product
 
 
 end
