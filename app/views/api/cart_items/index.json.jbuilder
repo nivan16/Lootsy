@@ -1,19 +1,41 @@
 ruby_product_owners = {}
+ruby_cart = {}
 
-json.cart do
-    json.products do
-        @cart.each do |product|
-            json.set! product.id do
-                json.partial! '/api/products/product', product: product
-            end
-            
-            ruby_product_owners[product.owner.id] = product.owner
+json.products do
+    @cart.each do |cart_info|
+        json.set! cart_info.product.id do
+            json.partial! '/api/products/product', product: cart_info.product
         end
-    end
-    json.users do 
-        json.merge! ruby_product_owners
+        
+        ruby_product_owners[cart_info.product.owner.id] = cart_info.product.owner
+        ruby_cart[cart_info.product.id] = cart_info.quantity
     end
 end
+json.users do 
+    json.merge! ruby_product_owners
+end
+json.cart do
+    json.merge! ruby_cart
+end
+
+
+
+# ruby_product_owners = {}
+
+# json.cart do
+#     json.products do
+#         @cart.each do |product|
+#             json.set! product.id do
+#                 json.partial! '/api/products/product', product: product
+#             end
+            
+#             ruby_product_owners[product.owner.id] = product.owner
+#         end
+#     end
+#     json.users do 
+#         json.merge! ruby_product_owners
+#     end
+# end
 
 #add owner name to products, and quantity of each product
 

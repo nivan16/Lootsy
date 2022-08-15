@@ -34,7 +34,12 @@ class Api::CartItemsController < ApplicationController
 
         #make sure that the includes is a preload and not an eager load!!!
         #preload is way faster, eager_load (in this case) will be much much slower.
-        @cart = @user.cart_items.includes(:owner)
+        @cart = @user.cart_products.preload(product: :owner)
+        
+            # .joins("INNER JOIN products ON cart_items.product_id = products.id")
+            # .joins("INNER JOIN users on products.owner_id = users.id")
+            # .where("shopper_id = 85")
+        # @cart = @user.cart_items.includes(:owner)
 
         if @cart == []
             render json: []
