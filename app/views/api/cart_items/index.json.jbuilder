@@ -1,22 +1,29 @@
-ruby_product_owners = {}
-ruby_cart = {}
+# ruby_product_owners = {}
+# ruby_cart = {}
 
-json.products do
-    @cart.each do |cart_info|
-        json.set! cart_info.product.id do
-            json.partial! '/api/products/product', product: cart_info.product
-        end
+@cart.each do |cart_product|
+    json.partial! '/api/cart_items/cart_item', cart_product: cart_product
+end
+
+
+# json.products do
+#     @cart.each do |cart_info|
+#         json.set! cart_info.product.id do
+#             json.partial! '/api/products/product', product: cart_info.product
+#         end
         
-        ruby_product_owners[cart_info.product.owner.id] = cart_info.product.owner
-        ruby_cart[cart_info.product.id] = cart_info.quantity
-    end
-end
-json.users do 
-    json.merge! ruby_product_owners
-end
-json.cart do
-    json.merge! ruby_cart
-end
+#         ruby_product_owners[cart_info.product.owner.id] = json.partial! '/api/users/user', user: cart_info.product.owner
+#         ruby_cart[cart_info.product.id] = cart_info.quantity
+#     end
+# end
+# json.users do 
+#     json.merge! ruby_product_owners
+# end
+# json.cart do
+#     json.merge! ruby_cart
+# end
+
+
 
 
 
