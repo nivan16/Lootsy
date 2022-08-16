@@ -1,7 +1,7 @@
 # ruby_product_owners = {}
 # ruby_cart = {}
 
-@cart.each do |cart_product|
+json.array! @cart do |cart_product|
     json.partial! '/api/cart_items/cart_item', cart_product: cart_product
 end
 

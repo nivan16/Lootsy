@@ -15,7 +15,11 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: params[:id])
-        render :show
+        if @user
+            render :show
+        else
+            render json: ["User not found!"], status: 404
+        end
     end
 
     def destroy

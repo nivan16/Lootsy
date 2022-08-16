@@ -17,31 +17,64 @@ document.addEventListener("DOMContentLoaded", () => {
     //configuring the redux store
     let store;
     if (window.currentUser) {
-        const preloadedState = {
-            entities: {
-                users: {
-                    [window.currentUser.id]: window.currentUser
+        //if user has a cart
+        if(window.currentUser.cart[0]) {
+            let preloadedState = {
+                entities: {
+                    users: {
+                        [window.currentUser.userInfo.id]: window.currentUser.userInfo
+                    },
+                    products: {},
                 },
-                products: {},
-            },
-            session: {
-                currentUserId: window.currentUser.id
-            },
-            errors: {
-                session: [],
-                product: [],
-            }
-        };
+                cart: {},
+                session: {
+                    currentUserId: window.currentUser.userInfo.id
+                },
+                errors: {
+                    session: [],
+                    product: []
+                }   
+            };
 
-        // delete window.currentUser;
-        store = configureStore(preloadedState);
-    }
+            window.currentUser.cart.forEach( ({ product, productOwner, cartItem }) => {
+                preloadedState.entities.products[product.id] = product;
+                preloadedState.entities.users[productOwner.id] = productOwner;
+                preloadedState.cart[product.id] = cartItem;
+            });
+            store = configureStore(preloadedState);
+        }
+        //if the logged in user doesnt have a cart already
+        else {
+            const preloadedState = {
+                entities: {
+                    users: {
+                        [window.currentUser.userInfo.id]: window.currentUser.userInfo
+                    },
+                    products: {},
+                },
+                session: {
+                    currentUserId: window.currentUser.userInfo.id
+                },
+                errors: {
+                    session: [],
+                    product: [],
+                }
+            };
+    
+            // delete window.currentUser;
+            store = configureStore(preloadedState);
+        }
+    } //end if (currentUser) conditional
     else {
         store = configureStore();
     };
     //end of store config
 
     ReactDOM.render(<Root store={store}/>, root);
+
+
+
+
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.requestProducts = requestProducts;
