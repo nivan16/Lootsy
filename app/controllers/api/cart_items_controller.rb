@@ -8,17 +8,16 @@ class Api::CartItemsController < ApplicationController
     #  if for example you just click add to cart, must make either create
     #  or update have a if else for both situations
     def update
-        @user = find_cart_owner(params[:user_id])
+        cart_owner = find_cart_owner(params[:user_id])
 
-        if @user.nil?
-            # and return **IS EXTREMELY IMPORTANT** in
-            #   the case the user doesnt exist (however unlikely)
+        if cart_owner.nil?
+            # and return **IS EXTREMELY IMPORTANT** in the case the user doesnt exist (however unlikely)
             render json: ["That user doesn't exist!"], status: 500 and return
         end
 
 
         ## Will likely change this to just CartItem.find_by(id: params[:id])
-        @cart_product = find_cart_item(@user.id, params[:product_id])
+        @cart_product = find_cart_item(cart_owner.id, params[:product_id])
 
         # if a new cart item
         if @cart_product.nil?
@@ -47,15 +46,15 @@ class Api::CartItemsController < ApplicationController
     # @cart = CartItem.includes(:product, :shopper).where('shopper_id = ?', params[:shopper_id])
     # .find throws an error, find_by returns nil
     def index
-        @user = find_cart_owner(params[:user_id])
+        cart_owner = find_cart_owner(params[:user_id])
 
-        if @user.nil?
+        if cart_owner.nil?
             render json: ["That user doesn't exist!"], status: 404 and return
         end
 
         #make sure that the includes is a preload and not an eager load!!!
         #preload is way faster, eager_load (in this case) will be much much slower.
-        @cart = @user.cart_products.preload(product: :owner)
+        @cart = cart_owner.cart_products.preload(product: :owner)
 
             # .joins("INNER JOIN products ON cart_items.product_id = products.id")
             # .joins("INNER JOIN users on products.owner_id = users.id")
@@ -73,7 +72,7 @@ class Api::CartItemsController < ApplicationController
     end
     
     def destroy
-        cart_item = CartItem.find_by(id: params[:id])
+        cart_item = find_cart_item(params[:user_id], params[:product_id])
         
         if cart_item.nil?
             render json: ["Something went wrong!"], status: 500
@@ -96,8 +95,8 @@ class Api::CartItemsController < ApplicationController
         return user
     end
 
-    def find_cart_item(user_id, product_id)
-        return CartItem.find_by(shopper_id: @user.id, product_id: params[:product_id])
+    def find_cart_item(shopper_id, product_id)
+        return CartItem.find_by(shopper_id: shopper_id, product_id: product_id)
     end
 
 end
