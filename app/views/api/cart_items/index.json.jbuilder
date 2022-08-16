@@ -1,10 +1,39 @@
-# ruby_product_owners = {}
-# ruby_cart = {}
+json.product_owners do end
+json.products do end
+json.cart_items do end
 
-json.array! @cart do |cart_product|
-    json.partial! '/api/cart_items/cart_item', cart_product: cart_product
+
+@cart.each do |cart_product|
+    json.products do 
+        json.set! cart_product.product.id do
+            json.id cart_product.product.id
+            json.owner_id cart_product.product.owner_id
+            json.name cart_product.product.name
+            json.product_category cart_product.product.category
+            json.product_description cart_product.product.description
+            json.product_price cart_product.product.price
+        end
+    end
+    
+    json.product_owners do 
+        json.set! cart_product.product.owner.id do 
+            json.id cart_product.product.owner.id
+            json.name cart_product.product.owner.name
+            json.email cart_product.product.owner.email
+        end
+    end
+    
+    json.cart_items do
+        json.set! cart_product.id do 
+            json.shopper_id cart_product.shopper_id
+            json.product_id cart_product.product_id
+            json.quantity cart_product.quantity
+        end
+    end
+    
 end
 
+# json.partial! '/api/cart_items/cart_item', cart_product: cart_product
 
 # json.products do
 #     @cart.each do |cart_info|

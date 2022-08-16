@@ -4,9 +4,15 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:create, :destroy, :index]
-    resources :users do
-      resources :cart_items, only: [:update, :index]
-    end
     resources :products
+
+    resources :users do
+      resources :cart_items, only: [:index]
+    end
+
+    patch "/cart_item", to: "cart_items#update"
+    delete "/cart_item", to: "cart_items#delete"
+    
   end
+
 end
