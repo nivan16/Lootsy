@@ -19,28 +19,30 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.currentUser) {
         //if user has a cart
         if(window.currentUser.cart[0]) {
+            const { cart, userInfo } = window.currentUser;
             let preloadedState = {
                 entities: {
                     users: {
-                        [window.currentUser.userInfo.id]: window.currentUser.userInfo
+                        [userInfo.id]: userInfo
                     },
                     products: {},
                 },
                 cart: {},
                 session: {
-                    currentUserId: window.currentUser.userInfo.id
+                    currentUserId: userInfo.id
                 },
                 errors: {
                     session: [],
-                    product: []
+                    products: []
                 }   
             };
 
-            window.currentUser.cart.forEach( ({ product, productOwner, cartItem }) => {
+            cart.forEach( ({ product, productOwner, cartItem }) => {
                 preloadedState.entities.products[product.id] = product;
                 preloadedState.entities.users[productOwner.id] = productOwner;
                 preloadedState.cart[product.id] = cartItem;
             });
+
             store = configureStore(preloadedState);
         }
         //if the logged in user doesnt have a cart already
@@ -57,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 errors: {
                     session: [],
-                    product: [],
+                    products: [],
                 }
             };
     

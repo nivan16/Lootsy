@@ -99,4 +99,8 @@ class Api::CartItemsController < ApplicationController
         return CartItem.find_by(shopper_id: shopper_id, product_id: product_id)
     end
 
+    def to_partial_path
+        '/api/cart_items/cart_item'
+    end
+
 end

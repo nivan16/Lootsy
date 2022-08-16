@@ -8,5 +8,5 @@ end
 
 # **Note: json.cart(ele) is syntax for json.array! with a name
 json.cart(user.cart_products) do |cart_product|
-    json.partial! "/api/cart_items/cart_item", cart_product: cart_product
+    json.partial! partial: "/api/cart_items/cart_item.json.jbuilder", cart_product: cart_product
 end
