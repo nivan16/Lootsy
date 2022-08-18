@@ -2,11 +2,44 @@ json.user_info do
     json.extract! user, :id, :email, :name
 end
 
+json.users do end
+json.products do end
+json.cart_items do end
 # there is only a cart object if the user.cart_products association 
 # doesn't return [] (which means there are no cart_products for a User instance)
 # because ruby will just not run the .each on the empty array!!
 
 # **Note: json.cart(ele) is syntax for json.array! with a name
-json.cart(user.cart_products) do |cart_product|
-    json.partial! partial: "/api/cart_items/cart_item.json.jbuilder", cart_product: cart_product
+
+user.cart_products.each do |cart_product|
+    json.products do 
+        json.set! cart_product.product.id do
+            json.id cart_product.product.id
+            json.owner_id cart_product.product.owner_id
+            json.name cart_product.product.name
+            json.product_category cart_product.product.category
+            json.product_description cart_product.product.description
+            json.product_price cart_product.product.price
+        end
+    end
+    
+    json.users do 
+        json.set! cart_product.product.owner.id do 
+            json.id cart_product.product.owner.id
+            json.name cart_product.product.owner.name
+            json.email cart_product.product.owner.email
+        end
+    end
+    
+    json.cart_items do
+        #the key is product id, not cart_item id, because it 
+        # makes it easier to update the quantity (ex: the show page)
+        # and the shopper is always available (as the current user)
+        json.set! cart_product.product.id do 
+            json.shopper_id cart_product.shopper_id
+            json.product_id cart_product.product_id
+            json.quantity cart_product.quantity
+        end
+    end
+    
 end

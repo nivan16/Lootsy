@@ -8,7 +8,7 @@ json.product do
     json.product_price cart_product.product.price
 end
 
-json.product_owner do 
+json.user do 
     json.id cart_product.product.owner.id
     json.name cart_product.product.owner.name
     json.email cart_product.product.owner.email

@@ -1,4 +1,4 @@
-json.product_owners do end
+json.users do end
 json.products do end
 json.cart_items do end
 
@@ -15,7 +15,7 @@ json.cart_items do end
         end
     end
     
-    json.product_owners do 
+    json.users do 
         json.set! cart_product.product.owner.id do 
             json.id cart_product.product.owner.id
             json.name cart_product.product.owner.name

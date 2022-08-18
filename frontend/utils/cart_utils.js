@@ -6,24 +6,18 @@ export const fetchCart = userId => (
     })
 );
 
-export const updateCartItem = (userId, productId) => (
+export const updateCartItem = (shopperId, productId, quantity) => (
     $.ajax({
-        method: "UPDATE",
+        method: "PATCH",
         url: '/api/cart_item',
-        data: {
-            userId,
-            productId
-        }
+        data: { shopperId, productId, quantity }
     })
 );
 
-export const deleteCartItem = (userId, productId) => (
+export const deleteCartItem = (shopperId, productId) => (
     $.ajax({
         method: "DELETE",
         url: '/api/cart_item',
-        data: {
-            userId,
-            productId
-        }
+        data: { shopperId, productId }
     })
 );

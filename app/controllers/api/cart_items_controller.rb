@@ -8,8 +8,7 @@ class Api::CartItemsController < ApplicationController
     #  if for example you just click add to cart, must make either create
     #  or update have a if else for both situations
     def update
-        cart_owner = find_cart_owner(params[:user_id])
-
+        cart_owner = find_cart_owner(params[:shopper_id])
         if cart_owner.nil?
             # and return **IS EXTREMELY IMPORTANT** in the case the user doesnt exist (however unlikely)
             render json: ["That user doesn't exist!"], status: 500 and return
@@ -21,7 +20,7 @@ class Api::CartItemsController < ApplicationController
 
         # if a new cart item
         if @cart_product.nil?
-            @cart_product = CartItem.new(cart_item_params)
+            @cart_product = CartItem.new(cart_owner.id, product_id: params[:product_id], quantity: params[:quantity])
             if @cart_product.save
                 render :show
             else
@@ -29,7 +28,7 @@ class Api::CartItemsController < ApplicationController
             end
         #if there is already that cart item
         elsif @cart_product
-            if @cart_product.update(cart_item_params)
+            if @cart_product.update(quantity: params[:quantity])
                 render :show
             else
                 render json: @cart_product.errors.full_messages, status: 404
@@ -43,7 +42,7 @@ class Api::CartItemsController < ApplicationController
     ##In this case, the cart id from the params
     ##  seems to already factor into the .includes for some reason
     
-    # @cart = CartItem.includes(:product, :shopper).where('shopper_id = ?', params[:shopper_id])
+    # @cart = CartItem.includes(:product, :shopper).where('shopper_id = ?', params[:user_id])
     # .find throws an error, find_by returns nil
     def index
         cart_owner = find_cart_owner(params[:user_id])
@@ -72,7 +71,7 @@ class Api::CartItemsController < ApplicationController
     end
     
     def destroy
-        cart_item = find_cart_item(params[:user_id], params[:product_id])
+        cart_item = find_cart_item(params[:shopper_id], params[:product_id])
         
         if cart_item.nil?
             render json: ["Something went wrong!"], status: 500
@@ -86,12 +85,8 @@ class Api::CartItemsController < ApplicationController
 
     private
 
-    def cart_item_params
-        params.require(:cart_item).permit(:shopper_id, :product_id, :quantity)
-    end
-
-    def find_cart_owner(user_id)
-        user = User.find_by(id: user_id)
+    def find_cart_owner(shopper_id)
+        user = User.find_by(id: shopper_id)
         return user
     end
 

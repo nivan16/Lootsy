@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let store;
     if (window.currentUser) {
         //if user has a cart
-        if(window.currentUser.cart[0]) {
-            const { cart, userInfo } = window.currentUser;
+        if(window.currentUser) {
+            const { userInfo } = window.currentUser;
             let preloadedState = {
                 entities: {
                     users: {
@@ -34,38 +34,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 errors: {
                     session: [],
                     products: []
-                }   
+                }
             };
 
-            cart.forEach( ({ product, productOwner, cartItem }) => {
-                preloadedState.entities.products[product.id] = product;
-                preloadedState.entities.users[productOwner.id] = productOwner;
-                preloadedState.cart[product.id] = cartItem;
-            });
+            if( window.currentUser.cartItems){
+                const { products, users, cartItems } = window.currentUser;
+                
+                preloadedState.entities.products = products;
+                preloadedState.entities.users = users;
+                preloadedState.cart = cartItems;
+            };
 
             store = configureStore(preloadedState);
         }
         //if the logged in user doesnt have a cart already
-        else {
-            const preloadedState = {
-                entities: {
-                    users: {
-                        [window.currentUser.userInfo.id]: window.currentUser.userInfo
-                    },
-                    products: {},
-                },
-                session: {
-                    currentUserId: window.currentUser.userInfo.id
-                },
-                errors: {
-                    session: [],
-                    products: [],
-                }
-            };
-    
-            // delete window.currentUser;
-            store = configureStore(preloadedState);
-        }
     } //end if (currentUser) conditional
     else {
         store = configureStore();
@@ -85,3 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // last day of this project (during school) was july 1st.
 // https://trello.com/b/NLdAVrw9/naran-ivanchukov
+
+/* _________________Notes_________________
+
+Change CartItemController update to update_cart,
+    and change the update to just return quantity.
+    Theres no reason to gather so much information
+    when just updating one number, when all info
+    will always be already existing in this case.
+.
+*/
