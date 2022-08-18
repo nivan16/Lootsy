@@ -24,7 +24,10 @@ json.cart_items do end
     end
     
     json.cart_items do
-        json.set! cart_product.id do 
+        #the key is product id, not cart_item id, because it 
+        # makes it easier to update the quantity (ex: the show page)
+        # and the shopper is always available (as the current user)
+        json.set! cart_product.product.id do 
             json.shopper_id cart_product.shopper_id
             json.product_id cart_product.product_id
             json.quantity cart_product.quantity
