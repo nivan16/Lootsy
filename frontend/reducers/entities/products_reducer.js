@@ -16,13 +16,17 @@ const productsReducer = (state={}, action) => {
         case RECEIVE_CART:
             return Object.assign({}, state, action.cart.products)
 
-        case RECEIVE_CURRENT_USER:
-            return action.user.products ? action.user.products : null;
-
         case REMOVE_PRODUCT:
             newState = Object.assign({}, state);
             delete newState[action.productId];
             return newState;
+            
+        case RECEIVE_CURRENT_USER:
+            return action.user.products ? (
+                Object.assign({}, state, action.user.products) 
+            ) : (
+                Object.assign({}, state)
+            );
 
         default:
             return state;

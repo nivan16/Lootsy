@@ -22,21 +22,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const { userInfo } = window.currentUser;
             let preloadedState = {
                 entities: {
-                    users: {
-                        [userInfo.id]: userInfo
-                    },
+                    users: {},
                     products: {},
                 },
                 cart: {},
-                session: {
-                    currentUserId: userInfo.id
-                },
+                session: {},
                 errors: {
                     session: [],
                     products: []
                 }
             };
-
+            
             if( window.currentUser.cartItems){
                 const { products, users, cartItems } = window.currentUser;
                 
@@ -44,6 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 preloadedState.entities.users = users;
                 preloadedState.cart = cartItems;
             };
+
+            preloadedState.entities.users[userInfo.id] = userInfo;          
+            preloadedState.session.currentUserId = userInfo.id;
 
             store = configureStore(preloadedState);
         }

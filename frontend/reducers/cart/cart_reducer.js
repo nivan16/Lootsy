@@ -9,10 +9,6 @@ const cartReducer = (state = {}, action) => {
         case RECEIVE_CART:
             return action.cart.cartItems;
 
-        case RECEIVE_CURRENT_USER:
-            debugger;
-            return action.user.cartItems ? action.user.cartItems : {};
-
         case RECEIVE_CART_ITEM:
             newState = Object.assign({}, state, action.cartItem);
             return newState;
@@ -21,6 +17,10 @@ const cartReducer = (state = {}, action) => {
             newState = Object.assign({}, state);
             delete newState[action.productId];
             return newState;
+
+        case RECEIVE_CURRENT_USER:
+            debugger;
+            return action.user.cartItems ? action.user.cartItems : {};
 
         case REMOVE_CURRENT_USER:
             return {};

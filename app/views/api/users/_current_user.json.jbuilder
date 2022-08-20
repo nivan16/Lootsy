@@ -17,9 +17,9 @@ user.cart_products.each do |cart_product|
             json.id cart_product.product.id
             json.owner_id cart_product.product.owner_id
             json.name cart_product.product.name
-            json.product_category cart_product.product.category
-            json.product_description cart_product.product.description
-            json.product_price cart_product.product.price
+            json.category cart_product.product.category
+            json.description cart_product.product.description
+            json.price cart_product.product.price
         end
     end
     

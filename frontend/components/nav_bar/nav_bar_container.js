@@ -12,5 +12,4 @@ const mapDispatchToProps = dispatch => ({
     logoutCurrentUser: currentUserId => dispatch(logoutCurrentUser(currentUserId))
 });//probably will give it a ui action to dispatch (closing and opening a model being updated through a handle submit)
 
-const NavBarContainer = connect(mapStateToProps, mapDispatchToProps);
-export default NavBarContainer(NavBar);
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
