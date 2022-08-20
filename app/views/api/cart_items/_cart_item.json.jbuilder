@@ -15,7 +15,7 @@ json.user do
 end
 
 json.cart_item do
-    json.shopper_id cart_product.shopper_id
     json.product_id cart_product.product_id
+    json.product_owner_id cart_product.product.owner.id
     json.quantity cart_product.quantity
 end
