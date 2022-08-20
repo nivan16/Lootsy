@@ -28,7 +28,7 @@ const cartCreator = (users, products, cart) => {
 
     Object.values(cart).forEach( cartItem => {
         formedCart.products[cartItem.productId] = products[cartItem.productId];
-        formedCart.owners[cartItem.ownerId] = users[cartItem.productOwnerId];
+        formedCart.owners[cartItem.productOwnerId] = users[cartItem.productOwnerId];
     });
 
     return formedCart;

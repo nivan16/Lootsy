@@ -1,4 +1,5 @@
 import React from 'react';
+import CartItem from './cart_item';
 import { Link } from 'react-router-dom';
 
 class Cart extends React.Component{
@@ -15,7 +16,7 @@ class Cart extends React.Component{
                     </Link>
                 </div>
             )
-        }
+        };
 
         const cartProducts = Object.values(this.props.cart.products);
         const productAmount = cartProducts.length;
@@ -46,12 +47,23 @@ class Cart extends React.Component{
 
                 <div className='cart-index-wrapper max-body-width body-padding'>
                     <div className='cart-index'>
-
+                            {
+                                cartProducts.map( cartProduct => (
+                                    <CartItem
+                                        key={cartProduct.id}
+                                        cartProduct={cartProduct}
+                                        productOwner={this.props.cart.owners[cartProduct.ownerId]}
+                                        currentUser={this.props.currentUser}
+                                        updateCartItem={this.props.updateCartItem}
+                                        deleteCartItem={this.props.deleteCartItem}
+                                    />
+                                ))
+                            }
 
                     </div>
                 </div>
             </>
-        )
+        );
     }
 }
 
