@@ -19,7 +19,7 @@ user.cart_products.each do |cart_product|
             json.name cart_product.product.name
             json.category cart_product.product.category
             json.description cart_product.product.description
-            json.price cart_product.product.price
+            json.price cart_product.product.price_string
         end
     end
     

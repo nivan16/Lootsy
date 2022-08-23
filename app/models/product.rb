@@ -15,4 +15,14 @@ class Product < ApplicationRecord
         foreign_key: :product_id,
         class_name: :CartItem,
         dependent: :destroy
+
+    def price_string
+        price_stringify = self.price.to_s.split(".")
+        if price_stringify[1].length == 1
+            price_stringify[1] += "0"
+        end
+        price_stringify.join(".")
+    end
+
+
 end

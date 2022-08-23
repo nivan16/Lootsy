@@ -17,7 +17,7 @@ u4 = User.create!(email: 'doctor@regions.com', name: 'Oak', password: 'ketchup')
 
 
 # product = Product.create!(name: , description: , category: '', price: , owner_id: )
-stand_arrow = Product.create!(name: 'Arrow', description: 'A random arrow I found in Egypt', category: 'art and collectables', price: 130.00, owner_id: u2.id)
+stand_arrow = Product.create!(name: 'Arrow', description: 'A random arrow I found in Egypt', category: 'art and collectables', price: 149.99, owner_id: u2.id)
 dios_diary = Product.create!(name: 'Old diary', description: 'Completely non-sensical diary, but it could lead to treasure', category: 'miscellaneous', price: 14.00, owner_id: u2.id)
 vampire_mask = Product.create!(name: 'Weird mask', description: 'A mask carbon dated to be several thousand years old I got in a cave', category: 'art and collectables', price: 30000.00, owner_id: u2.id)
 master_sword = Product.create!(name: 'Blue sword', description: 'A sword I pulled out of a rock, that has a strange triangle pattern on the hilt and a large handguard.', category: 'weapons', price: 127, owner_id: u3.id)

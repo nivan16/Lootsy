@@ -11,7 +11,7 @@ json.cart_items do end
             json.name cart_product.product.name
             json.category cart_product.product.category
             json.description cart_product.product.description
-            json.price cart_product.product.price
+            json.price cart_product.product.price_string
         end
     end
     

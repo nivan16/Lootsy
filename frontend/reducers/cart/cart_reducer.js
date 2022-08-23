@@ -19,7 +19,6 @@ const cartReducer = (state = {}, action) => {
             return newState;
 
         case RECEIVE_CURRENT_USER:
-            debugger;
             return action.user.cartItems ? action.user.cartItems : {};
 
         case REMOVE_CURRENT_USER:

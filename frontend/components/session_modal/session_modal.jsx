@@ -88,7 +88,7 @@ class SessionModal extends React.Component{
     }
 
     render(){
-        // debugger;
+
         const emailError = this.props.errors['email'];
         const passwordError = this.props.errors['password'];
         const nameError = this.props.errors['name'];
