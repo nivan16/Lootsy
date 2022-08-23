@@ -30,12 +30,14 @@ class CartItem extends React.Component{
         // such as just a { length } object, and actually map over it in
         // this function since it is still being constructed!
         // also doesnt create a middleman array!
-        const options = () => Array.from({length: 15}, (undefined, i) => ( 
+        const options = () => Array.from({length: 15}, (_, i) => ( 
             <option value={i+1} key={i}>
                 {i+1}
             </option>    
         ));
         
+        const quantityMessageBoolean = this.cartProduct.stock;
+
         return(
             <>
                 {/* <form> */}
@@ -66,14 +68,27 @@ class CartItem extends React.Component{
 
                     <div className='cart-item-numbers-wrapper'>
                         <div className='cart-item-quantity-wrapper'>
-                            
-                            <select name="cart-item-quantity-selector" id="cart-item-quantity-selector"
-                                onChange={this.handleQuantityChange}
-                                defaultValue={this.props.cartProduct.quanitity}
-                            >
-                                {options()}
-                            </select>
+                            {
+                                this.cartProduct.stock === 1 ? (
+                                    <span className='cart-item-one-left'>
+                                        There's only one item left of this loot!
+                                    </span>
+                                ) : (
+                                    <select name="cart-item-quantity-selector" id="cart-item-quantity-selector"
+                                        onChange={this.handleQuantityChange}
+                                        defaultValue={this.props.cartProduct.quanitity}
+                                    >
+                                        {options()}
+                                    </select>
+                                )
+                            }
                         </div>
+                        <div className='cart-item-price-wrapper'>
+                            <span className='cart-item-price'>
+                                { "$"+this.props.cartProduct.price  }
+                            </span>
+                        </div>
+
                     </div>          
                 {/* </form> */}
             </>
@@ -81,12 +96,6 @@ class CartItem extends React.Component{
     }
 };
 
-export default CartItem;
 
-{/* <select name="cart-item-quantity" id="cart-item-quantity" onChange={this.changeQuantity}>
-                            {
-                                quantities.map((_, i) => {
-                                    
-                                })
-                            }
-                        </select> */}
+
+export default CartItem;

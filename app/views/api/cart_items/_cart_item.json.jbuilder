@@ -6,6 +6,7 @@ json.product do
     json.category cart_product.product.category
     json.description cart_product.product.description
     json.price cart_product.product.price_string
+    json.stock cart_product.product.stock
 end
 
 json.user do 
