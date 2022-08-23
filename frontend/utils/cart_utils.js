@@ -6,11 +6,11 @@ export const fetchCart = userId => (
     })
 );
 
-export const updateCartItem = (shopperId, productId, quantity) => (
+export const updateCartItem = (cartItem) => (
     $.ajax({
         method: "PATCH",
         url: '/api/cart_item',
-        data: { shopperId, productId, quantity }
+        data: cartItem,
     })
 );
 

@@ -2,43 +2,6 @@ class Api::CartItemsController < ApplicationController
 
     before_action :ensure_logged_in, only: [:index, :update, :destroy]
 
-    #there's no way to check if there is a cart on front end
-    #  in the situation of adding to cart from a product page (assuming the
-    #  the cart isnt in the state anymore),
-    #  if for example you just click add to cart, must make either create
-    #  or update have a if else for both situations
-    def update
-        cart_owner = find_cart_owner(params[:shopper_id])
-        if cart_owner.nil?
-            # and return **IS EXTREMELY IMPORTANT** in the case the user doesnt exist (however unlikely)
-            render json: ["That user doesn't exist!"], status: 500 and return
-        end
-
-
-        ## Will likely change this to just CartItem.find_by(id: params[:id])
-        @cart_product = find_cart_item(cart_owner.id, params[:product_id])
-
-        # if a new cart item
-        if @cart_product.nil?
-            @cart_product = CartItem.new(cart_owner.id, product_id: params[:product_id], quantity: params[:quantity])
-            if @cart_product.save
-                render :show
-            else
-                render json: @cart_product.errors.full_messages, status: 404
-            end
-        #if there is already that cart item
-        elsif @cart_product
-            if @cart_product.update(quantity: params[:quantity])
-                render :show
-            else
-                render json: @cart_product.errors.full_messages, status: 404
-            end
-        end
-    end
-
-    #Ill make update modular, since a cart is just "always empty" at first
-    #  on the frontend!
-
     ##In this case, the cart id from the params
     ##  seems to already factor into the .includes for some reason
     
@@ -69,9 +32,46 @@ class Api::CartItemsController < ApplicationController
         end
 
     end
+
+    #there's no way to check if there is a cart on front end
+    #  in the situation of adding to cart from a product page (assuming the
+    #  the cart isnt in the state anymore),
+    #  if for example you just click add to cart, must make either create
+    #  or update have a if else for both situations
+    def update
+        cart_owner = find_cart_owner(params[:shopperId])
+        if cart_owner.nil?
+            # and return **IS EXTREMELY IMPORTANT** in the case the user doesnt exist (however unlikely)
+            render json: ["That user doesn't exist! and not formatting"], status: 500 and return
+        end
+
+
+        ## Will likely change this to just CartItem.find_by(id: params[:id])
+        @cart_product = find_cart_item(cart_owner.id, params[:productId])
+
+        # if a new cart item
+        if @cart_product.nil?
+            @cart_product = CartItem.new(cart_owner.id, product_id: params[:productId], quantity: params[:quantity].to_i)
+            if @cart_product.save
+                render :show
+            else
+                render json: @cart_product.errors.full_messages, status: 404
+            end
+        #if there is already that cart item
+        elsif @cart_product
+            if @cart_product.update(quantity: params[:quantity].to_i)
+                render :show
+            else
+                render json: @cart_product.errors.full_messages, status: 404
+            end
+        end
+    end
+
+    #Ill make update modular, since a cart is just "always empty" at first
+    #  on the frontend!
     
     def destroy
-        cart_item = find_cart_item(params[:shopper_id], params[:product_id])
+        cart_item = find_cart_item(params[:shopperId], params[:productId])
         
         if cart_item.nil?
             render json: ["Something went wrong!"], status: 500

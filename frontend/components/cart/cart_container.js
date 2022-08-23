@@ -11,8 +11,8 @@ const mapDispatchToProps = dispatch => ({
     requestCart: currentUserId => dispatch(
         requestCart(currentUserId)
     ),
-    updateCartItem: (currentUserId, productId, quantity) => dispatch(
-        updateCartItem(currentUserId, productId, quantity)
+    updateCartItem: cartItem => dispatch(
+        updateCartItem(cartItem)
     ),
     deleteCartItem: (currentUserId, productId) => dispatch(
         deleteCartItem(currentUserId, productId)
@@ -20,12 +20,15 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const cartCreator = (users, products, cart) => {
-    if(cart === {}) return cart;
+    //jQuery method
+    if($.isEmptyObject(cart)) return cart;
+
+
     let formedCart = {
         owners: {},
         products: {},
     };
-
+    debugger;
     Object.values(cart).forEach( cartItem => {
         formedCart.products[cartItem.productId] = products[cartItem.productId];
         formedCart.products[cartItem.productId].quanitity = cartItem.quantity;

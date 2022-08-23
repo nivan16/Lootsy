@@ -10,7 +10,7 @@ const cartReducer = (state = {}, action) => {
             return action.cart.cartItems;
 
         case RECEIVE_CART_ITEM:
-            newState = Object.assign({}, state, action.cartItem);
+            newState = Object.assign({}, state, {[action.newCartItem.cartItem.productId]: action.newCartItem.cartItem});
             return newState;
 
         case REMOVE_CART_ITEM:

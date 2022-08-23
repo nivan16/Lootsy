@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       resources :cart_items, only: [:index]
     end
     patch "/cart_item", to: "cart_items#update"
-    delete "/cart_item", to: "cart_items#delete"
+    delete "/cart_item", to: "cart_items#destroy"
     
   end
 

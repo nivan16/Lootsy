@@ -18,11 +18,11 @@ class CartItem extends React.Component{
 
     handleQuantityChange(e){
         e.preventDefault();
-        this.props.updateCartItem(
-            this.props.currentUser.id,
-            this.props.cartProduct.id,
-            e.target.value
-        );
+        this.props.updateCartItem({
+            shopperId: this.props.currentUser.id,
+            productId: this.props.cartProduct.id,
+            quantity: e.target.value
+        });
     }
 
     render(){
@@ -35,7 +35,7 @@ class CartItem extends React.Component{
                 {i+1}
             </option>    
         ));
-
+        
         return(
             <>
                 {/* <form> */}
@@ -69,16 +69,10 @@ class CartItem extends React.Component{
                             
                             <select name="cart-item-quantity-selector" id="cart-item-quantity-selector"
                                 onChange={this.handleQuantityChange}
-                                defaultValue={this.props.cartProduct.quantity}
+                                defaultValue={this.props.cartProduct.quanitity}
                             >
                                 {options()}
                             </select>
-
-                            {/* <select
-                                defaultValue={this.props.cartProduct.quantity}
-                                onChange={this.props.handleQuantityChange}
-                                options={options()}
-                            /> */}
                         </div>
                     </div>          
                 {/* </form> */}

@@ -33,7 +33,7 @@ const usersReducer = (state = {}, action) => {
                 return newState;
 
             case RECEIVE_CART_ITEM:
-                return Object.assign({}, state, action.cartItem.user);
+                return Object.assign({}, state, action.newCartItem.user);
     
             case RECEIVE_CART: //receive product owners
                 return Object.assign({}, state, action.cart.users);

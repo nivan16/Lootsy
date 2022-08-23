@@ -9,9 +9,9 @@ const receiveCart = cart => ({
     cart
 });
 
-const receiveCartItem = cartItem => ({
+const receiveCartItem = newCartItem => ({
     type: RECEIVE_CART_ITEM,
-    cartItem
+    newCartItem
 });
 
 const removeCartItem = productId => ({
@@ -24,12 +24,14 @@ export const requestCart = shopperId => dispatch => (
         .then( cartItems => dispatch(receiveCart(cartItems)))
 );
 
-export const updateCartItem = (shopperId, productId, quantity) => dispatch => (
-    CartUtils.updateCartItem(shopperId, productId, quantity)
-        .then( cartItem => dispatch(receiveCartItem(cartItem)))
+export const updateCartItem = cartItem => dispatch => (
+    CartUtils.updateCartItem(cartItem)
+        .then( newCartItem => dispatch(receiveCartItem(newCartItem)))
 );
 
 export const deleteCartItem = (shopperId, productId) => dispatch =>(
     CartUtils.deleteCartItem(shopperId, productId)
-        .then( () => dispatch(removeCartItem(productId)))
+        .then( () => dispatch(removeCartItem(productId)),
+        ( err=> console.log(err))
+    )
 );
