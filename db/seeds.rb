@@ -27,9 +27,10 @@ rengoku = Product.create!(name: 'Beautiful restored blade', description: "Looted
 #create a new user for demon slayer items!
 
 #if quantity changes to 0 (is removed from cart, then it would just be the destroy method!!)
-cart_item1 = CartItem.create!(shopper_id: u1.id, product_id: ocarina_of_time.id, quantity: 1)
-cart_item2 = CartItem.create!(shopper_id: u1.id, product_id: master_sword.id, quantity: 1)
-cart_item3 = CartItem.create!(shopper_id: u2.id, product_id: rengoku.id, quantity: 1)
+cart_item1 = CartItem.create!(shopper_id: u1.id, product_id: stand_arrow.id, quantity: 1)
+cart_item2 = CartItem.create!(shopper_id: u1.id, product_id: master_sword.id, quantity: 3)
+cart_item3 = CartItem.create!(shopper_id: u1.id, product_id: pokeball.id, quantity: 1)
+cart_item4 = CartItem.create!(shopper_id: u2.id, product_id: rengoku.id, quantity: 1)
 
 # Harry Potter:
 #   Elder wand

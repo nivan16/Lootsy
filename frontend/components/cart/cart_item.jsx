@@ -35,9 +35,7 @@ class CartItem extends React.Component{
                 {i+1}
             </option>    
         ));
-        
-        const quantityMessageBoolean = this.cartProduct.stock;
-
+            
         return(
             <>
                 {/* <form> */}
@@ -69,7 +67,7 @@ class CartItem extends React.Component{
                     <div className='cart-item-numbers-wrapper'>
                         <div className='cart-item-quantity-wrapper'>
                             {
-                                this.cartProduct.stock === 1 ? (
+                                this.props.cartProduct.stock === 1 ? (
                                     <span className='cart-item-one-left'>
                                         There's only one item left of this loot!
                                     </span>
