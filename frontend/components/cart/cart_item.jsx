@@ -17,6 +17,7 @@ class CartItem extends React.Component{
     }
 
     handleQuantityChange(e){
+        e.stopPropagation();
         e.preventDefault();
         this.props.updateCartItem({
             shopperId: this.props.currentUser.id,
@@ -30,15 +31,16 @@ class CartItem extends React.Component{
         // such as just a { length } object, and actually map over it in
         // this function since it is still being constructed!
         // also doesnt create a middleman array!
-        const options = () => Array.from({length: 15}, (_, i) => ( 
+        const options = () => Array.from({length: this.props.cartProduct.stock}, (_, i) => ( 
             <option value={i+1} key={i}>
                 {i+1}
             </option>    
         ));
+
             
-        return(
-            <>
-                {/* <form> */}
+        return (
+            <div className='cart-item-wrapper'>
+                <form onSubmit={this.handleRemove}>
                     <div className='cart-item-owner-wrapper'>
                         <span className='cart-item-owner'>
                             {this.props.productOwner.name}
@@ -56,7 +58,7 @@ class CartItem extends React.Component{
                                 </span>
                             </div>
                             <div>
-                                <button onClick={this.handleRemove}>
+                                <button className="cart-item-remove-button">
                                     Remove from cart
                                 </button>
                             </div>
@@ -88,8 +90,8 @@ class CartItem extends React.Component{
                         </div>
 
                     </div>          
-                {/* </form> */}
-            </>
+                </form>
+            </div>
         )
     }
 };

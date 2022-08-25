@@ -3,6 +3,16 @@ import CartItem from './cart_item';
 import { Link } from 'react-router-dom';
 
 class Cart extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.priceTotal = this.priceTotal.bind(this);
+    }
+
+    priceTotal(){
+
+    }
+
 
     render(){
         if($.isEmptyObject(this.props.cart)){
@@ -28,9 +38,9 @@ class Cart extends React.Component{
                         <h1 className='cart-product-amount'>
                             {
                                 productAmount === 1 ? ( 
-                                    `${productAmount} item in your cart`
+                                    productAmount + 'items in your cart'
                                 ) : (
-                                    `${productAmount} items in your cart`
+                                    productAmount + 'items in your cart'
                                 )
                             }
                         </h1>
@@ -45,7 +55,7 @@ class Cart extends React.Component{
                     </div>
                 </div>
 
-                <div className='cart-index-wrapper max-body-width body-padding'>
+                <div className='cart-index-and-checkout-wrapper max-body-width body-padding'>
                     <div className='cart-index'>
                             {
                                 cartProducts.map( cartProduct => (
@@ -60,7 +70,16 @@ class Cart extends React.Component{
                                 ))
                             }
 
+                            <div className='cart-index-checkout'>
+                                {/* <form {onSubmit={handleCheckingOutOrSomething}}> */}
+                                <form>
+                                    
+
+                                </form>
+                            </div>                        
+                        
                     </div>
+
                 </div>
             </>
         );
