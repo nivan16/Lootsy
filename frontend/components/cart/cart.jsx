@@ -6,11 +6,14 @@ class Cart extends React.Component{
     constructor(props){
         super(props);
 
-        this.priceTotal = this.priceTotal.bind(this);
+        this.subTotal = this.subTotal.bind(this);
     }
 
-    priceTotal(){
-
+    subTotal(cartProducts){
+        let total = 0;
+        
+        cartProducts.forEach( cartProduct => total += (parseFloat(cartProduct.price) * cartProduct.quantity ) );
+        return total;
     }
 
 
@@ -30,32 +33,36 @@ class Cart extends React.Component{
 
         const cartProducts = Object.values(this.props.cart.products);
         const productAmount = cartProducts.length;
+        let price = this.subTotal(cartProducts);
 
         return (
-            <>
-                <div className='cart-header-wrapper max-body-width body-padding'>
+            <div className='cart-page-wrapper max-body-width body-padding'>
+                <div className='cart-header-wrapper'>
+                    
                     <div className='cart-product-amount-wrapper'>
                         <h1 className='cart-product-amount'>
                             {
                                 productAmount === 1 ? ( 
-                                    productAmount + 'items in your cart'
+                                    productAmount + ' items in your cart'
                                 ) : (
-                                    productAmount + 'items in your cart'
+                                    productAmount + ' items in your cart'
                                 )
                             }
                         </h1>
                     </div>
 
-                    <div className='cart-index-redirect-wrapper'>
-                        <Link to='/'>
-                            <span className='cart-index-redirect'>
-                                Keep Shopping
-                            </span>
-                        </Link>
+                    <div className='cart-index-redirect-button-wrapper'>
+                        <div className='cart-index-redirect-button'>
+                            <Link to='/'>
+                                <span className='cart-index-redirect-button-text'>
+                                    Keep Shopping
+                                </span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
-                <div className='cart-index-and-checkout-wrapper max-body-width body-padding'>
+                <div className='cart-index-and-checkout-wrapper'>
                     <div className='cart-index'>
                             {
                                 cartProducts.map( cartProduct => (
@@ -70,10 +77,41 @@ class Cart extends React.Component{
                                 ))
                             }
 
-                            <div className='cart-index-checkout'>
+                            <div className='cart-checkout'>
                                 {/* <form {onSubmit={handleCheckingOutOrSomething}}> */}
                                 <form>
-                                    
+                                    <div className='cart-checkout-price'>
+                                        <span>Loot Total</span>
+
+                                        <span>${price.toFixed(2)}</span>
+                                    </div>
+
+                                    <div className='cart-checkout-shipping'>
+                                        <span>Shipping</span>
+
+                                        <span>${(price*0.06).toFixed(2)}</span>
+                                    </div>
+
+                                    <div className='cart-checkout-tax'>
+                                        <span>Tax</span>
+
+                                        <span>${(price*0.071).toFixed(2)}</span>
+                                    </div>
+
+                                    <div className='cart-checkout-total'>
+                                        <span>
+                                            Total { productAmount === 1 ? (
+                                                (productAmount + "items in your cart")
+                                            ) : (
+                                                "1 item in your cart"
+                                            )}
+                                        </span>
+                                        
+                                        <span>
+                                            ${( price + (price*0.131) ).toFixed(2) }
+                                        </span>
+                                    </div>
+
 
                                 </form>
                             </div>                        
@@ -81,7 +119,7 @@ class Cart extends React.Component{
                     </div>
 
                 </div>
-            </>
+            </div>
         );
     }
 }

@@ -31,7 +31,7 @@ const cartCreator = (users, products, cart) => {
 
     Object.values(cart).forEach( cartItem => {
         formedCart.products[cartItem.productId] = products[cartItem.productId];
-        formedCart.products[cartItem.productId].quanitity = cartItem.quantity;
+        formedCart.products[cartItem.productId].quantity = cartItem.quantity;
         formedCart.owners[cartItem.productOwnerId] = users[cartItem.productOwnerId];
     });
 
