@@ -1,4 +1,5 @@
 import React from 'react';
+import Select from 'react-select';
 
 class CartItem extends React.Component{
     constructor(props){
@@ -31,13 +32,13 @@ class CartItem extends React.Component{
         // such as just a { length } object, and actually map over it in
         // this function since it is still being constructed!
         // also doesnt create a middleman array!
-        const options = () => Array.from({length: this.props.cartProduct.stock}, (_, i) => ( 
-            <option value={i+1} key={i}>
+        let options = () => Array.from({length: this.props.cartProduct.stock}, (_, i) => { 
+            debugger
+            return <option value={i+1} key={i}>
                 {i+1}
             </option>    
-        ));
+        });
 
-            
         return (
             <div className='cart-item-wrapper'>
                 <form onSubmit={this.handleRemove}>
@@ -74,11 +75,12 @@ class CartItem extends React.Component{
                                         There's only one item left of this loot!
                                     </span>
                                 ) : (
-                                    <select name="cart-item-quantity-selector" id="cart-item-quantity-selector"
+                                    <select className="cart-item-quantity-selector"
+                                        id="cart-item-quantity-selector"
                                         onChange={this.handleQuantityChange}
-                                        defaultValue={this.props.cartProduct.quanitity}
-                                    >
-                                        {options()}
+                                        value={this.props.cartProduct.quantity}
+                                        >
+                                        options={options()}
                                     </select>
                                 )
                             }
