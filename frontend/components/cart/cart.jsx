@@ -36,8 +36,8 @@ class Cart extends React.Component{
         let price = this.subTotal(cartProducts);
 
         return (
-            <div className='cart-page-wrapper max-body-width body-padding'>
-                <div className='cart-header-wrapper'>
+            <>
+                <div className='cart-header-wrapper max-body-width body-padding'>
                     
                     <div className='cart-product-amount-wrapper'>
                         <h1 className='cart-product-amount'>
@@ -62,7 +62,7 @@ class Cart extends React.Component{
                     </div>
                 </div>
 
-                <div className='cart-index-and-checkout-wrapper'>
+                <div className='cart-index-and-checkout-wrapper max-body-width body-padding'>
                     <div className='cart-index'>
                             {
                                 cartProducts.map( cartProduct => (
@@ -119,7 +119,7 @@ class Cart extends React.Component{
                     </div>
 
                 </div>
-            </div>
+            </>
         );
     }
 }

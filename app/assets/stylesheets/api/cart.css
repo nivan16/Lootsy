@@ -17,26 +17,62 @@
 /* right side----right side----right side----right side */
 .cart-index-redirect-button-wrapper{
     position: relative;
-    border: 1px solid black;
-    min-height: 48px;
 }
 
-.cart-index-redirect-button{
+.cart-index-redirect-button {
     position: absolute;
-    right: -100%;
-    padding: 1rem !important;
+    /* transform: translate(-100%, -50%); */
+    right: 0;
+    width: max-content;
 }
 
 .cart-index-redirect-button a, .cart-index-redirect-button a:visited{
-    box-sizing: inherit;
     color: black;
     text-decoration: none;
+    text-align: right;
+    padding: 1rem;
+    margin-right: -1rem;
+    
+    transition: 225ms;
 }
 
-.cart-index-redirect-button:hover{
-    background-color: green;
+.cart-index-redirect-button:hover a{
+    border-radius: 25px;
+    background-color: rgba(200, 200, 200, 0.3);
 }
 
 .cart-index-redirect-button-text{
-    box-sizing: inherit;
+
 }
+
+
+/* !!!!!!!!!!!!!!! Really cool button effect!! !!!!!!!!!!!!!!!!! */
+/* .diva{
+    position: relative;
+    border: 0.5px solid lightgreen;
+    height: 50px;
+    width: 0;
+    margin: 0 auto;
+   }
+   
+   #anchor{
+     color: black;
+     display: block;
+     position: absolute;
+     right: 0;
+     width: max-content;
+     padding: none;
+     border: 18px solid green;
+     border-radius: 25px;
+     
+     box-sizing: border-box;
+     transition: 225ms;
+   }
+   
+   #anchor:hover{
+     border: 1px solid transparent;
+     padding: 17px;
+         border-radius: 25px;
+     background-color: rgba(200, 200, 200, 0.3);
+   }
+   <div class="diva"><a href="#" id="anchor">I am groot!</a></div> */
