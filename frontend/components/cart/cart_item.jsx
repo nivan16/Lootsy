@@ -80,7 +80,7 @@ class CartItem extends React.Component{
                                         onChange={this.handleQuantityChange}
                                         value={this.props.cartProduct.quantity}
                                         >
-                                        options={options()}
+                                        {options()}
                                     </select>
                                 )
                             }
