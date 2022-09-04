@@ -32,12 +32,11 @@ class CartItem extends React.Component{
         // such as just a { length } object, and actually map over it in
         // this function since it is still being constructed!
         // also doesnt create a middleman array!
-        let options = () => Array.from({length: this.props.cartProduct.stock}, (_, i) => { 
-            debugger
-            return <option value={i+1} key={i}>
+        let options = () => Array.from({length: this.props.cartProduct.stock}, (_, i) => (
+            <option value={i+1} key={i}>
                 {i+1}
             </option>    
-        });
+        ));
 
         return (
             <div className='cart-item-wrapper'>

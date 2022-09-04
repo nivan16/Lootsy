@@ -62,61 +62,70 @@ class Cart extends React.Component{
                     </div>
                 </div>
 
+                <div className='cart-guarantee-wrapper max-body-width body-padding'>
+                    <div className='cart-guarantee'>
+                        <p>
+                            <strong>Lootsy Purchase Protection: </strong>
+                            We work with many established guilds to guarantee your order, so
+                            if something happens we have your back!
+                        </p>
+                    </div>
+                </div>
+
                 <div className='cart-index-and-checkout-wrapper max-body-width body-padding'>
                     <div className='cart-index'>
-                            {
-                                cartProducts.map( cartProduct => (
-                                    <CartItem
-                                        key={cartProduct.id}
-                                        cartProduct={cartProduct}
-                                        productOwner={this.props.cart.owners[cartProduct.ownerId]}
-                                        currentUser={this.props.currentUser}
-                                        updateCartItem={this.props.updateCartItem}
-                                        deleteCartItem={this.props.deleteCartItem}
-                                    />
-                                ))
-                            }
-
-                            <div className='cart-checkout'>
-                                {/* <form {onSubmit={handleCheckingOutOrSomething}}> */}
-                                <form>
-                                    <div className='cart-checkout-price'>
-                                        <span>Loot Total</span>
-
-                                        <span>${price.toFixed(2)}</span>
-                                    </div>
-
-                                    <div className='cart-checkout-shipping'>
-                                        <span>Shipping</span>
-
-                                        <span>${(price*0.06).toFixed(2)}</span>
-                                    </div>
-
-                                    <div className='cart-checkout-tax'>
-                                        <span>Tax</span>
-
-                                        <span>${(price*0.071).toFixed(2)}</span>
-                                    </div>
-
-                                    <div className='cart-checkout-total'>
-                                        <span>
-                                            Total { productAmount === 1 ? (
-                                                (productAmount + "items in your cart")
-                                            ) : (
-                                                "1 item in your cart"
-                                            )}
-                                        </span>
-                                        
-                                        <span>
-                                            ${( price + (price*0.131) ).toFixed(2) }
-                                        </span>
-                                    </div>
-
-
-                                </form>
-                            </div>                        
-                        
+                        {
+                            cartProducts.map( cartProduct => (
+                                <CartItem
+                                    key={cartProduct.id}
+                                    cartProduct={cartProduct}
+                                    productOwner={this.props.cart.owners[cartProduct.ownerId]}
+                                    currentUser={this.props.currentUser}
+                                    updateCartItem={this.props.updateCartItem}
+                                    deleteCartItem={this.props.deleteCartItem}
+                                />
+                            ))
+                        }
                     </div>
+                    
+                    <div className='cart-checkout'>
+                        {/* <form {onSubmit={handleCheckingOutOrSomething}}> */}
+                        <form>
+                            <div className='cart-checkout-price'>
+                                <span>Loot Total</span>
+
+                                <span>${price.toFixed(2)}</span>
+                            </div>
+
+                            <div className='cart-checkout-shipping'>
+                                <span>Shipping</span>
+
+                                <span>${(price*0.06).toFixed(2)}</span>
+                            </div>
+
+                            <div className='cart-checkout-tax'>
+                                <span>Tax</span>
+
+                                <span>${(price*0.071).toFixed(2)}</span>
+                            </div>
+
+                            <div className='cart-checkout-total'>
+                                <span>
+                                    Total { productAmount === 1 ? (
+                                        (productAmount + "items in your cart")
+                                    ) : (
+                                        "1 item in your cart"
+                                    )}
+                                </span>
+                                
+                                <span>
+                                    ${( price + (price*0.131) ).toFixed(2) }
+                                </span>
+                            </div>
+
+
+                        </form>
+                    </div>                        
 
                 </div>
             </>
