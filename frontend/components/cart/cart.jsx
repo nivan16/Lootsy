@@ -66,14 +66,14 @@ class Cart extends React.Component{
                     <div className='cart-guarantee'>
                         <p>
                             <strong>Lootsy Purchase Protection: </strong>
-                            We work with many established guilds to guarantee your order, so
-                            if something happens we have your back!
+                            We work with many established guilds to guarantee your order.
+                            If something happens, we've got your back!
                         </p>
                     </div>
                 </div>
 
                 <div className='cart-index-and-checkout-wrapper max-body-width body-padding'>
-                    <div className='cart-index'>
+                    <ul className='cart-index'>
                         {
                             cartProducts.map( cartProduct => (
                                 <CartItem
@@ -86,46 +86,47 @@ class Cart extends React.Component{
                                 />
                             ))
                         }
-                    </div>
+                    </ul>
                     
-                    <div className='cart-checkout'>
-                        {/* <form {onSubmit={handleCheckingOutOrSomething}}> */}
-                        <form>
-                            <div className='cart-checkout-price'>
-                                <span>Loot Total</span>
+                    <div className='cart-checkout-wrapper'>
+                        <div className='cart-checkout'>
+                            {/* <form {onSubmit={handleCheckingOutOrSomething}}> */}
+                            <form>
+                                <div className='cart-checkout-price'>
+                                    <span>Loot Total</span>
 
-                                <span>${price.toFixed(2)}</span>
-                            </div>
+                                    <span>${price.toFixed(2)}</span>
+                                </div>
 
-                            <div className='cart-checkout-shipping'>
-                                <span>Shipping</span>
+                                <div className='cart-checkout-shipping'>
+                                    <span>Shipping</span>
 
-                                <span>${(price*0.06).toFixed(2)}</span>
-                            </div>
+                                    <span>${(price*0.06).toFixed(2)}</span>
+                                </div>
 
-                            <div className='cart-checkout-tax'>
-                                <span>Tax</span>
+                                <div className='cart-checkout-tax'>
+                                    <span>Tax</span>
 
-                                <span>${(price*0.071).toFixed(2)}</span>
-                            </div>
+                                    <span>${(price*0.071).toFixed(2)}</span>
+                                </div>
 
-                            <div className='cart-checkout-total'>
-                                <span>
-                                    Total { productAmount === 1 ? (
-                                        (productAmount + "items in your cart")
-                                    ) : (
-                                        "1 item in your cart"
-                                    )}
-                                </span>
-                                
-                                <span>
-                                    ${( price + (price*0.131) ).toFixed(2) }
-                                </span>
-                            </div>
+                                <div className='cart-checkout-total'>
+                                    <span>
+                                        Total { productAmount === 1 ? (
+                                            (productAmount + "items in your cart")
+                                        ) : (
+                                            "1 item in your cart"
+                                        )}
+                                    </span>
+                                    
+                                    <span>
+                                        ${( price + (price*0.131) ).toFixed(2) }
+                                    </span>
+                                </div>
+                            </form>
+                        </div>                        
 
-
-                        </form>
-                    </div>                        
+                    </div>
 
                 </div>
             </>

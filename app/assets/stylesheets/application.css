@@ -65,12 +65,19 @@ table {
 	border-spacing: 0;
 }
 
+a, a:visited{
+	text-decoration: none;
+	color: black;
+}
+
 html {
 	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
 	box-sizing: inherit;
+	font-family: inherit;
 }
 
 .max-body-width {
@@ -82,4 +89,8 @@ html {
 .body-padding {
 	padding-left: 36px;
     padding-right: 36px;
+}
+
+.hide{
+	display: none;
 }

@@ -69,10 +69,9 @@
     padding: 10px;
 }
 
-.cart-guarantee p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    font-size: 1rem;
-}
+/* .cart-guarantee p{
+    
+} */
 .cart-guarantee p strong{
     font-weight: 600;
 }
@@ -84,17 +83,118 @@
 .cart-index{
     flex: 2 2 auto;
 }
+.cart-index li:first-of-type{
+    border: none;
+}
 
 
 /* ------------------------ Cart Item ------------------------------*/
+.cart-list-item{
+    border-top: 1px solid lightgrey;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.cart-item-owner{
+    margin-bottom: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+.cart-item-wrapper{
+    display: flex;
+    flex-direction: row;
+
+    
+    margin: 5px 0;
+}
+
+/* --------- left side----------- */
+.cart-item-image{
+    /* in the case of the flex basis here, it only refers to 
+    width since the flex direction is row */
+    flex: 1 1 16vw;
+    height: 12vw;
+
+    background-color: rgb(204, 217, 240);
+    border-radius: 10px;
+}
 
 
+/* --------- middle side----------- */
+.cart-item-info-wrapper{
+    flex: 2 2 50%;
+    /* border: 1px solid black; */
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.cart-item-name{
+    line-height: 1.25rem;
+    padding-bottom: 1rem;
+}
+
+.cart-item-name a:hover{
+    text-decoration: underline;
+}
+
+.cart-item-remove-button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* --------- right side ----------- */
+.cart-item-quantity-wrapper{
+    flex: 2 2 35%;
+    /* padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem; */
+}
+
+/* price and quantity selector */
+.cart-item-numbers-wrapper{
+    display: flex;
+    justify-content: flex-end;
+}
+/* quantity select (if greater  
+than zero) */
+.cart-item-quantity-selector-container{
+    width: 100%;
+    min-width: 2rem;
+}
+
+.cart-item-quantity-selector{
+    padding: 0.75rem;
+
+    width: 4rem;
+    border: 1px solid lightgray;
+    border-radius: 7.5px;
+    box-shadow: 0 0 5px 1px rgb(224, 230, 240);
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 350ms;
+}
+
+.cart-item-quantity-selector:hover{
+    border: 1px solid rgb(138, 138, 138);
+    box-shadow: 0 0 10px 1.5px rgb(224, 230, 240);
+}
+
+.cart-item-price{
+    font-weight: 700;
+}
 
 
 /* ------------------------ Cart Checkout ------------------------------*/
 
-.cart-checkout{
+.cart-checkout-wrapper{
     flex: 1 1 auto;
+    padding: 1rem;
+}
+
+.cart-checkout{
+    padding-top: 1rem;
 }
 
 
