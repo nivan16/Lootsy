@@ -92,9 +92,9 @@ class CartItem extends React.Component{
                             </div>
                             {
                                 this.props.cartProduct.stock === 1 ? (
-                                    <span className={`cart-item-one-left`}>
+                                    <p className='cart-item-one-left'>
                                         There's only one item left of this loot!
-                                    </span>
+                                    </p>
                                 ) : (
                                     null
                                 )

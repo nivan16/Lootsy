@@ -113,9 +113,9 @@ class Cart extends React.Component{
                                 <div className='cart-checkout-total'>
                                     <span>
                                         Total { productAmount === 1 ? (
-                                            (productAmount + "items in your cart")
+                                            (`(${productAmount} items)`)
                                         ) : (
-                                            "1 item in your cart"
+                                            "(1 item)"
                                         )}
                                     </span>
                                     

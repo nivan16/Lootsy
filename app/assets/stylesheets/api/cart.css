@@ -142,6 +142,7 @@
     border: none;
     background: transparent;
     cursor: pointer;
+    padding-right: 0;
 }
 
 /* --------- right side ----------- */
@@ -186,15 +187,32 @@ than zero) */
 }
 
 
+.cart-item-one-left{
+    padding-top: 1.5rem;
+    text-align: right;
+    color: crimson;
+}
+
+/* .cart-item-one-left{
+    position: relative;
+    
+    transform: translate(-100%, 50%);
+} */
+
+
 /* ------------------------ Cart Checkout ------------------------------*/
 
 .cart-checkout-wrapper{
     flex: 1 1 auto;
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-left: 2rem;
 }
 
 .cart-checkout{
-    padding-top: 1rem;
+    padding: 1rem;
+    border: 1px solid rgb(241, 237, 237);
+    border-radius: 15px;
+    box-shadow: 0 0 10px 1px rgb(224, 230, 240);
 }
 
 
