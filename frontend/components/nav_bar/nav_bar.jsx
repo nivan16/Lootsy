@@ -50,7 +50,9 @@ class NavBar extends React.Component{
                                 }
                             </div>
                             <div className='nav-bar-cart'>
-                                <FontAwesomeIcon icon={faCartShopping} className='nav-bar-cart-icon' />
+                                <Link to='/cart'>
+                                    <FontAwesomeIcon icon={faCartShopping} className='nav-bar-cart-icon' />
+                                </Link>
                             </div>
                         </div>
                     </div>
