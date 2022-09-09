@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { deleteCartItem, requestCart, updateCartItem } from "../../actions/cart_actions";
+import { deleteCart, deleteCartItem, requestCart, updateCartItem } from "../../actions/cart_actions";
 import Cart from "./cart";
 
 const mapStateToProps = state => ({
@@ -14,9 +14,12 @@ const mapDispatchToProps = dispatch => ({
     updateCartItem: cartItem => dispatch(
         updateCartItem(cartItem)
     ),
+    deleteCart: shopperId => dispatch(
+        deleteCart(shopperId)
+    ),
     deleteCartItem: (currentUserId, productId) => dispatch(
         deleteCartItem(currentUserId, productId)
-    )
+    ),
 });
 
 const cartCreator = (users, products, cart) => {

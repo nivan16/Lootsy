@@ -7,6 +7,7 @@ class Cart extends React.Component{
         super(props);
 
         this.subTotal = this.subTotal.bind(this);
+        this.handleCheckout = this.handleCheckout.bind(this);
     }
 
     subTotal(cartProducts){
@@ -16,9 +17,13 @@ class Cart extends React.Component{
         return total;
     }
 
-    handleCheckout(){
+    handleCheckout(e){
         e.preventDefault();
         
+        //maybe create a modal that thanks for browsing
+        // for a 1.5 second duration, then redirects to homepage?
+        this.props.deleteCart(this.props.currentUser.id)
+            .then( () => this.props.history.push('/'));
     }
 
 
@@ -96,7 +101,7 @@ class Cart extends React.Component{
                     <div className='cart-checkout-wrapper'>
                         <div className='cart-checkout'>
                             {/* <form {onSubmit={handleCheckingOutOrSomething}}> */}
-                            <form>
+                            <form onSubmit={this.handleCheckout}>
                                 <div className='cart-checkout-subtotal-container'>
 
                                     <span className='cart-checkout-subtotal'>
@@ -136,9 +141,9 @@ class Cart extends React.Component{
                                 <div className='cart-checkout-total-container'>
                                     <span className='cart-checkout-total'>
                                         Total { productAmount === 1 ? (
-                                            (`(${productAmount} items)`)
-                                        ) : (
                                             "(1 item)"
+                                        ) : (
+                                            `(${productAmount} items)`
                                         )}
                                     </span>
                                     
@@ -146,6 +151,9 @@ class Cart extends React.Component{
                                         ${( price + (price*0.131) ).toFixed(2) }
                                     </span>
                                 </div>
+                                <button className='cart-checkout-button'>
+                                    Checkout
+                                </button>
                             </form>
                         </div>                        
 

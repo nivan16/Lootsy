@@ -83,7 +83,7 @@ class Api::CartItemsController < ApplicationController
     end
 
     def destroy_cart
-        user = find_cart_owner(params[:shopper_id])
+        user = find_cart_owner(params[:shopperId])
         
         if user.nil?
             render json: ["User not found!"], status: 404
