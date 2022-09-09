@@ -6,7 +6,7 @@ export const fetchCart = userId => (
     })
 );
 
-export const updateCartItem = (cartItem) => (
+export const updateCartItem = cartItem => (
     $.ajax({
         method: "PATCH",
         url: '/api/cart_item',
@@ -19,5 +19,13 @@ export const deleteCartItem = (shopperId, productId) => (
         method: "DELETE",
         url: '/api/cart_item',
         data: { shopperId, productId }
+    })
+);
+
+export const deleteCart = shopperId => (
+    $.ajax({
+        method: "DELETE",
+        url: '/api/cart',
+        data: { shopperId }
     })
 );

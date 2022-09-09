@@ -1,4 +1,4 @@
-import { RECEIVE_CART, RECEIVE_CART_ITEM, REMOVE_CART_ITEM } from '../../actions/cart_actions';
+import { RECEIVE_CART, RECEIVE_CART_ITEM, REMOVE_CART, REMOVE_CART_ITEM } from '../../actions/cart_actions';
 import { RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER } from "../../actions/session_actions";
 
 const cartReducer = (state = {}, action) => {
@@ -13,6 +13,10 @@ const cartReducer = (state = {}, action) => {
             newState = Object.assign({}, state, {[action.newCartItem.cartItem.productId]: action.newCartItem.cartItem});
             return newState;
 
+        case REMOVE_CART:
+        case REMOVE_CURRENT_USER:
+            return {};
+
         case REMOVE_CART_ITEM:
             newState = Object.assign({}, state);
             delete newState[action.productId];
@@ -21,9 +25,7 @@ const cartReducer = (state = {}, action) => {
         case RECEIVE_CURRENT_USER:
             return action.user.cartItems ? action.user.cartItems : {};
 
-        case REMOVE_CURRENT_USER:
-            return {};
-
+        
         default:
             return state;
     }
