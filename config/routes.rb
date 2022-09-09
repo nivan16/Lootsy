@@ -9,9 +9,11 @@ Rails.application.routes.draw do
     resources :users do
       resources :cart_items, only: [:index]
     end
+    #This is because the reference is the shopper_id(current_user)
+    # and the product_id
     patch "/cart_item", to: "cart_items#update"
     delete "/cart_item", to: "cart_items#destroy"
-    
+    delete "/cart", to: "cart_items#destroy_cart"
   end
 
 end

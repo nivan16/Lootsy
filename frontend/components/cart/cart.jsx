@@ -16,6 +16,11 @@ class Cart extends React.Component{
         return total;
     }
 
+    handleCheckout(){
+        e.preventDefault();
+        
+    }
+
 
     render(){
         if($.isEmptyObject(this.props.cart)){

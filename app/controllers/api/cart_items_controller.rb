@@ -82,16 +82,29 @@ class Api::CartItemsController < ApplicationController
         end
     end
 
+    def destroy_cart
+        user = find_cart_owner(params[:shopper_id])
+        
+        if user.nil?
+            render json: ["User not found!"], status: 404
+        else
+            cart = CartItem.where(shopper_id: user.id)
+            if cart.destroy_all
+                render json: {}, status: 202
+            else
+                render json: cart.errors.full_messages, status: 404
+            end
+        end
+    end
 
     private
 
     def find_cart_owner(shopper_id)
-        user = User.find_by(id: shopper_id)
-        return user
+        User.find_by(id: shopper_id)        
     end
 
     def find_cart_item(shopper_id, product_id)
-        return CartItem.find_by(shopper_id: shopper_id, product_id: product_id)
+        CartItem.find_by(shopper_id: shopper_id, product_id: product_id)
     end
 
     def to_partial_path
