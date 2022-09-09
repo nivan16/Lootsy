@@ -215,6 +215,15 @@ than zero) */
     box-shadow: 0 0 10px 1px rgb(224, 230, 240);
 }
 
+/* .cart-checkout-price-container{
+    display: inline-block;
+    width: 100%;
+} */
+
+.cart-checkout-price{
+    float: right;
+}
+
 
 
 

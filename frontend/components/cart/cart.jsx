@@ -92,20 +92,20 @@ class Cart extends React.Component{
                         <div className='cart-checkout'>
                             {/* <form {onSubmit={handleCheckingOutOrSomething}}> */}
                             <form>
-                                <div className='cart-checkout-price'>
-                                    <span>Loot Total</span>
+                                <span className='cart-checkout-price-container'>
+                                    <span className='cart-checkout-price'>Loot Total</span>
 
-                                    <span>${price.toFixed(2)}</span>
-                                </div>
+                                    <span className='cart-checkout-price'>${price.toFixed(2)}</span>
+                                </span>
 
-                                <div className='cart-checkout-shipping'>
-                                    <span>Shipping</span>
+                                <div className='cart-checkout-shipping-container'>
+                                    <span className='cart-checkout-shipping'>Shipping</span>
 
                                     <span>${(price*0.06).toFixed(2)}</span>
                                 </div>
 
-                                <div className='cart-checkout-tax'>
-                                    <span>Tax</span>
+                                <div className='cart-checkout-tax-container'>
+                                    <span className='cart-checkout-tax'>Tax</span>
 
                                     <span>${(price*0.071).toFixed(2)}</span>
                                 </div>
