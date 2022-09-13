@@ -151,9 +151,11 @@ class Cart extends React.Component{
                                         ${( price + (price*0.131) ).toFixed(2) }
                                     </span>
                                 </div>
-                                <button className='cart-checkout-button'>
-                                    Checkout
-                                </button>
+                                <div className='cart-checkout-button-container'>
+                                    <button className='cart-checkout-button'>
+                                       <span>Checkout</span>
+                                    </button>
+                                </div>
                             </form>
                         </div>                        
 
