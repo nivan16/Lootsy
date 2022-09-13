@@ -255,21 +255,64 @@ than zero) */
 .cart-checkout-button-container{
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .cart-checkout-button{
-    width: 100%;
-    color: white;
     background-color: black;
+    width: 100%;
     height: 3rem;
-    transition: 225ms;
+    padding: 0 !important;
+    
+    border-radius: 25px;
+    transition: 325ms;
+    transform: scale(1);
 }
+
+.cart-checkout-button-container:hover .cart-checkout-button{
+    transform: scale(1.03, 1.06);
+    box-shadow: 0 0 10px 1.5px rgb(224, 230, 240);
+}
+
+.cart-checkout-button-label{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 5;
+    font-size: 1rem;
+    font-weight: 600;
+    pointer-events: none;
+}
+
 
 /* Use after psuedo class!!!!! */
 
-.cart-checkout-button:hover{
+/* .cart-checkout-button::after{
+    content: "";
+    background-color: black;
+    border-radius: 25px;
+    display: block;
+    position: absolute;
+    z-index: -5;
 
+    top: -5%;
+    bottom: -5%;
+    left: 1%;
+    right: 1%;
+
+    
+    opacity: 0;
+    transform: scale(0);
+
+    transition: 500ms ease;
 }
+
+.cart-checkout-button-container:hover .cart-checkout-button::after{
+    opacity: 1;
+    transform: scale(1.05); 
+} */
 
 
 

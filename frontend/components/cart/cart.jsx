@@ -153,8 +153,10 @@ class Cart extends React.Component{
                                 </div>
                                 <div className='cart-checkout-button-container'>
                                     <button className='cart-checkout-button'>
-                                       <span>Checkout</span>
                                     </button>
+                                    <p className='cart-checkout-button-label'>
+                                        Checkout
+                                    </p>
                                 </div>
                             </form>
                         </div>                        
