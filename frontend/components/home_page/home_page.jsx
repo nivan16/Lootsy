@@ -77,6 +77,49 @@ class HomePage extends React.Component{
                         }
                     </div>
                 </div>
+
+                <div className='home-page-about-container'>
+                    <div className='home-page-about max-body-width body-padding'>
+                        <div className='home-page-about-header'>
+                            <h2>What is Lootsy?</h2>
+                            <a href="#">Read our tale of origin here</a>
+                        </div>
+
+                        <div className='home-page-about-messages-container'>
+                            <div className='home-page-about-message'>
+                                <h3>A community doing good</h3>
+                                <p>
+                                    Lootsy is a global marketplace that allows
+                                    people to buy, sell, and collect loot. We are a
+                                    constantly expanding community that pushes for 
+                                    positive change for all size guilds, people, and
+                                    the planet.
+                                </p>
+                            </div>
+                            <div className='home-page-about-message home-page-about-middle-message '>
+                                <h3>Support Independent Adventurers</h3>
+                                <p>
+                                    Most large businesses stock up warehouses with loot
+                                    from small guilds and independent adventurers. We
+                                    instead simplify the process, helping you connect with
+                                    these independent adventurers directly to find you unique
+                                    loot.
+                                </p>
+                            </div>
+                            <div className='home-page-about-message'>
+                                <h3>Peace of mind</h3>
+                                <p>
+                                    Safety is the highest priority for our company.
+                                    We contract adventurers with many guilds to ensure
+                                    that all parties are safe as well as the loot being
+                                    transported. If you ever need assistance, our team is
+                                    always ready to help.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </>
         )
     }

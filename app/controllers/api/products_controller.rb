@@ -27,9 +27,8 @@ class Api::ProductsController < ApplicationController
             @products = Product.all
             render :index
         else
-            @products = Product
-                .select(:id, :name, :category, :description, :price, :owner_id)
-                .where(category: params[:category])
+            @products = Product.where(category: params[:category])
+            # .select(:id, :name, :category, :description, :price, :owner_id)
             render :index
         end
     end
