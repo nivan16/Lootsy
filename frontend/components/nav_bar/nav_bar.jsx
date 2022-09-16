@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import SearchBar from '../search/search_bar';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 class NavBar extends React.Component{
     constructor(props){
@@ -27,16 +29,7 @@ class NavBar extends React.Component{
                     <div className='nav-bar'>
                         <Link to='/'>Lootsy</Link>
                         
-                        
-                        <div className='nav-bar-search-bar-container'>
-                            <form className='nav-bar-search-form'>
-                                <input className='nav-bar-search-bar' type="text" />
-
-                                <button className='nav-bar-search-button'>
-                                    <FontAwesomeIcon icon={faMagnifyingGlass} className='nav-bar-search-icon'/>
-                                </button>
-                            </form>
-                        </div>
+                        <SearchBar props={this.props}/>                       
 
                         <div className='nav-bar-button-container'>
                             <div className='nav-bar-session-button-container'>
