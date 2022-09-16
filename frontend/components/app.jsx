@@ -7,6 +7,7 @@ import HomePageContainer from './home_page/home_page_container';
 import CategoryPageContainer from './category_page/category_page_container';
 import CartContainer from './cart/cart_container';
 import ProductShowContainer from './product/product_show_container';
+import Footer from './footer/footer';
 
 const App = () => (
     <>
@@ -19,6 +20,7 @@ const App = () => (
             <Route exact path='/' component={HomePageContainer} />
         </Switch>
         
+        <Route path='/' component={Footer} />
         <SessionModalContainer />
     </>
 );

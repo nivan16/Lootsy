@@ -1,0 +1,16 @@
+.footer-top{
+    color: white;
+    background-color: rgb(117, 97, 219);
+    padding: 2rem;
+}
+
+.footer-top p{
+    text-align: center;
+    line-height: 1rem;
+    font-size: 1.25rem;
+}
+
+.footer-main-container{
+    background-color: rgb(50, 77, 106);
+
+}
