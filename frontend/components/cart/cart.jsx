@@ -28,7 +28,6 @@ class Cart extends React.Component{
 
 
     render(){
-        debugger;
         if($.isEmptyObject(this.props.cart)){
             return (
                 <div className='cart-empty'>
