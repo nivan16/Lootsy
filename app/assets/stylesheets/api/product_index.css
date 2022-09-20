@@ -10,3 +10,24 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+.product-index{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex: 1 1 auto;
+    
+    padding-left: 27px;
+    padding-right: 27px;
+}
+
+.product-index-product{
+    width: 25%;
+
+    padding: 9px;
+}
+
+.product-index-image-container{
+    background-color: greenyellow;
+    height: 15vh;
+}

@@ -10,21 +10,26 @@ class ProductIndex extends React.Component{
     render(){
 
         return (
-            <div className='product-index-container max-body-width body-padding'>
-                <div className="product-index-header">
+            <div className='product-index-container max-body-width'>
+                <div className="product-index-header body-padding">
                     <h2>Find something you'll love</h2>
                 </div>
-                <div className="product-index">
+                <ul className="product-index">
                     {
                         this.props.products.map( (product, idx) =>                        
-                            <div className='category-page-product' key={idx}>
+                            <li className='product-index-product' key={idx}>
                                 <Link to={`/products/${product.id}`}>
+                                    <div className="product-index-image-container">
+                                        <div className="product-index-image">
+
+                                        </div>
+                                    </div>
                                     {product.name}
                                 </Link>
-                            </div>                        
+                            </li>                        
                         )
                     }
-                </div>
+                </ul>
             </div>
         );
     }
