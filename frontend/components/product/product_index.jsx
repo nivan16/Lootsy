@@ -25,14 +25,46 @@ class ProductIndex extends React.Component{
                 <ul className="product-index">
                     {
                         Object.values(this.props.products).map( (product, idx) =>                        
-                            <li className='product-index-product' key={idx}>
+                            <li className='index-product' key={idx}>
                                 <Link to={`/products/${product.id}`}>
-                                    <div className="product-index-image-container">
-                                        <img className="product-index-image" src="https://randompicturegenerator.com/img/flower-generator/g0f1ca250391007b3ad1213bc5c8d1ff366a442c1e7038df928e89438ba91a75396122321a9a84f2eeae3c3922effe26e_640.jpg">
-
+                                    <div className="index-product-image-container">
+                                        <img className="index-product-image" src="https://randompicturegenerator.com/img/flower-generator/g0f1ca250391007b3ad1213bc5c8d1ff366a442c1e7038df928e89438ba91a75396122321a9a84f2eeae3c3922effe26e_640.jpg">
                                         </img>
                                     </div>
-                                    {product.name}
+                                    <div className="index-product-info-container">
+                                        <p className="index-product-name">
+                                            {product.name}
+                                        </p>
+                                        <p className="index-product-price">
+                                            ${product.price}
+                                        </p>
+                                        <p className="index-product-owner">
+                                            {this.props.owners[product.ownerId].name}
+                                        </p>
+                                    </div>
+                                </Link>
+                            </li>                        
+                        )
+                    }
+                    {
+                        Object.values(this.props.products).map( (product, idx) =>                        
+                            <li className='index-product' key={idx}>
+                                <Link to={`/products/${product.id}`}>
+                                    <div className="index-product-image-container">
+                                        <img className="index-product-image" src="https://picsum.photos/900/">
+                                        </img>
+                                    </div>
+                                    <div className="index-product-info-container">
+                                        <p className="index-product-name">
+                                            {product.name}
+                                        </p>
+                                        <p className="index-product-price">
+                                            {product.price}
+                                        </p>
+                                        <p className="index-product-owner">
+                                            {this.props.owners[product.ownerId].name}
+                                        </p>
+                                    </div>
                                 </Link>
                             </li>                        
                         )

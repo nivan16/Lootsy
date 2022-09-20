@@ -2,6 +2,8 @@
 /******** DELETE THIS LATER *************/
 .product-index-container{
     margin-bottom: 50vh !important;
+    padding-left: 9px;
+    padding-right: 9px;
 }
 
 /*------------ Index Header -----------*/
@@ -9,8 +11,8 @@
     font-size: 1.75rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .product-index{
@@ -18,37 +20,46 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     flex: 1 1 25%;
-    
-    padding-left: 9px;
-    padding-right: 9px;
 }
 
-.product-index-product{
+.index-product{
     width: 25%;
-    height: 20vw;
+    height: 25vw;
 
-    padding: 9px;
-}
+    padding: 1rem;
 
-.product-index-image-container{
-    width: 100%;
-    height: 85%;
-    overflow: hidden;
-
-    background-color: rgb(168, 209, 250);    
-}
-
-.product-index-image{
-    width: 100%;
-    height: 100%;
-    transform: scale(1.0001);
-
-
-    object-fit: cover;
     transition: 325ms;
 }
 
-.product-index-product:hover .product-index-image{
-    transform: scale(1.1);
+.index-product-image-container{
+    width: 100%;
+    height: 75%;
+    margin-bottom: 5px;
+    overflow: hidden;
+    
+    border-radius: 3px;
+    background-color: rgb(168, 209, 250);
+    box-shadow: 0 0 0 0 rgb(172, 194, 230);
+
+    transition: 150ms;
+    transition-delay: 200ms;
+}
+
+.index-product-image{
+    width: 100%;
+    height: 100%;
+    transform: scale(1.0000001);
+
+    transition: 325ms ease-in;
+    object-fit: cover;
+}
+
+.index-product:hover .index-product-image-container{
+    box-shadow: 0 0 3px 2.5px rgb(170, 176, 187);
+}
+
+.index-product:hover .index-product-image{
+    transform: scale(1.05);
+    
 }
 

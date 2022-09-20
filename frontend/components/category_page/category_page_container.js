@@ -4,6 +4,7 @@ import CategoryPage from './category_page';
 
 const mapStateToProps = (state, ownProps) => ({
     products: state.entities.products,
+    owners: state.entities.users,
     category: ownProps.match.params.category
 });
 
