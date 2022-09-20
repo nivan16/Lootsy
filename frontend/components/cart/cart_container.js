@@ -25,18 +25,20 @@ const mapDispatchToProps = dispatch => ({
 const cartCreator = (users, products, cart) => {
     //jQuery method
     if($.isEmptyObject(cart)) return cart;
-
-
+    
     let formedCart = {
         owners: {},
         products: {},
     };
 
-    Object.values(cart).forEach( cartItem => {
+    for(const cartItem of Object.values(cart)){
+        if(products[cartItem.productId] === undefined) return false;
+
+        
         formedCart.products[cartItem.productId] = products[cartItem.productId];
         formedCart.products[cartItem.productId].quantity = cartItem.quantity;
         formedCart.owners[cartItem.productOwnerId] = users[cartItem.productOwnerId];
-    });
+    };
 
     return formedCart;
 };

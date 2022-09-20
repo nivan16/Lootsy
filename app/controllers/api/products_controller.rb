@@ -13,7 +13,7 @@ class Api::ProductsController < ApplicationController
     end
 
     def show
-        @product = Product.find_by(id: params[:id])
+        @product = Product.find_by(id: params[:id]).preload(:owner)
         if @product #might have to switch this one around, 
             render :show
         else
@@ -24,10 +24,10 @@ class Api::ProductsController < ApplicationController
     def index
         # might change nil to "all", depending on frontend development
         if params[:category] == nil
-            @products = Product.all
+            @products = Product.all.preload(:owner)
             render :index
         else
-            @products = Product.where(category: params[:category])
+            @products = Product.where(category: params[:category]).preload(:owner)
             # .select(:id, :name, :category, :description, :price, :owner_id)
             render :index
         end

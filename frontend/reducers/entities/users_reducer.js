@@ -1,4 +1,5 @@
 import { RECEIVE_USERS, RECEIVE_USER, REMOVE_USER } from "../../actions/user_actions";
+import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS } from '../../actions/product_actions';
 import { RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER } from "../../actions/session_actions";
 import { RECEIVE_CART, RECEIVE_CART_ITEM } from '../../actions/cart_actions';
 
@@ -27,20 +28,26 @@ const usersReducer = (state = {}, action) => {
             newState[action.user.userInfo.id] = action.user.userInfo;
             return newState;
                     
-            case REMOVE_CURRENT_USER:
-                newState = Object.assign({}, state);
-                delete newState[action.currentUserId];
-                return newState;
+        case REMOVE_CURRENT_USER:
+            newState = Object.assign({}, state);
+            delete newState[action.currentUserId];
+            return newState;
 
-            case RECEIVE_CART_ITEM:
-                return Object.assign({}, state, action.newCartItem.user);
-    
-            case RECEIVE_CART: //receive product owners
-                return Object.assign({}, state, action.cart.users);
-            
-            default:
-                return state;
-            }
-        };
+        case RECEIVE_PRODUCT:
+            return Object.assign({}, state, action.productInfo.owner);
+
+        case RECEIVE_PRODUCTS:
+            return Object.assign({}, state, action.productInfo.owners)
+
+        case RECEIVE_CART_ITEM:
+            return Object.assign({}, state, action.newCartItem.user);
+
+        case RECEIVE_CART: //receive product owners
+            return Object.assign({}, state, action.cart.users);
+        
+        default:
+            return state;
+        }
+    };
 
 export default usersReducer;

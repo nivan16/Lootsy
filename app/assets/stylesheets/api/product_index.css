@@ -1,0 +1,12 @@
+
+/******** DELETE THIS LATER *************/
+.product-index-container{
+    margin-bottom: 50vh !important;
+}
+
+/*------------ Index Header -----------*/
+.product-index-header h2{
+    font-size: 1.75rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

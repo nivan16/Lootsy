@@ -5,14 +5,14 @@ export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
 export const REMOVE_PRODUCT = "DELETE_PRODUCT";
 export const RECEIVE_PRODUCT_ERRORS = 'RECEIVE_PRODUCT_ERRORS';
 
-const receiveAllProducts = products => ({
+const receiveAllProducts = productInfo => ({
     type: RECEIVE_PRODUCTS,
-    products
+    productInfo
 });
 
-const receiveProduct = product => ({
+const receiveProduct = productInfo => ({
     type: RECEIVE_PRODUCT,
-    product
+    productInfo
 });
 
 const removeProduct = productId => ({

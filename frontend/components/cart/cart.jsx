@@ -28,6 +28,15 @@ class Cart extends React.Component{
 
 
     render(){
+
+        //if the cart doesnt have the necessary products in the
+        // Redux state
+        if(this.props.cart === false){
+            this.props.requestCart(this.props.currentUser.id);
+            return null;
+        };
+
+        //if the cart is just empty
         if($.isEmptyObject(this.props.cart)){
             return (
                 <div className='cart-empty'>
@@ -40,6 +49,8 @@ class Cart extends React.Component{
                 </div>
             )
         };
+        
+
 
         const cartProducts = Object.values(this.props.cart.products);
         const productAmount = cartProducts.length;

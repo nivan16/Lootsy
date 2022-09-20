@@ -7,10 +7,10 @@ const productsReducer = (state={}, action) => {
 
     switch (action.type) {
         case RECEIVE_PRODUCTS:
-            return action.products;
+            return action.productInfo.products;
 
         case RECEIVE_PRODUCT:
-            return Object.assign({}, state, {[action.product.id]: action.product} ); //is this better?
+            return Object.assign({}, state, {[action.productInfo.product.id]: action.productInfo.product} ); //is this better?
 
         case RECEIVE_CART:
             return Object.assign({}, state, action.cart.products)
