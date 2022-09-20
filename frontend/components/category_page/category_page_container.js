@@ -3,7 +3,7 @@ import { requestProducts } from '../../actions/product_actions';
 import CategoryPage from './category_page';
 
 const mapStateToProps = (state, ownProps) => ({
-    products: Object.values(state.entities.products),
+    products: state.entities.products,
     category: ownProps.match.params.category
 });
 

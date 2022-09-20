@@ -7,9 +7,13 @@ const productsReducer = (state={}, action) => {
 
     switch (action.type) {
         case RECEIVE_PRODUCTS:
+            //if there are no products, return empty object
+            if($.isEmptyObject(action.productInfo)) return {};
             return action.productInfo.products;
 
         case RECEIVE_PRODUCT:
+            //if there is no product, return empty object
+            if($.isEmptyObject(action.productInfo)) return {};
             return Object.assign({}, state, {[action.productInfo.product.id]: action.productInfo.product} ); //is this better?
 
         case RECEIVE_CART:

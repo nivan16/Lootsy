@@ -21,8 +21,7 @@ class CategoryPage extends React.Component{
         // console.log("I've rendered!")
         // debugger;
         //Figure out why the product isnt rendering even though it exists in the state
-        if(!this.props.products[0]) return null;
-        
+
         return (
             <ProductIndex products={this.props.products} />
         );
