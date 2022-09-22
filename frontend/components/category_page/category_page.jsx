@@ -8,13 +8,17 @@ class CategoryPage extends React.Component{
     }
 
     componentDidMount(){
-        this.props.requestProducts(this.props.category.replaceAll('-',' '));
+        this.props.requestProducts({
+            category: this.props.category.replaceAll('-',' ')
+        });
     }
 
     componentDidUpdate(prevProps){
         if( prevProps.match.params.category !== this.props.category){
-            this.props.requestProducts(this.props.category.replaceAll('-',' '));
-        }
+            this.props.requestProducts({
+                category: this.props.category.replaceAll('-',' ')
+            });
+        };
     }
 
     render(){

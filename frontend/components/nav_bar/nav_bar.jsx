@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import SearchBar from '../search/search_bar';
+import SearchBar from './search_bar';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
@@ -29,7 +29,7 @@ class NavBar extends React.Component{
                     <div className='nav-bar'>
                         <Link to='/'>Lootsy</Link>
                         
-                        <SearchBar props={this.props}/>                       
+                        <SearchBar location={this.props.location} history={this.props.history}/>                       
 
                         <div className='nav-bar-button-container'>
                             <div className='nav-bar-session-button-container'>

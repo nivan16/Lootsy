@@ -24,5 +24,8 @@ class Product < ApplicationRecord
         price_stringify.join(".")
     end
 
+    def self.sanitize_query_param(query)
+        sanitize_sql_like(query)
+    end
 
 end

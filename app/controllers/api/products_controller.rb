@@ -23,12 +23,15 @@ class Api::ProductsController < ApplicationController
 
     def index
         # might change nil to "all", depending on frontend development
-        if params[:category] == nil
-            @products = Product.all.preload(:owner)
-            render :index
-        else
+        if params.has_key?(:category)
             @products = Product.where(category: params[:category]).preload(:owner)
             # .select(:id, :name, :category, :description, :price, :owner_id)
+            render :index
+        else
+            @products = Product
+                .where("name ILIKE (?)", "%#{ Product.sanitize_query_param(params[:query]) }%")
+                .preload(:owner)
+
             render :index
         end
     end

@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 class ProductIndex extends React.Component{
     constructor(props){
-        super(props)
+        super(props);
     };
 
 
     render(){
-
+        debugger;
         if($.isEmptyObject(this.props.products)){
             return (
                 <div className="product-index-no-products">
@@ -24,11 +24,11 @@ class ProductIndex extends React.Component{
                 </div>
                 <ul className="product-index">
                     {
-                        Object.values(this.props.products).map( (product, idx) =>                        
+                        Object.values(this.props.products).map( (product, idx) => (                   
                             <li className='index-product' key={idx}>
                                 <Link to={`/products/${product.id}`}>
                                     <div className="index-product-image-container">
-                                        <img className="index-product-image" src="https://picsum.photos/1600/">
+                                        <img className="index-product-image" src={"https://picsum.photos/1" + (idx +100) + "/"}>
                                         </img>
                                     </div>
                                     <div className="index-product-info-container">
@@ -44,14 +44,14 @@ class ProductIndex extends React.Component{
                                     </div>
                                 </Link>
                             </li>                        
-                        )
+                        ))
                     }
                     {
                         Object.values(this.props.products).map( (product, idx) =>                        
                             <li className='index-product' key={idx}>
                                 <Link to={`/products/${product.id}`}>
                                     <div className="index-product-image-container">
-                                        <img className="index-product-image" src="https://picsum.photos/900/">
+                                        <img className="index-product-image" src={"https://picsum.photos/90" + idx + "/"}>
                                         </img>
                                     </div>
                                     <div className="index-product-info-container">
