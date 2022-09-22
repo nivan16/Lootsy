@@ -1,7 +1,7 @@
 
 /******** DELETE THIS LATER *************/
 .product-index-container{
-    margin-bottom: 50vh !important;
+    /* margin-bottom: 50vh !important; */
     padding-left: 9px;
     padding-right: 9px;
 }
@@ -31,6 +31,7 @@
     transition: 325ms;
 }
 
+/* ---------- Product Image -------------*/
 .index-product-image-container{
     width: 100%;
     height: 75%;
@@ -41,25 +42,44 @@
     background-color: rgb(168, 209, 250);
     box-shadow: 0 0 0 0 rgb(172, 194, 230);
 
-    transition: 150ms;
-    transition-delay: 200ms;
+    transition: 175ms ease-in;
+    transition-delay: 25ms;
+    /* transition: 150ms ease-in;
+    transition-delay: 50ms; */
 }
 
 .index-product-image{
     width: 100%;
     height: 100%;
-    transform: scale(1.0000001);
 
-    transition: 325ms ease-in;
     object-fit: cover;
+    object-position: 50% 50%;
+
+    transform: scale(1.0000001);
+    transition: 325ms;
 }
 
+/* ----- Product Image Hover ----- */
 .index-product:hover .index-product-image-container{
-    box-shadow: 0 0 3px 2.5px rgb(170, 176, 187);
+    box-shadow: 0 0 3px 2.5px rgb(185, 191, 203);
 }
 
 .index-product:hover .index-product-image{
     transform: scale(1.05);
-    
 }
 
+/* ---------- Product Info ---------- */
+.index-product-name{
+    /* font-size: 0.9rem; */
+    padding-bottom: 0.35rem;
+}
+
+.index-product-price{
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding-bottom: 2px;
+}
+
+.index-product-owner{
+    font-size: 0.9rem;
+}

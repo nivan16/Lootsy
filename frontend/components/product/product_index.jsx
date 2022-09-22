@@ -28,7 +28,7 @@ class ProductIndex extends React.Component{
                             <li className='index-product' key={idx}>
                                 <Link to={`/products/${product.id}`}>
                                     <div className="index-product-image-container">
-                                        <img className="index-product-image" src="https://randompicturegenerator.com/img/flower-generator/g0f1ca250391007b3ad1213bc5c8d1ff366a442c1e7038df928e89438ba91a75396122321a9a84f2eeae3c3922effe26e_640.jpg">
+                                        <img className="index-product-image" src="https://picsum.photos/1600/">
                                         </img>
                                     </div>
                                     <div className="index-product-info-container">

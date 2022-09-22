@@ -7,6 +7,7 @@ footer, footer a, footer a:visited{
 .footer-top-container{
     background-color: rgb(117, 97, 219);
     padding: 2rem;
+    margin-top: 70vh !important;
 }
 
 .footer-top{
