@@ -4,9 +4,9 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import { signupCurrentUser, loginCurrentUser, clearSessionErrors } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
-    currentUser: state['entities']['users'][state.session.currentUserId],    
+    currentUser: state.entities.users[state.session.currentUserId],    
     isOpen: state.modal.isOpen,
-    errors: state['errors']['session']
+    errors: state.errors.session
 });
 
 const mapDispatchToProps = dispatch => ({
