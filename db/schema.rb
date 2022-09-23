@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_23_134700) do
+ActiveRecord::Schema.define(version: 2022_09_23_142454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,9 +47,6 @@ ActiveRecord::Schema.define(version: 2022_09_23_134700) do
     t.index ["product_id", "reviewer_id"], name: "index_reviews_on_product_id_and_reviewer_id", unique: true
     t.index ["product_id"], name: "index_reviews_on_product_id"
     t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
-  end
-
-  create_table "table_cart_items", force: :cascade do |t|
   end
 
   create_table "users", force: :cascade do |t|

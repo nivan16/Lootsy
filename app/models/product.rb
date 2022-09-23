@@ -16,6 +16,17 @@ class Product < ApplicationRecord
         class_name: :CartItem,
         dependent: :destroy
 
+    has_many :user_reviews,
+        primary_key: :id,
+        foreign_key: :product_id,
+        class_name: :Review,
+        dependent: :destroy
+
+    #Does this need a dependent destroy?
+    # does the cart_item hasmany through need one even?
+    has_many :reviewers, through: :user_reviews,
+        source: :reviewer
+
     def price_string
         price_stringify = self.price.to_s.split(".")
         if price_stringify[1].length == 1

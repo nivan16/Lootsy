@@ -26,6 +26,13 @@ class User < ApplicationRecord
         source: :product,
         dependent: :destroy
 
+    #Review table association
+    has_many :product_reviews,
+        primary_key: :id,
+        foreign_key: :reviewer_id,
+        class_name: :Review,
+        dependent: :destroy
+
 
     def password
         @password
