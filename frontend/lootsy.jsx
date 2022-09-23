@@ -17,36 +17,33 @@ document.addEventListener("DOMContentLoaded", () => {
     //configuring the redux store
     let store;
     if (window.currentUser) {
-        //if user has a cart
-        if(window.currentUser) {
-            const { userInfo } = window.currentUser;
-            let preloadedState = {
-                entities: {
-                    users: {},
-                    products: {},
-                },
-                cart: {},
-                session: {},
-                errors: {
-                    session: [],
-                    products: []
-                }
-            };
+        const { userInfo } = window.currentUser;
+        let preloadedState = {
+            entities: {
+                users: {},
+                products: {},
+            },
+            cart: {},
+            session: {},
+            errors: {
+                session: [],
+                products: []
+            }
+        };
+
+        //if the current user has a cart
+        if( window.currentUser.cartItems !== undefined){
+            const { products, users, cartItems } = window.currentUser;
             
-            if( window.currentUser.cartItems){
-                const { products, users, cartItems } = window.currentUser;
-                
-                preloadedState.entities.products = products;
-                preloadedState.entities.users = users;
-                preloadedState.cart = cartItems;
-            };
+            preloadedState.entities.products = products;
+            preloadedState.entities.users = users;
+            preloadedState.cart = cartItems;
+        };
+        
+        preloadedState.entities.users[userInfo.id] = userInfo;          
+        preloadedState.session.currentUserId = userInfo.id;
 
-            preloadedState.entities.users[userInfo.id] = userInfo;          
-            preloadedState.session.currentUserId = userInfo.id;
-
-            store = configureStore(preloadedState);
-        }
-        //if the logged in user doesnt have a cart already
+        store = configureStore(preloadedState);
     } //end if (currentUser) conditional
     else {
         store = configureStore();

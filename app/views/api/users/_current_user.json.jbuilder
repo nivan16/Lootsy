@@ -1,6 +1,13 @@
+# *************** IMPORTANT NOTE *************** #
+# If the current user has no cart, then jBuilder will
+# will send only the user_info object, with no other
+# objects. 
+
 json.user_info do
     json.extract! user, :id, :email, :name
 end
+
+# ********************************************** #
 
 json.users do end
 json.products do end
