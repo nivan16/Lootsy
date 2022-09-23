@@ -29,7 +29,7 @@ class NavBar extends React.Component{
                     <div className='nav-bar'>
                         <Link to='/'>Lootsy</Link>
                         
-                        <SearchBar location={this.props.location} history={this.props.history}/>                       
+                        <SearchBar pathname={this.props.pathname} history={this.props.history}/>                       
 
                         <div className='nav-bar-button-container'>
                             <div className='nav-bar-session-button-container'>

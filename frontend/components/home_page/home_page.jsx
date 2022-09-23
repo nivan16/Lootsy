@@ -8,6 +8,7 @@ class HomePage extends React.Component{
     }
     
     componentDidMount(){
+        //should this be specific products?
         this.props.requestProducts();
     }
 

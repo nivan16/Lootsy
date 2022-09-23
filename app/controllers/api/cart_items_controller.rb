@@ -28,7 +28,7 @@ class Api::CartItemsController < ApplicationController
         elsif @cart
             render :index
         else
-            render render json: @cart.errors.full_messages, status: 404
+            render json: @cart.errors.full_messages, status: 404
         end
 
     end

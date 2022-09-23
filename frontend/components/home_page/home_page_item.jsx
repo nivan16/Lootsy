@@ -32,7 +32,7 @@ class HomePageItem extends React.Component{
         const imgAndAlt = this.imgSource();
         return (
             <div className={`grid-brick grid-brick-${this.props.idx}`}>
-                <Link to='/'>
+                <Link to={`/products/${this.props.product.id}`}>
                     <div className="grid-image">
                         <img src={imgAndAlt[0]} alt={imgAndAlt[1]} />
                     </div>

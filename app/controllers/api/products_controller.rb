@@ -27,11 +27,13 @@ class Api::ProductsController < ApplicationController
             @products = Product.where(category: params[:category]).preload(:owner)
             # .select(:id, :name, :category, :description, :price, :owner_id)
             render :index
-        else
+        elsif params.has_key?(:query)
             @products = Product
                 .where("name ILIKE (?)", "%#{ Product.sanitize_query_param(params[:query]) }%")
                 .preload(:owner)
-
+            render :index
+        else
+            @products = Product.all
             render :index
         end
     end

@@ -8,7 +8,6 @@ class ProductIndex extends React.Component{
 
 
     render(){
-        debugger;
         if($.isEmptyObject(this.props.products)){
             return (
                 <div className="product-index-no-products">

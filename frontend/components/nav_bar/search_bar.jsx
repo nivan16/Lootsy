@@ -7,7 +7,7 @@ class SearchBar extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            searchQuery: ''
+            searchQuery: ""
         };
         
         this.handleChange = this.handleChange.bind(this);
@@ -24,19 +24,44 @@ class SearchBar extends React.Component{
     handleSearch(e){        
         e.preventDefault();
         
-        debugger; //Look how to encode the spaces into plus signs!!!!
-        this.props.history.push({ pathname: '/search', search: `q=${this.state.searchQuery}` })
+        
+        this.props.history.push({
+            pathname: '/search',
+            search: `q=${this.state.searchQuery}`
+        });
+
+        this.setState({
+            searchQuery: ""
+        });
     }
 
-    componentDidUpdate(prevProps){
+    // componentDidUpdate(prevProps){
         //something like if prevProps.location !=== this.props.location
         //this.props.fetchProducts(this.props.location.search.slice(2) )
         // Note: .slice(2) is to remove the "q=" part of the query string.
-    }
+        
+
+        /** Issue: state wont reset once url isnt category or search **/
+        // const { pathname } = this.props;
+        // "cq" refers to '/c/:category & /search'
+        // const searchPaths = "cq";
+
+        // if("cq".includes(pathname[1]))
+        // if(pathname[1] !== "c" || pathname[1] !== "q"){
+        //     if(prevProps.pathname[1] === "c" || prevProps.pathname[1] === "q"){
+        //         debugger
+        //         if(this.state.searchQuery !== ""){
+        //             this.setState({
+        //                 searchQuery: ""
+        //             });
+        //         };
+        //     };
+        // };
+    // }
 
 
     render(){
-
+        
         return (
             <div className='nav-bar-search-bar-container'>
                 <form className='nav-bar-search-form' onSubmit={this.handleSearch}>
