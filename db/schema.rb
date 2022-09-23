@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_23_173642) do
+ActiveRecord::Schema.define(version: 2022_09_23_134700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,18 @@ ActiveRecord::Schema.define(version: 2022_08_23_173642) do
     t.decimal "price", precision: 10, scale: 2, null: false
     t.integer "stock", null: false
     t.index ["owner_id"], name: "index_products_on_owner_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "reviewer_id", null: false
+    t.integer "rating", null: false
+    t.text "review"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id", "reviewer_id"], name: "index_reviews_on_product_id_and_reviewer_id", unique: true
+    t.index ["product_id"], name: "index_reviews_on_product_id"
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
   end
 
   create_table "table_cart_items", force: :cascade do |t|
