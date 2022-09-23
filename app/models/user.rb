@@ -1,10 +1,12 @@
 class User < ApplicationRecord
     validates :email, :name, :password_digest, :session_token, presence: true
-    validates :email, :session_token, uniqueness: true
+    validates :email, uniqueness: { case_sensitive: false }
+    validates :session_token, uniqueness: true
     
-    validates :password, length: {minimum: 6, allow_nil: true}
+    validates :password, length: { minimum: 6, allow_nil: true }
     
     before_validation :ensure_session_token
+    before_validation :ensure_lowercase_and_strip_whitespace, only: [:email, :name]
     
     #this refers to items being sold
     has_many :products,
@@ -67,6 +69,12 @@ class User < ApplicationRecord
         self.session_token
     end
     
+    def ensure_lowercase_and_strip_whitespace
+        # Accidentally did strip! at first,
+        # which caused validation fail (because of immediate execution)
 
+        self.name = self.name.strip unless self.name.nil?
+        self.email = self.email.strip.downcase unless self.email.nil?
+    end
 
 end
