@@ -13,29 +13,76 @@ class Api::ProductsController < ApplicationController
     end
 
     def show
-        @product = Product.find_by(id: params[:id]).preload(:owner)
-        if @product #might have to switch this one around, 
-            render :show
-        else
+        # The reason flat_map is used to gather the products association of user_reviews
+        #   is because the reviews are not gaurenteed to exist, and may return a CollectionProxy
+        #   that includes empty arrays. flat_map ensures the result will remain an ActiveRecord
+        #   Relation.
+
+        @product = Product.where(id: params[:id]).preload(:owner, user_reviews: :reviewer)
+        if @product.first.nil?
             render json: ['Product not found!'], status: 404
+    
+        else
+            @reviews = @products.flat_map(&:user_reviews)
+            @reviewers = @reviews.map(&:reviewer)
+
+            render :show
+            
         end
     end
 
     def index
-        # might change nil to "all", depending on frontend development
+        # Note: Using .where() allows me to use the associations regardless
+        #   of the products having a review or not. However, it increases
+        #   the render time of the views greatly, so there should be quick checks
+        #   of *if @reviews.first.nil check* or *if @products.first.nil check*
         if params.has_key?(:category)
-            @products = Product.where(category: params[:category]).preload(:owner)
-            # .select(:id, :name, :category, :description, :price, :owner_id)
-            render :index
+            @products = Product.where(category: params[:category]).preload(:owner, user_reviews: :reviewer)
+
+            if @products.first.nil?
+                #reduces render time if no products are found
+                render json: ["Products not found!"], status: 404
+            else
+                @products.preload(:owner, user_reviews: :reviewer)
+
+                @reviews = @products.flat_map(&:user_reviews)
+                @reviewers = @reviews.map(&:reviewer)
+
+                render :index
+            end
+
         elsif params.has_key?(:query)
             @products = Product
                 .where("name ILIKE (?)", "%#{ Product.sanitize_query_param(params[:query]) }%")
-                .preload(:owner)
-            render :index
+                .preload(:owner, user_reviews: :reviewer)
+
+            if @products.first.nil?
+                #reduces render time if no products are found
+                render json: ["Products not found!"], status: 404
+            else
+                @products.preload(:owner, user_reviews: :reviewer)
+
+                @reviews = @products.flat_map(&:user_reviews)
+                @reviewers = @reviews.map(&:reviewer)
+
+                render :index
+            end
+
         else
             @products = Product.all
+
+            @reviews = @products.flat_map(&:user_reviews)
+            @reviewers = @reviews.map(&:reviewer)
             render :index
         end
+
+        # The reason flat_map is used to gather the products association of user_reviews
+        #   is because the reviews are not gaurenteed to exist, and may return a CollectionProxy
+        #   that includes empty arrays. flat_map ensures the result will remain an ActiveRecord
+        #   Relation.
+
+        # @reviews = @products.flat_map(&:user_reviews)
+        # @reviewers = @reviews.map(&:reviewer)
     end
 
     def update

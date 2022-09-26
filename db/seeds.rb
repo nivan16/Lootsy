@@ -14,6 +14,7 @@ u1 = User.create!(email: 'looter@loot.com', name: 'anon', password: 'password')
 u2 = User.create!(email: 'bizarre@adventure.com', name: 'Kars', password: 'ultimatelifeform')
 u3 = User.create!(email: 'roamingseller@hyrule.com', name: 'Beetle', password: 'madeinheaven')
 u4 = User.create!(email: 'doctor@regions.com', name: 'Oak', password: 'ketchup')
+u5 = User.create!(email: 'critic@critics.com', name: 'Garf', password: 'foodies')
 
 
 # product = Product.create!(name: , description: , category: '', price: , owner_id: )
@@ -31,6 +32,10 @@ cart_item1 = CartItem.create!(shopper_id: u1.id, product_id: stand_arrow.id, qua
 cart_item2 = CartItem.create!(shopper_id: u1.id, product_id: master_sword.id, quantity: 3)
 cart_item3 = CartItem.create!(shopper_id: u1.id, product_id: pokeball.id, quantity: 1)
 cart_item4 = CartItem.create!(shopper_id: u2.id, product_id: rengoku.id, quantity: 1)
+
+review1 = Review.create!(product_id: stand_arrow.id, reviewer_id: u5.id, rating: 4, review: "This is an awesome collectable, but I feel sick after i nicked my skin with it")
+review2 = Review.create!(product_id: pokeball.id, reviewer_id: u5.id, rating: 5, review: nil)
+review3 = Review.create!(product_id: master_sword.id, reviewer_id: u5.id, rating: 3, review: "This is an okay item, but I wish it would make me stronger")
 
 # Harry Potter:
 #   Elder wand
