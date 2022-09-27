@@ -45,25 +45,36 @@ class Api::ProductsController < ApplicationController
 
                 render :index
             end
-
+            # .where("name ILIKE (?)", "%#{ Product.sanitize_query_param(params[:query]) }%")
         elsif params.has_key?(:query)
             @products = Product
                 .where("name ILIKE (?)", "%#{ Product.sanitize_query_param(params[:query]) }%")
                 .preload(:owner, user_reviews: :reviewer)
-
-            if @products.first.nil?
+            # byebug
+            if @products
+                # @products.preload(:owner, user_reviews: :reviewer)
+                # @reviews = @products.flat_map(&:user_reviews)
+                @reviews = {}
+                @products.each do |product|
+                    if !product.user_reviews.first.nil?
+                        @reviews[product.id] = product.user_reviews
+                    end  
+                end
+                render :index
+            else
                 #reduces render time if no products are found
                 render json: ["Products not found!"], status: 404
-            else
-                @products.preload(:owner, user_reviews: :reviewer)
-                @reviews = @products.flat_map(&:user_reviews)
-
-                render :index
             end
 
         else
             @products = Product.all
-            @reviews = @products.flat_map(&:user_reviews)
+            # @reviews = @products.flat_map(&:user_reviews)
+            @reviews = {}
+            @products.each do |product|
+              if !product.user_reviews.first.nil?
+                @reviews[product.id] = product.user_reviews
+              end  
+            end
 
             render :index
         end

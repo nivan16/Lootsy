@@ -7,7 +7,7 @@
       <script type='text/javascript'>
         window.currentUser = <%= render(
             "/api/users/current_user.json.jbuilder",
-            user: current_user
+            user: current_user_with_preload
         ).html_safe %>
       </script>
     <% end %>

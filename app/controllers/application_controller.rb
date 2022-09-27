@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     skip_before_action :verify_authenticity_token
 
-    helper_method :current_user, :logged_in?
+    helper_method :current_user, :logged_in?, :current_user_with_preload
 
     def current_user
         @current_user ||= User.find_by(session_token: session[:session_token])
@@ -30,5 +30,11 @@ class ApplicationController < ActionController::Base
         render json: ["Must be logged out!"], status: 404 if logged_in?
     end
 
+    def current_user_with_preload
+        @current_user ||= User
+            .where(session_token: session[:session_token])
+            .preload(cart_products: { product: :owner } )
+            .first
+    end
 
 end
