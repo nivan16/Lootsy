@@ -14,20 +14,17 @@ class Api::ProductsController < ApplicationController
 
     def show
         # The reason flat_map is used to gather the products association of user_reviews
-        #   is because the reviews are not gaurenteed to exist, and may return a CollectionProxy
+        #   is because the reviews are not guarenteed to exist, and may return a CollectionProxy
         #   that includes empty arrays. flat_map ensures the result will remain an ActiveRecord
         #   Relation.
 
-        @product = Product.where(id: params[:id]).preload(:owner, user_reviews: :reviewer)
-        if @product.first.nil?
+        @product = Product.where(id: params[:id]).preload(:owner, user_reviews: :reviewer).first
+        if @product.nil?
             render json: ['Product not found!'], status: 404
-    
         else
-            @reviews = @products.flat_map(&:user_reviews)
-            @reviewers = @reviews.map(&:reviewer)
-
+            @reviews = @product.user_reviews
+            # @reviewers = @reviews.map(&:reviewer) unless @reviews.first.nil?
             render :show
-            
         end
     end
 
@@ -43,10 +40,8 @@ class Api::ProductsController < ApplicationController
                 #reduces render time if no products are found
                 render json: ["Products not found!"], status: 404
             else
-                @products.preload(:owner, user_reviews: :reviewer)
-
                 @reviews = @products.flat_map(&:user_reviews)
-                @reviewers = @reviews.map(&:reviewer)
+                # @reviewers = @reviews.map(&:reviewer)
 
                 render :index
             end
@@ -61,18 +56,15 @@ class Api::ProductsController < ApplicationController
                 render json: ["Products not found!"], status: 404
             else
                 @products.preload(:owner, user_reviews: :reviewer)
-
                 @reviews = @products.flat_map(&:user_reviews)
-                @reviewers = @reviews.map(&:reviewer)
 
                 render :index
             end
 
         else
             @products = Product.all
-
             @reviews = @products.flat_map(&:user_reviews)
-            @reviewers = @reviews.map(&:reviewer)
+
             render :index
         end
 

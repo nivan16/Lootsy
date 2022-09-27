@@ -32,16 +32,16 @@ json.reviews do end
 
 end
 
-# @products.user_reviews.each do |user_review|
-#     json.reviews do
-#         json.set! user_review.id do
-#             json.extract! user_review, :id, :product_id, :reviewer_id, :rating, :review
-#         end
-#     end
+@reviews.each do |review|
+    json.reviews do
+        json.set! review.id do
+            json.extract! review, :id, :product_id, :reviewer_id, :rating, :review
+        end
+    end
     
-#     json.owners do
-#         json.set! user_review.reviewer.id do
-#             json.extract! user_review.reviewer, :id, :email, :name
-#         end
-#     end
-# end
+    json.owners do
+        json.set! review.reviewer.id do
+            json.extract! review.reviewer, :id, :email, :name
+        end
+    end
+end
