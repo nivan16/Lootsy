@@ -73,3 +73,8 @@ Change CartItemController update to update_cart,
     will always be already existing in this case.
 .
 */
+
+/*
+    1: npm install
+    2: bundle install (ruby dependencies (or packages?) )
+*/

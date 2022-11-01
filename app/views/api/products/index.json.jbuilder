@@ -40,6 +40,12 @@ end
     end
 end
 
+# Maybe instead of fetching all reviews and extracting it just for the index page, I should just create a method that
+#     allows me to calculate the average rating of the reviews.
+# Also *might* need the amount of reviews on products (which means i need to seed alot of reviews as well)
+
+
+
 # @reviews.each do |review|
 #     json.reviews do
 #         json.set! review.product_id do

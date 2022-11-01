@@ -15,9 +15,11 @@ const reviewsReducer = (state={}, action) => {
             return action.productInfo.reviews;
 
         case REMOVE_PRODUCT:
-            
+            let newState = Object.assign({}, state);
+            delete newState[action.productId];
+            return newState;
         default:
-            break;
+            return state;
     }
 };
 
