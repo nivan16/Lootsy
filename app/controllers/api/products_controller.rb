@@ -40,9 +40,6 @@ class Api::ProductsController < ApplicationController
                 #reduces render time if no products are found
                 render json: ["Products not found!"], status: 404
             else
-                @reviews = @products.flat_map(&:user_reviews)
-                # @reviewers = @reviews.map(&:reviewer)
-
                 render :index
             end
             # .where("name ILIKE (?)", "%#{ Product.sanitize_query_param(params[:query]) }%")
@@ -52,7 +49,7 @@ class Api::ProductsController < ApplicationController
                 .preload(:owner, user_reviews: :reviewer)
             # byebug
             if @products
-                # @products.preload(:owner, user_reviews: :reviewer)
+                @products.preload(:owner, user_reviews: :reviewer)
                 # @reviews = @products.flat_map(&:user_reviews)
                 @reviews = {}
                 @products.each do |product|

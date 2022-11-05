@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
     validates :product_id, :reviewer_id, :rating, presence: true
-    validates :review, length: { minimum: 5, allow_nil: true }
+    validates :review, length: { minimum: 1, allow_nil: true }
     validates :rating, inclusion: { in: 1..5 }
 
     validates :reviewer_id, uniqueness: { 

@@ -1,6 +1,6 @@
 json.products do end
 json.owners do end
-json.reviews do end
+# json.reviews do end
 # json.reviews do
 #     json.merge! @reviews
 # end
@@ -19,26 +19,28 @@ json.reviews do end
         end
     end
 
-    product.user_reviews.each do |review|
-        json.owners do
-            json.set! review.reviewer.id do
-                json.extract! review.reviewer, :id, :email, :name
-            end
-        end
-    end
+
+
+    # product.user_reviews.each do |review|
+    #     json.owners do
+    #         json.set! review.reviewer.id do
+    #             json.extract! review.reviewer, :id, :email, :name
+    #         end
+    #     end
+    # end
     
 end
 
-@reviews.each do |product_id, reviews|
-    json.reviews do
-        json.set! product_id do 
-            json.array!(reviews) do |review|
-                json.extract! review, :id, :product_id, :reviewer_id, :rating, :review
-            end
-            # json.merge! reviews
-        end
-    end
-end
+# @reviews.each do |product_id, reviews|
+#     json.reviews do
+#         json.set! product_id do 
+#             json.array!(reviews) do |review|
+#                 json.extract! review, :id, :product_id, :reviewer_id, :rating, :review
+#             end
+#             # json.merge! reviews
+#         end
+#     end
+# end
 
 # Maybe instead of fetching all reviews and extracting it just for the index page, I should just create a method that
 #     allows me to calculate the average rating of the reviews.
