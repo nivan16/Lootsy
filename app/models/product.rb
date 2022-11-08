@@ -39,4 +39,16 @@ class Product < ApplicationRecord
         sanitize_sql_like(query)
     end
 
+    # **Will likely need to use the method that converts the number
+    #     into a string to the cut the decimal notation down to 2*****
+    #
+    def avg_rating
+        #will return 0 if array length is zero (meaning there are no reviews)
+        rating_sum = self.user_reviews.inject(0) {|sum, user_review| sum += (user_review.rating / 5.0) }
+
+        # This is to check if there were no ratings,
+        #   and to prevent a ZeroDivisionError if true
+        return rating_sum if rating_sum == 0
+        rating_sum / self.user_reviews.length
+    end
 end

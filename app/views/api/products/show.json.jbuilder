@@ -2,6 +2,7 @@ json.product do
     json.set! @product.id do
         json.extract! @product, :id, :name, :category, :description, :owner_id, :stock
         json.price @product.price_string
+        json.avg_rating @product.avg_rating
     end
 end
 json.owners do 
@@ -19,7 +20,7 @@ json.reviews do end
         end
     end
 
-
+    #these are the reviewer IDs
     json.owners do
         json.set! review.reviewer.id do
             json.extract! review.reviewer, :id, :email, :name

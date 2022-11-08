@@ -41,3 +41,23 @@ class Api::ReviewsController < ApplicationController
         params.require(:review).permit(:product_id, :reviewer_id, :rating, :review)
     end
 end
+
+
+#Don't need to rename Review table, thats what it is on Etsy.
+
+#Change the name of jBuilder object from owners to users, since it will now
+# apply to the review Users (reviewers) as well. Its also just more readable and dynamic
+
+#After Owner object name change, alter the front-end so that the reducers and such
+# are properly referencing back-end data responses
+
+#Create Views for the Reviews Controller
+
+#Double check index & show for Products controller is accurate with information,
+# and check if destroy is working
+
+#Double check Product#avg_rating is working, and add decimal precision
+
+#** Make the Cart state on the front end independent, very important **
+# This includes: _current_user.jbuilder, cart controller, and nearly all frontend
+#   reducers with regards to the entities slice.

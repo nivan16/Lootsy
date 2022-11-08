@@ -18,10 +18,15 @@ class Api::ProductsController < ApplicationController
         #   that includes empty arrays. flat_map ensures the result will remain an ActiveRecord
         #   Relation.
 
-        @product = Product.where(id: params[:id]).preload(:owner, user_reviews: :reviewer).first
+        @product = Product
+            .where(id: params[:id])
+            .preload(:owner, user_reviews: :reviewer)
+            .first
+
         if @product.nil?
             render json: ['Product not found!'], status: 404
         else
+            
             @reviews = @product.user_reviews
             # @reviewers = @reviews.map(&:reviewer) unless @reviews.first.nil?
             render :show
@@ -34,7 +39,9 @@ class Api::ProductsController < ApplicationController
         #   the render time of the views greatly, so there should be quick checks
         #   of *if @reviews.first.nil check* or *if @products.first.nil check*
         if params.has_key?(:category)
-            @products = Product.where(category: params[:category]).preload(:owner, user_reviews: :reviewer)
+            @products = Product
+                .where(category: params[:category])
+                .preload(:owner, :user_reviews)
 
             if @products.first.nil?
                 #reduces render time if no products are found
@@ -42,36 +49,37 @@ class Api::ProductsController < ApplicationController
             else
                 render :index
             end
-            # .where("name ILIKE (?)", "%#{ Product.sanitize_query_param(params[:query]) }%")
+            
         elsif params.has_key?(:query)
             @products = Product
                 .where("name ILIKE (?)", "%#{ Product.sanitize_query_param(params[:query]) }%")
-                .preload(:owner, user_reviews: :reviewer)
-            # byebug
-            if @products
-                @products.preload(:owner, user_reviews: :reviewer)
-                # @reviews = @products.flat_map(&:user_reviews)
-                @reviews = {}
-                @products.each do |product|
-                    if !product.user_reviews.first.nil?
-                        @reviews[product.id] = product.user_reviews
-                    end  
-                end
-                render :index
-            else
+                .preload(:owner, :user_reviews)
+            
+            if @products.first.nil?
                 #reduces render time if no products are found
-                render json: ["Products not found!"], status: 404
+                render json: ["Product not found!"], status: 202
+            else
+                # @reviews = @products.flat_map(&:user_reviews)
+                # @reviews = {}
+                # @products.each do |product|
+                #     if !product.user_reviews.first.nil?
+                #         @reviews[product.id] = product.user_reviews
+                #     end  
+                # end
+                render :index
             end
 
         else
-            @products = Product.all
+            @products = Product
+                .all
+                .preload(:owner, :user_reviews)
             # @reviews = @products.flat_map(&:user_reviews)
-            @reviews = {}
-            @products.each do |product|
-              if !product.user_reviews.first.nil?
-                @reviews[product.id] = product.user_reviews
-              end  
-            end
+            # @reviews = {}
+            # @products.each do |product|
+            #   if !product.user_reviews.first.nil?
+            #     @reviews[product.id] = product.user_reviews
+            #   end  
+            # end
 
             render :index
         end
