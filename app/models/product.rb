@@ -49,6 +49,9 @@ class Product < ApplicationRecord
         # This is to check if there were no ratings,
         #   and to prevent a ZeroDivisionError if true
         return rating_sum if rating_sum == 0
+
+        # Otherwise will return a percentage relative to 1-5,
+        #   the lowest being 0.2 (20%) & highest being 1.0 (100%)
         rating_sum / self.user_reviews.length
     end
 end
