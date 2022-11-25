@@ -6,7 +6,7 @@ class Api::ReviewsController < ApplicationController
         if @review.save
             render :show
         else
-            render @review.errors.full_messages, status: 404
+            render json: @review.errors.full_messages, status: 404
         end
     end
 
@@ -16,7 +16,7 @@ class Api::ReviewsController < ApplicationController
         if @review.update(review_params)
             render :show
         else
-            render @review.errors.full_messages, status: 404
+            render json: @review.errors.full_messages, status: 404
         end
     end
 
@@ -31,7 +31,7 @@ class Api::ReviewsController < ApplicationController
             # probably not though
             render json: {}
         else
-            render @review.errors.full_messages, status: 404
+            render json: @review.errors.full_messages, status: 404
         end
     end
 
