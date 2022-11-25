@@ -27,7 +27,7 @@ class CategoryPage extends React.Component{
         //Figure out why the product isnt rendering even though it exists in the state
 
         return (
-            <ProductIndex products={this.props.products} owners={this.props.owners}/>
+            <ProductIndex products={this.props.products} users={this.props.users}/>
         );
     }
 };

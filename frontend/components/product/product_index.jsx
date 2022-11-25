@@ -38,7 +38,7 @@ class ProductIndex extends React.Component{
                                             ${product.price}
                                         </p>
                                         <p className="index-product-owner">
-                                            {this.props.owners[product.ownerId].name}
+                                            {this.props.users[product.ownerId].name}
                                         </p>
                                     </div>
                                 </Link>
