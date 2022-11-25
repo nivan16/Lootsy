@@ -30,7 +30,7 @@ After Owner object name change, alter the front-end so that the reducers and suc
 Create Views for the Reviews Controller
 
 ####################################################################################
-
+*********This is the next task!!!!
 ** Make the Cart state on the front end independent, very important **
  This includes: _current_user.jbuilder, cart controller, and nearly all frontend
    reducers with regards to the entities slice.
