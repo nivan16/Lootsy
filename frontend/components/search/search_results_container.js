@@ -5,7 +5,7 @@ import SearchResults from "./search_results";
 
 const mapStateToProps = (state, ownProps) => ({
     products: state.entities.products,
-    owners: state.entities.users
+    users: state.entities.users
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
