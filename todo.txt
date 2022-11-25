@@ -1,11 +1,13 @@
 Double check index & show for Products controller is accurate with information,
- and check if destroy is working
- Currently no destroy, but index and show are both working
+    and check if destroy is working
+
+* Currently no destroy, but index and show are both working
 
 ####################################################################################
 
 Double check Product#avg_rating is working, and add decimal precision
- no decimal precision, but it is working
+
+* no decimal precision, but it is working
 
 ####################################################################################
 
@@ -13,19 +15,10 @@ Don't need to rename Review table, thats what it is on Etsy.
 
 ####################################################################################
 
-***********
+****Done!****
+
 Change the name of jBuilder object from owners to users, since it will now
  apply to the review Users (reviewers) as well. Its also just more readable and dynamic
-
-Done:
-    Users:
-        _current_user
-        _user
-        show
-
-    Product:
-        show
-        index
 
 ####################################################################################
 
