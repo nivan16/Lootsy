@@ -13,8 +13,19 @@ Don't need to rename Review table, thats what it is on Etsy.
 
 ####################################################################################
 
+***********
 Change the name of jBuilder object from owners to users, since it will now
  apply to the review Users (reviewers) as well. Its also just more readable and dynamic
+
+Done:
+    Users:
+        _current_user
+        _user
+        show
+
+    Product:
+        show
+        index
 
 ####################################################################################
 
