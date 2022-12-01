@@ -14,13 +14,7 @@ const productsReducer = (state={}, action) => {
         case RECEIVE_PRODUCT:
             //if there is no product, return empty object *in the case of an empty search*
             if($.isEmptyObject(action.productInfo)) return {};
-            return Object.assign({}, state, action.productInfo.product); //is this better?
-
-        case RECEIVE_CART:
-            return Object.assign({}, state, action.cart.products)
-
-        case RECEIVE_CART_ITEM:
-            return Object.assign({}, state, {[action.newCartItem.product.id]: action.newCartItem.product})
+            return Object.assign({}, state, action.productInfo.product); //is this better?*
 
         case REMOVE_PRODUCT:
             let newState = Object.assign({}, state);
@@ -38,6 +32,13 @@ const productsReducer = (state={}, action) => {
             return state;
     }
 };
+
+// ***Prior cases from non-independent Cart State
+// case RECEIVE_CART:
+//             return Object.assign({}, state, action.cart.products)
+
+// case RECEIVE_CART_ITEM:
+//     return Object.assign({}, state, {[action.newCartItem.product.id]: action.newCartItem.product})
 
 
 export default productsReducer;
