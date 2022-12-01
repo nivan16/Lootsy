@@ -23,6 +23,7 @@ class Api::CartItemsController < ApplicationController
             # .where("shopper_id = 85")
         # @cart = @user.cart_items.includes(:owner)
 
+        # Might change the response object to an Object {}
         if @cart == []
             render json: []
         elsif @cart
@@ -47,22 +48,22 @@ class Api::CartItemsController < ApplicationController
 
 
         ## Will likely change this to just CartItem.find_by(id: params[:id])
-        @cart_product = find_cart_item(cart_owner.id, params[:productId])
+        @cart_item = find_cart_item(cart_owner.id, params[:productId])
 
         # if a new cart item
-        if @cart_product.nil?
-            @cart_product = CartItem.new(cart_owner.id, product_id: params[:productId], quantity: params[:quantity].to_i)
-            if @cart_product.save
+        if @cart_item.nil?
+            @cart_item = CartItem.new(cart_owner.id, product_id: params[:productId], quantity: params[:quantity].to_i)
+            if @cart_item.save
                 render :show
             else
-                render json: @cart_product.errors.full_messages, status: 404
+                render json: @cart_item.errors.full_messages, status: 404
             end
         #if there is already that cart item
-        elsif @cart_product
-            if @cart_product.update(quantity: params[:quantity].to_i)
+        elsif @cart_item
+            if @cart_item.update(quantity: params[:quantity].to_i)
                 render :show
             else
-                render json: @cart_product.errors.full_messages, status: 404
+                render json: @cart_item.errors.full_messages, status: 404
             end
         end
     end
@@ -82,6 +83,9 @@ class Api::CartItemsController < ApplicationController
         end
     end
 
+
+    #Unsure of use, consider removal in future (since rails associations already
+    # handle user deletion and related products)
     def destroy_cart
         user = find_cart_owner(params[:shopperId])
         
