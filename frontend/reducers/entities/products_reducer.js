@@ -14,7 +14,7 @@ const productsReducer = (state={}, action) => {
         case RECEIVE_PRODUCT:
             //if there is no product, return empty object *in the case of an empty search*
             if($.isEmptyObject(action.productInfo)) return {};
-            return Object.assign({}, state, {[action.productInfo.product.id]: action.productInfo.product} ); //is this better?
+            return Object.assign({}, state, action.productInfo.product); //is this better?
 
         case RECEIVE_CART:
             return Object.assign({}, state, action.cart.products)
