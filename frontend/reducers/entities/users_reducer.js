@@ -40,10 +40,10 @@ const usersReducer = (state = {}, action) => {
             return newState;
 
         case RECEIVE_PRODUCT:
-            return Object.assign({}, state, action.productInfo.owner);
+            return Object.assign({}, state, action.productInfo.user);
 
         case RECEIVE_PRODUCTS:
-            return Object.assign({}, state, action.productInfo.owners)
+            return Object.assign({}, state, action.productInfo.users)
 
         case RECEIVE_CART_ITEM:
             return Object.assign({}, state, action.newCartItem.user);

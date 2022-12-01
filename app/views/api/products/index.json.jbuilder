@@ -1,5 +1,5 @@
 json.products do end
-json.owners do end
+json.users do end
 # json.reviews do end
 # json.reviews do
 #     json.merge! @reviews
@@ -16,7 +16,7 @@ json.owners do end
     end
 
     #is it bad that I cant ever really remove user info from the state on the front end??
-    json.owners do 
+    json.users do 
         json.set! product.owner.id do
             json.extract! product.owner, :id, :email, :name
         end
@@ -25,7 +25,7 @@ json.owners do end
 
 
     # product.user_reviews.each do |review|
-    #     json.owners do
+    #     json.users do
     #         json.set! review.reviewer.id do
     #             json.extract! review.reviewer, :id, :email, :name
     #         end
@@ -62,7 +62,7 @@ end
                                     
                                 
     
-#     json.owners do
+#     json.users do
 #         json.set! review.reviewer.id do
 #             json.extract! review.reviewer, :id, :email, :name
 #         end

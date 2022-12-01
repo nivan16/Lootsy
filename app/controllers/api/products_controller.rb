@@ -45,7 +45,7 @@ class Api::ProductsController < ApplicationController
 
             if @products.first.nil?
                 #reduces render time if no products are found
-                render json: ["Products not found!"], status: 404
+                render json: {}, status: 202
             else
                 render :index
             end
@@ -57,7 +57,7 @@ class Api::ProductsController < ApplicationController
             
             if @products.first.nil?
                 #reduces render time if no products are found
-                render json: ["Product not found!"], status: 202
+                render json: {}, status: 202
             else
                 # @reviews = @products.flat_map(&:user_reviews)
                 # @reviews = {}

@@ -1,17 +1,21 @@
 Double check index & show for Products controller is accurate with information,
- and check if destroy is working
- Currently no destroy, but index and show are both working
+    and check if destroy is working
+
+* Currently no destroy, but index and show are both working
 
 ####################################################################################
 
 Double check Product#avg_rating is working, and add decimal precision
- no decimal precision, but it is working
+
+* no decimal precision, but it is working
 
 ####################################################################################
 
 Don't need to rename Review table, thats what it is on Etsy.
 
 ####################################################################################
+
+****Done!****
 
 Change the name of jBuilder object from owners to users, since it will now
  apply to the review Users (reviewers) as well. Its also just more readable and dynamic
@@ -26,7 +30,7 @@ After Owner object name change, alter the front-end so that the reducers and suc
 Create Views for the Reviews Controller
 
 ####################################################################################
-
+*********This is the next task!!!!
 ** Make the Cart state on the front end independent, very important **
  This includes: _current_user.jbuilder, cart controller, and nearly all frontend
    reducers with regards to the entities slice.
