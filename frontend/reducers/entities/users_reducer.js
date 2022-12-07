@@ -1,8 +1,6 @@
 import { RECEIVE_USERS, RECEIVE_USER, REMOVE_USER } from "../../actions/user_actions";
 import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS } from '../../actions/product_actions';
 import { RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER } from "../../actions/session_actions";
-import { RECEIVE_CART, RECEIVE_CART_ITEM } from '../../actions/cart_actions';
-import { $CombinedState } from "redux";
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -20,6 +18,8 @@ const usersReducer = (state = {}, action) => {
             delete newState[action.userId];
             return newState;
 
+        //This might just be changed to having the entirety of the current user data to being inside
+        //  of the sessions slice of state (sessions reducer)
         case RECEIVE_CURRENT_USER:      
             //For some reason, when a cart doesnt exist for a 
             // current user, eg: just registered user,
@@ -28,10 +28,10 @@ const usersReducer = (state = {}, action) => {
             // object into the user state, or the nested
             // userInfo into the current state in addition to
             // the cart product owners.
-            return ( action.user.cartItems === undefined ) ? ( 
-                Object.assign({}, state, {[action.user.id]: action.user} )
+            return ( action.currentUser.cartItems === undefined ) ? ( 
+                Object.assign({}, state, {[action.currentUser.id]: action.currentUser} )
             ) : (
-                Object.assign({}, state, action.user.users, {[action.user.userInfo.id]: action.user.userInfo})
+                Object.assign({}, state, {[action.currentUser.userInfo.id]: action.currentUser.userInfo})
             );
                     
         case REMOVE_CURRENT_USER:
@@ -43,17 +43,21 @@ const usersReducer = (state = {}, action) => {
             return Object.assign({}, state, action.productInfo.user);
 
         case RECEIVE_PRODUCTS:
-            return Object.assign({}, state, action.productInfo.users)
+            return Object.assign({}, state, action.productInfo.users);
 
-        case RECEIVE_CART_ITEM:
-            return Object.assign({}, state, action.newCartItem.user);
-
-        case RECEIVE_CART: //receive product owners
-            return Object.assign({}, state, action.cart.users);
-        
         default:
             return state;
-        }
-    };
+    }
+};
+
+// ***Prior cases from non-independent Cart State
+// import { RECEIVE_CART, RECEIVE_CART_ITEM } from '../../actions/cart_actions';
+
+// case RECEIVE_CART_ITEM:
+//         return Object.assign({}, state, action.newCartItem.user);
+
+// case RECEIVE_CART: //receive product owners
+//     return Object.assign({}, state, action.cart.users);
+
 
 export default usersReducer;

@@ -23,8 +23,7 @@ const cartReducer = (state = {}, action) => {
             return newState;
 
         case RECEIVE_CURRENT_USER:
-            return action.user.cartItems ? action.user.cartItems : {};
-
+            return action.currentUser.cartItems ? action.currentUser.cartItems : {};
         
         default:
             return state;
