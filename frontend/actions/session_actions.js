@@ -10,9 +10,8 @@ const receiveCurrentUser = currentUser => ({
     currentUser
 });
 
-const removeCurrentUser = currentUserId => ({
+const removeCurrentUser = () => ({
     type: REMOVE_CURRENT_USER,
-    currentUserId
 });
 
 const receiveSessionErrors = errors => ({

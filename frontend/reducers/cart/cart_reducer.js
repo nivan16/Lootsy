@@ -13,6 +13,9 @@ const cartReducer = (state = {}, action) => {
             newState = Object.assign({}, state, action.newCartItem);
             return newState;
 
+        // REMOVE_CART exists to protext against potential error on
+        //   removal of last item in cart
+        // **Should seek advice on this case
         case REMOVE_CART:
         case REMOVE_CURRENT_USER:
             return {};

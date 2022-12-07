@@ -17,30 +17,10 @@ const usersReducer = (state = {}, action) => {
             newState = Object.assign({}, state);
             delete newState[action.userId];
             return newState;
-
-        //This might just be changed to having the entirety of the current user data to being inside
-        //  of the sessions slice of state (sessions reducer)
-        case RECEIVE_CURRENT_USER:      
-            //For some reason, when a cart doesnt exist for a 
-            // current user, eg: just registered user,
-            // rails only sends the user info unnested.
-            //This will either just assign the shallow user
-            // object into the user state, or the nested
-            // userInfo into the current state in addition to
-            // the cart product owners.
-            return ( action.currentUser.cartItems === undefined ) ? ( 
-                Object.assign({}, state, {[action.currentUser.id]: action.currentUser} )
-            ) : (
-                Object.assign({}, state, {[action.currentUser.userInfo.id]: action.currentUser.userInfo})
-            );
-                    
-        case REMOVE_CURRENT_USER:
-            newState = Object.assign({}, state);
-            delete newState[action.currentUserId];
-            return newState;
-
+                
         case RECEIVE_PRODUCT:
-            return Object.assign({}, state, action.productInfo.user);
+            //This is productInfo.users* due to potential reviewers of a product
+            return Object.assign({}, state, action.productInfo.users);
 
         case RECEIVE_PRODUCTS:
             return Object.assign({}, state, action.productInfo.users);
@@ -58,6 +38,27 @@ const usersReducer = (state = {}, action) => {
 
 // case RECEIVE_CART: //receive product owners
 //     return Object.assign({}, state, action.cart.users);
+
+
+// ***Prior to currentUser data being stored entirely in Session Slice of State
+// case RECEIVE_CURRENT_USER:      
+//     //For some reason, when a cart doesnt exist for a 
+//     // current user, eg: just registered user,
+//     // rails only sends the user info unnested.
+//     //This will either just assign the shallow user
+//     // object into the user state, or the nested
+//     // userInfo into the current state in addition to
+//     // the cart product owners.
+//     return ( action.currentUser.cartItems === undefined ) ? ( 
+//         Object.assign({}, state, {[action.currentUser.id]: action.currentUser} )
+//     ) : (
+//         Object.assign({}, state, {[action.currentUser.userInfo.id]: action.currentUser.userInfo})
+//     );
+            
+// case REMOVE_CURRENT_USER:
+//     newState = Object.assign({}, state);
+//     delete newState[action.currentUserId];
+//     return newState;
 
 
 export default usersReducer;

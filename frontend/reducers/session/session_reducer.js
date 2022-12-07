@@ -1,7 +1,7 @@
 import { RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER } from "../../actions/session_actions";
 
 const _nullUser = {
-    currentUserId: null
+    currentUser: null
 };
 
 const sessionReducer = (state=_nullUser, action) => {
@@ -12,10 +12,10 @@ const sessionReducer = (state=_nullUser, action) => {
             // current user, eg: just registered user,
             // rails only sends the user info unnested.
 
-            return ( action.user.cartItems === undefined ) ? (
-                { currentUserId: action.user.id }
+            return ( action.currentUser.cartItems === undefined ) ? (
+                { currentUser: action.currentUser }
             ) : (
-                { currentUserId: action.user.userInfo.id }
+                { currentUser: action.currentUser.userInfo }
             );
 
         case REMOVE_CURRENT_USER:

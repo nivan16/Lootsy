@@ -1,26 +1,28 @@
-import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS, REMOVE_PRODUCT } from '../../actions/product_actions';
+import { RECEIVE_PRODUCT, REMOVE_PRODUCT } from '../../actions/product_actions';
 
 const reviewsReducer = (state={}, action) => {
     Object.freeze(state);
 
+    // *Will later need cases for the receival or removal of an individual review
     switch (action.type) {
-        case RECEIVE_PRODUCTS:
-            //if there are no products, return empty object *in the case of an empty search*
-            //also if there are products, but *no reviews*, return empty object 
-            if($.isEmptyObject(action.productInfo) || $.isEmptyObject(action.productInfo.reviews)) return {};
-            return action.productInfo.reviews;
-
         case RECEIVE_PRODUCT:
             if($.isEmptyObject(action.productInfo) || $.isEmptyObject(action.productInfo.reviews)) return {};
             return action.productInfo.reviews;
 
         case REMOVE_PRODUCT:
-            let newState = Object.assign({}, state);
-            delete newState[action.productId];
-            return newState;
+            return {};
+
         default:
             return state;
     }
 };
 
 export default reviewsReducer;
+
+// *Reviews will not exist in the case of a Product Index
+
+// case RECEIVE_PRODUCTS:
+//     //if there are no products, return empty object *in the case of an empty search*
+//     //also if there are products, but *no reviews*, return empty object 
+//     if($.isEmptyObject(action.productInfo) || $.isEmptyObject(action.productInfo.reviews)) return {};
+//     return action.productInfo.reviews;
