@@ -18,7 +18,7 @@ class NavBar extends React.Component{
     }
 
     handleLogout(){
-        this.props.logoutCurrentUser(this.props.currentUser.id);
+        this.props.logoutCurrentUser();
     }
 
     render(){
@@ -39,7 +39,6 @@ class NavBar extends React.Component{
                                     ) : (
                                         <button className='nav-bar-login' onClick={this.handleLogin}>Sign in</button> 
                                     )
-                                
                                 }
                             </div>
                             <div className='nav-bar-cart'>

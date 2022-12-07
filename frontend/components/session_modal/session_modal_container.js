@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { signupCurrentUser, loginCurrentUser, clearSessionErrors } from '../../actions/session_actions';
 
-const mapStateToProps = state => ({
-    currentUser: state.entities.users[state.session.currentUserId],    
+const mapStateToProps = state => ({  
     isOpen: state.modal.isOpen,
     errors: state.errors.session
 });
