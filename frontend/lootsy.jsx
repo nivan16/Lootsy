@@ -36,9 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if( window.currentUser.cartItems !== undefined){
             preloadedState.cart = window.currentUser.cartItems;
         };
-        
-        preloadedState.entities.users[userInfo.id] = userInfo;          
-        preloadedState.session.currentUserId = userInfo.id;
+                  
+        preloadedState.session.currentUser = userInfo;
 
         store = configureStore(preloadedState);
     } //end if (currentUser) conditional
