@@ -1,0 +1,16 @@
+.product-image-and-info-container{
+    display: flex;
+}
+
+.product-image-container {
+    width: 20vw;
+    height: 20vh;
+    overflow: hidden;
+}
+
+.product-image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

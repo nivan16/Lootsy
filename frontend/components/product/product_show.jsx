@@ -51,66 +51,71 @@ class ProductShow extends React.Component {
                     </div>
 
                     <div className='product-info-container'>
-                        <form onSubmit={this.handleSubmit}>
-                            <div className='product-owner-username-container'>
-                                <span>
-                                    { this.props.users[this.props.product.ownerId].name }
-                                </span>
-                            </div>
+                        <div className='product-owner-username-container'>
+                            <span>
+                                { this.props.users[this.props.product.ownerId].name }
+                            </span>
+                        </div>
 
-                            <div className='product-name-container'>
-                                <p>
-                                    { this.props.product.name }
+                        <div className='product-name-container'>
+                            <p>
+                                { this.props.product.name }
+                            </p>
+                        </div>
+
+                        <div className='product-price-container'>
+                            <span>
+                                { this.props.product.price }
+                            </span>
+                        </div>
+
+                        <div className='product-quantity-container'>
+                            {
+                                this.props.product.stock > 1 ? (
+                                    <>
+                                        <div className='product-quantity'>
+                                            <span>Quantity</span>
+                                        </div>
+                                        <select className={"product-quantity-selector"}
+                                            id="product-quantity-selector"
+                                            onChange={this.handleQuantityChange}
+                                            value={this.state.quantity}
+                                        >
+                                            {
+                                                options()
+                                            }
+
+                                        </select>
+                                    </>
+                                ) : (
+                                    null
+                                )
+                            }
+                        </div>
+                        <div className='product-purchase-and-cart-buttons-container'>
+                            <div className='product-checkout-button-container'>
+                                <form onSubmit={this.handleSubmit}>
+                                    <button className='product-checkout-button'>
+                                    </button>
+                                </form>
+
+                                <p className='product-checkout-button-label'>
+                                    Buy it now
                                 </p>
                             </div>
 
-                            <div className='product-price-container'>
-                                <span>
-                                    { this.props.product.price }
-                                </span>
-                            </div>
-
-                            <div className='product-quantity-container'>
-                                {
-                                    this.props.product.stock > 1 ? (
-                                        <>
-                                            <div className='product-quantity'>
-                                                <span>Quantity</span>
-                                            </div>
-                                            <select className={"product-quantity-selector"}
-                                                id="product-quantity-selector"
-                                                onChange={this.handleQuantityChange}
-                                                value={this.state.quantity}
-                                            >
-                                                {
-                                                    options()
-                                                }
-
-                                            </select>
-                                        </>
-                                    ) : (
-                                        null
-                                    )
-                                }
-                            </div>
-                            <div className='product-purchase-and-cart-buttons-container'>
-                                <div className='product-checkout-button-container'>
-                                    <button className='product-checkout-button'>
-                                    </button>
-                                    <p className='product-checkout-button-label'>
-                                        Buy it now
-                                    </p>
-                                </div>
-
-                                <div className='product-cart-add-button-container'>
+                            <div className='product-cart-add-button-container'>
+                                <form onSubmit={this.handleSubmit}>
                                     <button className='product-cart-add-button'>
                                     </button>
-                                    <p className='product-cart-add-button-label'>
-                                        Add to cart
-                                    </p>
-                                </div>
+                                </form>
+                                    
+                                <p className='product-cart-add-button-label'>
+                                    Add to cart
+                                </p>
                             </div>
-                        </form>
+
+                        </div>
                     </div>
                 </div>
 
@@ -136,12 +141,28 @@ export default ProductShow;
                 as well as some flair (ex: purchase protection thats already been created elsewhere on the website)
 
         3) Create a section for the reviews
-            a) shows the total amount of reviews(.length),
+    
+            a) Not a step per se, but the Reviews Component will **Need** to be either:
+
+                1) After consideration, it would be more efficient for the Product Details to be created twice in the render.
+
+                    a) On a computer view, it will likely either *float right*, or it will be in a *flex box that contains the Product Image*
+
+                    b) On a phone view, the whole page will simply be *flex-direction: column;*
+
+                *) In its own container, and have the Primary Container as a CSS Grid Layout for the Image, Details, and Reviews
+                *) In the overall container as the Product Image so that the Reviews can be listed under it
+
+
+            b) shows the total amount of reviews(.length),
             
-            b) the average rating of the reviews (displayed by the 5 star icons, maybe a seperate react library)
+            c) the average rating of the reviews (displayed by the 5 star icons, maybe a seperate react library)
             
-            c) the individual reviews, possibly sorted by high/low ratings,
-                and displaying the individual score as well as the written review (if applicable)        
+            d) the individual reviews, possibly sorted by high/low ratings,
+                and displaying the individual score as well as the written review (if applicable)
+        
+        
+                
 */
 
 /*
