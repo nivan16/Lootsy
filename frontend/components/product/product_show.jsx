@@ -8,18 +8,25 @@ class ProductShow extends React.Component {
         };
         
         this.handleQuantityChange = this.handleQuantityChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handlePurchase = this.handlePurchase.bind(this);
+        this.handleAddToCart = this.handleAddToCart.bind(this);
     }
 
     handleQuantityChange(e){
         e.stopPropagation();
         e.preventDefault();
+
         this.setState({
             quantity: e.target.value
         });
     }
 
-    handleSubmit(e){
+    handlePurchase(e){
+        e.stopPropagation();
+        e.preventDefault();
+    }
+
+    handleAddToCart(e){
         e.stopPropagation();
         e.preventDefault();
     }
@@ -41,19 +48,44 @@ class ProductShow extends React.Component {
                 {i+1}
             </option>    
         ));
-
+        https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg
         return (
             <div className='product-show-container max-body-width body-padding'>
                 <div className='product-image-and-info-container'>
                     <div className='product-image-container'>
-                        <img className="index-product-image" src={"https://picsum.photos/900/"}>
-                        </img>
+                        {/* <img className="product-show-image" src={"https://picsum.photos/900/"}>
+                        </img> */}
+                        <div className='product-image-width-height-wrapper'>
+
+                            {
+                            /* 
+
+                            *longer height*
+                            <img src={"https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg"}>
+                            </img>
+
+                            *longer width*
+                            <img className="product-show-image" src={"https://fastly.picsum.photos/id/757/1600/900.jpg?hmac=xB17QkxH_kqjV6K0R7-EZkW2xTq8iukba_wZ6wo5d4Q"}>
+                            </img>
+
+                            With this image type (longer height than width), should I have it
+                                with w & h at 100% with "object-fit: cover;" and create an 
+                                onClick function that creates an overlay of opacity 80% grey
+                                and shows the whole image, or should i just do "object-fit: fill;"
+                                with position relative(having the image in the middle translated)
+                                and max-height: 100% ??? */
+                            }
+                            
+                            <img className="product-show-image" src={"https://fastly.picsum.photos/id/757/1600/900.jpg?hmac=xB17QkxH_kqjV6K0R7-EZkW2xTq8iukba_wZ6wo5d4Q"}>
+                            </img>
+                        </div>
+
                     </div>
 
                     <div className='product-info-container'>
-                        <div className='product-owner-username-container'>
+                        <div className='product-price-container'>
                             <span>
-                                { this.props.users[this.props.product.ownerId].name }
+                                ${ this.props.product.price }
                             </span>
                         </div>
 
@@ -63,11 +95,11 @@ class ProductShow extends React.Component {
                             </p>
                         </div>
 
-                        <div className='product-price-container'>
+                        <div className='product-owner-username-container'>
                             <span>
-                                { this.props.product.price }
+                                { this.props.users[this.props.product.ownerId].name }
                             </span>
-                        </div>
+                        </div>                        
 
                         <div className='product-quantity-container'>
                             {
@@ -94,7 +126,7 @@ class ProductShow extends React.Component {
                         </div>
                         <div className='product-purchase-and-cart-buttons-container'>
                             <div className='product-checkout-button-container'>
-                                <form onSubmit={this.handleSubmit}>
+                                <form onSubmit={this.handlePurchase}>
                                     <button className='product-checkout-button'>
                                     </button>
                                 </form>
@@ -105,7 +137,7 @@ class ProductShow extends React.Component {
                             </div>
 
                             <div className='product-cart-add-button-container'>
-                                <form onSubmit={this.handleSubmit}>
+                                <form onSubmit={this.handleAddToCart}>
                                     <button className='product-cart-add-button'>
                                     </button>
                                 </form>
@@ -137,7 +169,7 @@ export default ProductShow;
                 
             a) Needs a item owner (username), title, price, and quantity selector (relatively in that order)
         
-            b) after the Add to cart/Purchase now buttons, needs the description inside of the aside/div
+            b) after the Add to cart/Purchase now buttons, needs the *Product Description* inside of the aside/div
                 as well as some flair (ex: purchase protection thats already been created elsewhere on the website)
 
         3) Create a section for the reviews

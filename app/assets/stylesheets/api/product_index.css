@@ -19,7 +19,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    flex: 1 1 25%;
+
+    /* The below css is a mistake,
+       flex: is supposed to be under the individual item in a flexgrid    
+    */
+    /* flex: 1 1 25%; */
 }
 
 .index-product{
