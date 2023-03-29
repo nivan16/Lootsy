@@ -1,5 +1,7 @@
 .product-image-and-info-container{
     display: flex;
+
+    margin-top: 1.5rem;
 }
 
 /* ---------- Product Image -------------*/
@@ -24,30 +26,175 @@
     /* object-position: 50% 50%; */
 }
 
-/* ---------- Product Information -------------*/
 
+/* ---------- Product Information -------------*/
 .product-info-container {
+    display: flex;
+
+    flex: 1 1 33%;
+    flex-direction: column;
+
     margin-left: 2rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.product-info-container {
-    flex: 1 1 33%;
+/* --- Price ---*/
+.product-price-container {
+    margin-bottom: 1rem;
 }
+
+.product-price-container > span{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* --- Name ---*/
+.product-name-container {
+    margin-bottom: 1rem;
+}
+
+.product-name-container > h1{
+    font-size: 1.5rem;
+}
+
+/* --- Owner ---*/
+.product-owner-username-container {
+    margin-bottom: 1.25rem;
+}
+
+.product-owner-username-container > span {
+    font-size: 1.125rem;
+}
+
+/* --- Quantity ---*/
+.product-quantity-container {
+    margin-bottom: 0.75rem;
+}
+
+.product-quantity {
+    margin-bottom: 0.5rem;
+}
+
+.product-quantity > span {
+    font-size: 0.8rem;
+}
+
+/* --- Quantity Button ---*/
+.product-quantity-selector {
+    width: 100%;
+    height: 3rem;
+
+    border: 1px solid lightgray;
+    box-shadow: 0 0 5px 1px rgb(218, 218, 218);
+    
+    font-size: 1.125rem;
+
+    padding-top: 2.5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+
+    
+}
+
+.product-quantity-selector:focus {
+    outline: none;
+}
+
+/* --- Purchase and Cart Buttons ---*/
+.product-purchase-and-cart-buttons-container {
+    margin-bottom: 2rem;
+}
+
+/* Purchase Now Button */
+.product-checkout-button-container {
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+.product-checkout-button {
+    width: 100%;
+    height: 3rem;
+    background-color: white;
+
+    /* 
+        removed default button border
+        but retained the border-radius (accurate hovering)  
+    */
+    border: none;
+    border-radius: 25px;
+
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.product-checkout-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 25px;
+    transition: 225ms;
+}
+
+.product-checkout-button:hover::before{
+    transform: scale(1.03, 1.06);
+}
+
+/* 
+.product-checkout-button-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 5;
+} 
+*/
+
+/* Add to Cart Button */
+.product-cart-add-button-container {
+    position: relative;
+}
+
+.product-cart-add-button {
+    width: 100%;
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 25px;
+    
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: 225ms;
+}
+
+.product-cart-add-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 25px;
+    transition: 225ms;
+    transform: scale(1.0000000000001);
+    z-index: -5;
+}
+
+.product-cart-add-button:hover::before {
+    transform: scale(1.03, 1.06);
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(0, 0, 0, 0.075);
+}
+
+
+
+
+
+
+
+
 
 /* .product-image-container {
     width: 20vw;

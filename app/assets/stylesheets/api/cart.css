@@ -253,9 +253,14 @@ than zero) */
 }
 
 .cart-checkout-button-container{
-    display: flex;
-    justify-content: center;
     position: relative;
+    /* 
+    Pretty sure display flex + justify content
+      center do not add anything to the button
+    
+    display: flex;
+    justify-content: center; 
+    */
 }
 
 .cart-checkout-button{

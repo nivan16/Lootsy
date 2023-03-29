@@ -24,6 +24,7 @@ class ProductShow extends React.Component {
     handlePurchase(e){
         e.stopPropagation();
         e.preventDefault();
+        this.props.history.push('/')
     }
 
     handleAddToCart(e){
@@ -90,9 +91,9 @@ class ProductShow extends React.Component {
                         </div>
 
                         <div className='product-name-container'>
-                            <p>
+                            <h1>
                                 { this.props.product.name }
-                            </p>
+                            </h1>
                         </div>
 
                         <div className='product-owner-username-container'>
@@ -108,7 +109,7 @@ class ProductShow extends React.Component {
                                         <div className='product-quantity'>
                                             <span>Quantity</span>
                                         </div>
-                                        <select className={"product-quantity-selector"}
+                                        <select className='product-quantity-selector'
                                             id="product-quantity-selector"
                                             onChange={this.handleQuantityChange}
                                             value={this.state.quantity}
@@ -128,29 +129,30 @@ class ProductShow extends React.Component {
                             <div className='product-checkout-button-container'>
                                 <form onSubmit={this.handlePurchase}>
                                     <button className='product-checkout-button'>
+                                        Buy it now
                                     </button>
+                                    {/* <p className='product-checkout-button-label'>
+                                        Buy it now
+                                    </p> */}
                                 </form>
-
-                                <p className='product-checkout-button-label'>
-                                    Buy it now
-                                </p>
                             </div>
 
                             <div className='product-cart-add-button-container'>
                                 <form onSubmit={this.handleAddToCart}>
                                     <button className='product-cart-add-button'>
+                                        Add to cart
                                     </button>
                                 </form>
-                                    
-                                <p className='product-cart-add-button-label'>
+                                {/* <p className='product-cart-add-button-label'>
                                     Add to cart
-                                </p>
+                                </p> */}                                    
                             </div>
 
                         </div>
                     </div>
                 </div>
 
+                
                 
             </div>
         )
