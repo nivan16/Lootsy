@@ -188,11 +188,48 @@
     border: 2px solid rgba(0, 0, 0, 0.075);
 }
 
+/* Product Description Button */
+.product-description-header {
+    display: inline-flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+.product-description-header-button {
+    height: 3rem;
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-align: left;
+}
+
+.product-description-header-button::before {
+    position: absolute;
+}
 
 
+/* Product Description */
+.product-description {
+    max-height: 0;
+    /* Note: 
+    visibility: hidden; is generally for when you
+    want to temp hide an element but still preserve the 
+    doc layout! */
+    overflow: hidden;
+    visibility: hidden;
+    transition: all 225ms;
 
+    margin-bottom: 2rem;
+}
 
-
+.product-description.expanded {
+    max-height: none;
+    overflow: visible;
+    visibility: visible;
+}
 
 
 

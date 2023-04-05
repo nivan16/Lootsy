@@ -4,12 +4,14 @@ class ProductShow extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            showDescription: false,
             quantity: 1
         };
         
         this.handleQuantityChange = this.handleQuantityChange.bind(this);
         this.handlePurchase = this.handlePurchase.bind(this);
         this.handleAddToCart = this.handleAddToCart.bind(this);
+        this.toggleDescription = this.toggleDescription.bind(this);
     }
 
     handleQuantityChange(e){
@@ -32,12 +34,24 @@ class ProductShow extends React.Component {
         e.preventDefault();
     }
 
+    toggleDescription(e){
+        e.stopPropagation();
+        e.preventDefault();
+
+        this.setState( prevProps => ({
+            showDescription: !prevProps.showDescription
+        }));
+    }
+
+
+
     componentDidMount(){
         //This returns the product, reviews, and owners/reviewers if product exists
         this.props.requestProduct(this.props.productId);
     }
 
     render() {
+        debugger;
         if(!this.props.product) return null;
 
         //Array.from is an array constructor that can take an element arg 
@@ -149,6 +163,35 @@ class ProductShow extends React.Component {
                             </div>
 
                         </div>
+
+                        <h2 
+                            className='product-description-header'
+                            onClick={this.toggleDescription}
+                        >
+                            <button className='product-description-header-button'>
+                                Description
+                            </button>
+                            <span>
+                                v
+                            </span>
+                        </h2>
+
+                        {/* 
+                            Type of React conditional rendering:
+                            this.state.showDescription && (
+                                <div className="product-show-description">
+                                    Conditional rendering on
+                                </div>
+                            )
+
+                            I would use it, but its important a screenreader can still access
+                            the text through display none
+                        */}
+
+                        <div className={`product-description ${this.state.showDescription ? " expanded" : ""}`}>
+                            {this.props.product.description}
+                        </div>
+
                     </div>
                 </div>
 
