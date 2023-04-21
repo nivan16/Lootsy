@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 class ProductShow extends React.Component {
     constructor(props){
@@ -51,7 +54,6 @@ class ProductShow extends React.Component {
     }
 
     render() {
-        debugger;
         if(!this.props.product) return null;
 
         //Array.from is an array constructor that can take an element arg 
@@ -164,17 +166,18 @@ class ProductShow extends React.Component {
 
                         </div>
 
-                        <h2 
-                            className='product-description-header'
+                        <div
+                            className='product-description-container' 
                             onClick={this.toggleDescription}
                         >
-                            <button className='product-description-header-button'>
-                                Description
-                            </button>
-                            <span>
-                                v
-                            </span>
-                        </h2>
+                            <h2 className='product-description-header'>
+                                <button className='product-description-header-button'>
+                                    Description
+                                </button>
+
+                                <FontAwesomeIcon icon={faCaretDown} className={`fa-caret-down ${this.state.showDescription ? "" : "expanded"}`}/>
+                            </h2>
+                        </div>
 
                         {/* 
                             Type of React conditional rendering:
@@ -191,7 +194,6 @@ class ProductShow extends React.Component {
                         <div className={`product-description ${this.state.showDescription ? " expanded" : ""}`}>
                             {this.props.product.description}
                         </div>
-
                     </div>
                 </div>
 
