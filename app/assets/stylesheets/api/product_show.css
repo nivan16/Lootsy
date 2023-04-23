@@ -282,3 +282,34 @@
     object-fit: cover;
 } */
 
+
+
+
+
+
+
+
+
+
+/* Product Unavailable */
+
+.product-show-unavailable-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+}
+
+.fa-face-frown {
+    height: 2rem;
+    width: 2rem;
+}
+
+.product-show-unavailable {
+    padding-left: 1rem;
+}

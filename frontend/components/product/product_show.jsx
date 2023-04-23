@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faFaceFrown } from '@fortawesome/free-solid-svg-icons';
 
 class ProductShow extends React.Component {
     constructor(props){
@@ -35,7 +35,6 @@ class ProductShow extends React.Component {
     handleAddToCart(e){
         e.stopPropagation();
         e.preventDefault();
-        debugger; //  Delete this later! just seeing what is in the state onClick!
         if(this.props.currentUser === null){
 
         }
@@ -65,7 +64,16 @@ class ProductShow extends React.Component {
     }
 
     render() {
-        if(!this.props.product) return null;
+        if(!this.props.product) return (
+            <div className='max-body-width body-padding'>
+                <div className="product-show-unavailable-container">
+                    <FontAwesomeIcon icon={faFaceFrown} style={{color: "#878787",}} />
+                    <p className='product-show-unavailable'>
+                        Sorry, this item is unavailable.
+                    </p>
+                </div>
+            </div>
+        );
 
         //Array.from is an array constructor that can take an element arg 
         // such as just a { length } object, and actually map over it in
