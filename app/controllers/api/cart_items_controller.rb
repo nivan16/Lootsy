@@ -52,7 +52,7 @@ class Api::CartItemsController < ApplicationController
 
         # if a new cart item
         if @cart_item.nil?
-            @cart_item = CartItem.new(cart_owner.id, product_id: params[:productId], quantity: params[:quantity].to_i)
+            @cart_item = CartItem.new(shopper_id: cart_owner.id, product_id: params[:productId], quantity: params[:quantity].to_i)
             if @cart_item.save
                 render :show
             else

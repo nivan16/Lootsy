@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { requestProduct } from "../../actions/product_actions";
+import { updateCartItem } from "../../actions/cart_actions";
 import ProductShow from "./product_show";
 
 const mapStateToProps = (state, ownProps) => ({
@@ -14,7 +15,7 @@ const mapStateToProps = (state, ownProps) => ({
 //needs updateCart, request, create, & update Review, 
 const mapDispatchToProps = dispatch => ({
     requestProduct: productId => dispatch(requestProduct(productId)),
-
+    updateCartItem: cartItem => dispatch(updateCartItem(cartItem))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductShow);

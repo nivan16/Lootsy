@@ -35,6 +35,17 @@ class ProductShow extends React.Component {
     handleAddToCart(e){
         e.stopPropagation();
         e.preventDefault();
+        debugger; //  Delete this later! just seeing what is in the state onClick!
+        if(this.props.currentUser === null){
+
+        }
+        else{
+            this.props.updateCartItem({
+                productId: this.props.productId,
+                shopperId: this.props.currentUser.id,
+                quantity: this.state.quantity
+            })
+        }
     }
 
     toggleDescription(e){
