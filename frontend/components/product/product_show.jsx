@@ -7,6 +7,8 @@ class ProductShow extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            showPurchasedModal: false,
+            showAddedToCartModal: false,
             showDescription: false,
             quantity: 1
         };
@@ -15,6 +17,18 @@ class ProductShow extends React.Component {
         this.handlePurchase = this.handlePurchase.bind(this);
         this.handleAddToCart = this.handleAddToCart.bind(this);
         this.toggleDescription = this.toggleDescription.bind(this);
+        this.closeAddedToCartModal = this.closeAddedToCartModal.bind(this);
+    }
+
+    closeAddedToCartModal(e){
+        e.stopPropagation();
+        e.preventDefault();
+
+        if(e.target.className === 'product-cart-added-modal-background'){
+            this.setState({
+                showAddedToCartModal: false
+            });
+        }
     }
 
     handleQuantityChange(e){
@@ -35,15 +49,20 @@ class ProductShow extends React.Component {
     handleAddToCart(e){
         e.stopPropagation();
         e.preventDefault();
+    
         if(this.props.currentUser === null){
 
         }
-        else{
+        else {
             this.props.updateCartItem({
                 productId: this.props.productId,
                 shopperId: this.props.currentUser.id,
                 quantity: this.state.quantity
             })
+            .then( data => this.setState({
+                showAddedToCartModal: true
+            }))
+
         }
     }
 
@@ -216,8 +235,17 @@ class ProductShow extends React.Component {
                     </div>
                 </div>
 
-                
-                
+                 
+                <div className={`product-cart-added-modal-container ${this.state.showAddedToCartModal ? 'open' : 'closed'}`}>
+                    <div 
+                        className='product-cart-added-modal-background'
+                        onClick={this.closeAddedToCartModal}
+                    >
+                        <div className='product-cart-added-modal'>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
