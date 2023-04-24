@@ -235,14 +235,46 @@ class ProductShow extends React.Component {
                     </div>
                 </div>
 
-                 
-                <div className={`product-cart-added-modal-container ${this.state.showAddedToCartModal ? 'open' : 'closed'}`}>
+                {/* 
+                <img className="product-modal-image" src={"https://fastly.picsum.photos/id/757/1600/900.jpg?hmac=xB17QkxH_kqjV6K0R7-EZkW2xTq8iukba_wZ6wo5d4Q"}>
+                </img>
+
+                *********vvvv height vvvv**************
+                <img className="product-modal-image" src={"https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg"}>
+                </img> 
+                */}
+                {/* <div className={`product-cart-added-modal-wrapper ${this.state.showAddedToCartModal ? 'open' : 'closed'}`}> */}
+                <div className='product-cart-added-modal-wrapper open'>
                     <div 
                         className='product-cart-added-modal-background'
                         onClick={this.closeAddedToCartModal}
                     >
-                        <div className='product-cart-added-modal'>
-
+                        <div className='product-cart-added-modal-container'>
+                            <div className='product-cart-added-modal-image-and-description-container'>
+                                <div className='product-modal-image-container'>
+                                    <img className="product-modal-image" src={"https://fastly.picsum.photos/id/757/1600/900.jpg?hmac=xB17QkxH_kqjV6K0R7-EZkW2xTq8iukba_wZ6wo5d4Q"}>
+                                    </img>
+                                </div>
+                                <p className='product-cart-added-modal-description'>
+                                    1 item added to cart
+                                </p>
+                            </div>
+                            <div>
+                                <form>
+                                    Remember to update the form above to include and
+                                        onSubmit, preventDefault & stopPropagation in the function,
+                                        and also add the className of the button below to the close
+                                        modal function
+                                    <button>
+                                        View your cart
+                                    </button>
+                                </form>
+                            </div>
+                            <div>
+                                <button className='product-cart-added-modal-close-button'>
+                                    Keep shopping
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
