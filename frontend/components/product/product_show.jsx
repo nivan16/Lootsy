@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faFaceFrown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faCaretDown, faFaceFrown } from '@fortawesome/free-solid-svg-icons';
 
 class ProductShow extends React.Component {
     constructor(props){
@@ -284,7 +284,7 @@ class ProductShow extends React.Component {
 
                             <div className='product-cart-added-modal-close-button-container'>
                                 <button className='product-cart-added-modal-close-button'>
-                                    Keep shopping ->
+                                    Keep shopping <FontAwesomeIcon icon={faArrowRight} />
                                 </button>
                             </div>
                         </div>

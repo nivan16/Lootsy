@@ -408,13 +408,17 @@
 .product-cart-added-modal-close-button-container {
     /* vvv These might be necessary if I include an arrow symbol from FontAwesome vvv */
     display: inline-flex;
-    /* align-items: center; */
     justify-content: center;
+    /* align-items: center; */
     position: relative;
     width: 100%;
 }
 
 .product-cart-added-modal-close-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     background-color: transparent;
     border: none;
     border-radius: 25px;
@@ -443,6 +447,21 @@
     /* transform: scale(1.03,1.06); */
 }
 
+.product-cart-added-modal-close-button > .fa-arrow-right {
+    position: absolute;
+    right: 32%;
+    transform: translateY(10%);
+    transition: right 160ms ease-in-out;
+    /* The z-index is so that the button still closes the modal
+        in the event that the icon itself is clicked on (refer
+        to event handler closeAddedToCartModal(e)
+    */
+    z-index: -5;
+}
+
+.product-cart-added-modal-close-button:hover .fa-arrow-right {
+    right: 30%;
+}
 
 /* ---------- Product Unavailable Page -------------*/
 
