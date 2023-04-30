@@ -16,6 +16,7 @@ class ProductShow extends React.Component {
         this.handleQuantityChange = this.handleQuantityChange.bind(this);
         this.handlePurchase = this.handlePurchase.bind(this);
         this.handleAddToCart = this.handleAddToCart.bind(this);
+        this.redirectToCart = this.redirectToCart.bind(this);
         this.toggleDescription = this.toggleDescription.bind(this);
         this.closeAddedToCartModal = this.closeAddedToCartModal.bind(this);
     }
@@ -61,9 +62,16 @@ class ProductShow extends React.Component {
             })
             .then( data => this.setState({
                 showAddedToCartModal: true
-            }))
+            }));
 
-        }
+        };
+    }
+
+    redirectToCart(e){
+        e.stopPropagation();
+        e.preventDefault();
+
+        this.props.history.push('/cart');
     }
 
     toggleDescription(e){
@@ -267,7 +275,9 @@ class ProductShow extends React.Component {
                                         and also add the className of the button below to the close
                                         modal function */
                                 }
-                                <button className='product-cart-added-modal-redirect-to-cart-button'>
+                                <button className='product-cart-added-modal-redirect-to-cart-button'
+                                    onClick={this.redirectToCart}    
+                                >
                                     View cart & check out
                                 </button>
                             </div>
