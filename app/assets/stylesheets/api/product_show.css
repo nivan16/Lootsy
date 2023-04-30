@@ -185,15 +185,15 @@
     background-color: black;
     border: 2px solid black;
     border-radius: 25px;
-    transition: 225ms;
     transform: scale(1.0000000000001);
+    transition: 225ms;
     z-index: -5;
 }
 
 .product-cart-add-button:hover::before {
-    transform: scale(1.03, 1.06);
     background-color: rgba(0, 0, 0, 0.7);
     border: 2px solid rgba(0, 0, 0, 0.075);
+    transform: scale(1.03, 1.06);
 }
 
 /* Product Description Button */
@@ -350,11 +350,57 @@
     padding-top: 4.4rem;
     padding-left: 1.5rem;
 
-    font-weight: 600;
     font-size: 1.25rem;
+    font-weight: 600;
 }
 
+/* Redirect to Cart Button */
+.product-cart-added-modal-redirect-to-cart-button-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
 
+.product-cart-added-modal-redirect-to-cart-button {
+    width: 90%;
+    height: 3rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.product-cart-added-modal-redirect-to-cart-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 25px;
+    transform: scale(1.0000000000001);
+    transition: 225ms;
+    z-index: -5;
+}
+
+.product-cart-added-modal-redirect-to-cart-button:hover::before {
+    /* top: -1%;
+    bottom: -1%;
+    left: 3.75%;
+    right: 3.75%; */
+
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    transform: scale(1.04, 1.06);
+}
 
 
 
@@ -364,7 +410,6 @@
     display: inline-flex;
     /* align-items: center; */
     justify-content: center;
-    margin-top: 0.75rem;
     position: relative;
     width: 100%;
 }
@@ -392,9 +437,9 @@
 
 .product-cart-added-modal-close-button:hover::before{
     top: 0;
-    left: 2%;
-    right: 2%;
     bottom: 0;
+    left: 3.5%;
+    right: 3.5%;
     /* transform: scale(1.03,1.06); */
 }
 

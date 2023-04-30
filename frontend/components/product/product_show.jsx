@@ -261,17 +261,15 @@ class ProductShow extends React.Component {
                                 </p>
                             </div>
 
-                            <div>
-                                <form>
-                                    {/* Remember to update the form above to include and
-                                            onSubmit, preventDefault & stopPropagation in the function,
-                                            and also add the className of the button below to the close
-                                            modal function */
-                                    }
-                                    <button>
-                                        View your cart
-                                    </button>
-                                </form>
+                            <div className='product-cart-added-modal-redirect-to-cart-button-container'>
+                                {/* Remember to update the form above to include and
+                                        onSubmit, preventDefault & stopPropagation in the function,
+                                        and also add the className of the button below to the close
+                                        modal function */
+                                }
+                                <button className='product-cart-added-modal-redirect-to-cart-button'>
+                                    View cart & check out
+                                </button>
                             </div>
 
                             <div className='product-cart-added-modal-close-button-container'>
