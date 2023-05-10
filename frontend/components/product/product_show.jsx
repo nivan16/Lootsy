@@ -18,7 +18,9 @@ class ProductShow extends React.Component {
         this.handleAddToCart = this.handleAddToCart.bind(this);
         this.redirectToCart = this.redirectToCart.bind(this);
         this.toggleDescription = this.toggleDescription.bind(this);
+
         this.closeAddedToCartModal = this.closeAddedToCartModal.bind(this);
+        this.closePurchasedModal = this.closePurchasedModal.bind(this);
     }
 
     closeAddedToCartModal(e){
@@ -28,6 +30,19 @@ class ProductShow extends React.Component {
         if(['product-cart-added-modal-background', 'product-cart-added-modal-close-button'].includes(e.target.className)){
             this.setState({
                 showAddedToCartModal: false
+            });
+        }
+    }
+
+    closePurchasedModal(e){
+        e.stopPropagation();
+        e.preventDefault();
+
+        //Please please please do not forget to either: include another class name OR remove
+        // the includes function
+        if(['product-purchased-modal-background'].includes(e.target.className)){
+            this.setState({
+                showPurchasedModal: false
             });
         }
     }
@@ -44,7 +59,10 @@ class ProductShow extends React.Component {
     handlePurchase(e){
         e.stopPropagation();
         e.preventDefault();
-        this.props.history.push('/')
+
+        this.setState({
+            showPurchasedModal: true
+        });
     }
 
     handleAddToCart(e){
@@ -71,6 +89,8 @@ class ProductShow extends React.Component {
         e.stopPropagation();
         e.preventDefault();
 
+        //this might also need a boolean for checking user logged in 
+        //or not
         this.props.history.push('/cart');
     }
 
@@ -290,6 +310,16 @@ class ProductShow extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <div className={`product-purchased-modal-wrapper ${this.state.showPurchasedModal ? 'open' : 'closed'}`}>
+                    <div 
+                        className='product-purchased-modal-background'
+                        onClick={this.closePurchasedModal}
+                    >
+                        
+                    </div>
+                </div>
+
             </div>
         )
     }
