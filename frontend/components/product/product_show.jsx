@@ -316,6 +316,21 @@ class ProductShow extends React.Component {
                         className='product-purchased-modal-background'
                         onClick={this.closePurchasedModal}
                     >
+                        <div className='product-purchased-modal-container'>
+                            {/* Should find an image to put inside/beside the thank you msg */}
+                            <p className='product-purchased-modal-message-one'>
+                                Thank you for looking at my website!
+                            </p>
+                            <p className='product-purchased-modal-message-two'>
+                                If would like to look at my portfolio,
+                                or my other socials, click the some of the buttons below. Or if you
+                                would like to continue looking around Lootsy, please feel free to do so!
+                            </p>
+                            
+                            <div className='social-links'>
+
+                            </div>
+                        </div>
                         
                     </div>
                 </div>

@@ -319,7 +319,6 @@
     width: 30rem;
     height: 20rem;
     background-color: white;
-
 }
 
 .product-cart-added-modal-image-and-description-container {
@@ -492,8 +491,27 @@
     z-index: 20;
 }
 
+/* Modal */
+.product-purchased-modal-container {    
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    height: 30rem;
+    background-color: white;
+}
 
+.product-purchased-modal-message-one {
+    text-align: center;
+    font-size: 1.5rem;
+    /* font-weight: 500; */
+    padding: 1rem;
+}
 
+.product-purchased-modal-message-two {
+    padding: 5px;
+}
 
 
 
