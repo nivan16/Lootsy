@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faCaretDown, faFaceFrown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faCaretDown, faFaceFrown} from '@fortawesome/free-solid-svg-icons';
+import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 class ProductShow extends React.Component {
     constructor(props){
@@ -36,7 +37,7 @@ class ProductShow extends React.Component {
 
     closePurchasedModal(e){
         e.stopPropagation();
-        e.preventDefault();
+        // e.preventDefault();
 
         //Please please please do not forget to either: include another class name OR remove
         // the includes function
@@ -311,7 +312,8 @@ class ProductShow extends React.Component {
                     </div>
                 </div>
 
-                <div className={`product-purchased-modal-wrapper ${this.state.showPurchasedModal ? 'open' : 'closed'}`}>
+                {/* <div className={`product-purchased-modal-wrapper ${this.state.showPurchasedModal ? 'open' : 'closed'}`}> */}
+                <div className={'product-purchased-modal-wrapper open'}>
                     <div 
                         className='product-purchased-modal-background'
                         onClick={this.closePurchasedModal}
@@ -326,9 +328,19 @@ class ProductShow extends React.Component {
                                 or my other socials, click the some of the buttons below. Or if you
                                 would like to continue looking around Lootsy, please feel free to do so!
                             </p>
+
+                            
                             
                             <div className='social-links'>
-
+                                <a href="https://www.github.com" target="_blank">
+                                    <FontAwesomeIcon className='fa-brand' icon={faGithub} />
+                                </a>
+                                <a href="https://www.linkedin.com" target="_blank">
+                                    <FontAwesomeIcon className='fa-brand' icon={faLinkedin} />
+                                </a>
+                                <a href="https://www.angellist.com" target="_blank">
+                                    <FontAwesomeIcon className='fa-brand' icon={faAngellist} />
+                                </a>
                             </div>
                         </div>
                         

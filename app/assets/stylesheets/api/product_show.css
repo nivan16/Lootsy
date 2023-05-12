@@ -503,14 +503,40 @@
 }
 
 .product-purchased-modal-message-one {
+    border-bottom: 1px solid grey;
     text-align: center;
     font-size: 1.5rem;
     /* font-weight: 500; */
-    padding: 1rem;
+
+    /* margin is to make the border have a limited space */
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1rem 0.5rem 1rem;
 }
 
 .product-purchased-modal-message-two {
-    padding: 5px;
+    line-height: 1.2;
+    padding: 1rem 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-around;
+
+    margin-top: 9rem;
+    padding: 1rem;
+}
+
+/* Note: .fa-brand is *more* specific than the three class
+            names below!
+*/
+.fa-brand {
+    width: 5rem;
+    height: 5rem;
+}
+
+.fa-linkedin {
+    color: #005eff;
 }
 
 
