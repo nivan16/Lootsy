@@ -329,7 +329,12 @@ class ProductShow extends React.Component {
                                 would like to continue looking around Lootsy, please feel free to do so!
                             </p>
 
-                            
+                            <div className='portfolio-link'>
+                                <a href="javascript:;">portfolio (this will be an image prob!)</a>
+                                <p>
+                                    portfolio website!
+                                </p>
+                            </div>
                             
                             <div className='social-links'>
                                 <a href="https://www.github.com" target="_blank">
