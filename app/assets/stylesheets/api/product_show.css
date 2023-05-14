@@ -502,6 +502,26 @@
     background-color: white;
 }
 
+/* close button */
+.product-purchased-modal-close-button {
+    position: absolute;
+    left: 105%;
+    top: 7%;
+    background-color: transparent;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    transform: scale(2.5);
+    transition: 225ms ease-in-out;7
+}
+
+.product-purchased-modal-close-button:hover {
+    border-radius: 50px;
+    border: 1px solid white;
+}
+
+
+/* messages */
 .product-purchased-modal-message-one {
     border-bottom: 1px solid grey;
     text-align: center;

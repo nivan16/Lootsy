@@ -41,7 +41,7 @@ class ProductShow extends React.Component {
 
         //Please please please do not forget to either: include another class name OR remove
         // the includes function
-        if(['product-purchased-modal-background'].includes(e.target.className)){
+        if(['product-purchased-modal-background', 'product-purchased-modal-close-button'].includes(e.target.className)){
             this.setState({
                 showPurchasedModal: false
             });
@@ -312,13 +312,17 @@ class ProductShow extends React.Component {
                     </div>
                 </div>
 
-                {/* <div className={`product-purchased-modal-wrapper ${this.state.showPurchasedModal ? 'open' : 'closed'}`}> */}
-                <div className={'product-purchased-modal-wrapper open'}>
+                <div className={`product-purchased-modal-wrapper ${this.state.showPurchasedModal ? 'open' : 'closed'}`}>
+                {/* <div className={'product-purchased-modal-wrapper open'}> */}
                     <div 
                         className='product-purchased-modal-background'
                         onClick={this.closePurchasedModal}
                     >
                         <div className='product-purchased-modal-container'>
+                            <span className='product-purchased-modal-close-button'>
+                                &times;
+                            </span>
+
                             {/* Should find an image to put inside/beside the thank you msg */}
                             <p className='product-purchased-modal-message-one'>
                                 Thank you for looking at my website!
