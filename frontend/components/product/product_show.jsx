@@ -112,6 +112,7 @@ class ProductShow extends React.Component {
     }
 
     render() {
+        debugger;
         if(!this.props.product) return (
             <div className='max-body-width body-padding'>
                 <div className="product-show-unavailable-container">
@@ -264,6 +265,22 @@ class ProductShow extends React.Component {
                     </div>
                 </div>
 
+                {/* Section for Reviews */}
+                    <div className='product-show-reviews-container'>
+                        Hello!
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
                 {/* 
                 <img className="product-modal-image" src={"https://fastly.picsum.photos/id/757/1600/900.jpg?hmac=xB17QkxH_kqjV6K0R7-EZkW2xTq8iukba_wZ6wo5d4Q"}>
                 </img>
@@ -319,9 +336,7 @@ class ProductShow extends React.Component {
                         onClick={this.closePurchasedModal}
                     >
                         <div className='product-purchased-modal-container'>
-                            <span className='product-purchased-modal-close-button'>
-                                &times;
-                            </span>
+                            <span className='product-purchased-modal-close-button'>&times;</span>
 
                             {/* Should find an image to put inside/beside the thank you msg */}
                             <p className='product-purchased-modal-message-one'>

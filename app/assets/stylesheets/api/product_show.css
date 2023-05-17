@@ -282,7 +282,29 @@
     object-fit: cover;
 } */
 
-/* ---------- Product Added To Cart Modal -------------*/
+
+/* ---------- Product Reviews ------------- */
+.product-show-reviews-container {
+    margin-top: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- Product Added To Cart Modal ------------- */
 .product-cart-added-modal-wrapper {
     opacity: 0;
     visibility: hidden;
@@ -505,18 +527,19 @@
 /* close button */
 .product-purchased-modal-close-button {
     position: absolute;
-    left: 105%;
-    top: 7%;
+    right: -50px;
     background-color: transparent;
-    border-radius: 50px;
+    line-height: 1;
+    /* border-radius: 50px; */
     color: white;
     cursor: pointer;
-    transform: scale(2.5);
-    transition: 225ms ease-in-out;7
+    font-size: 5rem;
+    transform: translateY(-50%);
+    transition: 225ms ease-in-out;
 }
 
 .product-purchased-modal-close-button:hover {
-    border-radius: 50px;
+    /* border-radius: 50px; */
     border: 1px solid white;
 }
 
