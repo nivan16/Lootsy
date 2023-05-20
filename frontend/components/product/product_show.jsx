@@ -273,7 +273,7 @@ class ProductShow extends React.Component {
                         -----Hello!-----
                     </div>
                     <ReviewIndex 
-                        reviews={this.props.reviews}
+                        reviews={Object.values(this.props.reviews)}
                         currentUser={this.props.currentUser}
                     />
 

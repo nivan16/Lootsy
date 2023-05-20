@@ -282,28 +282,6 @@
     object-fit: cover;
 } */
 
-
-/* ---------- Product Reviews ------------- */
-.product-show-reviews-container {
-    margin-top: 1rem;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ---------- Product Added To Cart Modal ------------- */
 .product-cart-added-modal-wrapper {
     opacity: 0;

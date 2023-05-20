@@ -2,7 +2,7 @@ import React from 'react';
 
 /*
     What properties (props) will this need?
-    .    Reviews
+    .    Reviews (as an array)
     .    Current User(if logged in, to create a new one)
     .
 
@@ -14,28 +14,40 @@ class ReviewIndex extends React.Component{
     constructor(props){
         super(props);
 
-        this.averageRating = this.averageRating.bind(this);
+        this.averageOfRatings = this.averageOfRatings.bind(this);
     }
 
-    averageRating(){
-        const sum = Object.values(this.props.reviews).reduce((acc, review) => {
+    averageOfRatings(){
+        /* If a hashmap is created here, and used as a return value, is that okay? */
+        const sum = this.props.reviews.reduce((acc, review) => {
             return acc + review.rating;
         }, 0);
 
 
-        return sum / Object.values(this.props.reviews).length;
+        return sum / this.props.reviews.length;
     }
 
+
+
+
     render(){
-        if($.isEmptyObject(this.props.reviews)){
+        if(this.props.reviews.length === 0){
             //This is going to return the react-review-stars package as well
             return (
                 <h2>
                     0 Product reviews *****
                 </h2>
             );
-        }
+        };
 
+        const averageRating = this.averageOfRatings();
+
+        return (
+            <h2>
+                {this.props.reviews.length} Product Reviews ::: {averageRating}
+            </h2>
+
+        );
     }
 }
 
