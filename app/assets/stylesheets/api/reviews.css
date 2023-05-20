@@ -4,8 +4,17 @@ They will automatically be included in application.css.
 You can use Sass (SCSS) here: http://sass-lang.com/ */
 
 /* ---------- Product Reviews ------------- */
-.product-show-reviews-container {
+.reviews-index-header {
     margin-top: 1rem;
+}
+
+.reviews-index-container {
+    margin-top: 1rem;
+}
+
+.review-item-rating { 
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 

@@ -13,6 +13,9 @@ import React from 'react';
 class ReviewIndex extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            currentPage: 1
+        };
 
         this.averageOfRatings = this.averageOfRatings.bind(this);
     }
@@ -27,6 +30,7 @@ class ReviewIndex extends React.Component{
         return sum / this.props.reviews.length;
     }
 
+    
 
 
 
@@ -34,7 +38,7 @@ class ReviewIndex extends React.Component{
         if(this.props.reviews.length === 0){
             //This is going to return the react-review-stars package as well
             return (
-                <h2>
+                <h2 className='reviews-index-header'>
                     0 Product reviews *****
                 </h2>
             );
@@ -42,10 +46,39 @@ class ReviewIndex extends React.Component{
 
         const averageRating = this.averageOfRatings();
 
+        const itemsPerPage = 4;
+        //Ex for below: (1-1) * 4 is index 0,
+        //(2-1) * 4 is index 4, meaning that its dynamic!
+        const startIndex = (this.state.currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+    
+        const reviewsToDisplay = this.props.reviews.slice(startIndex, endIndex);
+        
+        // Unsure if this is needed yet, to display the last page of reviews
+        // const totalPages = Math.ceil(this.props.reviews.length / itemsPerPage);
         return (
-            <h2>
-                {this.props.reviews.length} Product Reviews ::: {averageRating}
-            </h2>
+            <>
+                <h2 className='reviews-index-header'>
+                    {this.props.reviews.length} Product Reviews ::: {averageRating}
+                </h2>
+
+                <div className='reviews-index-container'>
+                    {
+                        reviewsToDisplay.map(review => (
+                                <div className='review-item' key={review.id}>
+                                    <div className='review-item-rating'>
+                                        {review.rating}
+                                    </div>
+                                    
+                                    <div className='review-item-reviewer'>
+                                        {this.props.users[review.reviewerId].name}
+                                    </div>
+                                </div>
+                            )
+                        )
+                    }
+                </div>
+            </>
 
         );
     }

@@ -269,12 +269,10 @@ class ProductShow extends React.Component {
                 </div>
 
                 {/* Section for Reviews */}
-                    <div className='product-show-reviews-container'>
-                        -----Hello!-----
-                    </div>
                     <ReviewIndex 
                         reviews={Object.values(this.props.reviews)}
                         currentUser={this.props.currentUser}
+                        users={this.props.users}
                     />
 
 
