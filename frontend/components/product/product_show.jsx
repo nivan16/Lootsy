@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewIndex from '../review/review_index';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCaretDown, faFaceFrown} from '@fortawesome/free-solid-svg-icons';
@@ -113,6 +114,8 @@ class ProductShow extends React.Component {
 
     render() {
         debugger;
+
+        //If there is no product under the ID in the url
         if(!this.props.product) return (
             <div className='max-body-width body-padding'>
                 <div className="product-show-unavailable-container">
@@ -267,9 +270,9 @@ class ProductShow extends React.Component {
 
                 {/* Section for Reviews */}
                     <div className='product-show-reviews-container'>
-                        Hello!
+                        -----Hello!-----
                     </div>
-
+                    <ReviewIndex reviews={this.props.reviews} />
 
 
 
