@@ -164,7 +164,7 @@ class ProductShow extends React.Component {
                                 and max-height: 100% ??? */
                             }
                             
-                            <img className="product-show-image" src={"https://fastly.picsum.photos/id/757/1600/900.jpg?hmac=xB17QkxH_kqjV6K0R7-EZkW2xTq8iukba_wZ6wo5d4Q"}>
+                            <img src={"https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg"}>
                             </img>
                         </div>
 
@@ -302,7 +302,7 @@ class ProductShow extends React.Component {
                         <div className='product-cart-added-modal-container'>
                             <div className='product-cart-added-modal-image-and-description-container'>
                                 <div className='product-modal-image-container'>
-                                    <img className="product-modal-image" src={"https://fastly.picsum.photos/id/757/1600/900.jpg?hmac=xB17QkxH_kqjV6K0R7-EZkW2xTq8iukba_wZ6wo5d4Q"}>
+                                    <img className="product-modal-image" src={"https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg"}>
                                     </img>
                                 </div>
                                 

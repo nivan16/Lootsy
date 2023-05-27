@@ -70,6 +70,12 @@ class ReviewIndex extends React.Component{
                                     <div className='review-item-rating'>
                                         {review.rating}
                                     </div>
+
+                                    {review.review !== null && (
+                                        <div className='review-item-text'>
+                                            {review.review}
+                                        </div>
+                                    )}
                                     
                                     <div className='review-item-reviewer'>
                                         {this.props.users[review.reviewerId].name}
@@ -78,6 +84,10 @@ class ReviewIndex extends React.Component{
                             )
                         )
                     }
+                </div>
+                <div className='reviews-index-pagination'>
+                    
+
                 </div>
             </>
 

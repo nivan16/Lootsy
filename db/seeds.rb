@@ -37,18 +37,17 @@ cart_item3 = CartItem.create!(shopper_id: u1.id, product_id: pokeball.id, quanti
 cart_item4 = CartItem.create!(shopper_id: u2.id, product_id: rengoku.id, quantity: 1)
 
 review1 = Review.create!(product_id: stand_arrow.id, reviewer_id: u5.id, rating: 4, review: "This is an awesome collectable, but I feel sick after i nicked my skin with it")
-review2 = Review.create!(product_id: master_sword.id, reviewer_id: u5.id, rating: 3, review: "This is an okay item, but I wish it would make me stronger")
 
-review3 = Review.create!(product_id: pokeball.id, reviewer_id: u5.id, rating: 5, review: nil)
+review2 = Review.create!(product_id: pokeball.id, reviewer_id: u5.id, rating: 5, review: nil)
 
-review4 = Review.create!(product_id: master_sword.id, reviewer_id: u1.id, rating: 2, review: nil)
-review5 = Review.create!(product_id: master_sword.id, reviewer_id: u2.id, rating: 5, review: nil)
-review6 = Review.create!(product_id: master_sword.id, reviewer_id: u3.id, rating: 3, review: nil)
-review7 = Review.create!(product_id: master_sword.id, reviewer_id: u4.id, rating: 1, review: nil)
-review8 = Review.create!(product_id: master_sword.id, reviewer_id: u5.id, rating: 1, review: nil)
-review9 = Review.create!(product_id: master_sword.id, reviewer_id: u6.id, rating: 1, review: nil)
-review10 = Review.create!(product_id: master_sword.id, reviewer_id: u7.id, rating: 1, review: nil)
-review11 = Review.create!(product_id: master_sword.id, reviewer_id: u8.id, rating: 1, review: nil)
+review3 = Review.create!(product_id: master_sword.id, reviewer_id: u1.id, rating: 2, review: nil)
+review4 = Review.create!(product_id: master_sword.id, reviewer_id: u2.id, rating: 5, review: 'The pure light of this blade leaves my body unaffected, and works well against Hamon!')
+review5 = Review.create!(product_id: master_sword.id, reviewer_id: u3.id, rating: 3, review: nil)
+review6 = Review.create!(product_id: master_sword.id, reviewer_id: u4.id, rating: 4, review: 'I originally bought this as a decoration piece, but I cannot stop looking into how it glows. Is it connected to the light of Solgaleo somehow?')
+review7 = Review.create!(product_id: master_sword.id, reviewer_id: u5.id, rating: 1, review: nil)
+review8 = Review.create!(product_id: master_sword.id, reviewer_id: u6.id, rating: 3, review: 'For the most part I prefer my missile launcher, but this thing is way better as a sidearm than my knife')
+review9 = Review.create!(product_id: master_sword.id, reviewer_id: u7.id, rating: 5, review: 'I love this sword but buyer beware, its already broken twice on me')
+review10 = Review.create!(product_id: master_sword.id, reviewer_id: u8.id, rating: 1, review: nil)
 
 # Harry Potter:
 #   Elder wand
