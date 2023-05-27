@@ -52,6 +52,7 @@ class ReviewIndex extends React.Component{
         const startIndex = (this.state.currentPage - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
     
+        // Ex: Array.slice(0, 4)
         const reviewsToDisplay = this.props.reviews.slice(startIndex, endIndex);
         
         // Unsure if this is needed yet, to display the last page of reviews

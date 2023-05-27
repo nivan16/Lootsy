@@ -15,6 +15,9 @@ u2 = User.create!(email: 'bizarre@adventure.com', name: 'Kars', password: 'ultim
 u3 = User.create!(email: 'roamingseller@hyrule.com', name: 'Beetle', password: 'madeinheaven')
 u4 = User.create!(email: 'doctor@regions.com', name: 'Oak', password: 'ketchup')
 u5 = User.create!(email: 'critic@critics.com', name: 'Garf', password: 'foodies')
+u6 = User.create!(email: 'merc@talon.com', name: 'Commander Jabsco', password:'caps4days')
+u7 = User.create!(email: 'link@hyrule.com', name: 'Link', password: 'princessmipha')
+u8 = User.create!(email: 'justpeachy@shroomdom.com', name: 'Peach', password: 'bffdaisy')
 
 
 # product = Product.create!(name: , description: , category: '', price: , owner_id: )
@@ -38,10 +41,14 @@ review2 = Review.create!(product_id: master_sword.id, reviewer_id: u5.id, rating
 
 review3 = Review.create!(product_id: pokeball.id, reviewer_id: u5.id, rating: 5, review: nil)
 
-review4 = Review.create!(product_id: vampire_mask.id, reviewer_id: u1.id, rating: 2, review: nil)
-review5 = Review.create!(product_id: vampire_mask.id, reviewer_id: u2.id, rating: 5, review: nil)
-review6 = Review.create!(product_id: vampire_mask.id, reviewer_id: u3.id, rating: 3, review: nil)
-review7 = Review.create!(product_id: vampire_mask.id, reviewer_id: u4.id, rating: 1, review: nil)
+review4 = Review.create!(product_id: master_sword.id, reviewer_id: u1.id, rating: 2, review: nil)
+review5 = Review.create!(product_id: master_sword.id, reviewer_id: u2.id, rating: 5, review: nil)
+review6 = Review.create!(product_id: master_sword.id, reviewer_id: u3.id, rating: 3, review: nil)
+review7 = Review.create!(product_id: master_sword.id, reviewer_id: u4.id, rating: 1, review: nil)
+review8 = Review.create!(product_id: master_sword.id, reviewer_id: u5.id, rating: 1, review: nil)
+review9 = Review.create!(product_id: master_sword.id, reviewer_id: u6.id, rating: 1, review: nil)
+review10 = Review.create!(product_id: master_sword.id, reviewer_id: u7.id, rating: 1, review: nil)
+review11 = Review.create!(product_id: master_sword.id, reviewer_id: u8.id, rating: 1, review: nil)
 
 # Harry Potter:
 #   Elder wand
