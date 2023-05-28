@@ -62,21 +62,51 @@ class ReviewIndex extends React.Component{
 
     paginateReviews(){
         //there is at least 2 pages on method invocation
-        if(this.props.reviews.length > 12){
-            //*if the currentPage is on one of the two last numbers*
-            //first number, "...", second last number, last number
-
+        const pageCount = Math.ceil(this.props.reviews.length / 4);
+        if(reviewLength > 12){
             //*if the currentPage is on one of the first two numbers*
             //first number, second number, "...", last number
 
+            //*if the currentPage is on one of the two last numbers*
+            //first number, "...", second last number, last number
+
             //*last case, if the currentPage is not either of the other cases*
             //first number, "...", currentPage number, "...", last number
+            const pagination = Array.from({length: 5}, (_, i) => {
+                return [0,2,4].includes(i) ? (
+                    <div className={`page-navigation-button-container ${i === this.state.currentPage ? 'currentPage' : ''}`}>
+                        <button className='page-navigation-button' onClick={this.toSpecificPage}>
+                            {i + 1}
+                        </button>
+                    </div>
+                ) : (
+                    null
+                );
+            })
+
+            if(currentPage < 3){
+                //*if the currentPage is one of the first 2 pages*
+                pagination[4] = (
+                    <p className={`page-navigation-ellipsis`}>
+                        &hellip;
+                    </p>
+                )
+            }
+            else if(currentPage > (pageCount - 2)){
+                pagination[2] = (
+                    <p className={`page-navigation-ellipsis`}>
+                        &hellip;
+                    </p>
+                )
+            };
+            
+            return pagination;
+
         }
         else {
             //In the case there is 12 or less reviews, just return 2 or 3 buttons
-            const buttonCount = Math.ceil(this.props.reviews.length / 4)
-            const pagination = Array.from({length: buttonCount}, (_, i) => (
-                <div className='page-navigation-button-container'>
+            const pagination = Array.from({length: pageCount}, (_, i) => (
+                <div className={`page-navigation-button-container ${i === this.state.currentPage ? 'currentPage' : ''}`}>
                     <button className='page-navigation-button' onClick={this.toSpecificPage}>
                         {i + 1}
                     </button>
