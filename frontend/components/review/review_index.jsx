@@ -18,6 +18,11 @@ class ReviewIndex extends React.Component{
         };
 
         this.averageOfRatings = this.averageOfRatings.bind(this);
+        this.nextPage = this.nextPage.bind(this);
+        this.paginateReviews = this.paginateReviews.bind(this);
+        this.previousPage = this.previousPage.bind(this);
+        this.toSpecificPage = this.toSpecificPage.bind(this);
+        
     }
 
     averageOfRatings(){
@@ -30,7 +35,7 @@ class ReviewIndex extends React.Component{
         return sum / this.props.reviews.length;
     }
 
-    updatePageNumber(e){
+    toSpecificPage(e){
         e.preventDefault();
 
         const newPage = parseInt(e.target.textContent);
@@ -67,8 +72,24 @@ class ReviewIndex extends React.Component{
             //*last case, if the currentPage is not either of the other cases*
             //first number, "...", currentPage number, "...", last number
         }
-        else{
+        else {
             //In the case there is 12 or less reviews, just return 2 or 3 buttons
+            const buttonCount = Math.ceil(this.props.reviews.length / 4)
+            const pagination = Array.from({length: buttonCount}, (_, i) => (
+                <div className='page-navigation-button-container'>
+                    <button className='page-navigation-button' onClick={this.toSpecificPage}>
+                        {i + 1}
+                    </button>
+                </div>
+            ))
+
+            return (
+                <>
+                    {pagination}
+                </>
+
+                
+            )
         }
     }
 
@@ -124,8 +145,8 @@ class ReviewIndex extends React.Component{
                         )
                     }
                 </div>
-                {this.props.reviews.length > 4 && <div className='reviews-index-pagination'>
-                    
+                {this.props.reviews.length > 4 && <div className='reviews-index-pagination-container'>
+                    {this.paginateReviews()}
                 </div>
                 }
             </>
