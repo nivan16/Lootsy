@@ -30,8 +30,47 @@ class ReviewIndex extends React.Component{
         return sum / this.props.reviews.length;
     }
 
-    
+    updatePageNumber(e){
+        e.preventDefault();
 
+        const newPage = parseInt(e.target.textContent);
+        this.setState({
+            currentPage: newPage
+        });
+    }
+
+    previousPage(e){
+        e.preventDefault();
+
+        this.setState({
+            currentPage: this.state.currentPage - 1
+        });
+    }
+
+    nextPage(e){
+        e.preventDefault();
+
+        this.setState({
+            currentPage: this.state.currentPage + 1
+        });
+    }
+
+    paginateReviews(){
+        //there is at least 2 pages on method invocation
+        if(this.props.reviews.length > 12){
+            //*if the currentPage is on one of the two last numbers*
+            //first number, "...", second last number, last number
+
+            //*if the currentPage is on one of the first two numbers*
+            //first number, second number, "...", last number
+
+            //*last case, if the currentPage is not either of the other cases*
+            //first number, "...", currentPage number, "...", last number
+        }
+        else{
+            //In the case there is 12 or less reviews, just return 2 or 3 buttons
+        }
+    }
 
 
     render(){
@@ -85,10 +124,10 @@ class ReviewIndex extends React.Component{
                         )
                     }
                 </div>
-                <div className='reviews-index-pagination'>
+                {this.props.reviews.length > 4 && <div className='reviews-index-pagination'>
                     
-
                 </div>
+                }
             </>
 
         );

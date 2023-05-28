@@ -113,7 +113,6 @@ class ProductShow extends React.Component {
     }
 
     render() {
-        debugger;
 
         //If there is no product under the ID in the url
         if(!this.props.product) return (
