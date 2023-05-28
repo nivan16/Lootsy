@@ -1,0 +1,74 @@
+/* Note: This comment is for a .scss file
+Place all the styles related to the api/Reviews controller here.
+They will automatically be included in application.css.
+You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+.reviews-index-header {
+    margin-top: 1rem;
+}
+
+.reviews-index-container {
+    width: 66%;
+    margin-top: 1rem;
+}
+
+/* Review Details */
+.review-item {
+    border: 1px solid black;
+}
+
+.review-item-rating {
+    margin-bottom: 1rem;
+}
+
+.review-item-text {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.review-item-reviewer {
+    margin-bottom: 1rem;
+}
+
+/* ----------- Review Button Navigation Container ----------- */
+.reviews-index-pagination-container {
+    display: flex;
+
+    padding-top: 0.5rem;
+}
+
+.reviews-index-pagination-container > * {
+    margin-right: 0.5rem;
+}
+
+
+/* Left and Right Arrow Buttons */
+.review-previous-page-navigation-button,
+.review-next-page-navigation-button {
+    border: 1px solid transparent;
+    border-radius: 25px;
+    font-size: 1.25rem;
+}
+
+.review-page-navigation-arrow{
+    display: block;
+    transform: translateY(-5%);
+}
+
+
+/* Numbered Buttons */
+.review-page-navigation-button {
+    padding-left: 9.75px;
+    padding-right: 9.75px;
+
+    border: 1px solid transparent;
+    border-radius: 25px;
+    font-size: 1.25rem;
+}
+
+.review-page-navigation-number {
+    display: block;
+    transform: translate(-5%, -5%);
+}
+
+

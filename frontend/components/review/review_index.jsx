@@ -46,7 +46,6 @@ class ReviewIndex extends React.Component{
 
     previousPage(e){
         e.preventDefault();
-
         this.setState({
             currentPage: this.state.currentPage - 1
         });
@@ -63,7 +62,7 @@ class ReviewIndex extends React.Component{
     paginateReviews(){
         //there is at least 2 pages on method invocation
         const pageCount = Math.ceil(this.props.reviews.length / 4);
-        if(reviewLength > 12){
+        if(pageCount > 3){
             //*if the currentPage is on one of the first two numbers*
             //first number, second number, "...", last number
 
@@ -74,9 +73,11 @@ class ReviewIndex extends React.Component{
             //first number, "...", currentPage number, "...", last number
             const pagination = Array.from({length: 5}, (_, i) => {
                 return [0,2,4].includes(i) ? (
-                    <div className={`page-navigation-button-container ${i === this.state.currentPage ? 'currentPage' : ''}`}>
-                        <button className='page-navigation-button' onClick={this.toSpecificPage}>
-                            {i + 1}
+                    <div className={`review-page-navigation-button-container ${i === this.state.currentPage ? 'currentPage' : ''}`}>
+                        <button className='review-page-navigation-button' onClick={this.toSpecificPage}>
+                            <span className='review-page-navigation-number'>
+                                {i + 1}
+                            </span>
                         </button>
                     </div>
                 ) : (
@@ -87,28 +88,30 @@ class ReviewIndex extends React.Component{
             if(currentPage < 3){
                 //*if the currentPage is one of the first 2 pages*
                 pagination[4] = (
-                    <p className={`page-navigation-ellipsis`}>
+                    <p className={`review-page-navigation-ellipsis`}>
                         &hellip;
                     </p>
                 )
             }
             else if(currentPage > (pageCount - 2)){
                 pagination[2] = (
-                    <p className={`page-navigation-ellipsis`}>
+                    <p className={`review-page-navigation-ellipsis`}>
                         &hellip;
                     </p>
                 )
             };
-            
+
             return pagination;
 
         }
         else {
             //In the case there is 12 or less reviews, just return 2 or 3 buttons
             const pagination = Array.from({length: pageCount}, (_, i) => (
-                <div className={`page-navigation-button-container ${i === this.state.currentPage ? 'currentPage' : ''}`}>
-                    <button className='page-navigation-button' onClick={this.toSpecificPage}>
-                        {i + 1}
+                <div className={`review-page-navigation-button-container ${i === this.state.currentPage ? 'currentPage' : ''}`}>
+                    <button className='review-page-navigation-button' onClick={this.toSpecificPage}>
+                        <span className='review-page-navigation-number'>
+                            {i + 1}
+                        </span>
                     </button>
                 </div>
             ))
@@ -176,7 +179,23 @@ class ReviewIndex extends React.Component{
                     }
                 </div>
                 {this.props.reviews.length > 4 && <div className='reviews-index-pagination-container'>
+                    <div className='review-previous-page-navigation-button-container'>
+                        <button className={`review-previous-page-navigation-button ${this.state.currentPage === 1 ? 'blocked' : ''}`} onClick={this.previousPage}>
+                            <span className='review-page-navigation-arrow'>
+                                &larr;
+                            </span>
+                        </button>
+                    </div>
+
                     {this.paginateReviews()}
+
+                    <div className='review-next-page-navigation-button-container'>
+                        <button className={`review-next-page-navigation-button ${this.state.currentPage === (this.props.reviews.length-1) ? 'blocked' : ''}`} onClick={this.nextPage}>
+                            <span className='review-page-navigation-arrow'>
+                                &rarr;
+                            </span>
+                        </button>
+                    </div>
                 </div>
                 }
             </>
