@@ -106,6 +106,39 @@ class ReviewIndex extends React.Component{
                     </>
                 );
             }
+            else if(currentPage > pageCount-2){
+                return (
+                    <>
+                        <div className='review-page-navigation-button-container'>
+                            <button className='review-page-navigation-button' onClick={this.toSpecificPage}>
+                                <span className='review-page-navigation-number'>
+                                    1
+                                </span>
+                            </button>
+                        </div>
+
+                        <p className='review-page-navigation-ellipsis'>
+                            &hellip;
+                        </p>
+
+                        <div className={`review-page-navigation-button-container ${this.currentPage === pageCount-1 ? 'current-review-page' : ''}`}>
+                            <button className='review-page-navigation-button' onClick={this.toSpecificPage}>
+                                <span className='review-page-navigation-number'>
+                                    {pageCount-1}
+                                </span>
+                            </button>
+                        </div>
+
+                        <div className={`review-page-navigation-button-container ${this.currentPage === pageCount ? 'current-review-page' : ''}`}>
+                            <button className='review-page-navigation-button' onClick={this.toSpecificPage}>
+                                <span className='review-page-navigation-number'>
+                                    {pageCount}
+                                </span>
+                            </button>
+                        </div>
+                    </>
+                );
+            }
             else {
                 return (
                     <>
