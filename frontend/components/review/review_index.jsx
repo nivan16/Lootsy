@@ -65,7 +65,7 @@ class ReviewIndex extends React.Component{
 
         //If there are more than 3 pages of reviews then elipses will be needed, otherwise it will just be numbered buttons
         if(pageCount > 3){            
-            if(currentPage <= 2){
+            if(this.state.currentPage <= 2){
                 //*if the currentPage is on one of the first two numbers*
                 // Ex: first number, second number, "...", last number
                 return (
@@ -100,7 +100,7 @@ class ReviewIndex extends React.Component{
                     </>
                 );
             }
-            else if(currentPage > pageCount-2){
+            else if(this.state.currentPage > pageCount-2){
                 //*if the currentPage is on one of the two last numbers*
                 // Ex: first number, "...", second last number, last number
                 return (
@@ -187,13 +187,7 @@ class ReviewIndex extends React.Component{
                 </div>
             ))
 
-            return (
-                <>
-                    {pagination}
-                </>
-
-                
-            )
+            return pagination;
         }
     }
 
