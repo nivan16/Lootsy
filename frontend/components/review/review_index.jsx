@@ -60,20 +60,14 @@ class ReviewIndex extends React.Component{
     }
 
     paginateReviews(){
-        //there is at least 2 pages on method invocation
+        //There is at least 2 pages on method invocation
         const pageCount = Math.ceil(this.props.reviews.length / 4);
-        if(pageCount > 3){
-            //*if the currentPage is on one of the first two numbers*
-            //first number, second number, "...", last number
 
-            //*if the currentPage is on one of the two last numbers*
-            //first number, "...", second last number, last number
-
-            
-            //*last case, if the currentPage is not either of the other cases*
-            //first number, "...", currentPage number, "...", last number
+        //If there are more than 3 pages of reviews then elipses will be needed, otherwise it will just be numbered buttons
+        if(pageCount > 3){            
             if(currentPage <= 2){
-                
+                //*if the currentPage is on one of the first two numbers*
+                // Ex: first number, second number, "...", last number
                 return (
                     <>
                         <div className={`review-page-navigation-button-container ${this.currentPage === 1 ? 'current-review-page' : ''}`}>
@@ -107,6 +101,8 @@ class ReviewIndex extends React.Component{
                 );
             }
             else if(currentPage > pageCount-2){
+                //*if the currentPage is on one of the two last numbers*
+                // Ex: first number, "...", second last number, last number
                 return (
                     <>
                         <div className='review-page-navigation-button-container'>
@@ -140,6 +136,8 @@ class ReviewIndex extends React.Component{
                 );
             }
             else {
+                //*last case, if the currentPage is not either of the other cases*
+                // Ex: first number, "...", currentPage number, "...", last number
                 return (
                     <>
                         <div className='review-page-navigation-button-container'>
