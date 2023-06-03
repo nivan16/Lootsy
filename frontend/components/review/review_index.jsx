@@ -155,7 +155,7 @@ class ReviewIndex extends React.Component{
                         <div className='review-page-navigation-button-container current-review-page'>
                             <button className='review-page-navigation-button' onClick={this.toSpecificPage}>
                                 <span className='review-page-navigation-number'>
-                                    {currentPage}
+                                    {this.state.currentPage}
                                 </span>
                             </button>
                         </div>

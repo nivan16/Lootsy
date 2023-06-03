@@ -18,11 +18,16 @@ u5 = User.create!(email: 'critic@critics.com', name: 'Garf', password: 'foodies'
 u6 = User.create!(email: 'merc@talon.com', name: 'Commander Jabsco', password:'caps4days')
 u7 = User.create!(email: 'link@hyrule.com', name: 'Link', password: 'princessmipha')
 u8 = User.create!(email: 'justpeachy@shroomdom.com', name: 'Peach', password: 'bffdaisy')
-u9 = User.create!(email: 'lorel1@epsum.com', name: 'lorey', password: 'password')
-u10 = User.create!(email: 'lorel2@epsum.com', name: 'epsil', password: 'password')
-u11 = User.create!(email: 'lorel3@epsum.com', name: 'tinker', password: 'password')
-u12 = User.create!(email: 'lorel4@epsum.com', name: 'gavin', password: 'password')
-u13 = User.create!(email: 'lorel5@epsum.com', name: 'paltry', password: 'password')
+u9 = User.create!(email: 'lorem1@epsum.com', name: 'lorey', password: 'password')
+u10 = User.create!(email: 'lorem2@epsum.com', name: 'epsil', password: 'password')
+u11 = User.create!(email: 'lorem3@epsum.com', name: 'tinker', password: 'password')
+u12 = User.create!(email: 'lorem4@epsum.com', name: 'gavin', password: 'password')
+u13 = User.create!(email: 'lorem5@epsum.com', name: 'patter', password: 'password')
+
+u14 = User.create!(email: 'lorem6@epsum.com', name: 'senku', password: 'password')
+u15 = User.create!(email: 'lorem7@epsum.com', name: 'harmon', password: 'password')
+u16 = User.create!(email: 'lorem8@epsum.com', name: 'jonathan', password: 'password')
+u17 = User.create!(email: 'lorem9@epsum.com', name: 'star', password: 'password')
 
 
 # product = Product.create!(name: , description: , category: '', price: , owner_id: )
@@ -55,9 +60,13 @@ review9 = Review.create!(product_id: master_sword.id, reviewer_id: u7.id, rating
 review10 = Review.create!(product_id: master_sword.id, reviewer_id: u8.id, rating: 1, review: nil)
 review11 = Review.create!(product_id: master_sword.id, reviewer_id: u9.id, rating: 1, review: nil)
 review12 = Review.create!(product_id: master_sword.id, reviewer_id: u10.id, rating: 1, review: nil)
-review12 = Review.create!(product_id: master_sword.id, reviewer_id: u11.id, rating: 1, review: nil)
-review12 = Review.create!(product_id: master_sword.id, reviewer_id: u12.id, rating: 1, review: nil)
-review13 = Review.create!(product_id: master_sword.id, reviewer_id: u13.id, rating: 1, review: '
+review13 = Review.create!(product_id: master_sword.id, reviewer_id: u11.id, rating: 1, review: nil)
+review14 = Review.create!(product_id: master_sword.id, reviewer_id: u12.id, rating: 1, review: nil)
+review15 = Review.create!(product_id: master_sword.id, reviewer_id: u13.id, rating: 1, review: nil)
+review16 = Review.create!(product_id: master_sword.id, reviewer_id: u14.id, rating: 1, review: nil)
+review17 = Review.create!(product_id: master_sword.id, reviewer_id: u15.id, rating: 1, review: nil)
+review18 = Review.create!(product_id: master_sword.id, reviewer_id: u16.id, rating: 1, review: nil)
+review19 = Review.create!(product_id: master_sword.id, reviewer_id: u17.id, rating: 1, review: '
 Even so my sun one early morn did shine,
 With all triumphant splendour on my brow;
 But out, alack, he was but one hour mine,
