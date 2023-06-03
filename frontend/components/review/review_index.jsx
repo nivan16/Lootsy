@@ -69,40 +69,47 @@ class ReviewIndex extends React.Component{
             //*if the currentPage is on one of the two last numbers*
             //first number, "...", second last number, last number
 
+            
             //*last case, if the currentPage is not either of the other cases*
             //first number, "...", currentPage number, "...", last number
-            const pagination = Array.from({length: 5}, (_, i) => {
-                return [0,2,4].includes(i) ? (
-                    <div className={`review-page-navigation-button-container ${i === this.state.currentPage ? 'currentPage' : ''}`}>
-                        <button className='review-page-navigation-button' onClick={this.toSpecificPage}>
-                            <span className='review-page-navigation-number'>
-                                {i + 1}
-                            </span>
-                        </button>
-                    </div>
-                ) : (
-                    null
+            if(currentPage){}
+            else {
+                return (
+                    <>
+                        <div className='review-page-navigation-button-container'>
+                            <button className='review-page-navigation-button' onClick={this.toSpecificPage}>
+                                <span className='review-page-navigation-number'>
+                                    1
+                                </span>
+                            </button>
+                        </div>
+
+                        <p className='review-page-navigation-ellipsis'>
+                            &hellip;
+                        </p>
+
+                        <div className='review-page-navigation-button-container current-review-page'>
+                            <button className='review-page-navigation-button' onClick={this.toSpecificPage}>
+                                <span className='review-page-navigation-number'>
+                                    {currentPage}
+                                </span>
+                            </button>
+                        </div>
+
+                        <p className='review-page-navigation-ellipsis'>
+                            &hellip;
+                        </p>
+
+                        <div className='review-page-navigation-button-container'>
+                            <button className='review-page-navigation-button' onClick={this.toSpecificPage}>
+                                <span className='review-page-navigation-number'>
+                                    {pageCount}
+                                </span>
+                            </button>
+                        </div>
+                    </>
                 );
-            })
-
-            if(currentPage < 3){
-                //*if the currentPage is one of the first 2 pages*
-                pagination[4] = (
-                    <p className={`review-page-navigation-ellipsis`}>
-                        &hellip;
-                    </p>
-                )
             }
-            else if(currentPage > (pageCount - 2)){
-                pagination[2] = (
-                    <p className={`review-page-navigation-ellipsis`}>
-                        &hellip;
-                    </p>
-                )
-            };
-
-            return pagination;
-
         }
         else {
             //In the case there is 12 or less reviews, just return 2 or 3 buttons
