@@ -44,23 +44,31 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 /* Left and Right Arrow Buttons */
 .review-previous-page-navigation-button,
 .review-next-page-navigation-button {
-    transform: scale(0.8);
+    transform: scale(0.9);
+    cursor: pointer;
     border: 1px solid transparent;
     border-radius: 25px;
     font-size: 1.25rem;
+    transition: background-color 175ms ease-in-out;
 }
 
-.review-page-navigation-arrow{
+.review-previous-page-navigation-button:hover,
+.review-next-page-navigation-button:hover {
+    /* I need to create a slightly darker background-color for the buttons
+    accounting for the hover background colors as well */
+    background-color: lightgray;
+}
+
+.review-page-navigation-arrow {
     display: block;
-    transform: translateY(-5%);
+    transform: translateY(-9%);
 }
-
-
 
 .review-previous-page-navigation-button.blocked,
 .review-next-page-navigation-button.blocked {
     cursor: not-allowed;
     background-color: #f8f8f8;
+    border: 1px solid transparent;
 }
 
 .review-previous-page-navigation-button.blocked > .review-page-navigation-arrow,
@@ -76,14 +84,27 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
     padding-left: 9.75px;
     padding-right: 9.75px;
 
+    cursor: pointer;
     border: 1px solid transparent;
     border-radius: 25px;
     font-size: 1.25rem;
+    transition: background-color 175ms ease-in-out;
+}
+
+.review-page-navigation-button:hover {
+    background-color: lightgray;
 }
 
 .review-page-navigation-number {
     display: block;
+    /* transform: translateY(-5%); */
     transform: translate(-5%, -5%);
 }
 
+.review-page-navigation-button.current-review-page {
+    cursor: default;
+    border: 2px solid black;
+    /*this is the default background color*/
+    background-color: rgb(240, 240, 240);
+}
 
