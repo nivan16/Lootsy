@@ -33,7 +33,6 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 /* ----------- Review Button Navigation Container ----------- */
 .reviews-index-pagination-container {
     display: flex;
-
     padding-top: 0.5rem;
 }
 
@@ -45,6 +44,7 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 /* Left and Right Arrow Buttons */
 .review-previous-page-navigation-button,
 .review-next-page-navigation-button {
+    transform: scale(0.8);
     border: 1px solid transparent;
     border-radius: 25px;
     font-size: 1.25rem;
@@ -56,8 +56,23 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 }
 
 
+
+.review-previous-page-navigation-button.blocked,
+.review-next-page-navigation-button.blocked {
+    cursor: not-allowed;
+    background-color: #f8f8f8;
+}
+
+.review-previous-page-navigation-button.blocked > .review-page-navigation-arrow,
+.review-next-page-navigation-button.blocked > .review-page-navigation-arrow {
+    color: rgb(194, 194, 194);
+}
+
+
+
 /* Numbered Buttons */
 .review-page-navigation-button {
+    transform: scale(0.9);
     padding-left: 9.75px;
     padding-right: 9.75px;
 

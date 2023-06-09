@@ -214,7 +214,7 @@ class ReviewIndex extends React.Component{
         const reviewsToDisplay = this.props.reviews.slice(startIndex, endIndex);
         
         // Unsure if this is needed yet, to display the last page of reviews
-        // const totalPages = Math.ceil(this.props.reviews.length / itemsPerPage);
+        const totalPages = Math.ceil(this.props.reviews.length / itemsPerPage);
         return (
             <>
                 <h2 className='reviews-index-header'>
@@ -255,7 +255,7 @@ class ReviewIndex extends React.Component{
                     {this.paginateReviews()}
 
                     <div className='review-next-page-navigation-button-container'>
-                        <button className={`review-next-page-navigation-button ${this.state.currentPage === (this.props.reviews.length-1) ? 'blocked' : ''}`} onClick={this.nextPage}>
+                        <button className={`review-next-page-navigation-button ${this.state.currentPage === totalPages ? 'blocked' : ''}`} onClick={this.nextPage}>
                             <span className='review-page-navigation-arrow'>
                                 &rarr;
                             </span>
