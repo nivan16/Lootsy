@@ -235,19 +235,28 @@ class ReviewIndex extends React.Component{
                         {this.props.reviews.length} Product Reviews |
                     </h2>
 
-                    <StarRatings 
-                        rating={averageRating}
-                        starEmptyColor='lightgray'
-                        starRatedColor='black'
-                        
-                    />
+                    <div className='reviews-index-header-stars-container'>
+                        <StarRatings 
+                            rating={averageRating}
+                            starEmptyColor='lightgray'
+                            starRatedColor='black'
+                            starDimension='25px'
+                            starSpacing='1px'                            
+                        />
+                    </div>
                 </div>
                 <div className='reviews-index-container'>
                     {
                         reviewsToDisplay.map(review => (
                                 <div className='review-item' key={review.id}>
                                     <div className='review-item-rating'>
-                                        {review.rating}
+                                        <StarRatings 
+                                            rating={review.rating}
+                                            starEmptyColor='lightgray'
+                                            starRatedColor='black'
+                                            starDimension='20px'
+                                            starSpacing='1px'                            
+                                        />
                                     </div>
 
                                     {review.review !== null && (

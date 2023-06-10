@@ -34,7 +34,7 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 }
 
 .review-item-rating {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .review-item-text {
