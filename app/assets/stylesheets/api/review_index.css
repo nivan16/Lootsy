@@ -3,9 +3,25 @@ Place all the styles related to the api/Reviews controller here.
 They will automatically be included in application.css.
 You can use Sass (SCSS) here: http://sass-lang.com/ */
 
-.reviews-index-header {
+
+/* Review Index Header */
+.reviews-index-header-container {
     margin-top: 1rem;
+    display: flex;
 }
+
+.reviews-index-header {
+    align-self: center;
+    transform: translateY(-15%);
+    margin-right: 5px;
+    font-weight: 500;
+}
+
+.reviews-index-header-stars-container {
+    align-self: flex-end;
+}
+
+
 
 .reviews-index-container {
     width: 66%;

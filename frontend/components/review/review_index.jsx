@@ -1,4 +1,5 @@
 import React from 'react';
+import StarRatings from 'react-star-ratings';
 
 /*
     What properties (props) will this need?
@@ -196,9 +197,21 @@ class ReviewIndex extends React.Component{
         if(this.props.reviews.length === 0){
             //This is going to return the react-review-stars package as well
             return (
-                <h2 className='reviews-index-header'>
-                    0 Product reviews *****
-                </h2>
+                <div className='reviews-index-header-container'>
+                    <h2 className='reviews-index-header'>
+                        0 Product reviews | 
+                    </h2>
+
+                    <div className='reviews-index-header-stars-container'>
+                        <StarRatings 
+                            rating={0}
+                            starEmptyColor='lightgray'
+                            className='aggregate-review-rating'
+                            starDimension='25px'
+                            starSpacing='1px'
+                        />
+                    </div>
+                </div>
             );
         };
 
@@ -217,10 +230,18 @@ class ReviewIndex extends React.Component{
         const totalPages = Math.ceil(this.props.reviews.length / itemsPerPage);
         return (
             <>
-                <h2 className='reviews-index-header'>
-                    {this.props.reviews.length} Product Reviews ::: {averageRating}
-                </h2>
+                <div className='reviews-index-header-container'>
+                    <h2 className='reviews-index-header'>
+                        {this.props.reviews.length} Product Reviews |
+                    </h2>
 
+                    <StarRatings 
+                        rating={averageRating}
+                        starEmptyColor='lightgray'
+                        starRatedColor='black'
+                        
+                    />
+                </div>
                 <div className='reviews-index-container'>
                     {
                         reviewsToDisplay.map(review => (
