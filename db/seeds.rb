@@ -59,13 +59,13 @@ review8 = Review.create!(product_id: master_sword.id, reviewer_id: u6.id, rating
 review9 = Review.create!(product_id: master_sword.id, reviewer_id: u7.id, rating: 5, review: 'I love this sword but buyer beware, its already broken twice on me')
 review10 = Review.create!(product_id: master_sword.id, reviewer_id: u8.id, rating: 1, review: nil)
 review11 = Review.create!(product_id: master_sword.id, reviewer_id: u9.id, rating: 1, review: nil)
-# review12 = Review.create!(product_id: master_sword.id, reviewer_id: u10.id, rating: 1, review: nil)
-# review13 = Review.create!(product_id: master_sword.id, reviewer_id: u11.id, rating: 1, review: nil)
-# review14 = Review.create!(product_id: master_sword.id, reviewer_id: u12.id, rating: 1, review: nil)
-# review15 = Review.create!(product_id: master_sword.id, reviewer_id: u13.id, rating: 1, review: nil)
-# review16 = Review.create!(product_id: master_sword.id, reviewer_id: u14.id, rating: 1, review: nil)
-# review17 = Review.create!(product_id: master_sword.id, reviewer_id: u15.id, rating: 1, review: nil)
-# review18 = Review.create!(product_id: master_sword.id, reviewer_id: u16.id, rating: 1, review: nil)
+review12 = Review.create!(product_id: master_sword.id, reviewer_id: u10.id, rating: 1, review: nil)
+review13 = Review.create!(product_id: master_sword.id, reviewer_id: u11.id, rating: 1, review: nil)
+review14 = Review.create!(product_id: master_sword.id, reviewer_id: u12.id, rating: 1, review: nil)
+review15 = Review.create!(product_id: master_sword.id, reviewer_id: u13.id, rating: 1, review: nil)
+review16 = Review.create!(product_id: master_sword.id, reviewer_id: u14.id, rating: 1, review: nil)
+review17 = Review.create!(product_id: master_sword.id, reviewer_id: u15.id, rating: 1, review: nil)
+review18 = Review.create!(product_id: master_sword.id, reviewer_id: u16.id, rating: 1, review: nil)
 review19 = Review.create!(product_id: master_sword.id, reviewer_id: u17.id, rating: 1, review: '
 Even so my sun one early morn did shine,
 With all triumphant splendour on my brow;

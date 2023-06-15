@@ -20,8 +20,8 @@ class ReviewIndex extends React.Component{
 
         this.averageOfRatings = this.averageOfRatings.bind(this);
         this.nextPage = this.nextPage.bind(this);
-        this.paginateReviews = this.paginateReviews.bind(this);
         this.previousPage = this.previousPage.bind(this);
+        this.paginateReviews = this.paginateReviews.bind(this);
         this.toSpecificPage = this.toSpecificPage.bind(this);
         
     }
@@ -44,21 +44,27 @@ class ReviewIndex extends React.Component{
             currentPage: newPage
         });
     }
+    
+    nextPage(e){
+        e.preventDefault();
+        debugger;
+        if (this.state.currentPage < Math.ceil(this.props.reviews.length / 4)) {
+            this.setState({
+                currentPage: this.state.currentPage + 1
+            });            
+        };
+    }
 
     previousPage(e){
         e.preventDefault();
-        this.setState({
-            currentPage: this.state.currentPage - 1
-        });
+        debugger;
+        if (this.state.currentPage > 1) {
+            this.setState({
+                currentPage: this.state.currentPage - 1
+            });
+        };
     }
 
-    nextPage(e){
-        e.preventDefault();
-
-        this.setState({
-            currentPage: this.state.currentPage + 1
-        });
-    }
 
     paginateReviews(){
         //There is at least 2 pages on method invocation
