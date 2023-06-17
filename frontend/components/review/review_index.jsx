@@ -24,6 +24,7 @@ class ReviewIndex extends React.Component{
         this.nextPage = this.nextPage.bind(this);
         this.previousPage = this.previousPage.bind(this);
         this.paginateReviews = this.paginateReviews.bind(this);
+        this.reviewSort = this.reviewSort.bind(this);
         this.toSpecificPage = this.toSpecificPage.bind(this);
         
     }
@@ -216,11 +217,13 @@ class ReviewIndex extends React.Component{
         else if(this.state.sortReviewsBy === 'highestRated'){
             sortedReviews.sort((a, b) => {
                 return a.rating - b.rating;
-            })
+            });
         }
-        else(){
-
-        }
+        else {//in the case of lowest rated
+            sortedReviews.sort((a, b) => {
+                return b.rating - a.rating;
+            });
+        };
 
         return sortedReviews;
     }
