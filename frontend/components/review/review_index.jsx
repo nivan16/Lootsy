@@ -17,7 +17,7 @@ class ReviewIndex extends React.Component{
         //Note: suggested will just return reviews with words in them first
         this.state = {
             currentPage: 1,
-            sortReviewsBy: 'Suggested'
+            sortReviewsBy: 'suggested'
         };
 
         this.averageOfRatings = this.averageOfRatings.bind(this);
@@ -203,8 +203,8 @@ class ReviewIndex extends React.Component{
     reviewSort(){
         let sortedReviews = [...this.props.reviews];
         //Suggested will return reviews with words first
-        if(this.state.sortReviewsBy === 'Suggested'){
-            sortedReviews.sort((a,b) => {
+        if(this.state.sortReviewsBy === 'suggested'){
+            sortedReviews.sort((a, b) => {
                 if(a.review === null && b.review === null)
                     return 0;
                 else if(a.review === null && b.review !== null)
@@ -213,8 +213,10 @@ class ReviewIndex extends React.Component{
                     return -1;
             });
         }
-        else if(){
-
+        else if(this.state.sortReviewsBy === 'highestRated'){
+            sortedReviews.sort((a, b) => {
+                return a.rating - b.rating;
+            })
         }
         else(){
 
