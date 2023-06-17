@@ -15,7 +15,8 @@ class ReviewIndex extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            currentPage: 1
+            currentPage: 1,
+            sortReviewsBy: 'suggested'
         };
 
         this.averageOfRatings = this.averageOfRatings.bind(this);
@@ -198,6 +199,21 @@ class ReviewIndex extends React.Component{
         }
     }
 
+    reviewSort(){
+        let sortedReviews = [...this.props.reviews];
+        if(this.state.sortReviewsBy === 'suggested'){
+            
+        }
+        else if(){
+
+        }
+        else(){
+
+        }
+
+        return sortedReviews;
+    }
+
 
     render(){
         if(this.props.reviews.length === 0){
@@ -223,6 +239,8 @@ class ReviewIndex extends React.Component{
 
         const averageRating = this.averageOfRatings();
 
+        let reviewsClone;
+
         const itemsPerPage = 4;
         //Ex for below: (1-1) * 4 is index 0,
         //(2-1) * 4 is index 4, meaning that its dynamic!
@@ -230,7 +248,7 @@ class ReviewIndex extends React.Component{
         const endIndex = startIndex + itemsPerPage;
     
         // Ex: Array.slice(0, 4)
-        const reviewsToDisplay = this.props.reviews.slice(startIndex, endIndex);
+        const reviewsToDisplay = reviewsClone.slice(startIndex, endIndex);
         
         // Unsure if this is needed yet, to display the last page of reviews
         const totalPages = Math.ceil(this.props.reviews.length / itemsPerPage);
@@ -252,6 +270,16 @@ class ReviewIndex extends React.Component{
                     </div>
                 </div>
                 <div className='reviews-index-container'>
+                    {/* For the below to work as well as other areas, maybe i should make a copy ([...this.props.reviews])
+                     of the reviews right before all the major code in the return function, that way the algorithms still work as
+                     long as i pass the Array const copy to the methods. Might need to have the class functions return functions, 
+                     will investigate. */}
+
+                    { totalPages > 1 && <div className='reviews-sorting-button'>
+
+                    </div>
+                    }
+
                     {
                         reviewsToDisplay.map(review => (
                                 <div className='review-item' key={review.id}>
