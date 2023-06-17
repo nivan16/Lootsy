@@ -14,9 +14,10 @@ import StarRatings from 'react-star-ratings';
 class ReviewIndex extends React.Component{
     constructor(props){
         super(props);
+        //Note: suggested will just return reviews with words in them first
         this.state = {
             currentPage: 1,
-            sortReviewsBy: 'suggested'
+            sortReviewsBy: 'Suggested'
         };
 
         this.averageOfRatings = this.averageOfRatings.bind(this);
@@ -201,8 +202,16 @@ class ReviewIndex extends React.Component{
 
     reviewSort(){
         let sortedReviews = [...this.props.reviews];
-        if(this.state.sortReviewsBy === 'suggested'){
-            
+        //Suggested will return reviews with words first
+        if(this.state.sortReviewsBy === 'Suggested'){
+            sortedReviews.sort((a,b) => {
+                if(a.review === null && b.review === null)
+                    return 0;
+                else if(a.review === null && b.review !== null)
+                    return 1;
+                else
+                    return -1;
+            });
         }
         else if(){
 
