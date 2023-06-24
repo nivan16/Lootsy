@@ -218,7 +218,7 @@ class ReviewIndex extends React.Component{
         }
         else{ //Sort reviews by highest rated
             sortedReviews.sort((a, b) => {
-                return a.rating - b.rating;
+                return b.rating - a.rating;
             });
         }
 
@@ -260,8 +260,8 @@ class ReviewIndex extends React.Component{
 
         const averageRating = this.averageOfRatings();
 
-        //What is this for??
-        const reviewsClone = [...this.props.reviews]
+        //What is this, reviewsClone, for??
+        let reviewsClone = this.reviewSort();
 
         const itemsPerPage = 4;
         //Ex for below: (1-1) * 4 is index 0,
@@ -280,36 +280,35 @@ class ReviewIndex extends React.Component{
                     <h2 className='reviews-index-header'>
                         {this.props.reviews.length} Product Reviews |
                     </h2>
-
+                    
                     <div className='reviews-index-header-stars-container'>
                         <StarRatings 
                             rating={averageRating}
                             starEmptyColor='lightgray'
                             starRatedColor='black'
-                            starDimension='25px'
+                            starDimension='20px'
                             starSpacing='1px'                            
                         />
                     </div>
-                </div>
-                <div className='reviews-index-container'>
                     {/* For the below to work as well as other areas, maybe i should make a copy ([...this.props.reviews])
                      of the reviews right before all the major code in the return function, that way the algorithms still work as
                      long as i pass the Array const copy to the methods. Might need to have the class functions return functions, 
                      will investigate. */}
 
                     { totalPages > 1 && <div className='reviews-sorting-button-container'>
-                        {/* This dropdown will be buttons because of the more excessive styling required */}
-                        <button
-                            className='reviews-sorting-button'
-                            onClick={(this.switchReviewSortCategory)}
-                        >
-                            {
-                                this.state.sortReviewsBy === 'suggested' ? 'Suggested' : 'Highest Rated'
-                            }
-                        </button>
-                    </div>
+                            {/* This dropdown will be buttons because of the more excessive styling required */}
+                            <button
+                                className='reviews-sorting-button'
+                                onClick={(this.switchReviewSortCategory)}
+                            >
+                                {
+                                    this.state.sortReviewsBy === 'suggested' ? 'Sort by: Suggested' : 'Sort by: Highest rated'
+                                }
+                            </button>
+                        </div>
                     }
-
+                </div>
+                <div className='reviews-index-container'>
                     {
                         reviewsToDisplay.map(review => (
                                 <div className='review-item' key={review.id}>

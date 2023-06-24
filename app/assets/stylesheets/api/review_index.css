@@ -6,27 +6,53 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 
 /* Review Index Header */
 .reviews-index-header-container {
-    margin-top: 1rem;
     display: flex;
+    width: 66%;
+    margin-top: 1rem;
 }
 
 .reviews-index-header {
     align-self: center;
     transform: translateY(-15%);
     margin-right: 5px;
+    font-size: 1rem;
     font-weight: 500;
 }
 
 .reviews-index-header-stars-container {
-    align-self: flex-end;
+    align-self: center;
 }
 
-
-
+/* ----------- Reviews Index ----------- */
 .reviews-index-container {
     width: 66%;
     margin-top: 1rem;
 }
+
+/* Reviews Sort Button */
+.reviews-sorting-button-container {
+    /* margin-left: auto; pushes an element to the right by
+    utilizing all available space to the left*/
+    margin-left: auto;
+    align-self: flex-end;
+}
+
+.reviews-sorting-button {
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    background-color: lightgreen;
+
+
+    transition: background-color 175ms ease-in-out;
+}
+
+.reviews-sorting-button:hover {
+    background-color: rgb(228, 228, 228);
+}
+
 
 /* Review Details */
 .review-item {
@@ -49,11 +75,9 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
     font-size: 0.9rem;
     color: gray;
     text-decoration: underline;
-    
-    
 }
 
-/* ----------- Review Button Navigation Container ----------- */
+/* ----------- Review Button Pagination Buttons ----------- */
 .reviews-index-pagination-container {
     display: flex;
     padding-top: 0.5rem;
