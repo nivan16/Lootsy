@@ -21,6 +21,7 @@ class ReviewIndex extends React.Component{
         this.state = {
             currentPage: 1,
             showSortingOptions: false,
+            showSortMenu: false,
             sortReviewsBy: 'suggested'
         };
 
@@ -30,6 +31,7 @@ class ReviewIndex extends React.Component{
         this.paginateReviews = this.paginateReviews.bind(this);
         this.reviewSort = this.reviewSort.bind(this);
         this.switchReviewSortCategory = this.switchReviewSortCategory.bind(this);
+        this.toggleSortMenu = this.toggleSortMenu.bind(this);
         this.toSpecificPage = this.toSpecificPage.bind(this);
         
     }
@@ -229,14 +231,27 @@ class ReviewIndex extends React.Component{
     }
 
     switchReviewSortCategory(e){
+        e.stopPropagation();
         this.setState( prevState => {
             return prevState.sortReviewsBy === 'suggested' ? { 
                 sortReviewsBy: 'ratings'
             } : {
                 sortReviewsBy: 'suggested'
-            }    
+            };
         });
     }
+
+    toggleSortMenu(e){
+        this.setState( prevState => {
+            return prevState.showSortMenu ? { 
+                showSortMenu: false
+            } : {
+                showSortMenu: true
+            };
+        });
+    }
+
+
 
 
     render(){
