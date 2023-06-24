@@ -1,6 +1,9 @@
 import React from 'react';
 import StarRatings from 'react-star-ratings';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+
 /*
     What properties (props) will this need?
     .    Reviews (as an array)
@@ -304,6 +307,7 @@ class ReviewIndex extends React.Component{
                                 {
                                     this.state.sortReviewsBy === 'suggested' ? 'Sort by: Suggested' : 'Sort by: Highest rated'
                                 }
+                                <FontAwesomeIcon icon={faCaretDown} className='review-sort-caret-down' />
                             </button>
                         </div>
                     }

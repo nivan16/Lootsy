@@ -236,12 +236,11 @@
 
 /* the caret symbol */
 .fa-caret-down {
-    transform: rotate(180deg);
     transition: transform 225ms;
 }
 
 .fa-caret-down.expanded{
-    transform: rotate(0);
+    transform: rotate(180deg);
 }
 
 /* Product Description */

@@ -245,7 +245,7 @@ class ProductShow extends React.Component {
                                     Description
                                 </button>
 
-                                <FontAwesomeIcon icon={faCaretDown} className={`fa-caret-down ${this.state.showDescription ? "" : "expanded"}`}/>
+                                <FontAwesomeIcon icon={faCaretDown} className={`fa-caret-down ${this.state.showDescription ? "expanded" : ""}`}/>
                             </h2>
                         </div>
 
