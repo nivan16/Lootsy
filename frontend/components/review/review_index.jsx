@@ -17,6 +17,7 @@ class ReviewIndex extends React.Component{
         //Note: suggested will just return reviews with words in them first
         this.state = {
             currentPage: 1,
+            showSortingOptions: false,
             sortReviewsBy: 'suggested'
         };
 
@@ -25,6 +26,7 @@ class ReviewIndex extends React.Component{
         this.previousPage = this.previousPage.bind(this);
         this.paginateReviews = this.paginateReviews.bind(this);
         this.reviewSort = this.reviewSort.bind(this);
+        this.switchReviewSortCategory = this.switchReviewSortCategory.bind(this);
         this.toSpecificPage = this.toSpecificPage.bind(this);
         
     }
@@ -214,18 +216,23 @@ class ReviewIndex extends React.Component{
                     return -1;
             });
         }
-        else if(this.state.sortReviewsBy === 'highestRated'){
+        else{ //Sort reviews by highest rated
             sortedReviews.sort((a, b) => {
                 return a.rating - b.rating;
             });
         }
-        else {//in the case of lowest rated
-            sortedReviews.sort((a, b) => {
-                return b.rating - a.rating;
-            });
-        };
 
         return sortedReviews;
+    }
+
+    switchReviewSortCategory(e){
+        this.setState( prevState => {
+            return prevState.sortReviewsBy === 'suggested' ? { 
+                sortReviewsBy: 'ratings'
+            } : {
+                sortReviewsBy: 'suggested'
+            }    
+        });
     }
 
 
@@ -253,7 +260,8 @@ class ReviewIndex extends React.Component{
 
         const averageRating = this.averageOfRatings();
 
-        let reviewsClone;
+        //What is this for??
+        const reviewsClone = [...this.props.reviews]
 
         const itemsPerPage = 4;
         //Ex for below: (1-1) * 4 is index 0,
@@ -289,8 +297,16 @@ class ReviewIndex extends React.Component{
                      long as i pass the Array const copy to the methods. Might need to have the class functions return functions, 
                      will investigate. */}
 
-                    { totalPages > 1 && <div className='reviews-sorting-button'>
-
+                    { totalPages > 1 && <div className='reviews-sorting-button-container'>
+                        {/* This dropdown will be buttons because of the more excessive styling required */}
+                        <button
+                            className='reviews-sorting-button'
+                            onClick={(this.switchReviewSortCategory)}
+                        >
+                            {
+                                this.state.sortReviewsBy === 'suggested' ? 'Suggested' : 'Highest Rated'
+                            }
+                        </button>
                     </div>
                     }
 
