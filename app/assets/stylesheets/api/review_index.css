@@ -29,15 +29,18 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
     margin-top: 1rem;
 }
 
-/* Reviews Sort Button */
-.reviews-sorting-button-container {
+/* ----------- Reviews Sort Button Menu ----------- */
+.reviews-sorting-buttons-container {
+    position: relative;
     /* margin-left: auto; pushes an element to the right by
     utilizing all available space to the left*/
     margin-left: auto;
     align-self: flex-end;
 }
 
+/* Menu Trigger Button */
 .reviews-sorting-button {
+    position: relative;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     padding-left: 1.1rem;
@@ -49,18 +52,51 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
     font-weight: 500;
 
     transition: background-color 175ms ease-in-out;
+    z-index: 20;
 }
 
-.reviews-sorting-button:hover {
+/* .reviews-sorting-button:hover {
     background-color: rgb(236, 236, 236);
-}
+} */
 
 .review-sort-caret-down {
     margin-left: 0.5rem;
 }
 
+/* Dropdown Menu */
+.reviews-sorting-options {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 0;
+    max-width: 0;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
 
-/* Review Details */
+    padding-top: 2.5rem; /* this matches perfectly with the area of hover created by the menu trigger button*/
+    background-color: rgba(236, 236, 236, 0.7);
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 7.5px;
+    
+    transition: height 225ms ease-in-out, max-height 225ms ease-in-out, width 225ms ease-in-out,
+    opacity 500ms ease-in-out, visibility 225ms ease-in-out;
+    z-index: 5;
+}
+
+.reviews-sorting-options.expanded {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 400px;
+    opacity: 1;
+    visibility: visible;
+    transition: height 225ms ease-in-out, max-height 225ms ease-in-out, width 225ms ease-in-out,
+    opacity 500ms ease-in-out, visibility 225ms ease-in-out;
+}
+
+
+/* ----------- Review Details ----------- */
 .review-item {
     /* border: 1px solid black; */
 }

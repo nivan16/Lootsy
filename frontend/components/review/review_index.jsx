@@ -242,6 +242,7 @@ class ReviewIndex extends React.Component{
     }
 
     toggleSortMenu(e){
+        e.stopPropagation()
         this.setState( prevState => {
             return prevState.showSortMenu ? { 
                 showSortMenu: false
@@ -313,20 +314,31 @@ class ReviewIndex extends React.Component{
                      long as i pass the Array const copy to the methods. Might need to have the class functions return functions, 
                      will investigate. */}
 
-                    { totalPages > 1 && <div className='reviews-sorting-button-container'>
+                    { totalPages > 1 && <div className='reviews-sorting-buttons-container'>
                             {/* This dropdown will be buttons because of the more excessive styling required */}
                             <button
                                 className='reviews-sorting-button'
-                                onClick={(this.switchReviewSortCategory)}
+                                onClick={this.toggleSortMenu}
                             >
                                 {
                                     this.state.sortReviewsBy === 'suggested' ? 'Sort by: Suggested' : 'Sort by: Highest rated'
                                 }
+
                                 <FontAwesomeIcon icon={faCaretDown} className='review-sort-caret-down' />
                             </button>
+
+                            <div className={`reviews-sorting-options ${this.state.showSortMenu ? 'expanded': ''}`}>
+                                <button
+                                    className={`reviews-suggested-sort ${this.state.sortReviewsBy === 'suggested' ? 'selected' : ''}`}
+                                    onClick={this.switchReviewSortCategory}
+                                >
+                                    Suggested
+                                </button>
+                            </div>
                         </div>
                     }
                 </div>
+
                 <div className='reviews-index-container'>
                     {
                         reviewsToDisplay.map(review => (
@@ -355,6 +367,7 @@ class ReviewIndex extends React.Component{
                         )
                     }
                 </div>
+
                 {this.props.reviews.length > 4 && <div className='reviews-index-pagination-container'>
                     <div className='review-previous-page-navigation-button-container'>
                         <button className={`review-previous-page-navigation-button ${this.state.currentPage === 1 ? 'blocked' : ''}`} onClick={this.previousPage}>
