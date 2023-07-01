@@ -327,16 +327,16 @@ class ReviewIndex extends React.Component{
                                 <FontAwesomeIcon icon={faCaretDown} className='review-sort-caret-down' />
                             </button>
 
-                            <div className={`reviews-sorting-options ${this.state.showSortMenu ? 'expanded': ''}`}>
+                            <div className={`reviews-sort-menu ${this.state.showSortMenu ? 'expanded': ''}`}>
                                 <button
-                                    className={`reviews-suggested-sort ${this.state.sortReviewsBy === 'suggested' ? 'selected' : ''}`}
+                                    className={`reviews-sorting-option ${this.state.sortReviewsBy === 'suggested' ? 'selected' : ''}`}
                                     onClick={this.switchReviewSortCategory}
                                 >
                                     Suggested
                                 </button>
 
                                 <button
-                                    className={`reviews-suggested-sort ${this.state.sortReviewsBy === 'suggested' ? '' : 'selected'}`}
+                                    className={`reviews-sorting-option ${this.state.sortReviewsBy === 'suggested' ? '' : 'selected'}`}
                                     onClick={this.switchReviewSortCategory}
                                 >
                                     Highested rated

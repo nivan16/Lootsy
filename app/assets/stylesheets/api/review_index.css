@@ -64,7 +64,7 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 }
 
 /* Dropdown Menu */
-.reviews-sorting-options {
+.reviews-sort-menu {
     display: none;
     /* position: absolute;
     top: 0;
@@ -85,7 +85,7 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
     z-index: 5;
 }
 
-.reviews-sorting-options.expanded {
+.reviews-sort-menu.expanded {
     display: block;
     position: absolute;
     top: 0;
@@ -104,6 +104,24 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 
     transition: height 225ms ease-in-out, max-height 225ms ease-in-out, width 225ms ease-in-out,
     opacity 108ms ease-in-out 500ms, visibility 225ms ease-in-out 500ms;
+}
+
+/* Dropdown Option Buttons */
+.reviews-sort-menu.expanded .reviews-sorting-option {
+    width: 100%;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+
+    transition: background-color 175ms ease-in-out;
+    z-index: 20;
 }
 
 
