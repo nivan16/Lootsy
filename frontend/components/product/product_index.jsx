@@ -1,4 +1,6 @@
 import React from "react";
+import StarRatings from 'react-star-ratings';
+
 import { Link } from 'react-router-dom';
 
 class ProductIndex extends React.Component{
@@ -57,9 +59,21 @@ class ProductIndex extends React.Component{
                                         <p className="index-product-name">
                                             {product.name}
                                         </p>
+
+                                        <div className="index-product-average-rating">
+                                            <StarRatings 
+                                                rating={product.avgRating}
+                                                starEmptyColor='lightgray'
+                                                className='aggregate-review-rating'
+                                                starDimension='20px'
+                                                starSpacing='1px'
+                                            />
+                                        </div>
+
                                         <p className="index-product-price">
                                             {product.price}
                                         </p>
+
                                         <p className="index-product-owner">
                                             {this.props.users[product.ownerId].name}
                                         </p>
