@@ -107,8 +107,11 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 }
 
 /* Dropdown Option Buttons */
-.reviews-sort-menu.expanded .reviews-sorting-option {
+.reviews-sorting-option {
+    display: inline-flex;
+    justify-content: space-between;
     width: 100%;
+    
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     padding-left: 1.1rem;
@@ -117,21 +120,28 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
     background-color: transparent;
     border: 1px solid transparent;
     cursor: pointer;
-    font-weight: 500;
     text-align: start;
 
     transition: background-color 175ms ease-in-out;
     z-index: 20;
 }
 
-.reviews-sort-menu.expanded .reviews-sorting-option.selected {
+.reviews-sorting-option.selected {
     background-color: rgb(242, 242, 242);
 }
 
-.reviews-sort-menu.expanded .reviews-sorting-option:hover {
+.reviews-sorting-option:hover {
     background-color: rgb(230, 230, 230);
 }
 
+/* Selected Option Check Symbol */
+.reviews-option-check-symbol {
+    display: none;
+}
+
+.reviews-sorting-option.selected .reviews-option-check-symbol{
+    display: block;
+}
 
 /* ----------- Review Details ----------- */
 .review-item {

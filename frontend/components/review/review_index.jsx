@@ -2,7 +2,7 @@ import React from 'react';
 import StarRatings from 'react-star-ratings';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 /*
     What properties (props) will this need?
@@ -335,6 +335,10 @@ class ReviewIndex extends React.Component{
                                     onClick={this.switchReviewSortCategory}
                                 >
                                     Suggested
+                                    
+                                    <div className='reviews-option-check-symbol'>
+                                        <FontAwesomeIcon icon={faCheck} style={{color: "#000000",}} /> 
+                                    </div>
                                 </button>
 
                                 <button
@@ -342,6 +346,10 @@ class ReviewIndex extends React.Component{
                                     onClick={this.switchReviewSortCategory}
                                 >
                                     Highested rated
+
+                                    <div className='reviews-option-check-symbol'>
+                                        <FontAwesomeIcon icon={faCheck} style={{color: "#000000",}} /> 
+                                    </div>
                                 </button>
                             </div>
                         </div>
