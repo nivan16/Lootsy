@@ -116,12 +116,20 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 
     background-color: transparent;
     border: 1px solid transparent;
-    border-radius: 25px;
     cursor: pointer;
     font-weight: 500;
+    text-align: start;
 
     transition: background-color 175ms ease-in-out;
     z-index: 20;
+}
+
+.reviews-sort-menu.expanded .reviews-sorting-option.selected {
+    background-color: rgb(242, 242, 242);
+}
+
+.reviews-sort-menu.expanded .reviews-sorting-option:hover {
+    background-color: rgb(230, 230, 230);
 }
 
 

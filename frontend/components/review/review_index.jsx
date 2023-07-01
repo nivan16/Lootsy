@@ -234,9 +234,11 @@ class ReviewIndex extends React.Component{
         e.stopPropagation();
         this.setState( prevState => {
             return prevState.sortReviewsBy === 'suggested' ? { 
-                sortReviewsBy: 'ratings'
+                sortReviewsBy: 'ratings',
+                showSortMenu: false
             } : {
-                sortReviewsBy: 'suggested'
+                sortReviewsBy: 'suggested',
+                showSortMenu: false
             };
         });
     }
