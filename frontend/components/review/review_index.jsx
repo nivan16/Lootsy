@@ -317,7 +317,7 @@ class ReviewIndex extends React.Component{
                     { totalPages > 1 && <div className='reviews-sorting-buttons-container'>
                             {/* This dropdown will be buttons because of the more excessive styling required */}
                             <button
-                                className='reviews-sorting-button'
+                                className={`reviews-sorting-button ${this.state.showSortMenu ? 'expanded' : 'hidden'}`}
                                 onClick={this.toggleSortMenu}
                             >
                                 {
@@ -333,6 +333,13 @@ class ReviewIndex extends React.Component{
                                     onClick={this.switchReviewSortCategory}
                                 >
                                     Suggested
+                                </button>
+
+                                <button
+                                    className={`reviews-suggested-sort ${this.state.sortReviewsBy === 'suggested' ? '' : 'selected'}`}
+                                    onClick={this.switchReviewSortCategory}
+                                >
+                                    Highested rated
                                 </button>
                             </div>
                         </div>
