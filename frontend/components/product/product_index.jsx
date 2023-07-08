@@ -25,29 +25,6 @@ class ProductIndex extends React.Component{
                 </div>
                 <ul className="product-index">
                     {
-                        Object.values(this.props.products).map( (product, idx) => (                   
-                            <li className='index-product' key={idx}>
-                                <Link to={`/products/${product.id}`}>
-                                    <div className="index-product-image-container">
-                                        <img className="index-product-image" src={"https://picsum.photos/1" + (idx +100) + "/"}>
-                                        </img>
-                                    </div>
-                                    <div className="index-product-info-container">
-                                        <p className="index-product-name">
-                                            {product.name}
-                                        </p>
-                                        <p className="index-product-price">
-                                            ${product.price}
-                                        </p>
-                                        <p className="index-product-owner">
-                                            {this.props.users[product.ownerId].name}
-                                        </p>
-                                    </div>
-                                </Link>
-                            </li>                        
-                        ))
-                    }
-                    {
                         Object.values(this.props.products).map( (product, idx) =>                        
                             <li className='index-product' key={idx}>
                                 <Link to={`/products/${product.id}`}>
