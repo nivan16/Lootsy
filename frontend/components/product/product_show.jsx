@@ -272,6 +272,7 @@ class ProductShow extends React.Component {
                         reviews={Object.values(this.props.reviews)}
                         currentUser={this.props.currentUser}
                         users={this.props.users}
+                        avgRating={this.props.product.avgRating}
                     />
 
 

@@ -279,7 +279,7 @@ class ReviewIndex extends React.Component{
             );
         };
 
-        const averageRating = this.averageOfRatings();
+        // const averageRating = this.averageOfRatings();
 
         //What is this, reviewsClone, for??
         let reviewsClone = this.reviewSort();
@@ -304,7 +304,7 @@ class ReviewIndex extends React.Component{
                     
                     <div className='reviews-index-header-stars-container'>
                         <StarRatings 
-                            rating={averageRating}
+                            rating={this.props.avgRating}
                             starEmptyColor='lightgray'
                             starRatedColor='black'
                             starDimension='20px'
