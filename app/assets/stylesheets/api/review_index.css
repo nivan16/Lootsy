@@ -154,8 +154,17 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 
 .review-item-text {
     /* margin-bottom: 1rem; */
-    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    line-height: 28px;
 }
+
+
+
 
 .review-item-reviewer {
     margin-top: 1rem;

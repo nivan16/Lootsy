@@ -57,7 +57,7 @@ class ReviewIndex extends React.Component{
     
     nextPage(e){
         e.preventDefault();
-        debugger;
+  
         if (this.state.currentPage < Math.ceil(this.props.reviews.length / 4)) {
             this.setState({
                 currentPage: this.state.currentPage + 1
@@ -67,7 +67,7 @@ class ReviewIndex extends React.Component{
 
     previousPage(e){
         e.preventDefault();
-        debugger;
+
         if (this.state.currentPage > 1) {
             this.setState({
                 currentPage: this.state.currentPage - 1
