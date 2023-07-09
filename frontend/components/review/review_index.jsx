@@ -3,7 +3,6 @@ import StarRatings from 'react-star-ratings';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCheck } from '@fortawesome/free-solid-svg-icons';
-import { render } from 'react-dom';
 
 /*
     What properties (props) will this need?
@@ -424,6 +423,33 @@ class IndividualReview extends React.Component{
         this.state = {
             isClamped: false,
             isExpanded: false
+        }
+
+        this.contentRef = React.createRef();
+
+        this.checkLineClamp = this.checkLineClamp.bind(this);
+    }
+
+    componentDidMount(){
+        this.checkLineClamp();
+        window.addEventListener('resize', this.checkLineClamp);
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener('resize', this.checkLineClamp);
+    }
+
+    checkLineClamp(){
+        const content = this.contentRef.current;
+        if(content && content.scrollWidth > content.containerWidth){
+            this.setState({
+                isClamped: true
+            });
+        }
+        else{
+            this.setState({
+                isClamped: false
+            });
         }
     }
 
