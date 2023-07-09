@@ -3,6 +3,7 @@ import StarRatings from 'react-star-ratings';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { render } from 'react-dom';
 
 /*
     What properties (props) will this need?
@@ -360,7 +361,13 @@ class ReviewIndex extends React.Component{
                     {
                         reviewsToDisplay.map(review => (
                                 <div className='review-item' key={review.id}>
-                                    <div className='review-item-rating'>
+                                    <IndividualReview 
+                                        review={review.review} 
+                                        rating={review.rating}
+                                        username={this.props.users[review.reviewerId].name}
+                                    />
+
+                                    {/* <div className='review-item-rating'>
                                         <StarRatings 
                                             rating={review.rating}
                                             starEmptyColor='lightgray'
@@ -371,14 +378,14 @@ class ReviewIndex extends React.Component{
                                     </div>
 
                                     {review.review !== null && (
-                                        <div className='review-item-text'>
+                                        <p className='review-item-text'>
                                             {review.review}
-                                        </div>
+                                        </p>
                                     )}
                                     
                                     <div className='review-item-reviewer'>
                                         {this.props.users[review.reviewerId].name}
-                                    </div>
+                                    </div> */}
                                 </div>
                             )
                         )
@@ -409,6 +416,45 @@ class ReviewIndex extends React.Component{
 
         );
     }
+}
+
+class IndividualReview extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            isClamped: false,
+            isExpanded: false
+        }
+    }
+
+    render(){
+
+        return (
+            <>
+                <div className='review-item-rating'>
+                    <StarRatings 
+                        rating={this.props.rating}
+                        starEmptyColor='lightgray'
+                        starRatedColor='black'
+                        starDimension='20px'
+                        starSpacing='1px'                            
+                    />
+                </div>
+
+                {this.props.review !== null && (
+                    <p ref={this.contentRef} className='review-item-text'>
+                        {this.props.review}
+                    </p>
+                )}
+                
+                <div className='review-item-reviewer'>
+                    {this.props.username}
+                </div>
+            </>
+        );
+    }
+
+
 }
 
 export default ReviewIndex;
