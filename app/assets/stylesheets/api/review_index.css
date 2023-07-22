@@ -152,6 +152,7 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
     margin-bottom: 0.5rem;
 }
 
+/* Review Text */
 .review-item-text {
     /* margin-bottom: 1rem; */
     display: -webkit-box;
@@ -163,9 +164,13 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
     line-height: 28px;
 }
 
+.review-item-text.item-text-expanded {
+    display: block;
+    overflow: visible;
+}
 
 
-
+/* Review Username */
 .review-item-reviewer {
     margin-top: 1rem;
     margin-bottom: 1rem;

@@ -472,6 +472,10 @@ class IndividualReview extends React.Component{
     }
 
     render(){
+        // if(this.props.username === 'star'){
+        //     debugger
+        // }
+
         return (
             <>
                 <div className='review-item-rating'>
@@ -486,7 +490,7 @@ class IndividualReview extends React.Component{
 
                 {this.props.review !== null && (
                     <div className='review-item-text-container'>
-                        <p ref={this.contentRef} className={`review-item-text ${this.state.isClamped ? '' : 'item-text-extended'}`}>
+                        <p ref={this.contentRef} className={`review-item-text ${this.state.isExpanded ? 'item-text-expanded' : ''}`}>
                             {this.props.review}
                         </p>
                         
