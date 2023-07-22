@@ -499,7 +499,7 @@ class IndividualReview extends React.Component{
                                 className='review-item-text-clamp-toggle'
                                 onClick={this.toggleClamp}
                             >
-                                &hellip;
+                                ...
                             </button>
                         )}
                     </div>

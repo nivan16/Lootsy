@@ -153,6 +153,10 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 }
 
 /* Review Text */
+.review-item-text-container {
+    display: flex;
+}
+
 .review-item-text {
     /* margin-bottom: 1rem; */
     display: -webkit-box;
@@ -169,6 +173,20 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
     overflow: visible;
 }
 
+/* Text Clamp Button */
+.review-item-text-clamp-toggle {
+    position: relative;
+    align-self: end;
+    /* max-height: 1rem; */
+    padding: 0;
+
+    margin-left: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-weight: 700;
+
+    transform: scale(1.4, 1);
+}
 
 /* Review Username */
 .review-item-reviewer {
