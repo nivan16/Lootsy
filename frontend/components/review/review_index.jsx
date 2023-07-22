@@ -428,6 +428,7 @@ class IndividualReview extends React.Component{
         this.contentRef = React.createRef();
 
         this.checkLineClamp = this.checkLineClamp.bind(this);
+        this.toggleClamp = this.toggleClamp.bind(this);
     }
 
     componentDidMount(){
@@ -453,6 +454,23 @@ class IndividualReview extends React.Component{
         }
     }
 
+    toggleClamp(){
+        this.setState((prevState) => {
+            if(prevState.isClamped){
+                return {
+                    isClamped: false,
+                    isExpanded: true
+                }
+            }
+            else{
+                return {
+                    isClamped: true,
+                    isExpanded: false
+                }
+            }
+        })
+    }
+
     render(){
         return (
             <>
@@ -473,7 +491,10 @@ class IndividualReview extends React.Component{
                         </p>
                         
                         {(this.state.isClamped || this.state.isExpanded) && (
-                            <button>
+                            <button 
+                                className='review-item-text-clamp-toggle'
+                                onClick={this.toggleClamp}
+                            >
                                 &hellip;
                             </button>
                         )}
