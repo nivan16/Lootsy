@@ -441,7 +441,7 @@ class IndividualReview extends React.Component{
 
     checkLineClamp(){
         const content = this.contentRef.current;
-        if(content && content.scrollWidth > content.containerWidth){
+        if(content && content.scrollHeight > content.clientHeight){
             this.setState({
                 isClamped: true
             });
@@ -454,7 +454,6 @@ class IndividualReview extends React.Component{
     }
 
     render(){
-
         return (
             <>
                 <div className='review-item-rating'>
@@ -468,9 +467,17 @@ class IndividualReview extends React.Component{
                 </div>
 
                 {this.props.review !== null && (
-                    <p ref={this.contentRef} className='review-item-text'>
-                        {this.props.review}
-                    </p>
+                    <div className='review-item-text-container'>
+                        <p ref={this.contentRef} className={`review-item-text ${this.state.isClamped ? '' : 'item-text-extended'}`}>
+                            {this.props.review}
+                        </p>
+                        
+                        {(this.state.isClamped || this.state.isExpanded) && (
+                            <button>
+                                &hellip;
+                            </button>
+                        )}
+                    </div>
                 )}
                 
                 <div className='review-item-reviewer'>
