@@ -1,3 +1,6 @@
+import React from "react";
+import StarRatings from "react-star-ratings";
+
 class ReviewIndexResult extends React.Component{
     constructor(props){
         super(props);
