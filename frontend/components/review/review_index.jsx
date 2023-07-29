@@ -1,5 +1,5 @@
 import React from 'react';
-import ReviewIndexResult from './review_index_result';
+import ReviewIndexItemClamper from './review_index_item_clamper';
 import StarRatings from 'react-star-ratings';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -361,7 +361,7 @@ class ReviewIndex extends React.Component{
                     {
                         reviewsToDisplay.map(review => (
                                 <div className='review-item' key={review.id}>
-                                    <ReviewIndexResult 
+                                    <ReviewIndexItemClamper 
                                         review={review.review} 
                                         rating={review.rating}
                                         username={this.props.users[review.reviewerId].name}

@@ -1,7 +1,7 @@
 import React from "react";
 import StarRatings from "react-star-ratings";
 
-class ReviewIndexResult extends React.Component{
+class ReviewIndexItemClamper extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -97,4 +97,4 @@ class ReviewIndexResult extends React.Component{
     }
 };
 
-export default ReviewIndexResult;
+export default ReviewIndexItemClamper;
