@@ -322,6 +322,7 @@
 
 .product-cart-added-modal-image-and-description-container {
     display: flex;
+    margin-bottom: 1rem;
 }
 
 .product-modal-image-container {
