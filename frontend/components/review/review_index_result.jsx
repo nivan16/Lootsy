@@ -93,3 +93,5 @@ class ReviewIndexResult extends React.Component{
         );
     }
 };
+
+export default ReviewIndexResult;
