@@ -9,6 +9,7 @@
     flex: 1 1 66%;
     height: 50vw;
     max-height: 80vh;
+    margin-bottom: 0.5rem;
     /* border: 1px solid rgb(85, 236, 85); */
 
     overflow: hidden;
