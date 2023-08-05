@@ -178,6 +178,7 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
     position: relative;
     align-self: end;
     /* max-height: 1rem; */
+    margin-bottom: 2px;
     padding: 0;
 
     margin-left: 0.5rem;
