@@ -301,7 +301,7 @@ class ProductShow extends React.Component {
                     >
                         <div className='product-cart-added-modal-container'>
                             <span className='product-cart-added-close-button'>
-                                <FontAwesomeIcon className='fa-modal-close-button' icon={faXmark} />
+                                <FontAwesomeIcon className='fa-cart-added-modal-close-button' icon={faXmark} />
                             </span>
 
                             <div className='product-cart-added-modal-image-and-description-container'>
@@ -345,7 +345,7 @@ class ProductShow extends React.Component {
                     >
                         <div className='product-purchased-modal-container'>
                             <span className='product-purchased-modal-close-button'>
-                                <FontAwesomeIcon className='fa-modal-close-button' icon={faXmark} />
+                                <FontAwesomeIcon className='fa-product-purchased-modal-close-button' icon={faXmark} />
                             </span>
 
                             {/* Should find an image to put inside/beside the thank you msg */}

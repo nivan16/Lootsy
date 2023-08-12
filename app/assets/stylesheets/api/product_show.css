@@ -406,8 +406,47 @@
 
 /* ****Modal(cart) close buttons**** */
 /* Top Right "x" Close Button */
+.product-cart-added-close-button {
+    position: absolute;
+    top: 0.25rem;
+    right: -3rem;
+    
+    height: 2.4rem;
+    width: 2.4rem;
+    background-color: transparent;
+    /* color: white; */
+    cursor: pointer;
 
+    transition: 225ms ease-in-out;
+    z-index: 20;
+}
 
+.product-cart-added-close-button::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 2.4rem;
+    width: 2.4rem;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    transform: scale(0.01);
+    transition: 225ms ease-in-out;
+}
+
+.product-cart-added-close-button:hover::after {
+    transform: scale(1.2);
+}
+
+.fa-cart-added-modal-close-button {
+    position: relative;
+    height: 2.4rem;
+    width: 2.4rem;
+    
+    color: white;
+}
 
 /* "Keep Shopping" Close Button */
 .product-cart-added-modal-close-button-container {
@@ -541,7 +580,7 @@
     transform: scale(1.2);
 }
 
-.fa-modal-close-button {
+.fa-product-purchased-modal-close-button {
     position: relative;
     height: 2.75rem;
     width: 2.75rem;
