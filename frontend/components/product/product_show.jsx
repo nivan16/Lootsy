@@ -2,7 +2,7 @@ import React from 'react';
 import ReviewIndex from '../review/review_index';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faCaretDown, faFaceFrown} from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faCaretDown, faFaceFrown, faXmark} from '@fortawesome/free-solid-svg-icons';
 import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 class ProductShow extends React.Component {
@@ -290,7 +290,7 @@ class ProductShow extends React.Component {
                 </img>
 
                 *********vvvv height vvvv**************
-                <img className="product-modal-image" src={"https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg"}>
+                <img className="produ877777ct-modal-image" src={"https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg"}>
                 </img> 
                 */}
                 {/* <div className='product-cart-added-modal-wrapper open'> */}
@@ -340,7 +340,9 @@ class ProductShow extends React.Component {
                         onClick={this.closePurchasedModal}
                     >
                         <div className='product-purchased-modal-container'>
-                            <span className='product-purchased-modal-close-button'>&times;</span>
+                            <span className='product-purchased-modal-close-button'>
+                                <FontAwesomeIcon className='fa-modal-close-button' icon={faXmark} />
+                            </span>
 
                             {/* Should find an image to put inside/beside the thank you msg */}
                             <p className='product-purchased-modal-message-one'>
