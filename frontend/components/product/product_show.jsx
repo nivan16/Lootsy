@@ -300,6 +300,10 @@ class ProductShow extends React.Component {
                         onClick={this.closeAddedToCartModal}
                     >
                         <div className='product-cart-added-modal-container'>
+                            <span className='product-cart-added-close-button'>
+                                <FontAwesomeIcon className='fa-modal-close-button' icon={faXmark} />
+                            </span>
+
                             <div className='product-cart-added-modal-image-and-description-container'>
                                 <div className='product-modal-image-container'>
                                     <img className="product-modal-image" src={"https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg"}>

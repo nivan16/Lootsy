@@ -404,7 +404,12 @@
 
 
 
-/* Modal(cart) close button */
+/* ****Modal(cart) close buttons**** */
+/* Top Right "x" Close Button */
+
+
+
+/* "Keep Shopping" Close Button */
 .product-cart-added-modal-close-button-container {
     /* vvv These might be necessary if I include an arrow symbol from FontAwesome vvv */
     display: inline-flex;
@@ -462,7 +467,6 @@
 .product-cart-added-modal-close-button:hover .fa-arrow-right {
     right: 30.5%;
 }
-
 
 /* ---------- Immediate Purchase Modal -------------*/
 .product-purchased-modal-wrapper {
