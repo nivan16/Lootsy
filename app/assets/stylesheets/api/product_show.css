@@ -503,25 +503,41 @@
     background-color: white;
 }
 
-/* close button */
+/* close button container */
 .product-purchased-modal-close-button {
     position: absolute;
-    right: -50px;
+    right: -3.5rem;
+    
+    height: 2.75rem;
+    width: 2.75rem;
     background-color: transparent;
-    line-height: 1;
-    /* border-radius: 50px; */
-    color: white;
+    /* color: white; */
     cursor: pointer;
-    font-size: 5rem;
-    transform: translateY(-50%);
+
     transition: 225ms ease-in-out;
+    z-index: 20;
 }
 
-.product-purchased-modal-close-button:hover {
-    /* border-radius: 50px; */
-    border: 1px solid white;
+
+.fa-modal-close-button {
+    position: relative;
+    height: 2.75rem;
+    width: 2.75rem;
+    
+    color: white;
 }
 
+.product-purchased-modal-close-button::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 2.75rem;
+    width: 2.75rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 30;
+}
 
 /* messages */
 .product-purchased-modal-message-one {
