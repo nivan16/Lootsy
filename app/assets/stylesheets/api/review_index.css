@@ -166,6 +166,7 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
     text-overflow: ellipsis;
     
     line-height: 28px;
+    margin-right: 0.5rem;
 }
 
 .review-item-text.item-text-expanded {
@@ -186,15 +187,31 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
     margin-left: 0.5rem;
     border-radius: 25px;
     border: 1px solid transparent;
-    background-color: rgb(223, 223, 223);
-
-    transform: scale(1.4, 1.1);
-    transition: 225ms;
+    /* background-color: rgb(223, 223, 223); */
+    background-color: transparent;
+    cursor: pointer;
+    transform: scale(1.6, 1.5);
 }
 
-.review-item-text-clamp-toggle:hover {
+.review-item-text-clamp-toggle::after{
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+
+    border-radius: 25px;
+    background-color: rgb(223, 223, 223);
+
+    transform: scale(1.4, 0.8);
+    transition: 100ms ease-in-out;
+    z-index: -5;
+}
+
+.review-item-text-clamp-toggle:hover::after {
     background-color: rgb(209, 209, 209);
-    transform: scale(1.6, 1.2);
+    transform: scale(1.6, 1);
 }
 
 /* Review Username */
