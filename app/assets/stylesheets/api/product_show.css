@@ -1,0 +1,678 @@
+.product-image-and-info-container{
+    display: flex;
+
+    margin-top: 1.5rem;
+}
+
+/* ---------- Product Image -------------*/
+.product-image-container {
+    flex: 1 1 66%;
+    height: 50vw;
+    max-height: 80vh;
+    margin-bottom: 0.5rem;
+    /* border: 1px solid rgb(85, 236, 85); */
+
+    overflow: hidden;
+}
+
+.product-image-width-height-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.product-image-width-height-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
+    /* object-position: 50% 50%; */
+}
+
+
+/* ---------- Product Information -------------*/
+.product-info-container {
+    display: flex;
+
+    flex: 1 1 33%;
+    flex-direction: column;
+
+    margin-left: 2rem;
+}
+
+/* --- Price ---*/
+.product-price-container {
+    margin-bottom: 1rem;
+}
+
+.product-price-container > span{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* --- Name ---*/
+.product-name-container {
+    margin-bottom: 1rem;
+}
+
+.product-name-container > h1{
+    font-size: 1.5rem;
+}
+
+/* --- Owner ---*/
+.product-owner-username-container {
+    margin-bottom: 1.25rem;
+}
+
+.product-owner-username-container > span {
+    font-size: 1.125rem;
+}
+
+/* --- Quantity ---*/
+.product-quantity-container {
+    margin-bottom: 0.75rem;
+}
+
+.product-quantity {
+    margin-bottom: 0.5rem;
+}
+
+.product-quantity > span {
+    font-size: 0.8rem;
+}
+
+/* --- Quantity Select ---*/
+.product-quantity-selector {
+    cursor: pointer;
+    width: 100%;
+    height: 3rem;
+
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px rgb(218, 218, 218);
+    
+    font-size: 1.125rem;
+
+    padding-top: 2.5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    transition: box-shadow, border 225ms;
+}
+
+.product-quantity-selector:focus {
+    outline: none;
+}
+
+.product-quantity-selector:hover {
+    border: 1px solid black;
+    box-shadow: 0 0 7.5px 1.5px rgb(218, 218, 218);
+}
+
+/* --- Purchase and Cart Buttons ---*/
+.product-purchase-and-cart-buttons-container {
+    margin-bottom: 2rem;
+}
+
+/* Purchase Now Button */
+.product-checkout-button-container {
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+.product-checkout-button {
+    cursor: pointer;
+    width: 100%;
+    height: 3rem;
+    background-color: white;
+
+    /* 
+        removed default button border
+        but retained the border-radius (accurate hovering)  
+    */
+    border: none;
+    border-radius: 25px;
+
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.product-checkout-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 25px;
+    transition: 225ms;
+}
+
+.product-checkout-button:hover::before{
+    transform: scale(1.03, 1.06);
+}
+
+/* 
+.product-checkout-button-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 5;
+} 
+*/
+
+/* Add to Cart Button */
+.product-cart-add-button-container {
+    position: relative;
+}
+
+.product-cart-add-button {
+    cursor: pointer;
+    width: 100%;
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 25px;
+    
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: 225ms;
+}
+
+.product-cart-add-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 25px;
+    transform: scale(1.0000000000001);
+    transition: 225ms;
+    z-index: -5;
+}
+
+.product-cart-add-button:hover::before {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(0, 0, 0, 0.075);
+    transform: scale(1.03, 1.06);
+}
+
+/* Product Description Button */
+.product-description-header {
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    /* border: 1px solid green; */
+    transition: 225ms;
+}
+
+.product-description-header-button {
+    height: 3rem;
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-align: left;
+}
+
+.product-description-header::before {
+    content: "";
+    position: absolute;
+    inset: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    transition: 160ms ease-in-out;
+}
+
+.product-description-header:hover::before {
+    top: 0;
+    left: -1.5%;
+    right: -2%;
+    bottom: 0;
+}
+
+/* the caret symbol */
+.fa-caret-down {
+    transition: transform 225ms;
+}
+
+.fa-caret-down.expanded{
+    transform: rotate(180deg);
+}
+
+/* Product Description */
+.product-description {
+    max-height: 0;
+    /* Note: 
+    visibility: hidden; is generally for when you
+    want to temp hide an element but still preserve the 
+    doc layout! */
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: 225ms;
+    margin-left: 1rem;
+}
+
+.product-description.expanded {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    max-height: 200px;
+    transition: 225ms;
+    line-height: 1.25rem;
+
+    /* padding bottom prevents letters from getting cut off*/
+    padding-bottom: 5px;
+}
+
+
+
+/* .product-image-container {
+    width: 20vw;
+    height: 20vh;
+    overflow: hidden;
+}
+
+.product-image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+/* ---------- Product Added To Cart Modal ------------- */
+.product-cart-added-modal-wrapper {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 225ms ease-in-out;
+}
+
+
+.product-cart-added-modal-wrapper.open {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s, opacity 225ms ease-in-out;
+}
+
+.product-cart-added-modal-wrapper.closed {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s 225ms, opacity 225ms ease-in-out;
+}
+
+/* Modal Background*/
+.product-cart-added-modal-background {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+/* *----- Modal -----* */
+.product-cart-added-modal-container {    
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30rem;
+    height: 20rem;
+    background-color: white;
+}
+
+.product-cart-added-modal-image-and-description-container {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.product-modal-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 9rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    overflow: hidden;
+}
+
+.product-modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* object-position: 50% 50%; */
+    border-radius: 7px;    
+}
+
+.product-cart-added-modal-description {
+    height: 9rem;
+    padding-top: 4.4rem;
+    padding-left: 1.5rem;
+
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Redirect to Cart Button */
+.product-cart-added-modal-redirect-to-cart-button-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+.product-cart-added-modal-redirect-to-cart-button {
+    width: 90%;
+    height: 3rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.product-cart-added-modal-redirect-to-cart-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 25px;
+    transform: scale(1.0000000000001);
+    transition: 225ms;
+    z-index: -5;
+}
+
+.product-cart-added-modal-redirect-to-cart-button:hover::before {
+    /* top: -1%;
+    bottom: -1%;
+    left: 3.75%;
+    right: 3.75%; */
+
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    transform: scale(1.04, 1.06);
+}
+
+
+
+/* ****Modal(cart) close buttons**** */
+/* Top Right "x" Close Button */
+.product-cart-added-close-button {
+    position: absolute;
+    top: 0.25rem;
+    right: -3rem;
+    
+    height: 2.4rem;
+    width: 2.4rem;
+    background-color: transparent;
+    /* color: white; */
+    cursor: pointer;
+
+    transition: 225ms ease-in-out;
+    z-index: 20;
+}
+
+.product-cart-added-close-button::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 2.4rem;
+    width: 2.4rem;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    transform: scale(0.01);
+    transition: 225ms ease-in-out;
+}
+
+.product-cart-added-close-button:hover::after {
+    transform: scale(1.2);
+}
+
+.fa-cart-added-modal-close-button {
+    position: relative;
+    height: 2.4rem;
+    width: 2.4rem;
+    
+    color: white;
+}
+
+/* "Keep Shopping" Close Button */
+.product-cart-added-modal-close-button-container {
+    /* vvv These might be necessary if I include an arrow symbol from FontAwesome vvv */
+    display: inline-flex;
+    justify-content: center;
+    /* align-items: center; */
+    position: relative;
+    width: 100%;
+}
+
+.product-cart-added-modal-close-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 500;
+    height: 3rem;
+    width: 95%;
+}
+
+.product-cart-added-modal-close-button::before {
+    content: "";
+    position: absolute;
+    inset: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    transition: 160ms ease-in-out;
+    z-index: -20;
+}
+
+.product-cart-added-modal-close-button:hover::before{
+    top: 0;
+    bottom: 0;
+    left: 3.5%;
+    right: 3.5%;
+    /* transform: scale(1.03,1.06); */
+}
+
+.product-cart-added-modal-close-button > .fa-arrow-right {
+    position: absolute;
+    right: 32%;
+    transform: translateY(10%);
+    transition: right 160ms ease-in-out;
+    /* The z-index is so that the button still closes the modal
+        in the event that the icon itself is clicked on (refer
+        to event handler closeAddedToCartModal(e)
+    */
+    z-index: -5;
+}
+
+.product-cart-added-modal-close-button:hover .fa-arrow-right {
+    right: 30.5%;
+}
+
+/* ---------- Immediate Purchase Modal -------------*/
+.product-purchased-modal-wrapper {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 225ms ease-in-out;
+}
+
+
+.product-purchased-modal-wrapper.open {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s, opacity 225ms ease-in-out;
+}
+
+.product-purchased-modal-wrapper.closed {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s 225ms, opacity 225ms ease-in-out;
+}
+
+/* Modal background */
+.product-purchased-modal-background {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+/* Modal */
+.product-purchased-modal-container {    
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    height: 30rem;
+    background-color: white;
+}
+
+/* close button container */
+.product-purchased-modal-close-button {
+    position: absolute;
+    right: -3.5rem;
+    
+    height: 2.75rem;
+    width: 2.75rem;
+    background-color: transparent;
+    /* color: white; */
+    cursor: pointer;
+
+    transition: 225ms ease-in-out;
+    z-index: 20;
+}
+
+.product-purchased-modal-close-button::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 2.75rem;
+    width: 2.75rem;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    transform: scale(0.01);
+    transition: 225ms ease-in-out;
+}
+
+.product-purchased-modal-close-button:hover::after {
+    transform: scale(1.2);
+}
+
+.fa-product-purchased-modal-close-button {
+    position: relative;
+    height: 2.75rem;
+    width: 2.75rem;
+    
+    color: white;
+}
+
+/* messages */
+.product-purchased-modal-message-one {
+    border-bottom: 1px solid grey;
+    text-align: center;
+    font-size: 1.5rem;
+    /* font-weight: 500; */
+
+    /* margin is to make the border have a limited space */
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1rem 0.5rem 1rem;
+}
+
+.product-purchased-modal-message-two {
+    line-height: 1.2;
+    padding: 1rem 2rem;
+}
+
+.portfolio-link {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.portfolio-link > a {
+    color: #005eff;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-around;
+
+    margin-top: 6rem;
+    padding: 1rem;
+}
+
+/* Note: .fa-brand is *more* specific than the three class
+            names below!
+*/
+.fa-brand {
+    width: 5rem;
+    height: 5rem;
+}
+
+.fa-linkedin {
+    color: #005eff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- Product Unavailable Page -------------*/
+
+.product-show-unavailable-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    background-color: rgb(243, 243, 243);
+
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+}
+
+.fa-face-frown {
+    height: 2rem;
+    width: 2rem;
+}
+
+.product-show-unavailable {
+    padding-left: 1rem;
+}

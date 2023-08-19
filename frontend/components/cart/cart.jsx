@@ -10,18 +10,21 @@ class Cart extends React.Component{
         this.handleCheckout = this.handleCheckout.bind(this);
     }
 
-    subTotal(cartProducts){
+    subTotal(cartItems){
         let total = 0;
         
-        cartProducts.forEach( cartProduct => total += (parseFloat(cartProduct.price) * cartProduct.quantity ) );
+        //consider future usage of reduce instead of forEach
+        cartItems.forEach( cartItem => total += (parseFloat(cartItem.price) * cartItem.quantity ) );
         return total;
     }
 
     handleCheckout(e){
         e.preventDefault();
         
-        //maybe create a modal that thanks for browsing
+        //Maybe create a modal that thanks for browsing
         // for a 1.5 second duration, then redirects to homepage?
+        //Or a separate page that gives thanks while also being a
+        // pretty pseudo application page?
         this.props.deleteCart(this.props.currentUser.id)
             .then( () => this.props.history.push('/'));
     }
@@ -52,9 +55,9 @@ class Cart extends React.Component{
         
 
 
-        const cartProducts = Object.values(this.props.cart.products);
-        const productAmount = cartProducts.length;
-        let price = this.subTotal(cartProducts);
+        const cartItems = Object.values(this.props.cart);
+        const cartItemAmount = cartItems.length;
+        let price = this.subTotal(cartItems);
 
         return (
             <>
@@ -63,10 +66,10 @@ class Cart extends React.Component{
                     <div className='cart-product-amount-wrapper'>
                         <h1 className='cart-product-amount'>
                             {
-                                productAmount === 1 ? ( 
-                                    productAmount + ' items in your cart'
+                                cartItemAmount === 1 ? ( 
+                                    cartItemAmount + ' items in your cart'
                                 ) : (
-                                    productAmount + ' items in your cart'
+                                    cartItemAmount + ' items in your cart'
                                 )
                             }
                         </h1>
@@ -96,11 +99,10 @@ class Cart extends React.Component{
                 <div className='cart-index-and-checkout-wrapper max-body-width body-padding'>
                     <ul className='cart-index'>
                         {
-                            cartProducts.map( cartProduct => (
+                            cartItems.map( cartItem => (
                                 <CartItem
-                                    key={cartProduct.id}
-                                    cartProduct={cartProduct}
-                                    productOwner={this.props.cart.owners[cartProduct.ownerId]}
+                                    key={cartItem.id}
+                                    cartItem={cartItem}
                                     currentUser={this.props.currentUser}
                                     updateCartItem={this.props.updateCartItem}
                                     deleteCartItem={this.props.deleteCartItem}
@@ -151,10 +153,10 @@ class Cart extends React.Component{
 
                                 <div className='cart-checkout-total-container'>
                                     <span className='cart-checkout-total'>
-                                        Total { productAmount === 1 ? (
+                                        Total { cartItemAmount === 1 ? (
                                             "(1 item)"
                                         ) : (
-                                            `(${productAmount} items)`
+                                            `(${cartItemAmount} items)`
                                         )}
                                     </span>
                                     

@@ -15,6 +15,19 @@ u2 = User.create!(email: 'bizarre@adventure.com', name: 'Kars', password: 'ultim
 u3 = User.create!(email: 'roamingseller@hyrule.com', name: 'Beetle', password: 'madeinheaven')
 u4 = User.create!(email: 'doctor@regions.com', name: 'Oak', password: 'ketchup')
 u5 = User.create!(email: 'critic@critics.com', name: 'Garf', password: 'foodies')
+u6 = User.create!(email: 'merc@talon.com', name: 'Commander Jabsco', password:'caps4days')
+u7 = User.create!(email: 'link@hyrule.com', name: 'Link', password: 'princessmipha')
+u8 = User.create!(email: 'justpeachy@shroomdom.com', name: 'Peach', password: 'bffdaisy')
+u9 = User.create!(email: 'lorem1@epsum.com', name: 'lorey', password: 'password')
+u10 = User.create!(email: 'lorem2@epsum.com', name: 'epsil', password: 'password')
+u11 = User.create!(email: 'lorem3@epsum.com', name: 'tinker', password: 'password')
+u12 = User.create!(email: 'lorem4@epsum.com', name: 'gavin', password: 'password')
+u13 = User.create!(email: 'lorem5@epsum.com', name: 'patter', password: 'password')
+
+u14 = User.create!(email: 'lorem6@epsum.com', name: 'senku', password: 'password')
+u15 = User.create!(email: 'lorem7@epsum.com', name: 'harmon', password: 'password')
+u16 = User.create!(email: 'lorem8@epsum.com', name: 'jonathan', password: 'password')
+u17 = User.create!(email: 'lorem9@epsum.com', name: 'star', password: 'password')
 
 
 # product = Product.create!(name: , description: , category: '', price: , owner_id: )
@@ -34,14 +47,34 @@ cart_item3 = CartItem.create!(shopper_id: u1.id, product_id: pokeball.id, quanti
 cart_item4 = CartItem.create!(shopper_id: u2.id, product_id: rengoku.id, quantity: 1)
 
 review1 = Review.create!(product_id: stand_arrow.id, reviewer_id: u5.id, rating: 4, review: "This is an awesome collectable, but I feel sick after i nicked my skin with it")
-review2 = Review.create!(product_id: master_sword.id, reviewer_id: u5.id, rating: 3, review: "This is an okay item, but I wish it would make me stronger")
 
-review3 = Review.create!(product_id: pokeball.id, reviewer_id: u5.id, rating: 5, review: nil)
+review2 = Review.create!(product_id: pokeball.id, reviewer_id: u5.id, rating: 5, review: nil)
 
-review4 = Review.create!(product_id: vampire_mask.id, reviewer_id: u1.id, rating: 2, review: nil)
-review5 = Review.create!(product_id: vampire_mask.id, reviewer_id: u2.id, rating: 5, review: nil)
-review6 = Review.create!(product_id: vampire_mask.id, reviewer_id: u3.id, rating: 3, review: nil)
-review7 = Review.create!(product_id: vampire_mask.id, reviewer_id: u4.id, rating: 1, review: nil)
+review3 = Review.create!(product_id: master_sword.id, reviewer_id: u1.id, rating: 2, review: nil)
+review4 = Review.create!(product_id: master_sword.id, reviewer_id: u2.id, rating: 5, review: 'The pure light of this blade leaves my body unaffected, and works well against Hamon!')
+review5 = Review.create!(product_id: master_sword.id, reviewer_id: u3.id, rating: 3, review: nil)
+review6 = Review.create!(product_id: master_sword.id, reviewer_id: u4.id, rating: 4, review: 'I originally bought this as a decoration piece, but I cannot stop looking into how it glows. Is it connected to the light of Solgaleo somehow?')
+review7 = Review.create!(product_id: master_sword.id, reviewer_id: u5.id, rating: 1, review: nil)
+review8 = Review.create!(product_id: master_sword.id, reviewer_id: u6.id, rating: 3, review: 'For the most part I prefer my missile launcher, but this thing is way better as a sidearm than my knife')
+review9 = Review.create!(product_id: master_sword.id, reviewer_id: u7.id, rating: 5, review: 'I love this sword but buyer beware, its already broken twice on me')
+review10 = Review.create!(product_id: master_sword.id, reviewer_id: u8.id, rating: 1, review: nil)
+review11 = Review.create!(product_id: master_sword.id, reviewer_id: u9.id, rating: 1, review: nil)
+review12 = Review.create!(product_id: master_sword.id, reviewer_id: u10.id, rating: 1, review: nil)
+review13 = Review.create!(product_id: master_sword.id, reviewer_id: u11.id, rating: 1, review: nil)
+review14 = Review.create!(product_id: master_sword.id, reviewer_id: u12.id, rating: 1, review: nil)
+review15 = Review.create!(product_id: master_sword.id, reviewer_id: u13.id, rating: 1, review: nil)
+review16 = Review.create!(product_id: master_sword.id, reviewer_id: u14.id, rating: 1, review: nil)
+review17 = Review.create!(product_id: master_sword.id, reviewer_id: u15.id, rating: 1, review: nil)
+review18 = Review.create!(product_id: master_sword.id, reviewer_id: u16.id, rating: 1, review: nil)
+review19 = Review.create!(product_id: master_sword.id, reviewer_id: u17.id, rating: 1, review: '
+Even so my sun one early morn did shine,
+With all triumphant splendour on my brow;
+But out, alack, he was but one hour mine,
+The region cloud hath mask’d him from me now …
+
+‘Full many a glorious morning have I seen’: Sonnet 33 is, without doubt, one of the more famous of Shakespeare’s Sonnets. It is also one of the most beautiful poems in English.
+
+The extended metaphor whereby ‘sun = Fair Youth’ in this poem is intended to pay homage to the young man’s beauty: he shines as brightly as that heavenly orb. Shakespeare piles on the flattery, though, with extra touches: the sun has a ‘sovereign eye’ and so, by association, has the Fair Youth – ‘sovereign’ suggesting royalty or at least nobility. The words ‘golden’, ‘gilding’, and ‘alchemy’ all reinforce this association with wealth and nobility.')
 
 # Harry Potter:
 #   Elder wand

@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             entities: {
                 users: {},
                 products: {},
+                reviews: {},
             },
             cart: {},
             session: {},
@@ -33,15 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //if the current user has a cart
         if( window.currentUser.cartItems !== undefined){
-            const { products, users, cartItems } = window.currentUser;
-            
-            preloadedState.entities.products = products;
-            preloadedState.entities.users = users;
-            preloadedState.cart = cartItems;
+            preloadedState.cart = window.currentUser.cartItems;
         };
-        
-        preloadedState.entities.users[userInfo.id] = userInfo;          
-        preloadedState.session.currentUserId = userInfo.id;
+                  
+        preloadedState.session.currentUser = userInfo;
 
         store = configureStore(preloadedState);
     } //end if (currentUser) conditional

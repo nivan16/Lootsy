@@ -11,9 +11,13 @@ class CartItem extends React.Component{
 
     handleRemove(e){
         e.preventDefault();
+        //Must change the productId to cartItemId
+        //  at here, the action, and the cart items controller since
+        //  it is now available (unsure why I had done so before
+        //  if it was previously available)
         this.props.deleteCartItem(
             this.props.currentUser.id,
-            this.props.cartProduct.id
+            this.props.cartItem.productId
         );
     }
 
@@ -22,7 +26,7 @@ class CartItem extends React.Component{
         e.preventDefault();
         this.props.updateCartItem({
             shopperId: this.props.currentUser.id,
-            productId: this.props.cartProduct.id,
+            productId: this.props.cartItem.productId,
             quantity: e.target.value
         });
     }
@@ -32,7 +36,7 @@ class CartItem extends React.Component{
         // such as just a { length } object, and actually map over it in
         // this function since it is still being constructed!
         // also doesnt create a middleman array!
-        const options = () => Array.from({length: this.props.cartProduct.stock}, (_, i) => (
+        const options = () => Array.from({length: this.props.cartItem.stock}, (_, i) => (
             <option value={i+1} key={i}>
                 {i+1}
             </option>    
@@ -42,7 +46,7 @@ class CartItem extends React.Component{
             <li className='cart-list-item'>                
                 <form onSubmit={this.handleRemove}>
                     <p className='cart-item-owner'>
-                        {this.props.productOwner.name}
+                        {this.props.cartItem.ownerName}
                     </p>
                     
                     <div className='cart-item-wrapper'>
@@ -53,8 +57,8 @@ class CartItem extends React.Component{
                         <div className='cart-item-info-wrapper'>
                             <div className='cart-item-info'>
                                 <p className='cart-item-name'>
-                                    <Link to={`/products/${this.props.cartProduct.id}`}>
-                                        {this.props.cartProduct.name}
+                                    <Link to={`/products/${this.props.cartItem.productId}`}>
+                                        {this.props.cartItem.productName}
                                     </Link>
                                 </p>
                                 <div>
@@ -70,11 +74,11 @@ class CartItem extends React.Component{
                             <div className='cart-item-numbers-wrapper'>
                                 <div className='cart-item-quantity-selector-container'>
                                     {
-                                        this.props.cartProduct.stock > 1 ? (
+                                        this.props.cartItem.stock > 1 ? (
                                             <select className={"cart-item-quantity-selector"}
                                                 id="cart-item-quantity-selector"
                                                 onChange={this.handleQuantityChange}
-                                                value={this.props.cartProduct.quantity}
+                                                value={this.props.cartItem.quantity}
                                                 >
                                                 {options()}
                                             </select>
@@ -86,12 +90,12 @@ class CartItem extends React.Component{
                                 </div>
                                 <div className='cart-item-price-wrapper'>
                                     <span className='cart-item-price'>
-                                        { "$"+this.props.cartProduct.price  }
+                                        { "$"+this.props.cartItem.price  }
                                     </span>
                                 </div>
                             </div>
                             {
-                                this.props.cartProduct.stock === 1 ? (
+                                this.props.cartItem.stock === 1 ? (
                                     <p className='cart-item-one-left'>
                                         There's only one item left of this loot!
                                     </p>
