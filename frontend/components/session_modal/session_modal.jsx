@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 class SessionModal extends React.Component{
     constructor(props){
@@ -98,8 +100,9 @@ class SessionModal extends React.Component{
                 <div className='session-modal-wrapper'>
                     <form className='session-modal-form' onSubmit={this.handleSubmit}> {/* why is this whole thing a form on etsy?*/}
                
-                        <span>
-                            <button className='session-modal-close-button'>X</button>
+                        
+                        <span className='session-modal-close-button'>
+                            <FontAwesomeIcon icon={faXmark} className='fa-session-modal-close-button-icon'/>
                         </span>
                      
                         {
