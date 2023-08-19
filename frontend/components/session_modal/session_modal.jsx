@@ -50,7 +50,9 @@ class SessionModal extends React.Component{
         }
     }
 
-    handleModalSwitch(){
+    handleModalSwitch(e){
+        e.preventDefault();
+
         this.setState({
             register: true
         });
@@ -113,8 +115,10 @@ class SessionModal extends React.Component{
                                 </div>
                             ) : (
                                 <div className='session-modal-login-header-wrap'>
-                                    <h1 className='session-modal-login-header'>Sign in</h1> 
-                                    <button className='session-modal-register-button' type='button' onClick={this.handleModalSwitch}>Register</button>
+                                    <h1 className='session-modal-login-header'>Sign in</h1>
+                                    <div className='session-modal-register-button-container'>
+                                        <button className='session-modal-register-button' type='button' onClick={this.handleModalSwitch}>Register</button>
+                                    </div>
                                 </div>
                             )
                         }
