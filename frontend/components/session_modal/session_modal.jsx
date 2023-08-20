@@ -37,7 +37,7 @@ class SessionModal extends React.Component{
         if(this.state.register){
             this.props.signupCurrentUser(this.state.user)
                 .then(() => {
-                    this.props.closeModal() 
+                    this.props.closeModal()
                     this.resetState();
                 }); //only on successfull submission!
         }
@@ -53,8 +53,14 @@ class SessionModal extends React.Component{
     handleModalSwitch(e){
         e.preventDefault();
 
+        this.props.clearSessionErrors();
         this.setState({
-            register: true
+            register: true,
+            user: {
+                email: "",
+                name: "",
+                password: ""
+            }
         });
     }
 
@@ -80,6 +86,7 @@ class SessionModal extends React.Component{
         //e.button returns which mouse button triggered the event, 0 being the primary (left) button
         if ((targetClass === 'session-modal-background' || targetClass === 'session-modal-close-button') && (e.button === 0)){
             this.props.closeModal();
+            this.props.clearSessionErrors();
             this.resetState();
         }
     }
