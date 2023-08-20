@@ -166,8 +166,10 @@ class SessionModal extends React.Component{
                         {
                             this.props.errors instanceof Array ? this.props.errors.map( err => this.renderErrorMessage(err)) : null
                         }
-
-                        <button type="submit" className='session-modal-form-button'>{this.state.register ? 'Register' : 'Sign In'}</button>
+                        
+                        <div className='session-modal-form-button-container'>
+                            <button type="submit" className='session-modal-form-button'>{this.state.register ? 'Register' : 'Sign In'}</button>
+                        </div>
                     </form>
                 </div>
             </div>

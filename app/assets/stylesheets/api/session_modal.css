@@ -112,10 +112,12 @@
     background: none;
     border: 2px solid black;
     border-radius: 2em;
+    cursor: pointer;
     transition: 200ms;
     transform: scale(1.01);
     z-index: 21;
 }
+
 .session-modal-register-button:hover{
     transform: scale(1.05, 1.05);
 }
@@ -188,14 +190,39 @@
 
 
 /* This is the form submission button ----------------------------------------------*/
+.session-modal-form-button-container{
+    position: relative;
+}
+
 .session-modal-form-button{
     height: 3em;
+    width: 100%;
     margin-top: 1em;
+    border-color: transparent;
     border-radius: 2em;
-    border: 1px solid black;
-    background-color: rgba(30, 30, 30, 1); /* This is pretty close to the perfect color */
+    background-color: transparent; /* This is pretty close to the perfect color */
+    cursor: pointer;
+    color: white;
     font-size: 1em;
     font-family: sans-serif;
     /* font-weight: 500; */
-    color: white;
+    transform: scale(1.0000000000001);
+    transition: 225ms ease-in-out;
+}
+
+.session-modal-form-button::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(30, 30, 30, 1);
+    border-radius: 2em;
+    transition: 150ms ease-in-out;
+    z-index: -5;
+}
+
+.session-modal-form-button:hover::after{
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(0, 0, 0, 0.075);
+    transform: scale(1.01, 1.02);
 }
