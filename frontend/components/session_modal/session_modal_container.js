@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
     closeModal: () => dispatch(closeModal())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionModal)
+export default connect(mapStateToProps, mapDispatchToProps)(SessionModal);

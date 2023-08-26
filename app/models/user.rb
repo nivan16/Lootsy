@@ -1,13 +1,18 @@
 class User < ApplicationRecord
     validates :email, :name, :password_digest, :session_token, presence: true
     validates :email, uniqueness: { case_sensitive: false }
+    validates :email, format: { 
+        with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, 
+        on: :create, 
+        message: "Please enter a valid email address"
+    }
+
     validates :session_token, uniqueness: true
-    
     validates :password, length: { minimum: 6, allow_nil: true }
     
     before_validation :ensure_session_token
     before_validation :ensure_lowercase_and_strip_whitespace, only: [:email, :name]
-    
+
     #this refers to items being sold
     has_many :products,
         primary_key: :id,
