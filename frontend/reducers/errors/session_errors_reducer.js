@@ -7,7 +7,24 @@ const sessionErrorReducer = (state={}, action) => {
 
     switch (action.type) {
         case RECEIVE_SESSION_ERRORS:
-            return action.errors.responseJSON;
+            let newState = {
+                email: null,
+                name: null,
+                password: null
+            };
+            if(!(action.errors.responseJSON instanceof Array)) return action.errors.responseJSON;
+
+            if(action.errors.responseJSON[0][0] === "E"){
+                newState.email = action.errors.responseJSON[0]
+            }
+            else if(action.errors.responseJSON[0][0] === "N"){
+                newState.name = action.errors.responseJSON[0]
+            }
+            else{
+                newState.password = action.errors.responseJSON[0]
+            }
+            
+            return newState;
         case CLEAR_SESSION_ERRORS:
         case RECEIVE_CURRENT_USER:
             return {};

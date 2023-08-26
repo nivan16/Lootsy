@@ -91,6 +91,8 @@ class SessionModal extends React.Component{
         }
     }
 
+
+
     renderErrorMessage(error){
         return (
             <div className='session-modal-input-error'>{error}</div>
@@ -102,7 +104,7 @@ class SessionModal extends React.Component{
         const emailError = this.props.errors['email'];
         const passwordError = this.props.errors['password'];
         const nameError = this.props.errors['name'];
-        debugger;
+     
         // I think this particular conditional will be handled by the nav bar in the future,
         //  as it will either render a signing/signup button or one specific to the user with a drop down
         return this.props.isOpen ? (

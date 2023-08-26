@@ -1,11 +1,12 @@
 class User < ApplicationRecord
-    validates :email, :name, :password_digest, :session_token, presence: true
-    validates :email, uniqueness: { case_sensitive: false }
     validates :email, format: { 
         with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, 
         on: :create, 
         message: "Please enter a valid email address"
     }
+    
+    validates :email, :name, :password_digest, :session_token, presence: true
+    validates :email, uniqueness: { case_sensitive: false }
 
     validates :session_token, uniqueness: true
     validates :password, length: { minimum: 6, allow_nil: true }
