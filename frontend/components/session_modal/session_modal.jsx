@@ -167,7 +167,7 @@ class SessionModal extends React.Component{
                         {/*  this is a terrible line of code, must refactor backend to send more specific errors or have frontend select this better!!! (selector.js file??) */ }
                         {/*  there are still fringe cases yet unresolved with the model validations returning pure errs (kinda) */ }
                         {
-                            this.props.errors instanceof Array ? this.props.errors.map( err => this.renderErrorMessage(err)) : null
+                            // this.props.errors instanceof Array ? this.props.errors.map( err => this.renderErrorMessage(err)) : null
                         }
                         
                         <div className='session-modal-form-button-container'>
