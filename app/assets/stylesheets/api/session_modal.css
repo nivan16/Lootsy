@@ -171,7 +171,13 @@
     border-radius: 0.5em;
     height: 2.75em;
     outline: 1px solid transparent;
-    transition: 350ms;
+    transition: 125ms;
+}
+
+.session-error{
+    background-color: #fddcd8;
+    border-color: crimson;
+    transition: 0;
 }
 
 .session-modal-email-input:hover, .session-modal-password-input:hover, .session-modal-name-input:hover{

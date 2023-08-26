@@ -91,8 +91,6 @@ class SessionModal extends React.Component{
         }
     }
 
-
-
     renderErrorMessage(error){
         return (
             <div className='session-modal-input-error'>
@@ -109,7 +107,11 @@ class SessionModal extends React.Component{
         const passwordError = this.props.errors['password'];
         const nameError = this.props.errors['name'];
      
-        debugger
+
+        let errorToRender;
+        if(emailError) errorToRender = "Email";
+        else if(passwordError) errorToRender = "Password";
+        else if(nameError) errorToRender = "Name";
         // I think this particular conditional will be handled by the nav bar in the future,
         //  as it will either render a signing/signup button or one specific to the user with a drop down
         return this.props.isOpen ? (
@@ -139,7 +141,12 @@ class SessionModal extends React.Component{
                         }
                         <div className='session-modal-input-wrap'>
                             <label htmlFor='session-modal-email'>Email address</label>
-                            <input type="text" id='session-modal-email' className='session-modal-email-input'  value={this.state.user.email} onChange={this.handleChange('email')} />
+                            <input type="text" 
+                                id='session-modal-email' 
+                                className={`session-modal-email-input ${errorToRender === "Email" ? "session-error" : ""}`}
+                                value={this.state.user.email} 
+                                onChange={this.handleChange('email')} 
+                            />
                         </div>
 
                         { 
@@ -152,7 +159,12 @@ class SessionModal extends React.Component{
                                 <>
                                     <div className='session-modal-input-wrap'>
                                         <label htmlFor='session-modal-name'>Name</label>
-                                        <input type="text" id='session-modal-name' className='session-modal-name-input'  value={this.state.user.name} onChange={this.handleChange('name')} />
+                                        <input type="text"
+                                            id='session-modal-name' 
+                                            className={`session-modal-name-input ${errorToRender === "Name" ? "session-error" : ""}`}
+                                            value={this.state.user.name}
+                                            onChange={this.handleChange('name')}
+                                        />
                                     </div>
 
                                     { nameError ? this.renderErrorMessage(nameError) : null }
@@ -162,7 +174,12 @@ class SessionModal extends React.Component{
                         
                         <div className='session-modal-input-wrap'>
                             <label htmlFor='session-modal-password'>Password</label>
-                            <input type="password" id='session-modal-password' className='session-modal-password-input' value={this.state.user.password} onChange={this.handleChange('password')} />
+                            <input type="password"
+                                id='session-modal-password'
+                                className={`session-modal-password-input ${errorToRender === "Password" ? "session-error" : ""}`}
+                                value={this.state.user.password}
+                                onChange={this.handleChange('password')}
+                            />
                         </div>
 
                         {
