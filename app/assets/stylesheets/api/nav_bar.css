@@ -117,10 +117,41 @@
     border-bottom: 2px solid rgba(33, 33, 33, 0.2);
 }
 
-.category-bar a, .category-bar a:visited{
+/* Individual Category */
+
+/* .category-bar a, .category-bar a:visited{
     text-decoration: none;
     color: rgb(56, 55, 55);
     font-size: 16px;
 
     padding-bottom: 12px;
+} */
+.category-container{
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.category-container a, .category-container a:visited{
+    text-decoration: none;
+    color: rgb(56, 55, 55);
+    font-size: 16px;
+
+    padding-bottom: 12px;
+}
+
+.category-container::after{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    right: 50%;
+    border-bottom: 2px solid black;
+    transition: 225ms;
+}
+
+.category-container:hover::after{
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-bottom: 2px solid black;
 }

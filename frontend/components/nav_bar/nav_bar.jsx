@@ -54,31 +54,41 @@ class NavBar extends React.Component{
                 <div className='category-bar-border'>
                     <div className='category-bar-wrapper max-body-width body-padding'>
                         <nav className='category-bar'>
-                            <Link to='/c/weapons'>
-                                <span className='category-bar-type'>
-                                    Weapons
-                                </span>
-                            </Link>
-                            <Link to='/c/jewelry-and-accessories'>
-                                <span className='category-bar-type'>
-                                Jewelry & Accessories 
-                                </span>
-                            </Link>
-                            <Link to='/c/clothing-and-armor'>
-                                <span className='category-bar-type'>
-                                    Clothing & Armor
-                                </span>
-                            </Link>
-                            <Link to='/c/art-and-collectables'>
-                                <span className='category-bar-type'>
-                                    Art & Collectables
-                                </span>
-                            </Link>
-                            <Link to='/c/miscellaneous'>
-                                <span className='category-bar-type'>
-                                    Miscellaneous
-                                </span>
-                            </Link>
+                            <div className='category-container'>
+                                <Link to='/c/weapons'>
+                                    <span className='category-bar-type'>
+                                        Weapons
+                                    </span>
+                                </Link>
+                            </div>
+                            <div className='category-container'>
+                                <Link to='/c/jewelry-and-accessories'>
+                                    <span className='category-bar-type'>
+                                    Jewelry & Accessories 
+                                    </span>
+                                </Link>
+                            </div>
+                            <div className='category-container'>
+                                <Link to='/c/clothing-and-armor'>
+                                    <span className='category-bar-type'>
+                                        Clothing & Armor
+                                    </span>
+                                </Link>
+                            </div>
+                            <div className='category-container'>
+                                <Link to='/c/art-and-collectables'>
+                                    <span className='category-bar-type'>
+                                        Art & Collectables
+                                    </span>
+                                </Link>
+                            </div>
+                            <div className='category-container'>
+                                <Link to='/c/miscellaneous'>
+                                    <span className='category-bar-type'>
+                                        Miscellaneous
+                                    </span>
+                                </Link>
+                            </div>
                         </nav>
                     </div>
                 </div>
