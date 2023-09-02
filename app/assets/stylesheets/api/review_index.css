@@ -27,6 +27,7 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 .reviews-index-container {
     width: 66%;
     margin-top: 1rem;
+    margin-bottom: 10rem;
 }
 
 /* ----------- Reviews Sort Button Menu ----------- */

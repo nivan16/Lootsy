@@ -390,28 +390,28 @@ class ReviewIndex extends React.Component{
                             )
                         )
                     }
+                    {this.props.reviews.length > 4 && <div className='reviews-index-pagination-container'>
+                        <div className='review-previous-page-navigation-button-container'>
+                            <button className={`review-previous-page-navigation-button ${this.state.currentPage === 1 ? 'blocked' : ''}`} onClick={this.previousPage}>
+                                <span className='review-page-navigation-arrow'>
+                                    &larr;
+                                </span>
+                            </button>
+                        </div>
+
+                        {this.paginateReviews()}
+
+                        <div className='review-next-page-navigation-button-container'>
+                            <button className={`review-next-page-navigation-button ${this.state.currentPage === totalPages ? 'blocked' : ''}`} onClick={this.nextPage}>
+                                <span className='review-page-navigation-arrow'>
+                                    &rarr;
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    }
                 </div>
 
-                {this.props.reviews.length > 4 && <div className='reviews-index-pagination-container'>
-                    <div className='review-previous-page-navigation-button-container'>
-                        <button className={`review-previous-page-navigation-button ${this.state.currentPage === 1 ? 'blocked' : ''}`} onClick={this.previousPage}>
-                            <span className='review-page-navigation-arrow'>
-                                &larr;
-                            </span>
-                        </button>
-                    </div>
-
-                    {this.paginateReviews()}
-
-                    <div className='review-next-page-navigation-button-container'>
-                        <button className={`review-next-page-navigation-button ${this.state.currentPage === totalPages ? 'blocked' : ''}`} onClick={this.nextPage}>
-                            <span className='review-page-navigation-arrow'>
-                                &rarr;
-                            </span>
-                        </button>
-                    </div>
-                </div>
-                }
             </>
 
         );
