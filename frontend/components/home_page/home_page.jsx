@@ -26,7 +26,19 @@ class HomePage extends React.Component{
                     </div>
 
                     <div className='home-page-categories max-body-width body-padding'>
-                        
+                        <div className='home-page-category'>
+                            <Link to='/'>
+                                <div className='home-page-category-img-container'>
+                                    <img src="https://www.japaneseswords4samurai.com/wp-content/uploads/2022/09/Witcher.jpg" alt="" />
+                                </div>
+                                <div className='home-page-category-img-description-container'>
+                                    <p className='home-page-category-img-description'>
+                                    Quality Weapons
+                                    </p>
+                                </div>
+                            </Link>
+                        </div>
+
                         <div className='home-page-category'>
                             <Link to='/'>
                                 <div className='home-page-category-img-container'>
@@ -40,6 +52,7 @@ class HomePage extends React.Component{
                             </Link>
                         </div>
 
+
                         <div className='home-page-category'>
                             <Link to='/'>
                                 <div className='home-page-category-img-container'>
@@ -49,25 +62,11 @@ class HomePage extends React.Component{
                                 </div>
                                 <div className='home-page-category-img-description-container'>
                                     <p className='home-page-category-img-description'>
-                                        Quality Armor
+                                        Sturdy Armor
                                     </p>
                                 </div>
                             </Link>
                         </div>
-
-                        <div className='home-page-category'>
-                            <Link to='/'>
-                                <div className='home-page-category-img-container'>
-                                    Image Here!
-                                </div>
-                                <div className='home-page-category-img-description-container'>
-                                    <p className='home-page-category-img-description'>
-                                        Description Here!
-                                    </p>
-                                </div>
-                            </Link>
-                        </div>
-
                     </div>
                 </div> 
 

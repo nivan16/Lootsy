@@ -21,6 +21,13 @@
     display: flex;
     justify-content: space-around;
 }
+.home-page-category > a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 .home-page-category-img-container{
     width: 115px;
@@ -31,11 +38,10 @@
 
     background-color: rgb(206, 206, 206);
     border-radius: 50%;
-    text-align: center;
 }
 
 .home-page-category-img-container > img {
-    max-width: 100%;
+    /* max-width: 100%; */
     max-height: 100%;
     object-fit: cover;
     object-position: 50% 50%;
