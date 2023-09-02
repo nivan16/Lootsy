@@ -30,11 +30,11 @@ class HomePage extends React.Component{
                         <div className='home-page-category'>
                             <Link to='/'>
                                 <div className='home-page-category-img-container'>
-                                    Image Here!
+                                    <img src="https://i.etsystatic.com/10204022/r/il/3490cc/4854099637/il_300x300.4854099637_fxnf.jpg"/>
                                 </div>
                                 <div className='home-page-category-img-description-container'>
                                     <p className='home-page-category-img-description'>
-                                        Description Here!
+                                        Enchanted Jewelry
                                     </p>
                                 </div>
                             </Link>
@@ -43,11 +43,13 @@ class HomePage extends React.Component{
                         <div className='home-page-category'>
                             <Link to='/'>
                                 <div className='home-page-category-img-container'>
-                                    Image Here!
+                                    <img src="https://i.etsystatic.com/43966513/r/il/501276/5172976012/il_300x300.5172976012_pviy.jpg"
+                                        alt="Quality Armor Sale" 
+                                    />
                                 </div>
                                 <div className='home-page-category-img-description-container'>
                                     <p className='home-page-category-img-description'>
-                                        Description Here!
+                                        Quality Armor
                                     </p>
                                 </div>
                             </Link>
