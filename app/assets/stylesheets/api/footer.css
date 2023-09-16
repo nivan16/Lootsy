@@ -50,6 +50,12 @@ footer, footer a, footer a:visited{
     padding-bottom: 1rem;
 }
 
+.footer-social-links > a > .fa-brand{
+    width: 2.5rem;
+    height: 2.55rem;
+    color: white;
+}
+
 /* --------------------- Footer Bottom --------------------- */
 
 .footer-bottom-container{
