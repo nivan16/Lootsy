@@ -23,6 +23,8 @@ class HomePageItem extends React.Component{
             case 'Beautiful restored blade':
                 // Katara Necklace img below
                 return ['https://i.etsystatic.com/23464188/c/3000/1688/0/0/il/40527b/2342132028/il_340x270.2342132028_buhs.jpg', "Rengoku's nichirin blade"]
+            case 'Old powerful wand':
+                return ['https://i.etsystatic.com/14787414/r/il/72b8c6/3744375692/il_794xN.3744375692_cgvd.jpg', "Elder wand"]
             default:
                 break;
         }
