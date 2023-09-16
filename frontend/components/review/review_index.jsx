@@ -262,21 +262,27 @@ class ReviewIndex extends React.Component{
         if(this.props.reviews.length === 0){
             //This is going to return the react-review-stars package as well
             return (
-                <div className='reviews-index-header-container'>
-                    <h2 className='reviews-index-header'>
-                        0 Product reviews | 
-                    </h2>
+                <>
+                    <div className='reviews-index-header-container'>
+                        <h2 className='reviews-index-header no-product-reviews'>
+                            0 product reviews  
+                        </h2>
 
-                    <div className='reviews-index-header-stars-container'>
-                        <StarRatings 
-                            rating={0}
-                            starEmptyColor='lightgray'
-                            className='aggregate-review-rating'
-                            starDimension='25px'
-                            starSpacing='1px'
-                        />
+                        <div className='reviews-index-header-stars-container'>
+                            <StarRatings 
+                                rating={0}
+                                starEmptyColor='lightgray'
+                                className='aggregate-review-rating'
+                                starDimension='25px'
+                                starSpacing='1px'
+                            />
+                        </div>
+
+                        {/* This exists here to provide a separation of space between the product and the footer*/}
                     </div>
-                </div>
+                    <div className='reviews-index-container'></div>
+                </>
+                
             );
         };
 
@@ -300,7 +306,7 @@ class ReviewIndex extends React.Component{
             <>
                 <div className='reviews-index-header-container'>
                     <h2 className='reviews-index-header'>
-                        {this.props.reviews.length} Product Reviews |
+                        {this.props.reviews.length} product reviews |
                     </h2>
                     
                     <div className='reviews-index-header-stars-container'>

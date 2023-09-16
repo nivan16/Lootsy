@@ -24,6 +24,7 @@
        flex: is supposed to be under the individual item in a flexgrid    
     */
     /* flex: 1 1 25%; */
+    margin-bottom: 15rem;
 }
 
 .index-product{
