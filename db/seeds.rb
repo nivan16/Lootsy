@@ -18,16 +18,17 @@ u5 = User.create!(email: 'critic@critics.com', name: 'Garf', password: 'foodies'
 u6 = User.create!(email: 'merc@talon.com', name: 'Commander Jabsco', password:'caps4days')
 u7 = User.create!(email: 'link@hyrule.com', name: 'Link', password: 'princessmipha')
 u8 = User.create!(email: 'justpeachy@shroomdom.com', name: 'Peach', password: 'bffdaisy')
-u9 = User.create!(email: 'lorem1@epsum.com', name: 'lorey', password: 'password')
-u10 = User.create!(email: 'lorem2@epsum.com', name: 'epsil', password: 'password')
-u11 = User.create!(email: 'lorem3@epsum.com', name: 'tinker', password: 'password')
-u12 = User.create!(email: 'lorem4@epsum.com', name: 'gavin', password: 'password')
-u13 = User.create!(email: 'lorem5@epsum.com', name: 'patter', password: 'password')
+u9 = User.create!(email: 'wandmaker@ollivanders.com', name: 'Ollivander', password: 'diagonalley')
 
-u14 = User.create!(email: 'lorem6@epsum.com', name: 'senku', password: 'password')
-u15 = User.create!(email: 'lorem7@epsum.com', name: 'harmon', password: 'password')
-u16 = User.create!(email: 'lorem8@epsum.com', name: 'jonathan', password: 'password')
-u17 = User.create!(email: 'lorem9@epsum.com', name: 'star', password: 'password')
+u_lorem1 = User.create!(email: 'lorem1@epsum.com', name: 'lorey', password: 'password')
+u_lorem2 = User.create!(email: 'lorem2@epsum.com', name: 'epsil', password: 'password')
+u_lorem3 = User.create!(email: 'lorem3@epsum.com', name: 'tinker', password: 'password')
+u_lorem4 = User.create!(email: 'lorem4@epsum.com', name: 'gavin', password: 'password')
+u_lorem5 = User.create!(email: 'lorem5@epsum.com', name: 'patter', password: 'password')
+u_lorem6 = User.create!(email: 'lorem6@epsum.com', name: 'senku', password: 'password')
+u_lorem7 = User.create!(email: 'lorem7@epsum.com', name: 'harmon', password: 'password')
+u_lorem8 = User.create!(email: 'lorem8@epsum.com', name: 'jonathan', password: 'password')
+u_lorem9 = User.create!(email: 'lorem9@epsum.com', name: 'star', password: 'password')
 
 
 # product = Product.create!(name: , description: , category: '', price: , owner_id: )
@@ -38,6 +39,7 @@ master_sword = Product.create!(name: 'Blue sword', description: 'A sword I pulle
 ocarina_of_time = Product.create!(name: 'Ocarina', description: 'An ocarina found at the moat of a castle, still works though!', category: 'art and collectables', price: 25.00, owner_id: u3.id, stock: 1)
 pokeball = Product.create!(name: 'Strong pouches', description: "I found these in a field of tall grass, they're made out of a really tough material.", category: 'jewelry and accessories', price: 100.00, owner_id: u4.id, stock: 19)
 rengoku = Product.create!(name: 'Beautiful restored blade', description: "Looted (the pieces of) this blade in a forest, but the material is very sturdy and I've never seen metal like this before.", category: 'weapons', price: 20000.00, owner_id: u4.id, stock: 1)
+elder_wand = Product.create!(name: 'Old powerful wand', description: 'This wand seems hold an amazing amount of power, but as a merchant it seems too dangerous to use or hold on to. It seems that it can heavily elevate the magic spells available to its caster!', category: 'weapons', price: 3000.00, owner_id: u9.id, stock: 1)
 #create a new user for demon slayer items!
 
 #if quantity changes to 0 (is removed from cart, then it would just be the destroy method!!)
@@ -58,15 +60,16 @@ review7 = Review.create!(product_id: master_sword.id, reviewer_id: u5.id, rating
 review8 = Review.create!(product_id: master_sword.id, reviewer_id: u6.id, rating: 3, review: 'For the most part I prefer my missile launcher, but this thing is way better as a sidearm than my knife')
 review9 = Review.create!(product_id: master_sword.id, reviewer_id: u7.id, rating: 5, review: 'I love this sword but buyer beware, its already broken twice on me')
 review10 = Review.create!(product_id: master_sword.id, reviewer_id: u8.id, rating: 1, review: nil)
-review11 = Review.create!(product_id: master_sword.id, reviewer_id: u9.id, rating: 1, review: nil)
-review12 = Review.create!(product_id: master_sword.id, reviewer_id: u10.id, rating: 1, review: nil)
-review13 = Review.create!(product_id: master_sword.id, reviewer_id: u11.id, rating: 1, review: nil)
-review14 = Review.create!(product_id: master_sword.id, reviewer_id: u12.id, rating: 1, review: nil)
-review15 = Review.create!(product_id: master_sword.id, reviewer_id: u13.id, rating: 1, review: nil)
-review16 = Review.create!(product_id: master_sword.id, reviewer_id: u14.id, rating: 1, review: nil)
-review17 = Review.create!(product_id: master_sword.id, reviewer_id: u15.id, rating: 1, review: nil)
-review18 = Review.create!(product_id: master_sword.id, reviewer_id: u16.id, rating: 1, review: nil)
-review19 = Review.create!(product_id: master_sword.id, reviewer_id: u17.id, rating: 1, review: '
+
+review11 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem1.id, rating: 1, review: nil)
+review12 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem2.id, rating: 1, review: nil)
+review13 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem3.id, rating: 1, review: nil)
+review14 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem4.id, rating: 1, review: nil)
+review15 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem5.id, rating: 1, review: nil)
+review16 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem6.id, rating: 1, review: nil)
+review17 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem7.id, rating: 1, review: nil)
+review18 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem8.id, rating: 1, review: nil)
+review19 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem9.id, rating: 1, review: '
 Even so my sun one early morn did shine,
 With all triumphant splendour on my brow;
 But out, alack, he was but one hour mine,
