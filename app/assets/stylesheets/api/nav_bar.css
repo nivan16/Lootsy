@@ -30,7 +30,7 @@
 .nav-bar > a{
     font-size: 2em;
     text-decoration: none;
-    
+    margin-bottom: 0.65rem;
 }
 
 
@@ -47,14 +47,19 @@
 .nav-bar-search-bar{
     height: 2.85em;
     width: 95%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
 
     border: 2px solid black;
-    border-radius: 20px 0 0 20px;
+    border-radius: 50px 0 0 50px;
     border-right: none;
     outline: none;
 
     cursor: text;
-    background-color: rgba(200, 200, 200, 0.3);
+    font-size: 1rem;
+    /* background-color: rgba(200, 200, 200, 0.3); */
 }
 
 .nav-bar-search-button{
@@ -62,7 +67,8 @@
     border: 2px solid black;
     border-radius: 0 20px 20px 0;
     border-left: none;
-    background-color: rgba(200, 200, 200, 0.3);
+    /* background-color: rgba(200, 200, 200, 0.3); */
+    background-color: white;
     cursor: pointer;
 }
 
