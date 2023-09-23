@@ -12,8 +12,16 @@ class ProductIndex extends React.Component{
     render(){
         if($.isEmptyObject(this.props.products)){
             return (
-                <div className="product-index-no-products">
-                    Sorry, no products were found!
+                <div className="product-index-no-products-container">
+                    <div className="max-body-width body-padding">
+                        <p className="no-products-found-message">
+                            We couldn't find any results for
+                        </p>
+                        
+                        <h1>
+                            Try searching for something else instead?
+                        </h1>
+                    </div>
                 </div>
             );
         };
