@@ -93,5 +93,20 @@
 /* No Product Found */
 
 .product-index-no-products-container{
-    
+    background-color: rgb(255, 232, 203);
+    margin-bottom: 90vh;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.no-products-found-message{
+    margin-bottom: 4rem;
+
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.no-products-found-suggestion{
+    font-size: 0.9rem;
+    font-weight: 600;
 }

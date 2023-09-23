@@ -17,8 +17,8 @@ class ProductIndex extends React.Component{
                         <p className="no-products-found-message">
                             We couldn't find any results for
                         </p>
-                        
-                        <h1>
+
+                        <h1 className="no-products-found-suggestion">
                             Try searching for something else instead?
                         </h1>
                     </div>
