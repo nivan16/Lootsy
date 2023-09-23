@@ -7,7 +7,11 @@ export const RECEIVE_PRODUCT_ERRORS = 'RECEIVE_PRODUCT_ERRORS';
 
 const receiveAllProducts = productInfo => ({
     type: RECEIVE_PRODUCTS,
-    productInfo
+    productInfo: {
+        products: productInfo.products,
+        users: productInfo.users
+    },
+    query: productInfo.query
 });
 
 const receiveProduct = productInfo => ({

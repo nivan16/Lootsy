@@ -51,13 +51,15 @@ class Api::ProductsController < ApplicationController
             end
             
         elsif params.has_key?(:query)
+            @query = Product.sanitize_query_param(params[:query])
+
             @products = Product
-                .where("name ILIKE (?)", "%#{ Product.sanitize_query_param(params[:query]) }%")
+                .where("name ILIKE (?)", "%#{@query}%")
                 .preload(:owner, :user_reviews)
             
             if @products.first.nil?
                 #reduces render time if no products are found
-                render json: {}, status: 202
+                render json: {query: @query}, status: 202
             else
                 # @reviews = @products.flat_map(&:user_reviews)
                 # @reviews = {}

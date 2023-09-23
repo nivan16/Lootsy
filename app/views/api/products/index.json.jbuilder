@@ -4,6 +4,9 @@ json.users do end
 # json.reviews do
 #     json.merge! @reviews
 # end
+if defined?(@query)
+    json.query @query
+end
 
 @products.each do |product|
     json.products do 
