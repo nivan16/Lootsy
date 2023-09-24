@@ -7,7 +7,7 @@ const productsReducer = (state={}, action) => {
     switch (action.type) {
         case RECEIVE_PRODUCTS:
             //if there are no products, return empty object *in the case of an empty search*
-            if($.isEmptyObject(action.productInfo)) return {};
+            if(action.productInfo.products === undefined) return {};
             return action.productInfo.products;
 
         case RECEIVE_PRODUCT:
