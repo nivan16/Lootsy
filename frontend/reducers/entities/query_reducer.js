@@ -9,6 +9,7 @@ const queryReducer = (state=_nullQuery, action) => {
 
     switch(action.type){
         case RECEIVE_PRODUCTS:
+            if(action.query === undefined) return _nullQuery;
             return action.query;
         default:
             return state;
