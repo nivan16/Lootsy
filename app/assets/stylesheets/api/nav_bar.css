@@ -77,12 +77,18 @@
     position: absolute;
     content: "";
     top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background-color: white;
+    background-color: rgba(200, 200, 200, 0.4);
 
+    transform: scale(0);
+    transition: 125ms ease-in-out;
     z-index: -5;
+}
+
+.nav-bar-search-button:hover .nav-bar-search-button::after{
+    transform: scale(1);
 }
 
 .nav-bar-search-icon{
