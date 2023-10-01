@@ -67,9 +67,11 @@ class SearchBar extends React.Component{
                 <form className='nav-bar-search-form' onSubmit={this.handleSearch}>
                     <input className='nav-bar-search-bar' type="text" onChange={this.handleChange} value={this.state.searchQuery}/>
 
-                    <button className='nav-bar-search-button'>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} className='nav-bar-search-icon'/>
-                    </button>
+                    <div className="nav-bar-search-button-container">
+                        <button className='nav-bar-search-button'>
+                            <FontAwesomeIcon icon={faMagnifyingGlass} className='nav-bar-search-icon'/>
+                        </button>
+                    </div>
                 </form>
             </div>
         );
