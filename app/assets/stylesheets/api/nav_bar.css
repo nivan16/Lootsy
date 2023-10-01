@@ -63,13 +63,26 @@
 }
 
 .nav-bar-search-button{
+    position: relative;
     width: 70px;
     border: 2px solid black;
     border-radius: 0 50px 50px 0;
     border-left: none;
     /* background-color: rgba(200, 200, 200, 0.3); */
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
+}
+
+.nav-bar-search-button::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+
+    z-index: -5;
 }
 
 .nav-bar-search-icon{

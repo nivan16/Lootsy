@@ -16,4 +16,4 @@ const queryReducer = (state=_nullQuery, action) => {
     }
 }
 
-export default queryReducer
+export default queryReducer;
