@@ -87,24 +87,27 @@
     height: 100%;
     width: 69px;
 
-    border: 1px solid rgba(200, 200, 200, 0.4);
+    border: 1px solid white;
     border-radius: 0 50px 50px 0;
     border-left: none;
 
     /* bottom: 50%;
     right: 50%; */
-    background-color: rgba(200, 200, 200, 0.4);
+    background-color: white;
 
     transform: scale(0.00000001);
-    transition: 125ms ease-in-out;
+    transition: transform 125ms ease-in-out, border-color 250ms, background-color 250ms;
     z-index: -1;
 }
 
 .nav-bar-search-button-container:hover .nav-bar-search-button::after{
     transform: scale(1);
+    transition: transform 75ms ease-in-out, border-color 50ms ease, background-color 50ms ease;
     /* inset: 0 !important;
     bottom: 0 !important; */
     /* transform: scale(1); */
+    border-color: rgba(200, 200, 200, 0.4);
+    background-color: rgba(200, 200, 200, 0.4);
 }
 
 .nav-bar-search-icon{
@@ -131,7 +134,8 @@
     /* font-size: 1em; */
     width: 100%;
     padding: 0.75em;
-    border: none;
+    border: transparent;
+    border-radius: 20px;
     background-color: transparent;
     cursor: pointer;
 }
@@ -139,13 +143,13 @@
 .nav-bar-cart-icon{
     padding: 0.5em;
     font-size: 1.25em;
+    border-radius: 20px;
     cursor: pointer;
 }
 
 .nav-bar-login:hover, .nav-bar-cart-icon:hover{
     transition: 200ms;
     background-color: rgba(200, 200, 200, 0.4);
-    border-radius: 20px;
 }
 
 /* Navigation Category Bar */
