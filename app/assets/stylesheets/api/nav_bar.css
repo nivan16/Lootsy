@@ -87,13 +87,13 @@
     height: 100%;
     width: 69px;
 
-    border: 1px solid lightgray;
+    border: 1px solid rgba(200, 200, 200, 0.4);
     border-radius: 0 50px 50px 0;
     border-left: none;
 
     /* bottom: 50%;
     right: 50%; */
-    background-color: lightgray;
+    background-color: rgba(200, 200, 200, 0.4);
 
     transform: scale(0.00000001);
     transition: 125ms ease-in-out;
