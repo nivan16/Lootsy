@@ -24,15 +24,23 @@ class SearchBar extends React.Component{
     handleSearch(e){        
         e.preventDefault();
         
-        
         this.props.history.push({
             pathname: '/search',
             search: `q=${this.state.searchQuery}`
         });
 
-        this.setState({
-            searchQuery: ""
-        });
+    }
+
+    
+
+    componentDidMount(){
+        if(this.props.query !== undefined && this.props.pathname === '/search'){
+            var searchQueryCopy = ('' + this.props.history.location.search).slice(3);
+            this.setState({
+                searchQuery: searchQueryCopy
+            });
+        }
+        // if(this.props.history.location.search)
     }
 
     // componentDidUpdate(prevProps){
