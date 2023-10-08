@@ -66,7 +66,7 @@
 
 /* ----- Product Image Hover ----- */
 .index-product:hover .index-product-image-container{
-    box-shadow: 0 0 3px 2.5px rgb(185, 191, 203);
+    box-shadow: 0 0 3px 5px rgb(236, 236, 236);
 }
 
 .index-product:hover .index-product-image{

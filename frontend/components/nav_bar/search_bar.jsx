@@ -28,7 +28,6 @@ class SearchBar extends React.Component{
             pathname: '/search',
             search: `q=${this.state.searchQuery}`
         });
-
     }
 
     
@@ -40,11 +39,9 @@ class SearchBar extends React.Component{
                 searchQuery: searchQueryCopy
             });
         }
-        // if(this.props.history.location.search)
     }
 
     componentDidUpdate(prevProps){
-        debugger
         if(prevProps.pathname === '/search' && this.props.pathname !== '/search'){
             this.setState({
                 searchQuery: ''
