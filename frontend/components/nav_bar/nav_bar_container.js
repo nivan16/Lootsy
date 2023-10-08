@@ -5,7 +5,8 @@ import NavBar from "./nav_bar";
 
 const mapStateToProps = ( state, ownProps ) => ({
     currentUser: state.session.currentUser,
-    pathname: ownProps.location.pathname
+    pathname: ownProps.location.pathname,
+    query: state.query
 }); //to display a message of "Sign In" or "Hello, ${name}!"
 
 const mapDispatchToProps = dispatch => ({
