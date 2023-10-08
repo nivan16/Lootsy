@@ -43,6 +43,14 @@ class SearchBar extends React.Component{
         // if(this.props.history.location.search)
     }
 
+    componentDidUpdate(prevProps){
+        debugger
+        if(prevProps.pathname === '/search' && this.props.pathname !== '/search'){
+            this.setState({
+                searchQuery: ''
+            });
+        };
+    }
     // componentDidUpdate(prevProps){
         //something like if prevProps.location !=== this.props.location
         //this.props.fetchProducts(this.props.location.search.slice(2) )
