@@ -95,7 +95,7 @@ const Footer = props => {
 
                     <div className='footer-legalese'>
                         <span className='footer-business-copyright'>
-                            © 2022 Lootsy, Gld.
+                            © 2022 Lootsy, Guild.
                         </span>
 
                         <a href="#">
