@@ -27,7 +27,7 @@ class HomePage extends React.Component{
 
                     <div className='home-page-categories max-body-width body-padding'>
                         <div className='home-page-category'>
-                            <Link to='/'>
+                            <Link to='/c/weapons'>
                                 <div className='home-page-category-img-container'>
                                     <img src="https://www.japaneseswords4samurai.com/wp-content/uploads/2022/09/Witcher.jpg" alt="" />
                                 </div>
@@ -40,7 +40,7 @@ class HomePage extends React.Component{
                         </div>
 
                         <div className='home-page-category'>
-                            <Link to='/'>
+                            <Link to='/c/jewelry-and-accessories'>
                                 <div className='home-page-category-img-container'>
                                     <img src="https://i.etsystatic.com/10204022/r/il/3490cc/4854099637/il_300x300.4854099637_fxnf.jpg"/>
                                 </div>
@@ -54,7 +54,7 @@ class HomePage extends React.Component{
 
 
                         <div className='home-page-category'>
-                            <Link to='/'>
+                            <Link to='/c/clothing-and-armor'>
                                 <div className='home-page-category-img-container'>
                                     <img src="https://i.etsystatic.com/43966513/r/il/501276/5172976012/il_300x300.5172976012_pviy.jpg"
                                         alt="Quality Armor Sale" 
