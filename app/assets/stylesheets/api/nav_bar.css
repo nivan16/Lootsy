@@ -140,7 +140,13 @@
     cursor: pointer;
 }
 
+/* Cart Icon */
+.nav-bar-cart{
+    position: relative;
+}
+
 .nav-bar-cart-icon{
+    position: relative;
     padding: 0.5em;
     font-size: 1.25em;
     border-radius: 20px;
