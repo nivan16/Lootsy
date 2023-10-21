@@ -151,16 +151,21 @@
     position: absolute;
 
     top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    height: 100%;
+    left: 1px;
+    width: 100%;
+    
     background-color: green;
+    border-radius: 20px;
+
+    /* transform: scale(0.00000001); */
+    
 
     z-index: -5;
 }
 
 .nav-bar-cart:hover::after{
-
+    
 }
 
 .nav-bar-cart-icon{
