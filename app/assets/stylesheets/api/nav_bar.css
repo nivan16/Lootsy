@@ -155,17 +155,16 @@
     left: 1px;
     width: 100%;
     
-    background-color: green;
+    background-color: white;
     border-radius: 20px;
 
-    /* transform: scale(0.00000001); */
-    
+    transform: scale(0.00000001);
+    transition: transform 125ms ease-in-out, background-color 250ms;
 
     z-index: -5;
 }
 
 .nav-bar-cart:hover::after{
-    
 }
 
 .nav-bar-cart-icon{
