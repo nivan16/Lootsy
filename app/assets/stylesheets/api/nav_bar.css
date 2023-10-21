@@ -154,20 +154,26 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: black;
+    background-color: green;
 
-    z-index: 25;
+    z-index: -5;
+}
+
+.nav-bar-cart:hover::after{
+
 }
 
 .nav-bar-cart-icon{
     position: relative;
     padding: 0.5em;
-    font-size: 1.25em;
+
+    background-color: transparent;
     border-radius: 20px;
+    font-size: 1.25em;
     cursor: pointer;
 }
 
-.nav-bar-login:hover, .nav-bar-cart-icon:hover{
+.nav-bar-login:hover{
     transition: 200ms;
     background-color: rgba(200, 200, 200, 0.4);
 }
