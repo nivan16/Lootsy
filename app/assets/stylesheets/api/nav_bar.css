@@ -131,6 +131,7 @@
 
 /* top right bottom left*/
 .nav-bar-login{
+    position: relative;
     /* font-size: 1em; */
     width: 100%;
     padding: 0.75em;
@@ -138,6 +139,22 @@
     border-radius: 20px;
     background-color: transparent;
     cursor: pointer;
+}
+.nav-bar-login::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    background-color: rgba(200, 200, 200, 0.4);
+}
+
+.nav-bar-login:hover{
+    transition: 200ms;
+    background-color: rgba(200, 200, 200, 0.4);
 }
 
 /* Cart Icon */
@@ -180,11 +197,6 @@
     border-radius: 20px;
     font-size: 1.25em;
     cursor: pointer;
-}
-
-.nav-bar-login:hover{
-    transition: 200ms;
-    background-color: rgba(200, 200, 200, 0.4);
 }
 
 /* Navigation Category Bar */
