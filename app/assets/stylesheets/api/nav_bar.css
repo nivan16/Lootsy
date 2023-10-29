@@ -149,10 +149,11 @@
     right: 0;
     left: 0;
 
-    background-color: rgba(200, 200, 200, 0.4);
+    transition: 250ms;
+    background-color: transparent;
 }
 
-.nav-bar-login:hover{
+.nav-bar-login:hover::after{
     transition: 200ms;
     background-color: rgba(200, 200, 200, 0.4);
 }
