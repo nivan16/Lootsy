@@ -148,16 +148,19 @@
     bottom: 0;
     right: 0;
     left: 0;
-
+    border-radius: 20px;
     transform: scale(0.00000001);
-    transition: 250ms;
+    transition: transform 125ms ease-in-out, background-color 250ms;
     background-color: transparent;
+
+    z-index: -5;
 }
 
 .nav-bar-login:hover::after{
     background-color: rgba(200, 200, 200, 0.4);
 
     transform: scale(1);
+    transition: transform 75ms ease-in-out, background-color 50ms ease;
 }
 
 /* Cart Icon */
