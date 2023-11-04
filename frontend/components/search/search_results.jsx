@@ -23,7 +23,7 @@ class SearchResults extends React.Component{
     render(){
         
         return (
-            <ProductIndex products={this.props.products} users={this.props.users} />
+            <ProductIndex products={this.props.products} users={this.props.users} query={this.props.query}/>
         );
     }
 }
