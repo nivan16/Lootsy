@@ -46,7 +46,6 @@ const Footer = props => {
                             <li>
                                 Playing with my cats
                             </li>
-                            <li>Sleeping</li>
                             <li>Coding</li>
                             <li>Anime</li>
                             <li>Gym</li>
