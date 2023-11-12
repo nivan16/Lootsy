@@ -42,23 +42,27 @@ class Cart extends React.Component{
         //if the cart is just empty
         if($.isEmptyObject(this.props.cart)){
             return (
-                <div className='cart-guarantee-wrapper'>
-                    <div className='cart-guarantee'>
-                        <p>
-                            <strong>Lootsy Purchase Protection: </strong>
-                            We work with many established guilds to guarantee your order.
-                            If something happens, we've got your back!
-                        </p>
+                <>
+                    <div className='cart-guarantee-wrapper max-body-width body-padding'>
+                        <div className='cart-guarantee empty-cart-guarantee'>
+                            <p>
+                                <strong>Lootsy Purchase Protection: </strong>
+                                We work with many established guilds to guarantee your order.
+                                If something happens, we've got your back!
+                            </p>
+                        </div>
                     </div>
-                    <div className='cart-empty'>
-                        <h2>Your cart is empty.</h2>
+                    <div className='cart-empty max-body-width body-padding'>
+                        <h2 className='cart-empty-title'>
+                            Your cart is empty.
+                        </h2>
                         <Link to='/'>
                             <span>
                                 Find some loot from our store to fill it up
                             </span>
                         </Link>
                     </div>
-                </div>
+                </>
             )
         };
         

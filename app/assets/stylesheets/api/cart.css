@@ -291,6 +291,18 @@ than zero) */
     pointer-events: none;
 }
 
+/* Empty Cart Page*/
+.empty-cart-guarantee{
+    margin-top: 1rem;
+}
+
+.cart-empty-title{
+    margin-top: 2rem;
+}
+
+
+
+
 
 /* Use after psuedo class!!!!! */
 
