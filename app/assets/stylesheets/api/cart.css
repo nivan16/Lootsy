@@ -304,6 +304,13 @@ than zero) */
     text-align: center;
 }
 
+.cart-empty-suggestion{
+    display: block;
+    margin-top: 1rem;
+
+    text-align: center;
+    text-decoration: underline !important;
+}
 
 
 

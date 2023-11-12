@@ -56,8 +56,9 @@ class Cart extends React.Component{
                         <h2 className='cart-empty-title'>
                             Your cart is empty.
                         </h2>
+                        
                         <Link to='/'>
-                            <span>
+                            <span className='cart-empty-suggestion'>
                                 Find some loot from our store to fill it up
                             </span>
                         </Link>
