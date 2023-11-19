@@ -9,6 +9,6 @@ export const createReview = review => (
     ReviewUtils.createReview(review)
         .then (
             review => dispatch(receiveReview(review)),
-            err => dispatch(recieveReviewErrors(err.responseJSON))
+            err => dispatch(receiveReviewErrors(err.responseJSON))
         )
 );
