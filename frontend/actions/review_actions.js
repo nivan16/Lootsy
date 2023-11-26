@@ -9,6 +9,11 @@ const receiveReview = review => ({
     review
 })
 
+const removeReview = reviewId => ({
+    type: REMOVE_REVIEW,
+    reviewId
+})
+
 const receiveReviewErrors = errors => ({
     type: RECEIVE_REVIEW_ERRORS,
     errors
