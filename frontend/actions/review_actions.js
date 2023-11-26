@@ -19,7 +19,7 @@ const receiveReviewErrors = errors => ({
     errors
 })
 
-export const createReview = review => (
+export const createReview = review => dispatch => (
     ReviewUtils.createReview(review)
         .then (
             review => dispatch(receiveReview(review)),
