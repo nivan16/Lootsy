@@ -26,3 +26,11 @@ export const createReview = review => (
             err => dispatch(receiveReviewErrors(err.responseJSON))
         )
 );
+
+export const deleteReview = reviewId => dispatch => ({
+    ReviewUtils.deleteReview(reviewId)
+        .then(
+            () => dispatch(removeReview(reviewId)),
+            err => dispatch(receiveReviewErrors(err.responseJSON))
+        )
+})
