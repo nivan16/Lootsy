@@ -20,7 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const { userInfo } = window.currentUser;
         let preloadedState = {
             entities: {
-                users: {},
+                users: {
+                    [userInfo.id]: userInfo
+                },
                 products: {},
                 reviews: {},
             },

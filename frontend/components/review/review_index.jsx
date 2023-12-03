@@ -256,10 +256,11 @@ class ReviewIndex extends React.Component{
     }
 
 
-
+    
 
     render(){
         if(this.props.reviews.length === 0){
+
             //This is going to return the react-review-stars package as well
             return (
                 <>
@@ -302,6 +303,7 @@ class ReviewIndex extends React.Component{
         
         // Unsure if this is needed yet, to display the last page of reviews
         const totalPages = Math.ceil(this.props.reviews.length / itemsPerPage);
+        debugger
         return (
             <>
                 <div className='reviews-index-header-container'>

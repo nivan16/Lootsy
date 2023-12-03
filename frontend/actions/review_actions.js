@@ -6,7 +6,7 @@ export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 
 const receiveReview = review => ({
     type: RECEIVE_REVIEW,
-    review
+    reviewInfo: review
 });
 
 const removeReview = reviewId => ({
