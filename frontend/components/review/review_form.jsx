@@ -43,16 +43,39 @@ class ReviewForm extends React.Component{
                 </h1>
                 
                 <div className="review-form-rating-display">
-                    <h2>Rating:</h2>
+                    <h2 className="review-form-rating-title">
+                        Rating:
+                    
+                    </h2>
                     <StarRatings 
                         rating={this.state.rating}
                         changeRating={this.handleRatingChange}
                         numberOfStars={5}
-                        name="rating"
-                        starDimension="20px"
-                        starSpacing="1px"
+                        
+                        starEmptyColor='lightgray'
+                        starRatedColor='black'
+                        starHoverColor='black'
+                        starDimension='20px'
+                        starSpacing='1px'
                     />
 
+                    <p className="review-form-rating-label">
+                        {this.state.rating} Star(s)
+                    </p>
+                </div>
+
+                <div className="review-form-review-display">
+                    <p className="review-form-review-title">
+                        Review:
+                    </p>
+
+                    <textarea className="review-form-textarea" value={this.state.review} onChange={this.handleReviewChange}
+                        id="review-form-textarea-body" cols="50" rows="10"                        >
+                    </textarea>
+
+                    <button className="review-form-submit-button">
+                        Submit
+                    </button>
                 </div>
 
             </form>
