@@ -1,3 +1,5 @@
+import { connect } from "react-redux";
+import { createReview } from "../../actions/review_actions";
 import React from "react";
 import StarRatings from 'react-star-ratings';
 
@@ -5,9 +7,10 @@ class ReviewForm extends React.Component{
     constructor(props){
         super(props);
 
+        debugger
         this.state = {
-            product_id: this.props.match.params.id,
-            reviewer_id: this.props.userId,
+            product_id: this.props.productId,
+            reviewer_id: this.props.reviewerId,
             rating: 0,
             review: "",
         }
@@ -32,7 +35,12 @@ class ReviewForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
+        this.props.createReview(this.state);
 
+        this.setState({
+            rating: 0,
+            review: ""
+        });
     }
 
     render(){
@@ -86,4 +94,12 @@ class ReviewForm extends React.Component{
 
 }
 
-export default ReviewForm
+const mapStateToProps = state => ({
+    reviewerId: state.session.currentUser.id,
+});
+
+const mapDispatchToProps = dispatch => ({
+    createReview: review => dispatch(createReview(review)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReviewForm);

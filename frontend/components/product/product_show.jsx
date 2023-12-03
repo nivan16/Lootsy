@@ -4,6 +4,7 @@ import ReviewIndex from '../review/review_index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCaretDown, faFaceFrown, faXmark} from '@fortawesome/free-solid-svg-icons';
 import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import ReviewForm from '../review/review_form';
 
 class ProductShow extends React.Component {
     constructor(props){
@@ -135,6 +136,7 @@ class ProductShow extends React.Component {
                 {i+1}
             </option>    
         ));
+        
         https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg
         return (
             <div className='product-show-container max-body-width body-padding'>
@@ -275,8 +277,12 @@ class ProductShow extends React.Component {
                         avgRating={this.props.product.avgRating}
                     />
 
-
-
+                    {this.props.currentUser ? (
+                            <ReviewForm productId={this.props.product.id}/>
+                        ) : (
+                            null
+                        )
+                    }
 
 
 
