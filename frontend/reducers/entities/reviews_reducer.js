@@ -1,5 +1,5 @@
 import { RECEIVE_PRODUCT, REMOVE_PRODUCT } from '../../actions/product_actions';
-import { RECIEVE_REVIEW, REMOVE_REVIEW } from '../../actions/review_actions';
+import { RECEIVE_REVIEW, REMOVE_REVIEW } from '../../actions/review_actions';
 
 const reviewsReducer = (state={}, action) => {
     Object.freeze(state);
@@ -13,7 +13,7 @@ const reviewsReducer = (state={}, action) => {
         case REMOVE_PRODUCT:
             return {};
 
-        case RECIEVE_REVIEW:
+        case RECEIVE_REVIEW:
             return Object.assign({}, state, action.review);
 
         case REMOVE_REVIEW:
