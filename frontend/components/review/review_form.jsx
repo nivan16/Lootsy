@@ -7,7 +7,6 @@ class ReviewForm extends React.Component{
     constructor(props){
         super(props);
 
-        debugger
         this.state = {
             product_id: this.props.productId,
             reviewer_id: this.props.reviewerId,
@@ -44,51 +43,52 @@ class ReviewForm extends React.Component{
     }
 
     render(){
-        <div className="review-form-container">
-            <form className="review-form" onSubmit={this.handleSubmit}>
-                <h1 className="review-form-header">
-                    Write a review
-                </h1>
-                
-                <div className="review-form-rating-display">
-                    <h2 className="review-form-rating-title">
-                        Rating:
+        return (
+            <div className="review-form-container">
+                <form className="review-form" onSubmit={this.handleSubmit}>
+                    <h1 className="review-form-header">
+                        Write a review
+                    </h1>
                     
-                    </h2>
-                    <StarRatings 
-                        rating={this.state.rating}
-                        changeRating={this.handleRatingChange}
-                        numberOfStars={5}
+                    <div className="review-form-rating-display">
+                        <h2 className="review-form-rating-title">
+                            Rating:
                         
-                        starEmptyColor='lightgray'
-                        starRatedColor='black'
-                        starHoverColor='black'
-                        starDimension='20px'
-                        starSpacing='1px'
-                    />
+                        </h2>
+                        <StarRatings 
+                            rating={this.state.rating}
+                            changeRating={this.handleRatingChange}
+                            numberOfStars={5}
+                            
+                            starEmptyColor='lightgray'
+                            starRatedColor='black'
+                            starHoverColor='black'
+                            starDimension='20px'
+                            starSpacing='1px'
+                        />
 
-                    <p className="review-form-rating-label">
-                        {this.state.rating} Star(s)
-                    </p>
-                </div>
+                        <p className="review-form-rating-label">
+                            {this.state.rating} Star(s)
+                        </p>
+                    </div>
 
-                <div className="review-form-review-display">
-                    <p className="review-form-review-title">
-                        Review:
-                    </p>
+                    <div className="review-form-review-display">
+                        <p className="review-form-review-title">
+                            Review:
+                        </p>
 
-                    <textarea className="review-form-textarea" value={this.state.review} onChange={this.handleReviewChange}
-                        id="review-form-textarea-body" cols="50" rows="10"                        >
-                    </textarea>
+                        <textarea className="review-form-textarea" value={this.state.review} onChange={this.handleReviewChange}
+                            id="review-form-textarea-body" cols="50" rows="10"                        >
+                        </textarea>
 
-                    <button className="review-form-submit-button">
-                        Submit
-                    </button>
-                </div>
+                        <button className="review-form-submit-button">
+                            Submit
+                        </button>
+                    </div>
 
-            </form>
-        </div>
-
+                </form>
+            </div>
+        )
     }
 
 
