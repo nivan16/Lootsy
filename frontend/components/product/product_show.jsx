@@ -6,17 +6,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCaretDown, faFaceFrown, faXmark} from '@fortawesome/free-solid-svg-icons';
 import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import ReviewForm from '../review/review_form';
-import review_form from '../review/review_form';
 
 class ProductShow extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            sessionModalTriggered: false,
             showAddedToCartModal: false,
             showDescription: false,
             showPurchasedModal: false,
             showReviewModal: false,
-            showSessionModal: false,
             quantity: 1
         };
         
@@ -29,6 +28,33 @@ class ProductShow extends React.Component {
 
         this.closeAddedToCartModal = this.closeAddedToCartModal.bind(this);
         this.closePurchasedModal = this.closePurchasedModal.bind(this);
+    }
+
+    componentDidUpdate(prevProps, prevState){
+
+        //Note: This is to automatically open the review modal if a user
+        //          attempted to leave a review but was not logged in
+        
+        //if the session modal was opened
+        if (prevProps.isOpen !== this.props.isOpen) {
+            //if it was opened due to the add review button &
+            //  if it was only opened on the prior component update
+            if ( (this.state.sessionModalTriggered === true) && (prevState.sessionModalTriggered === false) ) {
+                // if the user logged in or registered when they opened the session modal
+                if (this.props.currentUser === true) {
+                    this.setState({
+                        showReviewModal: true
+                    });
+                }
+                else{
+                    //reset the session modal triggered boolean to false for
+                    //  possible future attempts at a review
+                    this.setState({
+                        sessionModalTriggered: false
+                    });
+                }
+            };
+        };
     }
 
     closeAddedToCartModal(e){
@@ -86,6 +112,9 @@ class ProductShow extends React.Component {
             //Open session modal and pass a message from here
             //  to let it know to render title "Sign in to continue" instead
             this.props.openModal();
+            this.setState({
+                sessionModalTriggered: true
+            })        
         }
 
     }
@@ -127,8 +156,6 @@ class ProductShow extends React.Component {
             showDescription: !prevProps.showDescription
         }));
     }
-
-
 
     componentDidMount(){
         //This returns the product, reviews, and owners/reviewers if product exists
@@ -303,10 +330,11 @@ class ProductShow extends React.Component {
                         Add a review
                     </button>
                     
-                    <div className={`review-form-modal-container ${this.state.showReviewModal ? '': 'review-form-modal-hidden'}`}>
-                        <ReviewForm productId={this.props.product.id}/>
+                    <div className="review-form-modal-background">
+                        <div className={`review-form-modal-container ${this.state.showReviewModal ? '': 'review-form-modal-hidden'}`}>
+                            <ReviewForm productId={this.props.product.id}/>
+                        </div>
                     </div>
-
 
 
 

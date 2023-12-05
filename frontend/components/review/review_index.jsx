@@ -303,7 +303,7 @@ class ReviewIndex extends React.Component{
         
         // Unsure if this is needed yet, to display the last page of reviews
         const totalPages = Math.ceil(this.props.reviews.length / itemsPerPage);
-        debugger
+
         return (
             <>
                 <div className='reviews-index-header-container'>
