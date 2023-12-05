@@ -9,7 +9,7 @@ class ReviewForm extends React.Component{
 
         this.state = {
             product_id: this.props.productId,
-            reviewer_id: this.props.reviewerId,
+            reviewer_id: this.props.reviewer?.id,
             rating: 0,
             review: "",
         }
@@ -43,50 +43,64 @@ class ReviewForm extends React.Component{
     }
 
     render(){
+        // if($.isEmptyObject(this.props.reviewer)){
+        //     return (
+        //         <div className="review-form-modal-background">
+        //             <div className="review-form-error-container">
+        //                 <div className="review-form-error-">
+        //                     <h1>Please sign in or create an account to leave a review</h1>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     )
+        // }
+
         return (
-            <div className="review-form-container">
-                <form className="review-form" onSubmit={this.handleSubmit}>
-                    <h1 className="review-form-header">
-                        Write a review
-                    </h1>
-                    
-                    <div className="review-form-rating-display">
-                        <h2 className="review-form-rating-title">
-                            Rating:
+            <div className="review-form-modal-background">
+                <div className="review-form-container">
+                    <form className="review-form" onSubmit={this.handleSubmit}>
+                        <h1 className="review-form-header">
+                            Write a review
+                        </h1>
                         
-                        </h2>
-                        <StarRatings 
-                            rating={this.state.rating}
-                            changeRating={this.handleRatingChange}
-                            numberOfStars={5}
+                        <div className="review-form-rating-display">
+                            <h2 className="review-form-rating-title">
+                                Rating:
                             
-                            starEmptyColor='lightgray'
-                            starRatedColor='black'
-                            starHoverColor='black'
-                            starDimension='20px'
-                            starSpacing='1px'
-                        />
+                            </h2>
+                            <StarRatings 
+                                rating={this.state.rating}
+                                changeRating={this.handleRatingChange}
+                                numberOfStars={5}
+                                
+                                starEmptyColor='lightgray'
+                                starRatedColor='black'
+                                starHoverColor='black'
+                                starDimension='20px'
+                                starSpacing='1px'
+                            />
 
-                        <p className="review-form-rating-label">
-                            {this.state.rating} Star(s)
-                        </p>
-                    </div>
+                            <p className="review-form-rating-label">
+                                {this.state.rating} Star(s)
+                            </p>
+                        </div>
 
-                    <div className="review-form-review-display">
-                        <p className="review-form-review-title">
-                            Review:
-                        </p>
+                        <div className="review-form-review-display">
+                            <p className="review-form-review-title">
+                                Review:
+                            </p>
 
-                        <textarea className="review-form-textarea" value={this.state.review} onChange={this.handleReviewChange}
-                            id="review-form-textarea-body" cols="50" rows="10"                        >
-                        </textarea>
+                            <textarea className="review-form-textarea" value={this.state.review} onChange={this.handleReviewChange}
+                                id="review-form-textarea-body" cols="50" rows="10"                        >
+                            </textarea>
 
-                        <button className="review-form-submit-button">
-                            Submit
-                        </button>
-                    </div>
+                            <button className="review-form-submit-button">
+                                Submit
+                            </button>
+                        </div>
 
-                </form>
+                    </form>
+                </div>
             </div>
         )
     }
@@ -95,7 +109,7 @@ class ReviewForm extends React.Component{
 }
 
 const mapStateToProps = state => ({
-    reviewerId: state.session.currentUser.id,
+    reviewer: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

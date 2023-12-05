@@ -1,24 +1,29 @@
 import React from 'react';
 import ReviewIndex from '../review/review_index';
+import SessionModalContainer from '../session_modal/session_modal_container';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCaretDown, faFaceFrown, faXmark} from '@fortawesome/free-solid-svg-icons';
 import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import ReviewForm from '../review/review_form';
+import review_form from '../review/review_form';
 
 class ProductShow extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            showPurchasedModal: false,
             showAddedToCartModal: false,
             showDescription: false,
+            showPurchasedModal: false,
+            showReviewModal: false,
+            showSessionModal: false,
             quantity: 1
         };
         
-        this.handleQuantityChange = this.handleQuantityChange.bind(this);
-        this.handlePurchase = this.handlePurchase.bind(this);
         this.handleAddToCart = this.handleAddToCart.bind(this);
+        this.handlePurchase = this.handlePurchase.bind(this);
+        this.handleQuantityChange = this.handleQuantityChange.bind(this);
+        this.handleReviewModalToggle = this.handleReviewModalToggle.bind(this);
         this.redirectToCart = this.redirectToCart.bind(this);
         this.toggleDescription = this.toggleDescription.bind(this);
 
@@ -50,6 +55,15 @@ class ProductShow extends React.Component {
         }
     }
 
+    handlePurchase(e){
+        e.stopPropagation();
+        e.preventDefault();
+
+        this.setState({
+            showPurchasedModal: true
+        });
+    }
+
     handleQuantityChange(e){
         e.stopPropagation();
         e.preventDefault();
@@ -59,13 +73,21 @@ class ProductShow extends React.Component {
         });
     }
 
-    handlePurchase(e){
-        e.stopPropagation();
+    handleReviewModalToggle(e){
         e.preventDefault();
+        e.stopPropagation();
 
-        this.setState({
-            showPurchasedModal: true
-        });
+        if(this.props.currentUser){
+            this.setState({
+                showReviewModal: true
+            });
+        }
+        else if(this.props.currentUser === null){
+            //Open session modal and pass a message from here
+            //  to let it know to render title "Sign in to continue" instead
+            this.props.openModal();
+        }
+
     }
 
     handleAddToCart(e){
@@ -277,13 +299,13 @@ class ProductShow extends React.Component {
                         avgRating={this.props.product.avgRating}
                     />
 
-                    {this.props.currentUser ? (
-                            <ReviewForm productId={this.props.product.id}/>
-                        ) : (
-                            null
-                        )
-                    }
-
+                    <button className='review-form-modal-toggle' onClick={this.handleReviewModalToggle}>
+                        Add a review
+                    </button>
+                    
+                    <div className={`review-form-modal-container ${this.state.showReviewModal ? '': 'review-form-modal-hidden'}`}>
+                        <ReviewForm productId={this.props.product.id}/>
+                    </div>
 
 
 
