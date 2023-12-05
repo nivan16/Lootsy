@@ -9,7 +9,6 @@ class ReviewForm extends React.Component{
 
         this.state = {
             product_id: this.props.productId,
-            reviewer_id: this.props.reviewer?.id,
             rating: 0,
             review: "",
         }
@@ -34,8 +33,11 @@ class ReviewForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.createReview(this.state);
+        debugger
+        let newState = Object.assign({}, this.state, { reviewer_id: this.props.reviewer.id })
 
+        //created the variable because the reviewer wouldnt update in the state but it would in the props
+        this.props.createReview(newState);
         this.setState({
             rating: 0,
             review: ""

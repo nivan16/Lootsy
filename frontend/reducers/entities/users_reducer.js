@@ -17,6 +17,21 @@ const usersReducer = (state = {}, action) => {
             newState = Object.assign({}, state);
             delete newState[action.userId];
             return newState;
+
+        case RECEIVE_CURRENT_USER:
+            //the boolean checks if there are cart items and/or if jbuilder strangely sent a wrapped object unnecessarily
+            if( action.currentUser.userInfo === undefined ){
+                return Object.assign( {}, state, { [action.currentUser.id]: action.currentUser } );
+            }
+            else{
+                return Object.assign( {}, state, { [action.currentUser.userInfo.id]: action.currentUser.userInfo} );
+            };
+            
+            // return ( action.currentUser.cartItems === undefined ) ? (
+            //     Object.assign( {}, state, { [action.currentUser.id]: action.currentUser } )
+            // ) : (
+            //     Object.assign( {}, state, { [action.currentUser.userInfo.id]: action.currentUser.userInfo} )
+            // );
                 
         case RECEIVE_PRODUCT:
             //This is productInfo.users* due to potential reviewers of a product
