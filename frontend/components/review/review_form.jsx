@@ -55,6 +55,7 @@ class ReviewForm extends React.Component{
         //         </div>
         //     )
         // }
+
         return (
             <div className={`review-form-modal-background ${this.props.showReviewModal ? 'review-form-modal-hidden': ''}`}>
                 <div className={`review-form-modal-container ${this.props.showReviewModal ? 'review-form-modal-hidden': ''}`}>
@@ -101,19 +102,37 @@ class ReviewForm extends React.Component{
                                     starDimension='29.9px'
                                     starSpacing='1px'
                                 />
+                                {/*
+                                    {(this.state.rating === 1) ? (
+                                            <p className="review-form-rating-label">
+                                                {this.state.rating} Star
+                                            </p>
+                                        ) : (
+                                            <p className="review-form-rating-label">
+                                                {this.state.rating} Stars
+                                            </p>
+                                        )
+                                    }
 
-                                <p className="review-form-rating-label">
-                                    {this.state.rating} Star(s)
-                                </p>
+                                */}
                             </div>
 
                             <div className="review-form-review-display">
-                                <p className="review-form-review-title">
-                                    Review:
+                                <h3 className="review-form-review-explanation">
+                                    Help others by sharing your feedback
+                                </h3>
+
+                                <p className="review-form-review-examples">
+                                    What do you like about this? Did it arrive on time? Describe your experience
+                                    with this item.
                                 </p>
 
-                                <textarea className="review-form-textarea" value={this.state.review} onChange={this.handleReviewChange}
-                                    id="review-form-textarea-body" cols="50" rows="10"                        >
+                                <textarea 
+                                    className="review-form-textarea" 
+                                    value={this.state.review} 
+                                    onChange={this.handleReviewChange}
+                                    placeholder="Share a word if you'd like"
+                                >
                                 </textarea>
 
                                 <button className="review-form-submit-button" >
