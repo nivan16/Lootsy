@@ -111,7 +111,7 @@ class ProductShow extends React.Component {
         else if(this.props.currentUser === null){
             //Open session modal and pass a message from here
             //  to let it know to render title "Sign in to continue" instead
-            this.props.openModal();
+            this.props.openModalActionRequired();
             this.setState({
                 sessionModalTriggered: true
             })        
@@ -214,7 +214,7 @@ class ProductShow extends React.Component {
                                 and max-height: 100% ??? */
                             }
                             
-                            <img src={"https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg"}>
+                            <img src={"https://i.etsystatic.com/26339184/r/il/672aaf/5609400017/il_794xN.5609400017_tglw.jpg"}>
                             </img>
                         </div>
 

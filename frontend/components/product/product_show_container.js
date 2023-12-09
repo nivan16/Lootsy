@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { requestProduct } from "../../actions/product_actions";
 import { updateCartItem } from "../../actions/cart_actions";
-import { openModal, closeModal } from '../../actions/modal_actions'; //session modal
+import { openModalActionRequired } from '../../actions/modal_actions'; //session modal
 import ProductShow from "./product_show";
 
 const mapStateToProps = (state, ownProps) => ({
@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
     requestProduct: productId => dispatch(requestProduct(productId)),
     updateCartItem: cartItem => dispatch(updateCartItem(cartItem)),
-    openModal: () => dispatch(openModal()),
+    openModalActionRequired: () => dispatch(openModalActionRequired()),
 
 });
 

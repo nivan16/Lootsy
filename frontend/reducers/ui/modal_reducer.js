@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL } from "../../actions/modal_actions";
+import { OPEN_MODAL, CLOSE_MODAL, OPEN_MODAL_ACTION_REQUIRED } from "../../actions/modal_actions";
 
 const _closedModal = { 
     isOpen: false
@@ -12,6 +12,8 @@ const modalReducer = ( state = _closedModal, action) => {
             return { isOpen: true };
         case CLOSE_MODAL:
             return { isOpen: false };
+        case OPEN_MODAL_ACTION_REQUIRED:
+            return { isOpen: "actionRequired" };
         default:
             return state;
     };

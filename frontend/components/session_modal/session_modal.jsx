@@ -103,10 +103,11 @@ class SessionModal extends React.Component{
 
     render(){
 
+        const actionRequired = this.props.isOpen === "actionRequired";
         const emailError = this.props.errors['email'];
         const passwordError = this.props.errors['password'];
         const nameError = this.props.errors['name'];
-     
+    
 
         let errorToRender;
         if(emailError) errorToRender = "Email";
@@ -114,10 +115,10 @@ class SessionModal extends React.Component{
         else if(nameError) errorToRender = "Name";
         // I think this particular conditional will be handled by the nav bar in the future,
         //  as it will either render a signing/signup button or one specific to the user with a drop down
-        return this.props.isOpen ? (
+        return !!this.props.isOpen ? (
             <div className='session-modal-background' onMouseDown={this.closeSessionModal}>
                 <div className='session-modal-wrapper'>
-                    <form className='session-modal-form' onSubmit={this.handleSubmit}> {/* why is this whole thing a form on etsy?*/}
+                    <form className='session-modal-form' onSubmit={this.handleSubmit}>
                
                         
                         <span className='session-modal-close-button'>
@@ -131,12 +132,29 @@ class SessionModal extends React.Component{
                                     <div className='session-modal-register-header-extra'>Registration is easy.</div>
                                 </div>
                             ) : (
-                                <div className='session-modal-login-header-wrap'>
-                                    <h1 className='session-modal-login-header'>Sign in</h1>
-                                    <div className='session-modal-register-button-container'>
-                                        <button className='session-modal-register-button' type='button' onClick={this.handleModalSwitch}>Register</button>
+                                <>
+                                    <div className='session-modal-login-header-wrap'>
+                                        <h1 className='session-modal-login-header'>
+                                            {actionRequired ? (
+                                                    "Sign in to continue"
+                                                ) : (
+                                                    "Sign in"
+                                                )
+                                            }
+                                        </h1>
+                                        <div className='session-modal-register-button-container'>
+                                            <button className='session-modal-register-button' type='button' onClick={this.handleModalSwitch}>Register</button>
+                                        </div>
                                     </div>
-                                </div>
+                                        {actionRequired ? ( 
+                                                <p className='session-modal-action-required-messaage'>
+                                                    Sign in or register with your email address
+                                                </p>
+                                            ) : (
+                                                null
+                                            )
+                                        }
+                                </>
                             )
                         }
                         <div className='session-modal-input-wrap'>
