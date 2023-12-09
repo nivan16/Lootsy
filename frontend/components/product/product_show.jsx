@@ -22,12 +22,13 @@ class ProductShow extends React.Component {
         this.handleAddToCart = this.handleAddToCart.bind(this);
         this.handlePurchase = this.handlePurchase.bind(this);
         this.handleQuantityChange = this.handleQuantityChange.bind(this);
-        this.handleReviewModalToggle = this.handleReviewModalToggle.bind(this);
         this.redirectToCart = this.redirectToCart.bind(this);
         this.toggleDescription = this.toggleDescription.bind(this);
-
+        
+        this.openReviewModal = this.openReviewModal.bind(this);
         this.closeAddedToCartModal = this.closeAddedToCartModal.bind(this);
         this.closePurchasedModal = this.closePurchasedModal.bind(this);
+        this.closeReviewModal = this.closeReviewModal.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -81,6 +82,14 @@ class ProductShow extends React.Component {
         }
     }
 
+    closeReviewModal(e){
+        e.stopPropagation();
+
+        this.setState({
+            showReviewModal: false
+        })
+    }
+
     handlePurchase(e){
         e.stopPropagation();
         e.preventDefault();
@@ -99,7 +108,7 @@ class ProductShow extends React.Component {
         });
     }
 
-    handleReviewModalToggle(e){
+    openReviewModal(e){
         e.preventDefault();
         e.stopPropagation();
 
@@ -326,7 +335,7 @@ class ProductShow extends React.Component {
                         avgRating={this.props.product.avgRating}
                     />
 
-                    <button className='review-form-modal-toggle' onClick={this.handleReviewModalToggle}>
+                    <button className='review-form-modal-toggle' onClick={this.openReviewModal}>
                         Add a review
                     </button>
                     
@@ -340,7 +349,12 @@ class ProductShow extends React.Component {
 
                     
                     {/* Should it just be like this, passing the showReviewModal condition here so everything has a more proper seperation of concern? */}
-                    <ReviewForm productId={this.props.product.id} showReviewModal={this.state.showReviewModal}/>
+                    <ReviewForm
+                        product={this.props.product}
+                        productOwnerName={this.props.users[this.props.product.ownerId].name}
+                        showReviewModal={this.state.showReviewModal}
+                        closeReviewModal={(e) => this.closeReviewModal(e)}
+                    />
                     
 
 

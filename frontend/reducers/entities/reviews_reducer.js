@@ -14,7 +14,6 @@ const reviewsReducer = (state={}, action) => {
             return {};
 
         case RECEIVE_REVIEW:
-            debugger;
             return Object.assign({}, state, action.reviewInfo.review);
 
         case REMOVE_REVIEW:

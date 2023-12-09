@@ -1,0 +1,22 @@
+.review-form-modal-background{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    z-index: 50;
+}
+
+.review-form-modal-container{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    height: 40rem;
+    width: 35rem;
+    padding: 2rem;
+    background-color: white;
+
+    transform: translate(-50%, -50%);
+}

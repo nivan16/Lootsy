@@ -8,7 +8,7 @@ class ReviewForm extends React.Component{
         super(props);
 
         this.state = {
-            product_id: this.props.productId,
+            product_id: this.props.product.id,
             rating: 0,
             review: "",
         }
@@ -33,7 +33,6 @@ class ReviewForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
         let newState = Object.assign({}, this.state, { reviewer_id: this.props.reviewer.id })
 
         //created the variable because the reviewer wouldnt update in the state but it would in the props
@@ -56,21 +55,41 @@ class ReviewForm extends React.Component{
         //         </div>
         //     )
         // }
-
         return (
             <div className={`review-form-modal-background ${this.props.showReviewModal ? 'review-form-modal-hidden': ''}`}>
                 <div className={`review-form-modal-container ${this.props.showReviewModal ? 'review-form-modal-hidden': ''}`}>
                     <div className="review-form-container">
                         <form className="review-form" onSubmit={this.handleSubmit}>
                             <h1 className="review-form-header">
-                                Write a review
+                                Leave a review
                             </h1>
+
+                            <div className="review-form-product-info-container">
+                                {/* <div className="review-form-product-image-container">
+                                    <img src="https://i.etsystatic.com/26339184/r/il/672aaf/5609400017/il_794xN.5609400017_tglw.jpg" alt="thecutekirbster" />
+                                </div> */}
+
+                                <div className="review-form-product-name-and-owner-container">
+                                    <div className="review-form-product-owner-container">
+                                        {/* Will need image of profile pic here in the future! */}
+                                        <p className="review-form-product-owner">
+                                            {this.props.productOwnerName}
+                                        </p>
+                                    </div>
+
+                                    <div className="review-form-product-name-container">
+                                        <p className="review-form-product-name">
+                                            {this.props.product.name}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                             
                             <div className="review-form-rating-display">
                                 <h2 className="review-form-rating-title">
                                     Rating:
-                                
-                                </h2>
+                                </h2>                               
+
                                 <StarRatings 
                                     rating={this.state.rating}
                                     changeRating={this.handleRatingChange}
@@ -97,7 +116,7 @@ class ReviewForm extends React.Component{
                                     id="review-form-textarea-body" cols="50" rows="10"                        >
                                 </textarea>
 
-                                <button className="review-form-submit-button">
+                                <button className="review-form-submit-button" >
                                     Submit
                                 </button>
                             </div>

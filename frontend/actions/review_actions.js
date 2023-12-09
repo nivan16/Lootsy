@@ -19,14 +19,13 @@ const receiveReviewErrors = errors => ({
     errors
 });
 
-export const createReview = review => dispatch => {
-    debugger
-    return ( ReviewUtils.createReview(review)
+export const createReview = review => dispatch => (
+    ReviewUtils.createReview(review)
         .then (
             review => dispatch(receiveReview(review)),
             err => dispatch(receiveReviewErrors(err.responseJSON))
         )
-)};
+);
 
 export const deleteReview = reviewId => dispatch => (
     ReviewUtils.deleteReview(reviewId)
