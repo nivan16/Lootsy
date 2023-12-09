@@ -330,13 +330,18 @@ class ProductShow extends React.Component {
                         Add a review
                     </button>
                     
-                    <div className="review-form-modal-background">
-                        <div className={`review-form-modal-container ${this.state.showReviewModal ? '': 'review-form-modal-hidden'}`}>
+                    {/******* Note: The ReviewForm component might need to be renamed to ReviewFormModal ********/}
+                    
+                    {/* <div className={`review-form-modal-background ${this.state.showReviewModal ? 'review-form-modal-hidden': ''}`}>
+                        <div className={`review-form-modal-container ${this.state.showReviewModal ? 'review-form-modal-hidden': ''}`}>
                             <ReviewForm productId={this.props.product.id}/>
                         </div>
-                    </div>
+                    </div> */}
 
-
+                    
+                    {/* Should it just be like this, passing the showReviewModal condition here so everything has a more proper seperation of concern? */}
+                    <ReviewForm productId={this.props.product.id} showReviewModal={this.state.showReviewModal}/>
+                    
 
 
 
