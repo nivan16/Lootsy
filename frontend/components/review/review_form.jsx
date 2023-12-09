@@ -61,13 +61,13 @@ class ReviewForm extends React.Component{
                     <div className="review-form-container">
                         <form className="review-form" onSubmit={this.handleSubmit}>
                             <h1 className="review-form-header">
-                                Leave a review
+                                Leave a Review
                             </h1>
 
                             <div className="review-form-product-info-container">
-                                {/* <div className="review-form-product-image-container">
+                                <div className="review-form-product-image-container">
                                     <img src="https://i.etsystatic.com/26339184/r/il/672aaf/5609400017/il_794xN.5609400017_tglw.jpg" alt="thecutekirbster" />
-                                </div> */}
+                                </div>
 
                                 <div className="review-form-product-name-and-owner-container">
                                     <div className="review-form-product-owner-container">
@@ -87,7 +87,7 @@ class ReviewForm extends React.Component{
                             
                             <div className="review-form-rating-display">
                                 <h2 className="review-form-rating-title">
-                                    Rating:
+                                    My Review
                                 </h2>                               
 
                                 <StarRatings 
@@ -98,7 +98,7 @@ class ReviewForm extends React.Component{
                                     starEmptyColor='lightgray'
                                     starRatedColor='black'
                                     starHoverColor='black'
-                                    starDimension='20px'
+                                    starDimension='29.9px'
                                     starSpacing='1px'
                                 />
 
