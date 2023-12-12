@@ -1,4 +1,5 @@
 .review-form-modal-background{
+    display: block;
     position: fixed;
     background: rgba(0, 0, 0, 0.5);
     left: 0;
@@ -9,9 +10,14 @@
     z-index: 50;
 }
 
+.review-form-modal-background.review-form-modal-hidden{
+    display: none;
+}
+
 /* Modal Container */
 .review-form-modal-container{
     position: absolute;
+    display: block;
     top: 39%;
     left: 50%;
     height: 40rem;
@@ -23,6 +29,10 @@
     border-radius: 25px;
 
     transform: translate(-50%, -50%);
+}
+
+.review-form-modal-hidden{
+    display: none;
 }
 
 /* Header */

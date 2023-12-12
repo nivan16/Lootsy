@@ -55,10 +55,10 @@ class ReviewForm extends React.Component{
         //         </div>
         //     )
         // }
-
+        
         return (
-            <div className={`review-form-modal-background ${this.props.showReviewModal ? 'review-form-modal-hidden': ''}`}>
-                <div className={`review-form-modal-container ${this.props.showReviewModal ? 'review-form-modal-hidden': ''}`}>
+            <div className={`review-form-modal-background ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
+                <div className={`review-form-modal-container ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
                     <div className="review-form-container">
                         <form className="review-form" onSubmit={this.handleSubmit}>
                             <h1 className="review-form-header">

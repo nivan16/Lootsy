@@ -37,6 +37,9 @@ class ProductShow extends React.Component {
         //          attempted to leave a review but was not logged in
         
         //if the session modal was opened
+        
+
+        //Nevermind. Its the second condition for some reason!!!!!!
         if (prevProps.isOpen !== this.props.isOpen) {
             //if it was opened due to the add review button &
             //  if it was only opened on the prior component update
@@ -120,10 +123,10 @@ class ProductShow extends React.Component {
         else if(this.props.currentUser === null){
             //Open session modal and pass a message from here
             //  to let it know to render title "Sign in to continue" instead
-            this.props.openModalActionRequired();
             this.setState({
                 sessionModalTriggered: true
             })        
+            this.props.openModalActionRequired();
         }
 
     }
