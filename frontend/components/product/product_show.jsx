@@ -78,8 +78,6 @@ class ProductShow extends React.Component {
     }
 
     closeReviewModal(e){
-        e.stopPropagation();
-
         this.setState({
             showReviewModal: false
         })
@@ -345,7 +343,7 @@ class ProductShow extends React.Component {
                         product={this.props.product}
                         productOwnerName={this.props.users[this.props.product.ownerId].name}
                         showReviewModal={this.state.showReviewModal}
-                        closeReviewModal={(e) => this.closeReviewModal(e)}
+                        closeReviewModal={this.closeReviewModal}
                     />
                     
 

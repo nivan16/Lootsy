@@ -36,6 +36,7 @@ class ReviewForm extends React.Component{
         let newState = Object.assign({}, this.state, { reviewer_id: this.props.reviewer.id })
 
         //created the variable because the reviewer wouldnt update in the state but it would in the props
+        this.props.closeReviewModal(e);
         this.props.createReview(newState);
         this.setState({
             rating: 0,
