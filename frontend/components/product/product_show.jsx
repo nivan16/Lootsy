@@ -1,6 +1,5 @@
 import React from 'react';
 import ReviewIndex from '../review/review_index';
-import SessionModalContainer from '../session_modal/session_modal_container';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCaretDown, faFaceFrown, faXmark} from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +10,6 @@ class ProductShow extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            sessionModalTriggered: false,
             showAddedToCartModal: false,
             showDescription: false,
             showPurchasedModal: false,
@@ -31,33 +29,27 @@ class ProductShow extends React.Component {
         this.closeReviewModal = this.closeReviewModal.bind(this);
     }
 
-    componentDidUpdate(prevProps, prevState){
+    componentDidUpdate(prevProps){
 
         //Note: This is to automatically open the review modal if a user
         //          attempted to leave a review but was not logged in
         
         //if the session modal was opened
         
-
+        debugger
         //Nevermind. Its the second condition for some reason!!!!!!
-        if (prevProps.isOpen !== this.props.isOpen) {
+        //  **Its because either the first if statement or the else statement isnt clear enough
+        if ( (prevProps.isOpen === 'actionRequired') && (this.props.isOpen === false) ) {
             //if it was opened due to the add review button &
             //  if it was only opened on the prior component update
-            if ( (this.state.sessionModalTriggered === true) && (prevState.sessionModalTriggered === false) ) {
-                // if the user logged in or registered when they opened the session modal
-                if (this.props.currentUser === true) {
-                    this.setState({
-                        showReviewModal: true
-                    });
-                }
-                else{
-                    //reset the session modal triggered boolean to false for
-                    //  possible future attempts at a review
-                    this.setState({
-                        sessionModalTriggered: false
-                    });
-                }
+            // debugger
+            // if the user logged in or registered when they opened the session modal
+            if (this.props.currentUser !== null) {
+                this.setState({
+                    showReviewModal: true
+                });
             };
+            
         };
     }
 
@@ -122,10 +114,7 @@ class ProductShow extends React.Component {
         }
         else if(this.props.currentUser === null){
             //Open session modal and pass a message from here
-            //  to let it know to render title "Sign in to continue" instead
-            this.setState({
-                sessionModalTriggered: true
-            })        
+            //  to let it know to render title "Sign in to continue" instead     
             this.props.openModalActionRequired();
         }
 
