@@ -36,7 +36,6 @@ class ProductShow extends React.Component {
         
         //if the session modal was opened
         
-        debugger
         //Nevermind. Its the second condition for some reason!!!!!!
         //  **Its because either the first if statement or the else statement isnt clear enough
         if ( (prevProps.isOpen === 'actionRequired') && (this.props.isOpen === false) ) {
@@ -325,9 +324,12 @@ class ProductShow extends React.Component {
                         avgRating={this.props.product.avgRating}
                     />
 
-                    <button className='review-form-modal-toggle' onClick={this.openReviewModal}>
-                        Add a review
-                    </button>
+                    <div className='review-form-modal-toggle-container'>
+                        <button className='review-form-modal-toggle' onClick={this.openReviewModal}>
+                            Add a review
+                        </button>
+                    </div>
+
                     
                     {/******* Note: The ReviewForm component might need to be renamed to ReviewFormModal ********/}
                     

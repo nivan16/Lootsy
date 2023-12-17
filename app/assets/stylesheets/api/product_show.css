@@ -1,3 +1,7 @@
+.product-show-container{
+    padding-bottom: 5rem;
+}
+
 /* Product Image & Information */
 .product-image-and-info-container{
     display: flex;

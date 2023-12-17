@@ -1,3 +1,13 @@
+/* Review Modal Open Button */
+.review-form-modal-toggle{
+    margin: none;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 6px;
+    color: white;
+}
+
+/* Modal Background */
 .review-form-modal-background{
     display: block;
     position: fixed;

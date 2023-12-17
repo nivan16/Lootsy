@@ -32,8 +32,10 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 /* ----------- Reviews Index ----------- */
 .reviews-index-container {
     width: 66%;
-    margin-top: 1rem;
-    margin-bottom: 15rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 /* ----------- Reviews Sort Button Menu ----------- */
