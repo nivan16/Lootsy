@@ -326,7 +326,12 @@ class ProductShow extends React.Component {
 
                     <div className='review-form-modal-toggle-container'>
                         <button className='review-form-modal-toggle' onClick={this.openReviewModal}>
-                            Add a review
+                            {( !($.isEmptyObject(this.props.currentUser)) && !($.isEmptyObject(this.props.reviews[this.props.currentUser.id])) ) ? (
+                                    "Edit your review" 
+                                ) : (
+                                    "Add a review"
+                                )
+                            }
                         </button>
                     </div>
 
