@@ -27,10 +27,10 @@ export const createReview = review => dispatch => (
         )
 );
 
-export const deleteReview = reviewId => dispatch => (
-    ReviewUtils.deleteReview(reviewId)
+export const deleteReview = review => dispatch => (
+    ReviewUtils.deleteReview(review.id)
         .then(
-            () => dispatch(removeReview(reviewId)),
+            () => dispatch(removeReview(review.reviewerId)),
             err => dispatch(receiveReviewErrors(err.responseJSON))
         )
 );
