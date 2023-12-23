@@ -21,7 +21,15 @@ const receiveReviewErrors = errors => ({
 
 export const createReview = review => dispatch => (
     ReviewUtils.createReview(review)
-        .then (
+        .then(
+            review => dispatch(receiveReview(review)),
+            err => dispatch(receiveReviewErrors(err.responseJSON))
+        )
+);
+
+export const editReview = review => dispatch => (
+    ReviewUtils.editReview(review)
+        .then(
             review => dispatch(receiveReview(review)),
             err => dispatch(receiveReviewErrors(err.responseJSON))
         )
