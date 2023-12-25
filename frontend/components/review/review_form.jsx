@@ -18,6 +18,22 @@ class ReviewForm extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount(){
+        if(this.props.review !== undefined){
+            if(this.props.review.review !== null){
+                this.setState({
+                    rating: this.props.review.rating,
+                    review: this.props.review.review
+                });
+            }
+            else{
+                this.setState({
+                    rating: this.props.review.rating
+                });
+            };
+        };
+    }
+
     handleRatingChange(newRating){
         this.setState({
             rating: newRating
@@ -34,7 +50,9 @@ class ReviewForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         let newState = Object.assign({}, this.state, { reviewer_id: this.props.reviewer.id })
-
+        if(this.props.review !== undefined){
+            newState.id = this.props.review.id
+        };
         //created the variable because the reviewer wouldnt update in the state but it would in the props
         this.props.closeReviewModal(e);
         this.props.createReview(newState);
@@ -56,7 +74,7 @@ class ReviewForm extends React.Component{
         //         </div>
         //     )
         // }
-        
+        debugger
         return (
             <div className={`review-form-modal-background ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
                 <div className={`review-form-modal-container ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
@@ -128,13 +146,23 @@ class ReviewForm extends React.Component{
                                     with this item.
                                 </p>
 
-                                <textarea 
-                                    className="review-form-textarea" 
-                                    value={this.state.review} 
-                                    onChange={this.handleReviewChange}
-                                    placeholder="Share a word if you'd like"
-                                >
-                                </textarea>
+                                {( (this.props.review !== undefined) && (this.props.review.review !== null) ) ? (
+                                        <textarea 
+                                            className="review-form-textarea"
+                                            value={this.state.review} 
+                                            onChange={this.handleReviewChange}
+                                        >
+                                        </textarea>
+                                    ) : (
+                                        <textarea 
+                                            className="review-form-textarea" 
+                                            value={this.state.review} 
+                                            onChange={this.handleReviewChange}
+                                            placeholder="Share a word if you'd like"
+                                        >
+                                        </textarea>       
+                                    )
+                                }
 
                                 <button className="review-form-submit-button" >
                                     Submit

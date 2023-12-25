@@ -4,7 +4,7 @@ import ReviewIndex from '../review/review_index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCaretDown, faFaceFrown, faXmark} from '@fortawesome/free-solid-svg-icons';
 import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import ReviewForm from '../review/review_form';
+import ReviewFormContainer from '../review/review_form';
 
 class ProductShow extends React.Component {
     constructor(props){
@@ -346,9 +346,10 @@ class ProductShow extends React.Component {
 
                     
                     {/* Should it just be like this, passing the showReviewModal condition here so everything has a more proper seperation of concern? */}
-                    <ReviewForm
+                    <ReviewFormContainer
                         product={this.props.product}
                         productOwnerName={this.props.users[this.props.product.ownerId].name}
+                        review={this.props.currentUser !== null ? this.props.reviews[this.props.currentUser.id] : undefined}
                         showReviewModal={this.state.showReviewModal}
                         closeReviewModal={this.closeReviewModal}
                     />
