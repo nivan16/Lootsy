@@ -2,7 +2,6 @@ class Api::ReviewsController < ApplicationController
 
     def create
         @review = Review.new(review_params)
-        
         if @review.save
             render :show
         else
@@ -11,8 +10,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-        @review = Review.find_by(id: :id)
-
+        @review = Review.find_by(id: params[:id])
         if @review.nil?
             render json: ["Review not found!"], status: 404
         elsif @review.update(review_params)
@@ -23,7 +21,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def destroy
-        @review = Review.find_by(id: :id)
+        @review = Review.find_by(id: params[:id])
 
         #need to ask if current_user is okay or should send the id of the current user from
         # the front end
@@ -42,6 +40,6 @@ class Api::ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:id, :product_id, :reviewer_id, :rating, :review)
+        params.require(:review).permit(:product_id, :reviewer_id, :rating, :review)
     end
 end
