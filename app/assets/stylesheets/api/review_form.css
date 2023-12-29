@@ -49,10 +49,10 @@
 .review-form-modal-container{
     position: absolute;
     display: block;
-    top: 39%;
+    top: 43%;
     left: 50%;
-    height: 40rem;
-    width: 26.5rem;
+    height: 45rem;
+    width: 35rem;
     
     padding: 1.75rem;
     background-color: white;
@@ -120,7 +120,7 @@
 
 /* Review Star Rating */
 .review-form-rating-display{
-    /* display: flex; */
+    /* margin-bottom: 1rem; */
 }
 
 .review-form-rating-title{
@@ -140,41 +140,148 @@
 }
 
 .review-form-review-explanation{
-    margin-top: 1.0rem;
+    margin-top: 1.2rem;
     font-size: 1rem;
     font-weight: 500;
 }
 
 .review-form-review-examples{
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
+    margin-top: 0.55rem;
+    font-size: 0.95rem;
     line-height: 1.3;
 }
-
+/* Written Review */
 .review-form-textarea{
     width: 100%;
     height: 150px;
     margin-top: 0.75rem;
-    padding-top: 8px;
+    padding-top: 5px;
     padding-bottom: 8px;
     padding-left: 8px;
     padding-right: 8px;
 
-    border-color: rgb(212, 212, 212);
-    border-width: 2px;
+    border-color: rgb(197, 197, 197);
+    border-width: 1px;
     border-radius: 5px;
+    font-size: 1rem;
+    line-height: 1.3;
 
     transition: border-color 225ms ease-in-out;
     resize: none;
 }
 
-
 .review-form-textarea:focus-visible{
     outline: none;
-    border-color: rgb(180, 180, 180);
-    border-width: 2px;
+    border-color: rgb(71, 71, 71);
+    border-width: 1px;
 }
 
+/* Reviewer Information and Privacy Statement */
+.review-form-reviewer-information-container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 1.5rem;
+}
+
+.review-form-reviewer-information{
+    font-size: 0.9rem;
+}
+
+.review-form-privacy-statement{
+    margin-top: 7px;
+    font-size: 0.9rem;
+}
+
+
+
+
+/* Review Form Buttons Container */
+.review-form-buttons-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+/* Form Cancel Button */
+.review-form-cancel-modal-button{
+    position: relative;
+    padding-top: 0.55rem;
+    padding-bottom: 0.6rem;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 500;
+    z-index: 30;
+}
+
+.review-form-cancel-modal-button::after{
+    position: absolute;
+    display: block;
+    content: "";
+    inset: 0;
+
+    background-color: transparent;
+    /* border: 1px solid rgba(200, 200, 200, 0.4); */
+    border-radius: 25px;
+    
+    transform: scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 25;
+}
+
+.review-form-cancel-modal-button:hover::after{
+    background-color: rgba(210, 210, 210, 0.4);
+    transform: scale(1.04, 1.07);
+    transition: 150ms ease;
+}
+/* ^^ font size 18px */
+
+/* Form Submit Button */
 .review-form-submit-button{
-    margin-top: 1rem;
+    position: relative;
+    padding-top: 0.55rem;
+    padding-bottom: 0.6rem;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 500;
+    z-index: 50;
+}
+
+
+.review-form-submit-button::before{
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: black;
+    border-radius: 25px;
+    
+    transition: 200ms ease-in-out;
+    transform: scale(1.005, 1.01);
+    /* ***The base of the modal form is 50, and 
+    this is at -5, but it works perfectly for some reason...
+    maybe because of position absolute?*** */
+    z-index: -5;
+}
+
+.review-form-submit-button:hover::before{
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.05, 1.09);
+    transition: 150ms ease;
 }

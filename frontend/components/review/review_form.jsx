@@ -99,6 +99,9 @@ class ReviewForm extends React.Component{
         //     )
         // }
 
+        // <div className={`review-form-modal-background ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
+        // <div className={`review-form-modal-container ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
+
         return (
             <div className={`review-form-modal-background ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
                 <div className={`review-form-modal-container ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
@@ -142,8 +145,8 @@ class ReviewForm extends React.Component{
                                     starEmptyColor='lightgray'
                                     starRatedColor='black'
                                     starHoverColor='black'
-                                    starDimension='29.9px'
-                                    starSpacing='1px'
+                                    starDimension='32px'
+                                    starSpacing='3px'
                                 />
                                 {/*
                                     {(this.state.rating === 1) ? (
@@ -176,12 +179,28 @@ class ReviewForm extends React.Component{
                                     onChange={this.handleReviewChange}
                                     placeholder="Share a word if you'd like"
                                 >
-                                </textarea>       
-                                
+                                </textarea>
 
-                                <button className="review-form-submit-button" >
-                                    Submit
-                                </button>
+                                <div className="review-form-reviewer-information-container">
+                                    <p className="review-form-reviewer-information">
+                                        {`Reviewed by ${this.props.reviewer ? this.props.reviewer.name : ""}.`}
+                                    </p>
+
+                                    <p className="review-form-privacy-statement">
+                                        Your review and profile information will be publicly displayed.
+                                    </p>
+                                </div>
+                                
+                                <div className="review-form-buttons-container">
+                                    <div className="review-form-cancel-modal-button">
+                                        Cancel
+                                    </div>
+
+                                    <button className="review-form-submit-button" >
+                                        Post Your Review
+                                    </button>
+
+                                </div>
                             </div>
 
                         </form>
