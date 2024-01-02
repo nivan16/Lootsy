@@ -79,11 +79,16 @@ class ReviewForm extends React.Component{
         };
         //created the variable because the reviewer wouldnt update in the state but it would in the props
         this.props.closeReviewModal(e);
-        (this.props.review === undefined) ? this.props.createReview(newState) : this.props.editReview(newState);
-        this.setState({
-            rating: 0,
-            review: ""
-        });
+        if(this.props.review === undefined){
+            this.props.createReview(newState);
+            this.setState({
+                rating: 0,
+                review: ""
+            });
+        }
+        else{
+            this.props.editReview(newState);
+        }
     }
 
     render(){
@@ -103,7 +108,9 @@ class ReviewForm extends React.Component{
         // <div className={`review-form-modal-container ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
 
         return (
-            <div className={`review-form-modal-background ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
+            <div className={`review-form-modal-background ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}
+                onClick={this.props.closeReviewModal}   
+            >
                 <div className={`review-form-modal-container ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
                     <div className="review-form-container">
                         <form className="review-form" onSubmit={this.handleSubmit}>
@@ -192,7 +199,7 @@ class ReviewForm extends React.Component{
                                 </div>
                                 
                                 <div className="review-form-buttons-container">
-                                    <div className="review-form-cancel-modal-button">
+                                    <div className="review-form-cancel-modal-button" onClick={this.props.closeReviewModal}>
                                         Cancel
                                     </div>
 

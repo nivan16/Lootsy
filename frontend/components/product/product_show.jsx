@@ -64,7 +64,7 @@ class ProductShow extends React.Component {
     }
 
     closePurchasedModal(e){
-        e.stopPropagation();
+        
         // e.preventDefault();
 
         //Please please please do not forget to either: include another class name OR remove
@@ -77,9 +77,12 @@ class ProductShow extends React.Component {
     }
 
     closeReviewModal(e){
-        this.setState({
-            showReviewModal: false
-        })
+        // debugger
+        if ( ['review-form-modal-background', 'review-form-cancel-modal-button', 'review-form-submit-button'].includes(e.target.className) ) {
+            this.setState({
+                showReviewModal: false
+            })   
+        }
     }
 
     handlePurchase(e){
