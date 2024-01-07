@@ -1,4 +1,4 @@
-import { RECEIVE_PRODUCT, REMOVE_PRODUCT } from '../../actions/product_actions';
+import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS ,REMOVE_PRODUCT } from '../../actions/product_actions';
 import { RECEIVE_REVIEW, REMOVE_REVIEW } from '../../actions/review_actions';
 
 const reviewsReducer = (state={}, action) => {
@@ -9,6 +9,9 @@ const reviewsReducer = (state={}, action) => {
         case RECEIVE_PRODUCT:
             if($.isEmptyObject(action.productInfo) || $.isEmptyObject(action.productInfo.reviews)) return {};
             return action.productInfo.reviews;
+
+        case RECEIVE_PRODUCTS:
+            return {};
 
         case REMOVE_PRODUCT:
             return {};
