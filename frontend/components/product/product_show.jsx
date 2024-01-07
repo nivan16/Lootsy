@@ -186,7 +186,7 @@ class ProductShow extends React.Component {
                 {i+1}
             </option>    
         ));
-        
+        // debugger
         https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg
         return (
             <div className='product-show-container max-body-width body-padding'>
@@ -355,6 +355,7 @@ class ProductShow extends React.Component {
                         review={this.props.currentUser !== null ? this.props.reviews[this.props.currentUser.id] : undefined}
                         showReviewModal={this.state.showReviewModal}
                         closeReviewModal={this.closeReviewModal}
+                        paramsId={this.props.match.params.id}
                     />
                     
 
