@@ -38,6 +38,21 @@ class ReviewForm extends React.Component{
         if( (prevProps.product.id !== this.props.product.id) ){
             if(this.props.review !== undefined){
                 if(this.props.review.review !== null){
+                    //i think i really need to change the empty review from null to '', its messing up alot
+                    //  unless i can figure out a way to either: use trim() and then set to null and then figure
+                    //  out a way to send nulls to the back end
+                    //  *** Or ***
+                    //  Have an instance variable method strip() the review (or maybe just handle in front end since JS is faster)
+                    //      and if the review.review.length === 0 then set it to *nil* (null in Ruby) and then have it save/update to postgresql
+                    //      Also, even though the enter key generates a new line by html representing it as "\n", .trim() (in the front-end)
+                    //          removes any number of them (1 - 20) so I will probably do a if(newState.review.trim().length === 0){ then set to '' }
+                    //          or mayber even just trim it regardless and then have Ruby set it to nil if the length is equal to 0 (the review is just "") 
+
+                    //  **Note: it is very possible to create/edit a review to have (review: nil) in the rails console, where validation isnt prevent
+                    //      by "Minimum 1 required!" error
+
+                    //Also there was a weird bug where the old review persisted to a new user when: edit( or create i forgot), log out, register(i think)
+                    //  then "Add a review". could be because of sending empty string with 95 whitespace to backend, then front end received it oddly
                     this.setState({
                         rating: this.props.review.rating,
                         review: this.props.review.review
@@ -74,9 +89,15 @@ class ReviewForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         let newState = Object.assign({}, this.state, { reviewer_id: this.props.reviewer.id })
+
         if(this.props.review !== undefined){
             newState.id = this.props.review.id
+            if (this.props.review.review !== null && this.state.review.length === 0) {
+                newState.review = null;
+            }
         };
+
+       
         //created the variable because the reviewer wouldnt update in the state but it would in the props
         this.props.closeReviewModal(e);
         if(this.props.review === undefined){
