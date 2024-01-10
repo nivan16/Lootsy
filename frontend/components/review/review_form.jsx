@@ -19,8 +19,6 @@ class ReviewForm extends React.Component{
     }
 
     componentDidMount(){
-        // debugger
-        debugger
         if(this.props.review !== undefined){
             
             if(this.props.review.review !== null){
@@ -38,11 +36,7 @@ class ReviewForm extends React.Component{
     }
 
     componentDidUpdate(prevProps, prevState){
-        debugger
-
         if(prevProps.reviewer !== this.props.reviewer){
-            debugger
-
             if(this.props.review !== undefined){
                 if(this.props.review.review !== null){
                     this.setState({

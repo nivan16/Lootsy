@@ -77,8 +77,8 @@ class ProductShow extends React.Component {
     }
 
     closeReviewModal(e){
-        // debugger
-        if ( ['review-form-modal-background', 'review-form-cancel-modal-button', 'review-form-submit-button'].includes(e.target.className) ) {
+        debugger
+        if ( ['review-form-modal-background ', 'review-form-cancel-modal-button', 'review-form-submit-button'].includes(e.target.className) ) {
             this.setState({
                 showReviewModal: false
             })   
