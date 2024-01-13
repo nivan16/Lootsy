@@ -20,33 +20,34 @@ class ReviewForm extends React.Component{
 
     componentDidMount(){
         if(this.props.review !== undefined){
-            
-            if(this.props.review.review !== null){
+            if(this.props.review.review === null){
                 this.setState({
                     rating: this.props.review.rating,
-                    review: this.props.review.review
+                    review: ""                   
                 });
             }
             else{
                 this.setState({
-                    rating: this.props.review.rating
+                    rating: this.props.review.rating,
+                    review: this.props.review.review
                 });
             };
         };
     }
 
-    componentDidUpdate(prevProps, prevState){
-        if(prevProps.reviewer !== this.props.reviewer){
+    componentDidUpdate(prevProps){
+        if(prevProps.showReviewModal === false && this.props.showReviewModal === true){
             if(this.props.review !== undefined){
-                if(this.props.review.review !== null){
+                if(this.props.review.review === null){
                     this.setState({
                         rating: this.props.review.rating,
-                        review: this.props.review.review
+                        review: ""
                     });
                 }
                 else{
                     this.setState({
-                        rating: this.props.review.rating
+                        rating: this.props.review.rating,
+                        review: this.props.review.review
                     });
                 };
             }
@@ -57,27 +58,12 @@ class ReviewForm extends React.Component{
                 });
             }
         }
-            
-        if(prevProps.showReviewModal === false && this.props.showReviewModal === true){
-            if(this.props.review !== undefined){
-                if(this.props.review.review !== null){
-                    this.setState({
-                        rating: this.props.review.rating,
-                        review: this.props.review.review
-                    });
-                }
-                else{
-                    this.setState({
-                        rating: this.props.review.rating
-                    });
-                };
-            }
-            else{
-                this.setState({
-                    rating: 0,
-                    review: "",
-                });
-            }
+
+        if(prevProps.reviewer !== null && this.props.reviewer === null){
+            this.setState({
+                rating: 0,
+                review: "",
+            });
         }
             //this only updates if the rating AND the review is different than prior, if someone carries over the same rating than it wont work.
             // if( this.props.review !== null && (this.props.review.rating !== this.state.rating && this.props.review.review !== this.state.review) ){
@@ -137,12 +123,14 @@ class ReviewForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        let newState = Object.assign({}, this.state, { reviewer_id: this.props.reviewer.id })
-
+        let newState = Object.assign({}, this.state, { reviewer_id: this.props.reviewer.id });
         if(this.props.review !== undefined){
             newState.id = this.props.review.id
             if (this.props.review.review !== null && this.state.review.length === 0) {
                 newState.review = null;
+            }
+            else{
+                newState.review = newState.review.trim();
             }
         };
 
@@ -176,6 +164,7 @@ class ReviewForm extends React.Component{
 
         // <div className={`review-form-modal-background ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
         // <div className={`review-form-modal-container ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
+        
         return (
             <div className={`review-form-modal-background ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}
                 onClick={this.props.closeReviewModal}   

@@ -77,7 +77,6 @@ class ProductShow extends React.Component {
     }
 
     closeReviewModal(e){
-        debugger
         if ( ['review-form-modal-background ', 'review-form-cancel-modal-button', 'review-form-submit-button'].includes(e.target.className) ) {
             this.setState({
                 showReviewModal: false
@@ -116,8 +115,7 @@ class ProductShow extends React.Component {
             //Open session modal and pass a message from here
             //  to let it know to render title "Sign in to continue" instead     
             this.props.openModalActionRequired();
-        }
-
+        };
     }
 
     handleAddToCart(e){

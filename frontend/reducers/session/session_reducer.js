@@ -12,7 +12,7 @@ const sessionReducer = (state=_nullUser, action) => {
             // current user, eg: just registered user,
             // rails only sends the user info unnested.
 
-            return ( action.currentUser.cartItems === undefined ) ? (
+            return ( action.currentUser.userInfo === undefined ) ? (
                 { currentUser: action.currentUser }
             ) : (
                 { currentUser: action.currentUser.userInfo }
