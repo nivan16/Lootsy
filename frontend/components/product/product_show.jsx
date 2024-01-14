@@ -318,12 +318,32 @@ class ProductShow extends React.Component {
                 </div>
 
                 {/* Section for Reviews */}
+                    
+                    
+                    {/* 
+                        Now i have to change it so that a user sees their review at the top always (if logged in AND actually has a review)
+                            Then i need to "move" the Edit review button under the currentUser's review
+                                Lastly, I need to add the delete button next to the edit review *while making sure the currentUser can only delete their own review* 
+                    */}
+
                     <ReviewIndex 
                         reviews={Object.values(this.props.reviews)}
+                        review={this.props.currentUser !== null ? this.props.reviews[this.props.currentUser.id] : undefined}
+                        showReviewModal={this.state.showReviewModal}
+                        paramsId={this.props.match.params.id}
                         currentUser={this.props.currentUser}
                         users={this.props.users}
                         avgRating={this.props.product.avgRating}
                     />
+                    
+                    {/* <ReviewIndex 
+                        reviews={Object.values(this.props.reviews)}
+                        currentUser={this.props.currentUser}
+                        users={this.props.users}
+                        avgRating={this.props.product.avgRating}
+                    /> */}
+
+
 
                     { (this.props.product.ownerId !== this.props.currentUser?.id ) ? (
                         <div className='review-form-modal-toggle-container'>
@@ -360,7 +380,14 @@ class ProductShow extends React.Component {
                         paramsId={this.props.match.params.id}
                     />
                     
-
+                    {/* <ReviewFormContainer
+                        product={this.props.product}
+                        productOwnerName={this.props.users[this.props.product.ownerId].name}
+                        review={this.props.currentUser !== null ? this.props.reviews[this.props.currentUser.id] : undefined}
+                        showReviewModal={this.state.showReviewModal}
+                        closeReviewModal={this.closeReviewModal}
+                        paramsId={this.props.match.params.id}
+                    /> */}
 
 
 
