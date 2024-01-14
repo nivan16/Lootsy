@@ -1,5 +1,5 @@
 import React from 'react';
-import ReviewIndex from '../review/review_index';
+import ReviewIndexContainer from '../review/review_index';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCaretDown, faFaceFrown, faXmark} from '@fortawesome/free-solid-svg-icons';
@@ -326,7 +326,7 @@ class ProductShow extends React.Component {
                                 Lastly, I need to add the delete button next to the edit review *while making sure the currentUser can only delete their own review* 
                     */}
 
-                    <ReviewIndex 
+                    <ReviewIndexContainer
                         reviews={Object.values(this.props.reviews)}
                         review={this.props.currentUser !== null ? this.props.reviews[this.props.currentUser.id] : undefined}
                         showReviewModal={this.state.showReviewModal}
@@ -342,6 +342,9 @@ class ProductShow extends React.Component {
                         users={this.props.users}
                         avgRating={this.props.product.avgRating}
                     /> */}
+
+
+ 
 
 
 

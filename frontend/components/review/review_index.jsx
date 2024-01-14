@@ -1,3 +1,6 @@
+import { connect } from "react-redux";
+import { editReview, deleteReview } from "../../actions/review_actions";
+
 import React from 'react';
 import ReviewIndexItemClamper from './review_index_item_clamper';
 import StarRatings from 'react-star-ratings';
@@ -430,4 +433,9 @@ class ReviewIndex extends React.Component{
     }
 }
 
-export default ReviewIndex;
+const mapDispatchToProps = dispatch => ({
+    editReview: review => dispatch(editReview(review)),
+    deleteReview: review => dispatch(deleteReview(review))
+});
+
+export default connect(null, mapDispatchToProps)(ReviewIndex);
