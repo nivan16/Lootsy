@@ -165,6 +165,11 @@ class ReviewForm extends React.Component{
         // <div className={`review-form-modal-background ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
         // <div className={`review-form-modal-container ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
         
+
+        /*
+            Two things I need to address, one is disabling the ability for the Owner of a product to leave a review on said product, 
+            and second is to figure out where to put the delete button.
+        */
         return (
             <div className={`review-form-modal-background ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}
                 onClick={this.props.closeReviewModal}   

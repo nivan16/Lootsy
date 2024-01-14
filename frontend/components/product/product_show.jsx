@@ -184,7 +184,7 @@ class ProductShow extends React.Component {
                 {i+1}
             </option>    
         ));
-        // debugger
+        debugger
         https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg
         return (
             <div className='product-show-container max-body-width body-padding'>
@@ -325,16 +325,20 @@ class ProductShow extends React.Component {
                         avgRating={this.props.product.avgRating}
                     />
 
-                    <div className='review-form-modal-toggle-container'>
-                        <button className='review-form-modal-toggle' onClick={this.openReviewModal}>
-                            {( !($.isEmptyObject(this.props.currentUser)) && !($.isEmptyObject(this.props.reviews[this.props.currentUser.id])) ) ? (
-                                    "Edit your review" 
-                                ) : (
-                                    "Add a review"
-                                )
-                            }
-                        </button>
-                    </div>
+                    { (this.props.product.ownerId !== this.props.currentUser?.id ) ? (
+                        <div className='review-form-modal-toggle-container'>
+                            <button className='review-form-modal-toggle' onClick={this.openReviewModal}>
+                                {( !($.isEmptyObject(this.props.currentUser)) && !($.isEmptyObject(this.props.reviews[this.props.currentUser.id])) ) ? (
+                                        "Edit your review" 
+                                    ) : (
+                                        "Add a review"
+                                    )
+                                }
+                            </button>
+                        </div>
+                    ) : (
+                        null
+                    )}
 
                     
                     {/******* Note: The ReviewForm component might need to be renamed to ReviewFormModal ********/}
