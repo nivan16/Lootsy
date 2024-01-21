@@ -214,6 +214,7 @@ class ReviewIndex extends React.Component{
 
     reviewSort(){
         let sortedReviews = [...this.props.reviews];
+        
         //Suggested will return reviews with words first
         if(this.state.sortReviewsBy === 'suggested'){
             sortedReviews.sort((a, b) => {
@@ -229,6 +230,17 @@ class ReviewIndex extends React.Component{
             sortedReviews.sort((a, b) => {
                 return b.rating - a.rating;
             });
+        }
+
+        if(this.props.currentUserReview !== undefined) {
+            sortedReviews.sort((a, b) => {
+                if(a.reviewerId === this.props.currentUser.id)
+                    return -1;
+                else if (b.reviewerId === this.props.currentUser.id)
+                    return 1;
+                else 
+                    return 0;
+            })
         }
 
         return sortedReviews;
