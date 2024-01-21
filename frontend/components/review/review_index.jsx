@@ -388,7 +388,8 @@ class ReviewIndex extends React.Component{
                     {
                         reviewsToDisplay.map(review => (
                                 <div className='review-item' key={review.id}>
-                                    <ReviewIndexItemClamper 
+                                    <ReviewIndexItemClamper
+                                        reviewId={review.id}
                                         review={review.review}
                                         reviewerId={review.reviewerId}
                                         rating={review.rating}

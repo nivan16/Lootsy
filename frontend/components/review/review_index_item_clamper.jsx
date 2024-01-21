@@ -15,6 +15,7 @@ class ReviewIndexItemClamper extends React.Component{
         this.contentRef = React.createRef();
 
         this.checkLineClamp = this.checkLineClamp.bind(this);
+        this.deleteUserReview = this.deleteUserReview.bind(this);
         this.toggleClamp = this.toggleClamp.bind(this);
     }
 
@@ -39,6 +40,14 @@ class ReviewIndexItemClamper extends React.Component{
                 isClamped: false
             });
         }
+    }
+
+    deleteUserReview(e){
+        e.preventDefault()
+        this.props.deleteReview({
+            id: this.props.reviewId,
+            reviewerId: this.props.reviewerId
+        })
     }
 
     toggleClamp(){
@@ -103,9 +112,9 @@ class ReviewIndexItemClamper extends React.Component{
                                 Edit your review
                             </button>
                         </div>
-                        
+
                         <div className='review-delete-button-container'>
-                            <button className='review-delete-button'>
+                            <button className='review-delete-button' onClick={this.deleteUserReview}>
                                 Delete your review
                             </button>
                         </div>
