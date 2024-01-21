@@ -392,31 +392,15 @@ class ReviewIndex extends React.Component{
                                         review={review.review} 
                                         rating={review.rating}
                                         username={this.props.users[review.reviewerId].name}
+                                        currentUserReview={this.props.currentUserReview}
+                                        editReview={this.props.editReview}
+                                        deleteReview={this.props.deleteReview}
                                     />
-
-                                    {/* <div className='review-item-rating'>
-                                        <StarRatings 
-                                            rating={review.rating}
-                                            starEmptyColor='lightgray'
-                                            starRatedColor='black'
-                                            starDimension='20px'
-                                            starSpacing='1px'                            
-                                        />
-                                    </div>
-
-                                    {review.review !== null && (
-                                        <p className='review-item-text'>
-                                            {review.review}
-                                        </p>
-                                    )}
-                                    
-                                    <div className='review-item-reviewer'>
-                                        {this.props.users[review.reviewerId].name}
-                                    </div> */}
                                 </div>
                             )
                         )
                     }
+
                     {this.props.reviews.length > 4 && <div className='reviews-index-pagination-container'>
                         <div className='review-previous-page-navigation-button-container'>
                             <button className={`review-previous-page-navigation-button ${this.state.currentPage === 1 ? 'blocked' : ''}`} onClick={this.previousPage}>

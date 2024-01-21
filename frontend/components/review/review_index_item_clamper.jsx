@@ -62,7 +62,7 @@ class ReviewIndexItemClamper extends React.Component{
         // if(this.props.username === 'star'){
         //     debugger
         // }
-
+        
         return (
             <>
                 <div className='review-item-rating'>
