@@ -395,6 +395,7 @@ class ReviewIndex extends React.Component{
                                         currentUserReview={this.props.currentUserReview}
                                         editReview={this.props.editReview}
                                         deleteReview={this.props.deleteReview}
+                                        openReviewModal={this.props.openReviewModal}
                                     />
                                 </div>
                             )

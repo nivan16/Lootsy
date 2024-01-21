@@ -334,6 +334,7 @@ class ProductShow extends React.Component {
                         currentUser={this.props.currentUser}
                         users={this.props.users}
                         avgRating={this.props.product.avgRating}
+                        openReviewModal={this.openReviewModal}
                     />
                     
                     {/* <ReviewIndex 
