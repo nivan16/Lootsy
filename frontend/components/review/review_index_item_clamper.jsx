@@ -96,12 +96,20 @@ class ReviewIndexItemClamper extends React.Component{
                     {this.props.username}
                 </div>
 
-                {this.props.currentUserReview !== undefined ? (
-                        <div className='review-form-modal-toggle-container'>
-                            <button className='review-form-modal-toggle' onClick={this.props.openReviewModal}>
+                { ( (this.props.currentUserReview !== undefined) && (this.props.currentUserReview.reviewerId === this.props.reviewerId)) ? (
+                    <div className='review-edit-and-delete-container'>
+                        <div className='review-form-modal-edit-toggle-container'>
+                            <button className='review-form-modal-edit-toggle' onClick={this.props.openReviewModal}>
                                 Edit your review
                             </button>
                         </div>
+                        
+                        <div className='review-delete-button-container'>
+                            <button className='review-delete-button'>
+                                Delete your review
+                            </button>
+                        </div>
+                    </div>
                     ) : (
                         null
                     )
