@@ -1,5 +1,7 @@
-/* Review Modal Open Button */
-.review-form-modal-toggle{
+/* Review Modal Open Buttons */
+
+/* Review Create Button */
+.review-form-modal-create-toggle{
     position: relative;
     margin: none;
     background-color: transparent;
@@ -11,7 +13,7 @@
     z-index: 20;
 }
 
-.review-form-modal-toggle::before{
+.review-form-modal-create-toggle::before{
     content: "";
     display: block;
     position: absolute;
@@ -24,8 +26,13 @@
     z-index: -10;
 }
 
-.review-form-modal-toggle:hover::before{
+.review-form-modal-create-toggle:hover::before{
     transform: scale(1.1, 1.3);
+}
+
+/* Review Modal Edit and Delete Buttons*/
+.review-edit-and-delete-container{
+    display: flex;
 }
 
 /* Modal Background */
