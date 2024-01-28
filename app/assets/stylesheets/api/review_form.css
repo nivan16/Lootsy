@@ -33,7 +33,47 @@
 /* Review Modal Edit and Delete Buttons*/
 .review-edit-and-delete-container{
     display: flex;
+    margin-bottom: 1rem;
 }
+
+.review-form-modal-edit-toggle-container{
+    margin-right: 2rem;
+}
+
+.review-form-modal-edit-toggle{
+    position: relative;
+    
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+
+    z-index: 20;
+}
+
+.review-form-modal-edit-toggle::before{
+    content: "";
+    display: block;
+    position: absolute;
+    
+    inset: -1px;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: black;
+    
+    transform: scale(1.000000001);
+    transition: 225ms ease-in-out;
+    z-index: -10;
+}
+
+
+
+
+
+
+
+
 
 /* Modal Background */
 .review-form-modal-background{
