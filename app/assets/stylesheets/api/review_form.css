@@ -36,6 +36,7 @@
     margin-bottom: 1rem;
 }
 
+/* Review Edit Toggle */
 .review-form-modal-edit-toggle-container{
     margin-right: 2rem;
 }
@@ -67,10 +68,60 @@
     z-index: -10;
 }
 
+.review-form-modal-edit-toggle{
+    position: relative;
+    
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
 
+    z-index: 20;
+}
 
+.review-form-modal-edit-toggle::before{
+    content: "";
+    display: block;
+    position: absolute;
+    
+    inset: -1px;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: black;
+    
+    transform: scale(1.000000001);
+    transition: 225ms ease-in-out;
+    z-index: -10;
+}
 
+/* Review Delete Button */
+.review-delete-button{
+    position: relative;
+    
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
 
+    z-index: 20;
+}
+
+.review-delete-button::before{
+    content: "";
+    display: block;
+    position: absolute;
+    
+    inset: -1px;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: black;
+    
+    transform: scale(1.000000001);
+    transition: 225ms ease-in-out;
+    z-index: -10;
+}
 
 
 
