@@ -33,12 +33,13 @@
 /* Review Modal Edit and Delete Buttons*/
 .review-edit-and-delete-container{
     display: flex;
-    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Review Edit Toggle */
 .review-form-modal-edit-toggle-container{
-    margin-right: 2rem;
+    margin-right: 1.25rem;
 }
 
 .review-form-modal-edit-toggle{
