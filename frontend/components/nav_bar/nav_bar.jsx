@@ -27,7 +27,7 @@ class NavBar extends React.Component{
                 {/* Main Navigation Bar */}
                 <header className='nav-bar-wrapper max-body-width body-padding'>
                     <div className='nav-bar'>
-                        <Link to='/'>Lootsy</Link>
+                        <Link to='/'>Cutesy</Link>
                         
                         <SearchBar pathname={this.props.pathname} history={this.props.history} query={this.props.query}/>                       
 

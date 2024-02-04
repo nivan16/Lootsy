@@ -5,7 +5,7 @@ class Api::ReviewsController < ApplicationController
         if @review.save
             render :show
         else
-            render json: @review.errors.full_messages, status: 404
+            render json: @review.errors.full_messages, status: 400
         end
     end
 

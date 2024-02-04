@@ -77,6 +77,11 @@ class ProductShow extends React.Component {
     }
 
     closeReviewModal(e){
+        debugger
+        /*
+            The current issue for error displaying is that the automatic Onclick event listener will always run, even when the function isnt called,
+                so i need need need to have a seperate condition for the button itself, maybe have the argument "e" just be "true" or "close"
+        */
         if ( ['review-form-modal-background ', 'review-form-cancel-modal-button', 'review-form-submit-button'].includes(e.target.className) ) {
             this.setState({
                 showReviewModal: false
@@ -184,6 +189,8 @@ class ProductShow extends React.Component {
                 {i+1}
             </option>    
         ));
+
+        debugger
         
         https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg
         return (

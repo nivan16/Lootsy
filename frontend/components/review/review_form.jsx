@@ -136,7 +136,7 @@ class ReviewForm extends React.Component{
 
        
         //created the variable because the reviewer wouldnt update in the state but it would in the props
-        this.props.closeReviewModal(e);
+        //this.props.closeReviewModal(e);
         if(this.props.review === undefined){
             this.props.createReview(newState);
             this.setState({
