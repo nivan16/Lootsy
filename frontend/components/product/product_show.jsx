@@ -61,6 +61,7 @@ class ProductShow extends React.Component {
                 showAddedToCartModal: false
             });
         }
+        
     }
 
     closePurchasedModal(e){
