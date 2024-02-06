@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { createReview, editReview, deleteReview } from "../../actions/review_actions";
+import { createReview, editReview, deleteReview, clearReviewErrors } from "../../actions/review_actions";
 import React from "react";
 import StarRatings from 'react-star-ratings';
 
@@ -37,7 +37,7 @@ class ReviewForm extends React.Component{
 
     componentDidUpdate(prevProps){
         if(prevProps.showReviewModal === false && this.props.showReviewModal === true){
-            if(this.props.review !== undefined){
+            if(this.props.review !== undefined){                
                 if(this.props.review.review === null){
                     this.setState({
                         rating: this.props.review.rating,
@@ -57,6 +57,10 @@ class ReviewForm extends React.Component{
                     review: "",
                 });
             }
+        }
+
+        if((prevProps.showReviewModal === true && this.props.showReviewModal === false) && (this.props.errors.length !== 0) ){
+            this.props.clearReviewErrors();
         }
 
         if(prevProps.reviewer !== null && this.props.reviewer === null){
@@ -138,14 +142,22 @@ class ReviewForm extends React.Component{
         //created the variable because the reviewer wouldnt update in the state but it would in the props
         //this.props.closeReviewModal(e);
         if(this.props.review === undefined){
-            this.props.createReview(newState);
-            this.setState({
-                rating: 0,
-                review: ""
-            });
+            this.props.createReview(newState)
+                .then(() => {
+                    this.props.closeReviewModal('successfulSubmission')
+                    this.setState({
+                        rating: 0,
+                        review: ""
+                    })
+                    if(this.props.errors.length !== 0) this.props.clearReviewErrors();
+                });
         }
         else{
-            this.props.editReview(newState);
+            this.props.editReview(newState)
+                .then(() => {
+                    this.props.closeReviewModal('successfulSubmission')
+                    if(this.props.errors.length !== 0) this.props.clearReviewErrors();
+                });
         }
     }
 
@@ -170,11 +182,17 @@ class ReviewForm extends React.Component{
             Two things I need to address, one is disabling the ability for the Owner of a product to leave a review on said product, 
             and second is to figure out where to put the delete button.
         */
+
+
+        //***************Now i just need to create the actual error display************************************************************************
+        const ratingError = this.props.errors.includes("Rating is not included in the list");
+
+
         return (
             <div className={`review-form-modal-background ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}
                 onClick={this.props.closeReviewModal}   
             >
-                <div className={`review-form-modal-container ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}>
+                <div className={`review-form-modal-container ${this.props.showReviewModal ? '': 'review-form-modal-hidden'} ${ratingError ? 'review-form-error' : ''}`}>
                     <div className="review-form-container">
                         <form className="review-form" onSubmit={this.handleSubmit}>
                             <h1 className="review-form-header">
@@ -218,24 +236,22 @@ class ReviewForm extends React.Component{
                                     starDimension='32px'
                                     starSpacing='3px'
                                 />
-                                {/*
-                                    {(this.state.rating === 1) ? (
-                                            <p className="review-form-rating-label">
-                                                {this.state.rating} Star
-                                            </p>
-                                        ) : (
-                                            <p className="review-form-rating-label">
-                                                {this.state.rating} Stars
-                                            </p>
-                                        )
-                                    }
 
-                                */}
+                                {ratingError ? (
+                                        <div className="review-form-rating-error-container">
+                                            <div className="review-form-rating-error-display">
+                                                Please select a rating.
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        null
+                                    )
+                                }
                             </div>
 
                             <div className="review-form-review-display">
                                 <h3 className="review-form-review-explanation">
-                                    Help others by sharing your feedback
+                                    Help others by sharing your feedback.
                                 </h3>
 
                                 <p className="review-form-review-examples">
@@ -247,7 +263,7 @@ class ReviewForm extends React.Component{
                                     className="review-form-textarea" 
                                     value={this.state.review} 
                                     onChange={this.handleReviewChange}
-                                    placeholder="Share a word if you'd like"
+                                    placeholder="Share a word if you'd like!"
                                 >
                                 </textarea>
 
@@ -284,13 +300,15 @@ class ReviewForm extends React.Component{
 }
 
 const mapStateToProps = state => ({
-    reviewer: state.session.currentUser
+    reviewer: state.session.currentUser,
+    errors: state.errors.reviews
 });
 
 const mapDispatchToProps = dispatch => ({
     createReview: review => dispatch(createReview(review)),
     editReview: review => dispatch(editReview(review)),
-    deleteReview: review => dispatch(deleteReview(review))
+    deleteReview: review => dispatch(deleteReview(review)),
+    clearReviewErrors: () => dispatch(clearReviewErrors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewForm);

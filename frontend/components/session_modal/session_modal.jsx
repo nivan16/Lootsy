@@ -147,7 +147,7 @@ class SessionModal extends React.Component{
                                         </div>
                                     </div>
                                         {actionRequired ? ( 
-                                                <p className='session-modal-action-required-messaage'>
+                                                <p className='session-modal-action-required-message'>
                                                     Sign in or register with your email address
                                                 </p>
                                             ) : (

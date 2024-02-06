@@ -32,7 +32,7 @@
     height: 25vw;
 
     padding: 1rem;
-
+    cursor: pointer;
     transition: 325ms;
 }
 
@@ -47,7 +47,7 @@
     background-color: rgb(168, 209, 250);
     box-shadow: 0 0 0 0 rgb(196, 196, 196);
 
-    transition: 175ms ease-in;
+    transition: 175ms ease-in-out;
     transition-delay: 25ms;
     /* transition: 150ms ease-in;
     transition-delay: 50ms; */
@@ -66,11 +66,11 @@
 
 /* ----- Product Image Hover ----- */
 .index-product:hover .index-product-image-container{
-    box-shadow: 0 0 4px 5px rgb(230, 230, 230);
+    box-shadow: 0 0 3px 3px rgb(230, 230, 230);
 }
 
 .index-product:hover .index-product-image{
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 /* ---------- Product Info ---------- */

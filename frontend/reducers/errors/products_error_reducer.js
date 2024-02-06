@@ -1,6 +1,6 @@
 import { RECEIVE_PRODUCT_ERRORS } from "../../actions/product_actions";
 
-const productErrorsReducer = (state=[], action) => {
+const productsErrorReducer = (state=[], action) => {
     Object.freeze(state);
 
     switch (action.type) {
@@ -11,4 +11,4 @@ const productErrorsReducer = (state=[], action) => {
     }
 };
 
-export default productErrorsReducer;
+export default productsErrorReducer;

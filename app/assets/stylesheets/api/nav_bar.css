@@ -28,6 +28,8 @@
 
 /* */
 .nav-bar > a{
+    /* color: rgb(146, 86, 101) !important; */
+    color: rgb(204, 152, 161) !important;
     font-size: 2em;
     text-decoration: none;
     margin-bottom: 0.65rem;
@@ -138,6 +140,7 @@
     border: transparent;
     border-radius: 20px;
     background-color: transparent;
+    color: rgb(99, 15, 85);
     cursor: pointer;
 }
 .nav-bar-login::after{
@@ -231,7 +234,8 @@
 
 .category-container a, .category-container a:visited{
     text-decoration: none;
-    color: rgb(56, 55, 55);
+    /* color: rgb(75, 12, 64); */
+    color: rgb(110, 29, 29);
     font-size: 16px;
 
     padding-bottom: 12px;
@@ -244,7 +248,7 @@
     bottom: -2px;
     left: 50%;
     right: 50%;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgb(75, 12, 64);
     transition: 225ms;
 }
 
@@ -253,5 +257,5 @@
     position: absolute;
     left: 0;
     right: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgb(75, 12, 64);
 }
