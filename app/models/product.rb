@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
     validates :name, :description, :category, :price, :owner_id, :stock, presence: true
     validates :category, inclusion: { 
-        in: ["weapons", "jewelry and accessories", "clothing and armor", "art and collectables", "miscellaneous"],
+        in: ["phone cases", "jewelry", "plushies", "bags", "keychains", "gaming accessories"],
         message: "%{value} is not a valid category"
     }
     

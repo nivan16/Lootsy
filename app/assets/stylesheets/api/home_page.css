@@ -217,6 +217,53 @@
     grid-row-end: 6;
 }
 
+/* Editors favorites */
+
+.home-page-editor-favorites-wrapper{
+    margin-top: 10rem !important;
+}
+
+.home-page-editor-favorites{
+    display: flex;
+    max-width: 100%;
+    max-height: 40vh;
+}
+
+.home-page-favorite {
+    /* height: 100%;
+    width: 100%; */
+    position: relative;
+    padding-right: 10px;
+}
+
+.home-page-last-favorite{
+    padding-right: 0;
+}
+
+.home-page-favorite > a{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.home-page-favorite-image-container{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.home-page-favorite-image-container > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: 325ms;
+
+    /* This transform scale below is to prevent the image from
+    offsetting by a few pixels when the image is hovered on */
+    transform: scale(1.0000001);
+}
+
 /*---------------------- Home Page About Us ------------------------*/
 
 .home-page-about-container{
@@ -224,7 +271,7 @@
     background-color: rgb(146, 86, 101);
     color: white;
     margin-top: 20rem !important;
-    padding-bottom: 10rem !important;
+    padding-bottom: 5rem !important;
 }
 
 /* ------ About Us Header ------ */

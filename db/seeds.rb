@@ -20,26 +20,51 @@ u7 = User.create!(email: 'link@hyrule.com', name: 'Link', password: 'princessmip
 u8 = User.create!(email: 'justpeachy@shroomdom.com', name: 'Peach', password: 'bffdaisy')
 u9 = User.create!(email: 'wandmaker@ollivanders.com', name: 'Ollivander', password: 'diagonalley')
 
-u_lorem1 = User.create!(email: 'lorem1@epsum.com', name: 'lorey', password: 'password')
-u_lorem2 = User.create!(email: 'lorem2@epsum.com', name: 'epsil', password: 'password')
-u_lorem3 = User.create!(email: 'lorem3@epsum.com', name: 'tinker', password: 'password')
-u_lorem4 = User.create!(email: 'lorem4@epsum.com', name: 'gavin', password: 'password')
-u_lorem5 = User.create!(email: 'lorem5@epsum.com', name: 'patter', password: 'password')
-u_lorem6 = User.create!(email: 'lorem6@epsum.com', name: 'senku', password: 'password')
-u_lorem7 = User.create!(email: 'lorem7@epsum.com', name: 'harmon', password: 'password')
-u_lorem8 = User.create!(email: 'lorem8@epsum.com', name: 'jonathan', password: 'password')
-u_lorem9 = User.create!(email: 'lorem9@epsum.com', name: 'star', password: 'password')
+u_lorem_phone_case1 = User.create!(email: 'case1@epsum.com', name: 'cinnamoroll_jellybean', password: 'password')
+u_lorem_phone_case2 = User.create!(email: 'case2@epsum.com', name: 'empathy.calm', password: 'password')
+u_lorem_phone_case3 = User.create!(email: 'case3@epsum.com', name: 'bear-blush', password: 'password')
+u_lorem_phone_case4 = User.create!(email: 'case4@epsum.com', name: 'bubble.chiffchaff', password: 'password')
+u_lorem_phone_case5 = User.create!(email: 'case5@epsum.com', name: 'kittytoot', password: 'password')
 
+u_lorem_jewelry1 = User.create!(email: 'jewelry1@epsum.com', name: 'strawberrymilk', password: 'password')
+u_lorem_jewelry2 = User.create!(email: 'jewelry2@epsum.com', name: 'glitter.sweets', password: 'password')
+u_lorem_jewelry3 = User.create!(email: 'jewelry3@epsum.com', name: 'blackcat_doodlee', password: 'password')
+u_lorem_jewelry4 = User.create!(email: 'jewelry4@epsum.com', name: 'panpangarden', password: 'password')
+u_lorem_jewelry5 = User.create!(email: 'jewelry5@epsum.com', name: 'lily_pipsqueek ', password: 'password')
+
+u_lorem_plushies1 = User.create!(email: 'plushies1@epsum.com', name: 'strawberry.blossom', password: 'password')
+u_lorem_plushies2 = User.create!(email: 'plushies2@epsum.com', name: 'buffvivacious', password: 'password')
+u_lorem_plushies3 = User.create!(email: 'plushies3@epsum.com', name: 'chonkywubblybuns', password: 'password')
+u_lorem_plushies4 = User.create!(email: 'plushies4@epsum.com', name: 'dew_snake', password: 'password')
+# u_lorem_plushies5 = User.create!(email: 'plushies5@epsum.com', name: '', password: 'password')
+
+u_lorem_bags1 = User.create!(email: 'bags1@epsum.com', name: 'tiddlywinksmushroom', password: 'password')
+u_lorem_bags2 = User.create!(email: 'bags2@epsum.com', name: 'puppy__sakura ', password: 'password')
+u_lorem_bags3 = User.create!(email: 'bags3@epsum.com', name: 'berry0merry', password: 'password')
+u_lorem_bags4 = User.create!(email: 'bags4@epsum.com', name: 'potion.meep', password: 'password')
+u_lorem_bags5 = User.create!(email: 'bags5@epsum.com', name: 'pinkykittypancake', password: 'password')
+
+u_lorem_keychains1 = User.create!(email: 'keychains1@epsum.com', name: 'muscletiddlywinks', password: 'password')
+u_lorem_keychains2 = User.create!(email: 'keychains2@epsum.com', name: 'shortcakeflowercow', password: 'password')
+u_lorem_keychains3 = User.create!(email: 'keychains3@epsum.com', name: 'kawaiisu.swirlcake', password: 'password')
+u_lorem_keychains4 = User.create!(email: 'keychains4@epsum.com', name: 'lilkitsgameboy', password: 'password')
+u_lorem_keychains5 = User.create!(email: 'keychains5@epsum.com', name: 'cherrydobby', password: 'password')
+
+u_lorem_gaming1 = User.create!(email: 'gaming1@epsum.com', name: 'cutie_keeb_pro', password: 'password')
+u_lorem_gaming2 = User.create!(email: 'gaming2@epsum.com', name: 'kirbybrumby', password: 'password')
+u_lorem_gaming3 = User.create!(email: 'gaming3@epsum.com', name: 'cozy.sparkle', password: 'password')
+u_lorem_gaming4 = User.create!(email: 'gaming4@epsum.com', name: 'tipsycakes_ichigo', password: 'password')
+u_lorem_gaming5 = User.create!(email: 'gaming5@epsum.com', name: 'blossom.bunnie', password: 'password')
 
 # product = Product.create!(name: , description: , category: '', price: , owner_id: )
-stand_arrow = Product.create!(name: 'Arrow', description: 'A random arrow I found in Egypt', category: 'art and collectables', price: 149.99, owner_id: u2.id, stock: 3)
-dios_diary = Product.create!(name: 'Old diary', description: 'Completely non-sensical diary, but it could lead to treasure', category: 'miscellaneous', price: 14.00, owner_id: u2.id, stock: 1)
-vampire_mask = Product.create!(name: 'Weird mask', description: 'A mask carbon dated to be several thousand years old I got in a cave', category: 'alocalles', price: 30000.00, owner_id: u2.id, stock: 5)
-master_sword = Product.create!(name: 'Blue sword', description: 'A sword I pulled out of a rock, that has a strange triangle pattern on the hilt and a large handguard.', category: 'weapons', price: 127, owner_id: u3.id, stock: 1)
-ocarina_of_time = Product.create!(name: 'Ocarina', description: 'An ocarina found at the moat of a castle, still works though!', category: 'art and collectables', price: 25.00, owner_id: u3.id, stock: 1)
-pokeball = Product.create!(name: 'Strong pouches', description: "I found these in a field of tall grass, they're made out of a really tough material.", category: 'jewelry and accessories', price: 100.00, owner_id: u4.id, stock: 19)
-rengoku = Product.create!(name: 'Beautiful restored blade', description: "Looted (the pieces of) this blade in a forest, but the material is very sturdy and I've never seen metal like this before.", category: 'weapons', price: 20000.00, owner_id: u4.id, stock: 1)
-elder_wand = Product.create!(name: 'Old powerful wand', description: 'This wand seems hold an amazing amount of power, but as a merchant it seems too dangerous to use or hold on to. It seems that it can heavily elevate the magic spells available to its caster!', category: 'weapons', price: 3000.00, owner_id: u9.id, stock: 1)
+# stand_arrow = Product.create!(name: 'Arrow', description: 'A random arrow I found in Egypt', category: 'art and collectables', price: 149.99, owner_id: u2.id, stock: 3)
+# dios_diary = Product.create!(name: 'Old diary', description: 'Completely non-sensical diary, but it could lead to treasure', category: 'miscellaneous', price: 14.00, owner_id: u2.id, stock: 1)
+# vampire_mask = Product.create!(name: 'Weird mask', description: 'A mask carbon dated to be several thousand years old I got in a cave', category: 'alocalles', price: 30000.00, owner_id: u2.id, stock: 5)
+# master_sword = Product.create!(name: 'Blue sword', description: 'A sword I pulled out of a rock, that has a strange triangle pattern on the hilt and a large handguard.', category: 'weapons', price: 127, owner_id: u3.id, stock: 1)
+# ocarina_of_time = Product.create!(name: 'Ocarina', description: 'An ocarina found at the moat of a castle, still works though!', category: 'art and collectables', price: 25.00, owner_id: u3.id, stock: 1)
+# pokeball = Product.create!(name: 'Strong pouches', description: "I found these in a field of tall grass, they're made out of a really tough material.", category: 'jewelry and accessories', price: 100.00, owner_id: u4.id, stock: 19)
+# rengoku = Product.create!(name: 'Beautiful restored blade', description: "Looted (the pieces of) this blade in a forest, but the material is very sturdy and I've never seen metal like this before.", category: 'weapons', price: 20000.00, owner_id: u4.id, stock: 1)
+# elder_wand = Product.create!(name: 'Old powerful wand', description: 'This wand seems hold an amazing amount of power, but as a merchant it seems too dangerous to use or hold on to. It seems that it can heavily elevate the magic spells available to its caster!', category: 'weapons', price: 3000.00, owner_id: u9.id, stock: 1)
 
 
 # Category of Phone Cases
@@ -56,7 +81,7 @@ pink_cinna_case = Product.create!(
         The phone case is flexible and durable, dirt-resistant, to protect your mobile phone against any drops or bumps.",
     category: 'phone cases', 
     price: 14.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_phone_case1.id,
     stock: 4
 )
 
@@ -69,7 +94,7 @@ japanese_street_phone_cases = Product.create!(
         The pink and green colour scheme adds a fresh and playful touch, perfectly complementing your personal style. Elevate your phone's aesthetic with our Japanese Street Landscape Phone Case and embark on a journey through the vibrant streets of Japan wherever you go.",
     category: 'phone cases',
     price: 24.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_phone_case2.id,
     stock: 26
 )
 
@@ -96,7 +121,7 @@ cartoon_bear_case = Product.create!(
         Thank you so much for purchasing from us!!!',
     category: 'phone cases',
     price: 19.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_phone_case3.id,
     stock: 7
 )
 
@@ -109,7 +134,7 @@ three_d_bear_case = Product.create!(
         All of our products are custom-made with love and care in our workshop. We hope you will enjoy them!',
     category: 'phone cases',
     price: 22.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_phone_case4.id,
     stock: 2
 )
 
@@ -122,7 +147,7 @@ cat_case_with_wristband = Product.create!(
         – Precision cut ports provide easy access.',
     category: 'phone cases',
     price: 21.49,
-    owner_id: u8.id,
+    owner_id: u_lorem_phone_case5.id,
     stock: 25
 )
 
@@ -143,7 +168,7 @@ strawberry_earrings = Product.create!(
         As a thank you for your support, we will provide you with a coupon for your next purchase. ❤',
     category: 'jewelry',
     price:  17.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_jewelry1.id,
     stock: 14
 )
 
@@ -166,7 +191,7 @@ macaron_earrings = Product.create!(
         *Each are also unique and were carefully made by hand, so, the item you receive could be look a little bit different from the photos.*',
     category: 'jewelry',
     price: 27.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_jewelry2.id,
     stock: 14
 )
 
@@ -179,7 +204,7 @@ cat_in_plant_earrings = Product.create!(
         both companionship and flora, allowing you to express your style with a touch of charm and originality.",
     category: 'jewelry',
     price: 16.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_jewelry3.id,
     stock: 9
 )
 
@@ -194,9 +219,9 @@ bread_cat_earrings = Product.create!(
         ☆ Earring hooks are 925 sterling silver.
         ☆ For the longevity of your earrings, please do not shower while wearing them or expose them to water for long periods of time.",
     category: 'jewelry',
-    price:         ,
-    owner_id: u8.id,
-    stock: 
+    price:  9.99,
+    owner_id: u_lorem_jewelry4.id,
+    stock: 11
 )
 
 lily_of_valley_earrings= Product.create!(
@@ -208,7 +233,7 @@ lily_of_valley_earrings= Product.create!(
         style with a roughly 4cm drop (this length cannot be changed), featuring a fish hook back.',
     category: 'jewelry',
     price: 31.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_jewelry5.id,
     stock: 5
 )
 
@@ -220,7 +245,7 @@ ruby_the_cow = Product.create!(
     description: "This is Ruby, the Strawberry Cow. She's handmade, adorable, and has a magnetic/removable strawberry on top of her wittle precious head. Measures approximately 8 inches tall.",
     category: 'plushies',
     price: 31.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_plushies1.id,
     stock: 4
 )
 
@@ -231,7 +256,7 @@ milkshake_the_cow = Product.create!(
         features, and a minky fabric for her belly and inside of her ears.",
     category: 'plushies',
     price: 32.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_plushies1.id,
     stock: 8
 )
 
@@ -242,7 +267,7 @@ buff_hello_kitty = Product.create!(
     description: 'A big buff Hello Kitty to protect you from evil. Can also act as a boyfriend replacement.',
     category: 'plushies',
     price: 28.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_plushies2.id,
     stock: 19
 )
 
@@ -258,7 +283,7 @@ chonky_bunny = Product.create!(
         DISCLAIMER: Colors may vary between your screen and the actual product. As all products are handmade, minor flaws and slight differences may still be possible.",
     category: 'plushies',
     price: 42.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_plushies3.id,
     stock: 11
 )
 
@@ -270,7 +295,7 @@ candy_snake_plushie_set = Product.create!(
         Perfect for any plush collector! 💖",
     category: 'plushies',
     price:  45.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_plushies4.id,
     stock: 2
 )
 
@@ -288,7 +313,7 @@ mushroom_bag = Product.create!(
         However, as you know, handmade products may have slight variations, but the actual size won't differ too much!",
     category: 'bags',
     price:  22.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_bags1.id,
     stock: 12
 )
 
@@ -311,7 +336,7 @@ floral_bag = Product.create!(
         Care instructions: hand wash/wash on delicate at a temperature no higher than 86 ºF (or 30°С)',
     category: 'bags',
     price: 44.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_bags2.id,
     stock: 21
 )
 
@@ -332,7 +357,7 @@ strawberry_crossbody_bag = Product.create!(
         Note: To increase bag life, make sure not to overstuff the bag and keep out of prolonged exposure to direct sunlight/any extreme weather!',
     category: 'bags',
     price: 34.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_bags3.id,
     stock: 6
 )
 
@@ -356,7 +381,7 @@ cat_potion_bag = Product.create!(
         Additionally, if you plan to iron the bag, flip the pattern to the back or place an extra layer of fabric over the design to protect it from heat damage.*",
     category: 'bags',
     price:  25.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_bags4.id,
     stock: 14
 )
 
@@ -383,7 +408,7 @@ convertible_cat_bag = Product.create!(
         of the bag; for the free edges (like the ears and bottom of the bag,) the material can be warmed gently with a hair dryer or heating pad and smoothed into place!',
     category: 'bags',
     price: 43.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_bags5.id,
     stock: 1
 )
 
@@ -404,7 +429,7 @@ cat_and_dog_keychain = Product.create!(
         Please note that the colour of images may vary from screen to screen due to photography, lighting and screen settings. Minor errors may be possible as these products are handmade.',
     category: 'keychains',
     price: 12.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_keychains1.id,
     stock: 17
 )
 
@@ -422,7 +447,7 @@ flower_cow_keychain = Product.create!(
         Please note that colors may vary from different screens.',
     category: 'keychains',
     price:  8.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_keychains2.id,
     stock: 10
 )
 
@@ -431,7 +456,7 @@ cinnamoroll_swirlcake_keychain = Product.create!(
     description: "Looking for a fun way to show off your love for Sanrio characters? Our Cinnamoroll keychain is perfect for you! With its adorable features, it's sure to bring a smile to your face every time you see it.",
     category: 'keychains',
     price: 4.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_keychains3.id,
     stock: 24
 )
 
@@ -453,7 +478,7 @@ gameboy_keychain = Product.create!(
         ♦ All items are quality assured, to make sure you receive the best quality product possible!',
     category: 'keychains',
     price:  9.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_keychains4.id,
     stock: 2
 )
 
@@ -469,12 +494,14 @@ cherry_keychain_set = Product.create!(
         sure to delight and bring a smile to your face. Order now and add some fruity charm to your everyday life!",
     category: 'keychains',
     price: 7.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_keychains5.id,
     stock: 1
 )
 
-sakura_artisan_keycaps = Product.create!(
-    name: 'Kawaii Pink/White Sakura Artisan Keycaps for Mechanical Keyboards',
+
+#Category of Gaming Accessories
+sakura_resin_keycaps = Product.create!(
+    name: 'Sakura Resin Custom Keycaps',
     description: "Handmade artisan keycap.
         
         A very sweet and cute way to add color to your mechanical keyboard. Enjoy the cuteness of the keycap.
@@ -490,7 +517,7 @@ sakura_artisan_keycaps = Product.create!(
         ♡ Color varies as it is shown on the listing. Different screens may show different colors.",
     category: 'gaming accessories',
     price: 25.00,
-    owner_id: u8.id,
+    owner_id: u_lorem_gaming1.id,
     stock: 5
 )
 
@@ -508,7 +535,7 @@ kirby_mouse_pad = Product.create!(
         ✨ Materials: Rubber pad',
     category: 'gaming accessories',
     price:  40.00,
-    owner_id: u8.id,
+    owner_id: u_lorem_gaming2.id,
     stock: 4
 )
 
@@ -522,7 +549,7 @@ forest_switch_case = Product.create!(
         🐰THERE ARE 4 CLIP/BUCKLES ON THE BOTTOM SIDE OF THE CASE, MAKE SURE YOU INSTALL THE BOTTOM SIDE FIRST, AND PUSH HARD TO HEAR 4 'CLICK' SOUNDS TO FASTEN IT TO THE CORRECT POSITION.",
     category: 'gaming accessories',
     price: 17.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_gaming3.id,
     stock: 7
 )
 
@@ -531,7 +558,7 @@ strawberry_switch_thumbgrips = Product.create!(
     description: '2pc Strawberry Nintendo Switch JoyCon Thumb Grips',
     category: 'gaming accessories',
     price: 5.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_gaming4.id,
     stock: 11
 )
 
@@ -552,38 +579,38 @@ sakura_pc_fan_cover = Product.create!(
         I hope you enjoy this item.',
     category: 'gaming accessories',
     price: 38.99,
-    owner_id: u8.id,
+    owner_id: u_lorem_gaming5.id,
     stock: 1
 )
 
 #if quantity changes to 0 (is removed from cart, then it would just be the destroy method!!)
-cart_item1 = CartItem.create!(shopper_id: u1.id, product_id: stand_arrow.id, quantity: 1)
-cart_item2 = CartItem.create!(shopper_id: u1.id, product_id: master_sword.id, quantity: 3)
-cart_item3 = CartItem.create!(shopper_id: u1.id, product_id: pokeball.id, quantity: 1)
-cart_item4 = CartItem.create!(shopper_id: u2.id, product_id: rengoku.id, quantity: 1)
+cart_item1 = CartItem.create!(shopper_id: u1.id, product_id: buff_hello_kitty.id, quantity: 1)
+cart_item2 = CartItem.create!(shopper_id: u1.id, product_id: cartoon_bear_case.id, quantity: 1)
+cart_item3 = CartItem.create!(shopper_id: u1.id, product_id: macaron_earrings.id, quantity: 1)
+cart_item4 = CartItem.create!(shopper_id: u1.id, product_id: mushroom_bag.id, quantity: 1)
 
-review1 = Review.create!(product_id: stand_arrow.id, reviewer_id: u5.id, rating: 4, review: "This is an awesome collectable, but I feel sick after i nicked my skin with it")
+# review1 = Review.create!(product_id: stand_arrow.id, reviewer_id: u5.id, rating: 4, review: "This is an awesome collectable, but I feel sick after i nicked my skin with it")
 
-review2 = Review.create!(product_id: pokeball.id, reviewer_id: u5.id, rating: 5, review: nil)
+# review2 = Review.create!(product_id: pokeball.id, reviewer_id: u5.id, rating: 5, review: nil)
 
-review3 = Review.create!(product_id: master_sword.id, reviewer_id: u1.id, rating: 2, review: nil)
-review4 = Review.create!(product_id: master_sword.id, reviewer_id: u2.id, rating: 5, review: 'The pure light of this blade leaves my body unaffected, and works well against Hamon!')
-review5 = Review.create!(product_id: master_sword.id, reviewer_id: u3.id, rating: 3, review: nil)
-review6 = Review.create!(product_id: master_sword.id, reviewer_id: u4.id, rating: 4, review: 'I originally bought this as a decoration piece, but I cannot stop looking into how it glows. Is it connected to the light of Solgaleo somehow?')
-review7 = Review.create!(product_id: master_sword.id, reviewer_id: u5.id, rating: 1, review: nil)
-review8 = Review.create!(product_id: master_sword.id, reviewer_id: u6.id, rating: 3, review: 'For the most part I prefer my missile launcher, but this thing is way better as a sidearm than my knife')
-review9 = Review.create!(product_id: master_sword.id, reviewer_id: u7.id, rating: 5, review: 'I love this sword but buyer beware, its already broken twice on me')
-review10 = Review.create!(product_id: master_sword.id, reviewer_id: u8.id, rating: 1, review: nil)
+review3 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u1.id, rating: 2, review: nil)
+review4 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u2.id, rating: 5, review: nil)
+review5 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u3.id, rating: 3, review: nil)
+review6 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u4.id, rating: 4, review: nil)
+review7 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u5.id, rating: 1, review: nil)
+review8 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u6.id, rating: 3, review: nil)
+review9 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u7.id, rating: 5, review: nil)
+review10 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u8.id, rating: 1, review: nil)
 
-review11 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem1.id, rating: 1, review: nil)
-review12 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem2.id, rating: 1, review: nil)
-review13 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem3.id, rating: 1, review: nil)
-review14 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem4.id, rating: 1, review: nil)
-review15 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem5.id, rating: 1, review: nil)
-review16 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem6.id, rating: 1, review: nil)
-review17 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem7.id, rating: 1, review: nil)
-review18 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem8.id, rating: 1, review: nil)
-review19 = Review.create!(product_id: master_sword.id, reviewer_id: u_lorem9.id, rating: 1, review: '
+review11 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_plushies1.id, rating: 1, review: nil)
+review12 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_plushies2.id, rating: 1, review: nil)
+review13 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_plushies3.id, rating: 1, review: nil)
+review14 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_plushies4.id, rating: 1, review: nil)
+review15 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_keychains2.id, rating: 1, review: nil)
+review16 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming1.id, rating: 1, review: nil)
+review17 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming2.id, rating: 1, review: nil)
+review18 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming3.id, rating: 1, review: nil)
+review19 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming4.id, rating: 1, review: '
 Even so my sun one early morn did shine,
 With all triumphant splendour on my brow;
 But out, alack, he was but one hour mine,

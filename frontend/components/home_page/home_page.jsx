@@ -22,7 +22,7 @@ class HomePage extends React.Component{
                 <div className='home-page-category-wrapper'>
 
                     <div className='home-page-title-wrapper max-body-width body-padding'>
-                        <h1 className='home-page-title'>Loot that is meant for you.</h1>
+                        <h1 className='home-page-title'>Keep calm and stay cute.</h1>
                     </div>
 
                     <div className='home-page-categories max-body-width body-padding'>
@@ -70,13 +70,58 @@ class HomePage extends React.Component{
                     </div>
                 </div> 
 
+
                 <div className='home-page-grid-wrapper max-body-width body-padding'>
                     <div className='home-page-grid'>
                         {
-                            this.props.products.map( (product, idx) => (
+                            this.props.products.slice(0, 8).map( (product, idx) => (
                                 <HomePageItem key={product.id} product={product} idx={idx}/>
                             ))
                         }
+                    </div>
+                </div>
+                
+                <div className='home-page-editor-favorites-wrapper max-body-width body-padding'>
+                    <div className='home-page-editor-favorites'>
+                        <div className='home-page-favorite'>
+                            <Link to='/'>
+                                <div className='home-page-favorite-image-container'>
+                                    <img src="https://i.etsystatic.com/15174309/r/il/266d99/3581177974/il_794xN.3581177974_308b.jpg" alt="mushy badge" />
+                                </div>
+                            </Link>
+                        </div>
+
+                        <div className='home-page-favorite'>
+                            <Link to='/'>
+                                <div className='home-page-favorite-image-container'>
+                                    <img src="https://i.etsystatic.com/14085821/r/il/623c62/3215094120/il_794xN.3215094120_ik2q.jpg" alt="mushy badge" />         
+                                </div>
+                            </Link>
+                        </div>
+                        
+                        <div className='home-page-favorite'>
+                            <Link to='/'>
+                                <div className='home-page-favorite-image-container'>
+                                    <img src="https://i.etsystatic.com/41582462/r/il/426cf4/5389971410/il_794xN.5389971410_jfu0.jpg" alt="mushy badge" />
+                                </div>
+                            </Link>
+                        </div>
+
+                        <div className='home-page-favorite'>
+                            <Link to='/'>
+                                <div className='home-page-favorite-image-container'>
+                                    <img src="https://i.etsystatic.com/42608576/r/il/69351f/5530269020/il_794xN.5530269020_fyza.jpg" alt="mushy badge" />
+                                </div>
+                            </Link>
+                        </div>
+
+                        <div className='home-page-favorite home-page-last-favorite'>
+                            <Link to='/'>
+                                <div className='home-page-favorite-image-container'>
+                                    <img src="https://i.etsystatic.com/35871599/r/il/ab9a60/5308166034/il_794xN.5308166034_pvim.jpg" alt="mushy badge" /> 
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
