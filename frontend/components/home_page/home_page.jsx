@@ -16,62 +16,98 @@ class HomePage extends React.Component{
         if (!(this.props.products)){
             return null;
         }
+
+        /*  I have to change categories, fix formating of the seeds and reviews for the enter key spacing(probably with \n or something),
+                and fix/add more reviews to the new products & changing the names of the lorumepsum & original u1-u10 users!
+
+            **Also, just have the description top automatically be open, while still offering the user the ability to hide it.
+
+            I also need to limit the products called by the homepage on both the initial render/refresh as well as component did mount
+                to *ONLY* the products actually being used. Currently, either the totality of the products table is being sent to the front end
+                or the O(n)^2 algorithm (im pretty sure, or O(n)^n ) i currently have for tying the products to the application view is slowing down the initial hard render of the 
+                website immensely
+
+
+        */
+
+
         return (
             <>
-
                 <div className='home-page-category-wrapper'>
-
                     <div className='home-page-title-wrapper max-body-width body-padding'>
                         <h1 className='home-page-title'>Keep calm and stay cute.</h1>
                     </div>
 
                     <div className='home-page-categories max-body-width body-padding'>
-                        <div className='home-page-category'>
-                            <Link to='/c/weapons'>
-                                <div className='home-page-category-img-container'>
-                                    <img src="https://www.japaneseswords4samurai.com/wp-content/uploads/2022/09/Witcher.jpg" alt="" />
-                                </div>
-                                <div className='home-page-category-img-description-container'>
-                                    <p className='home-page-category-img-description'>
-                                    Quality Weapons
-                                    </p>
-                                </div>
-                            </Link>
-                        </div>
 
                         <div className='home-page-category'>
-                            <Link to='/c/jewelry-and-accessories'>
+                            <Link to='/c/plushies'>
                                 <div className='home-page-category-img-container'>
-                                    <img src="https://i.etsystatic.com/10204022/r/il/3490cc/4854099637/il_300x300.4854099637_fxnf.jpg"/>
-                                </div>
-                                <div className='home-page-category-img-description-container'>
-                                    <p className='home-page-category-img-description'>
-                                        Enchanted Jewelry
-                                    </p>
-                                </div>
-                            </Link>
-                        </div>
-
-
-                        <div className='home-page-category'>
-                            <Link to='/c/clothing-and-armor'>
-                                <div className='home-page-category-img-container'>
-                                    <img src="https://i.etsystatic.com/43966513/r/il/501276/5172976012/il_300x300.5172976012_pviy.jpg"
-                                        alt="Quality Armor Sale" 
+                                    <img src="https://i.etsystatic.com/35707709/r/il/600962/4059201713/il_fullxfull.4059201713_2fp9.jpg"
+                                        alt="plushie" 
                                     />
                                 </div>
+
                                 <div className='home-page-category-img-description-container'>
                                     <p className='home-page-category-img-description'>
-                                        Sturdy Armor
+                                        Plushies
                                     </p>
                                 </div>
                             </Link>
                         </div>
+
+                        <div className='home-page-category'>
+                            <Link to='/c/jewelry'>
+                                <div className='home-page-category-img-container'>
+                                    <img src="https://cdn.shopify.com/s/files/1/0520/4623/3759/products/Sakura-Mochi-Earrings-Flat_grande.png" alt="jewelry" />
+                                </div>
+
+                                <div className='home-page-category-img-description-container'>
+                                    <p className='home-page-category-img-description'>
+                                        Jewelry
+                                    </p>
+                                </div>
+                            </Link>
+                        </div>
+
+                        <div className='home-page-category'>
+                            <Link to='/c/keychains'>
+                                <div className='home-page-category-img-container'>
+                                    <img src="https://i.pinimg.com/originals/85/b6/d5/85b6d55597106e0ab5e6a7df8bb1399b.png" alt='keychains'/>
+                                </div>
+
+                                <div className='home-page-category-img-description-container'>
+                                    <p className='home-page-category-img-description'>
+                                        Keychains
+                                    </p>
+                                </div>
+                            </Link>
+                        </div>
+
+                        <div className='home-page-category'>
+                            <Link to='/c/gaming-accessories'>
+                                <div className='home-page-category-img-container'>
+                                    <img src="https://blog.displate.com/wp-content/uploads/2022/01/Pink-Gaming-Setup_39.jpg" alt='gaming accessories'/>
+                                </div>
+
+                                <div className='home-page-category-img-description-container'>
+                                    <p className='home-page-category-img-description'>
+                                        Gaming
+                                    </p>
+                                </div>
+                            </Link>
+                        </div>                        
                     </div>
                 </div> 
 
 
                 <div className='home-page-grid-wrapper max-body-width body-padding'>
+                    <div className='home-page-grid-title-container'>
+                        <h2 className='home-page-grid-title'>
+                            popular gifts right now
+                        </h2>
+                    </div>
+
                     <div className='home-page-grid'>
                         {
                             this.props.products.slice(0, 8).map( (product, idx) => (
@@ -82,6 +118,12 @@ class HomePage extends React.Component{
                 </div>
                 
                 <div className='home-page-editor-favorites-wrapper max-body-width body-padding'>
+                    <div className='home-page-editor-favorites-title-container'>
+                        <h2 className='home-page-editor-favorites-title'>
+                            shop our favorites
+                        </h2>
+
+                    </div>
                     <div className='home-page-editor-favorites'>
                         <div className='home-page-favorite'>
                             <Link to='/'>
@@ -128,39 +170,35 @@ class HomePage extends React.Component{
                 <div className='home-page-about-container'>
                     <div className='home-page-about max-body-width body-padding'>
                         <div className='home-page-about-header'>
-                            <h2>What is Lootsy?</h2>
-                            <a href="#">Read our tale of origin here</a>
+                            <h2>What is Cutesy?</h2>
+                            <a href="#">Read our wonderfully adorable story.</a>
                         </div>
 
                         <div className='home-page-about-messages-container'>
                             <div className='home-page-about-message'>
-                                <h3>A community doing good</h3>
+                                <h3>a community being cute</h3>
                                 <p>
-                                    Lootsy is a global marketplace that allows
-                                    people to buy, sell, and collect loot. We are a
-                                    constantly expanding community that pushes for 
-                                    positive change for all size guilds, people, and
-                                    the planet.
+                                    Cutesy is a global online marketplace, where people come 
+                                    together to make, sell, buy, and collect enchantingly 
+                                    darling items. We’re also a community pushing for positive
+                                    change for small businesses, people, and the planet. 
                                 </p>
                             </div>
                             <div className='home-page-about-message home-page-about-middle-message '>
-                                <h3>Support Independent Adventurers</h3>
+                                <h3>support independent cuties</h3>
                                 <p>
-                                    Most large businesses stock up warehouses with loot
-                                    from small guilds and independent adventurers. We
-                                    instead simplify the process, helping you connect with
-                                    these independent adventurers directly to find you unique
-                                    loot.
+                                    There’s no Cutesy warehouse – just millions of cuties
+                                    selling the things they love. We make the whole process
+                                    easy, helping you connect directly with our lovely
+                                    makers to find something extraordinary.
                                 </p>
                             </div>
                             <div className='home-page-about-message'>
-                                <h3>Peace of mind</h3>
+                                <h3>peace of mind</h3>
                                 <p>
-                                    Safety is the highest priority for our company.
-                                    We contract adventurers with many guilds to ensure
-                                    that all parties are safe as well as the loot being
-                                    transported. If you ever need assistance, our team is
-                                    always ready to help.
+                                    Your privacy is the highest priority of our dedicated 
+                                    team. And if you ever need assistance, we are always
+                                    ready to step in for support.
                                 </p>
                             </div>
                         </div>

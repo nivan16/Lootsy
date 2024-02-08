@@ -29,7 +29,7 @@
 /* */
 .nav-bar > a{
     /* color: rgb(146, 86, 101) !important; */
-    color: rgb(204, 152, 161) !important;
+    color: rgb(221, 143, 156) !important;
     font-size: 2em;
     text-decoration: none;
     margin-bottom: 0.65rem;
@@ -203,6 +203,7 @@
     padding: 0.5em;
 
     background-color: transparent;
+    color: rgb(221, 143, 156);
     border-radius: 20px;
     font-size: 1.25em;
     cursor: pointer;
@@ -216,6 +217,7 @@
 }
 .category-bar-border{
     border-bottom: 2px solid rgba(33, 33, 33, 0.2);
+    /* rgb(230, 133, 149) */
 }
 
 /* Individual Category */
@@ -234,8 +236,8 @@
 
 .category-container a, .category-container a:visited{
     text-decoration: none;
-    /* color: rgb(75, 12, 64); */
-    color: rgb(110, 29, 29);
+    color: rgb(75, 12, 64);
+    /* color: rgb(90, 41, 90); */
     font-size: 16px;
 
     padding-bottom: 12px;
@@ -248,7 +250,8 @@
     bottom: -2px;
     left: 50%;
     right: 50%;
-    border-bottom: 2px solid rgb(75, 12, 64);
+    /* border-bottom: 2px solid rgb(75, 12, 64); */
+    border-bottom: 2px solid rgb(99, 15, 85);
     transition: 225ms;
 }
 
@@ -257,5 +260,5 @@
     position: absolute;
     left: 0;
     right: 0;
-    border-bottom: 2px solid rgb(75, 12, 64);
+    border-bottom: 2px solid rgb(99, 15, 85);
 }

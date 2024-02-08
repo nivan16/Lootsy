@@ -34,7 +34,7 @@
 }
 
 .home-page-category:hover{
-    border-color: black;
+    border-color: rgb(99, 15, 85);
 }
 
 .home-page-category > a{
@@ -53,7 +53,7 @@
     margin-bottom: 1rem;
     overflow: hidden;
 
-    background-color: rgb(206, 206, 206);
+    background-color: rgba(206, 206, 206, 0.4);
     border-radius: 50%;
     
     transform: scale(1.00000001);
@@ -82,16 +82,28 @@
 .home-page-category-img-description{
     font-weight: 600;
     /* color: rgb(75, 12, 64); */
-    color: rgb(136, 35, 35);
+    color: rgb(134, 37, 118);
 }
 
-/* Home Page Grid */
+/* Home Page Grid Container */
 .home-page-grid-wrapper{
     /* max-height: 100%; */
     margin-top: 9rem !important;
     /* max-width: 100%; */
 }
 
+/* Home Page Grid Title*/
+.home-page-grid-title-container{
+    padding-bottom: 2.1rem;
+}
+
+.home-page-grid-title{
+    color: rgb(71, 11, 61);
+    font-size: 2.25rem;
+    font-weight: 200;
+}
+
+/* Home Page Grid */
 .home-page-grid{
     display: grid;
     grid-template-rows: repeat(5, 9vh);
@@ -218,11 +230,22 @@
 }
 
 /* Editors favorites */
-
 .home-page-editor-favorites-wrapper{
-    margin-top: 10rem !important;
+    margin-top: 5rem !important;
 }
 
+/* Editors Favorites Title */
+.home-page-editor-favorites-title-container{
+    padding-bottom: 2.1rem;
+}
+
+.home-page-editor-favorites-title{
+    color: rgb(71, 11, 61);
+    font-size: 2.25rem;
+    font-weight: 200;
+}
+
+/* Editors Favorites Product */
 .home-page-editor-favorites{
     display: flex;
     max-width: 100%;
@@ -270,7 +293,7 @@
     /* background-color: rgb(255, 232, 203); */
     background-color: rgb(146, 86, 101);
     color: white;
-    margin-top: 20rem !important;
+    margin-top: 7rem !important;
     padding-bottom: 5rem !important;
 }
 
@@ -302,17 +325,26 @@
     color: rgb(101, 101, 101);
     opacity: 0.75;
 }
+
 /* ----- About Us Messages ----- */
 .home-page-about-messages-container{
     display: flex;
     justify-content: space-between;
 }
 
+.home-page-about-message{
+    width: 31%;
+    max-width: 31%;
+}
+
 .home-page-about-message h3{
+    /* display: flex;
+    justify-content: center; */
     font-size: 1.6rem;
     font-weight: 500;
     padding-bottom: 1.5rem;
     line-height: 1.2;
+
 }
 
 .home-page-about-message p{
@@ -320,7 +352,7 @@
     line-height: 2;
 }
 
-.home-page-about-middle-message{
+/* .home-page-about-middle-message{
     padding-left: 2rem;
     padding-right: 2rem;
-}
+} */
