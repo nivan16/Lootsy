@@ -288,6 +288,17 @@ class ReviewIndex extends React.Component{
                             0 product reviews  
                         </h2>
 
+                        {/* <div className='reviews-index-header-stars-container'>
+                            <StarRatings 
+                                rating={0}
+                                starEmptyColor='lightgray'
+                                starRatedColor='green'
+                                className='aggregate-review-rating'
+                                starDimension='25px'
+                                starSpacing='1px'
+                            />
+                        </div> */}
+
                         <div className='reviews-index-header-stars-container'>
                             <StarRatings 
                                 rating={0}
@@ -334,7 +345,7 @@ class ReviewIndex extends React.Component{
                         <StarRatings 
                             rating={this.props.avgRating}
                             starEmptyColor='lightgray'
-                            starRatedColor='black'
+                            starRatedColor='green'
                             starDimension='20px'
                             starSpacing='1px'                            
                         />

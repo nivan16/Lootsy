@@ -3,13 +3,18 @@
 // is used so that the backend can more safely
 // test if the parameters has the key of
 // category or not, and return the correct data
-export const fetchProducts = (params) => (
+export const fetchProducts = (params) => {
+    
+    debugger
+    //lol
+
+    return (
     $.ajax({
         method: "GET",
         url: '/api/products',
         data: params
     })
-);
+)};
 
 export const fetchProduct = productId => (
     $.ajax({

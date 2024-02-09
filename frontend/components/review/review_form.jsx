@@ -128,15 +128,20 @@ class ReviewForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         let newState = Object.assign({}, this.state, { reviewer_id: this.props.reviewer.id });
-        if(this.props.review !== undefined){
-            newState.id = this.props.review.id
-            if (this.props.review.review !== null && this.state.review.length === 0) {
-                newState.review = null;
-            }
-            else{
-                newState.review = newState.review.trim();
-            }
-        };
+
+        if(this.state.review.length === 0) {
+            newState.review = null;
+        }
+        else{
+            newState.review = newState.review.trim();   
+        }
+
+        
+        // if(this.props.review !== undefined){
+            
+            // if(this.props.review.review !== null && this.state.review.length === 0) {
+        // };
+
 
        
         //created the variable because the reviewer wouldnt update in the state but it would in the props
@@ -153,6 +158,7 @@ class ReviewForm extends React.Component{
                 });
         }
         else{
+            newState.id = this.props.review.id
             this.props.editReview(newState)
                 .then(() => {
                     this.props.closeReviewModal('successfulSubmission')
@@ -186,7 +192,6 @@ class ReviewForm extends React.Component{
 
         //***************Now i just need to create the actual error display************************************************************************
         const ratingError = this.props.errors.includes("Rating is not included in the list");
-
 
         return (
             <div className={`review-form-modal-background ${this.props.showReviewModal ? '': 'review-form-modal-hidden'}`}

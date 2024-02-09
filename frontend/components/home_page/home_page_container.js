@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    requestProducts: () => dispatch(requestProducts())
+    requestProducts: homePageRequest => dispatch(requestProducts(homePageRequest))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

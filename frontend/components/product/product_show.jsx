@@ -11,7 +11,7 @@ class ProductShow extends React.Component {
         super(props);
         this.state = {
             showAddedToCartModal: false,
-            showDescription: false,
+            showDescription: true,
             showPurchasedModal: false,
             showReviewModal: false,
             quantity: 1
@@ -35,7 +35,6 @@ class ProductShow extends React.Component {
         //          attempted to leave a review but was not logged in
         
         //if the session modal was opened
-        
         //Nevermind. Its the second condition for some reason!!!!!!
         //  **Its because either the first if statement or the else statement isnt clear enough
         if ( (prevProps.isOpen === 'actionRequired') && (this.props.isOpen === false) ) {
@@ -79,7 +78,7 @@ class ProductShow extends React.Component {
     }
 
     closeReviewModal(e){
-        debugger
+        
         /*
             The current issue for error displaying is that the automatic Onclick event listener will always run, even when the function isnt called,
                 so i need need need to have a seperate condition for the button itself, maybe have the argument "e" just be "true" or "close"
@@ -175,6 +174,7 @@ class ProductShow extends React.Component {
 
     render() {
 
+        
         //If there is no product under the ID in the url
         if(!this.props.product) return (
             <div className='max-body-width body-padding'>
@@ -197,40 +197,63 @@ class ProductShow extends React.Component {
             </option>    
         ));
 
-        debugger
+        
         
         https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg
         return (
             <div className='product-show-container max-body-width body-padding'>
-                <div className='product-image-and-info-container'>
-                    <div className='product-image-container'>
-                        {/* <img className="product-show-image" src={"https://picsum.photos/900/"}>
-                        </img> */}
-                        <div className='product-image-width-height-wrapper'>
+                <div className='product-image-info-and-reviews-container'>
+                    <div className='product-image-and-reviews-container'>
+                        <div className='product-image-container'>
+                            {/* <img className="product-show-image" src={"https://picsum.photos/900/"}>
+                            </img> */}
+                            <div className='product-image-width-height-wrapper'>
 
-                            {
-                            /* 
+                                {
+                                /* 
 
-                            *longer height*
-                            <img src={"https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg"}>
-                            </img>
+                                *longer height*
+                                <img src={"https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg"}>
+                                </img>
 
-                            *longer width*
-                            <img className="product-show-image" src={"https://fastly.picsum.photos/id/757/1600/900.jpg?hmac=xB17QkxH_kqjV6K0R7-EZkW2xTq8iukba_wZ6wo5d4Q"}>
-                            </img>
+                                *longer width*
+                                <img className="product-show-image" src={"https://fastly.picsum.photos/id/757/1600/900.jpg?hmac=xB17QkxH_kqjV6K0R7-EZkW2xTq8iukba_wZ6wo5d4Q"}>
+                                </img>
 
-                            With this image type (longer height than width), should I have it
-                                with w & h at 100% with "object-fit: cover;" and create an 
-                                onClick function that creates an overlay of opacity 80% grey
-                                and shows the whole image, or should i just do "object-fit: fill;"
-                                with position relative(having the image in the middle translated)
-                                and max-height: 100% ??? */
-                            }
-                            
-                            <img src={"https://i.etsystatic.com/26339184/r/il/672aaf/5609400017/il_794xN.5609400017_tglw.jpg"}>
-                            </img>
+                                With this image type (longer height than width), should I have it
+                                    with w & h at 100% with "object-fit: cover;" and create an 
+                                    onClick function that creates an overlay of opacity 80% grey
+                                    and shows the whole image, or should i just do "object-fit: fill;"
+                                    with position relative(having the image in the middle translated)
+                                    and max-height: 100% ??? */
+                                }
+                                {/* <img src={"https://i.etsystatic.com/26339184/r/il/672aaf/5609400017/il_794xN.5609400017_tglw.jpg"}>
+                                </img> */}
+                                <img src='https://i.etsystatic.com/37862971/r/il/ad8eba/5557104233/il_794xN.5557104233_bzr3.jpg' alt='mushroom bag'>
+                                </img>
+                            </div>
                         </div>
 
+                        <ReviewIndexContainer
+                            reviews={Object.values(this.props.reviews)}
+                            currentUserReview={this.props.currentUser !== null ? this.props.reviews[this.props.currentUser.id] : undefined}
+                            showReviewModal={this.state.showReviewModal}
+                            paramsId={this.props.match.params.id}
+                            currentUser={this.props.currentUser}
+                            users={this.props.users}
+                            avgRating={this.props.product.avgRating}
+                            openReviewModal={this.openReviewModal}
+                        />
+
+                        { (this.props.product.ownerId !== this.props.currentUser?.id ) && ($.isEmptyObject(this.props.reviews[this.props.currentUser?.id])) ? (
+                            <div className='review-form-modal-create-toggle-container'>
+                                <button className='review-form-modal-create-toggle' onClick={this.openReviewModal}>
+                                    Add a review
+                                </button>
+                            </div>
+                        ) : (
+                            null
+                        )}
                     </div>
 
                     <div className='product-info-container'>
@@ -279,7 +302,7 @@ class ProductShow extends React.Component {
                             <div className='product-checkout-button-container'>
                                 <form onSubmit={this.handlePurchase}>
                                     <button className='product-checkout-button'>
-                                        Buy it now
+                                        buy it now
                                     </button>
                                     {/* <p className='product-checkout-button-label'>
                                         Buy it now
@@ -290,7 +313,7 @@ class ProductShow extends React.Component {
                             <div className='product-cart-add-button-container'>
                                 <form onSubmit={this.handleAddToCart}>
                                     <button className='product-cart-add-button'>
-                                        Add to cart
+                                        add to cart
                                     </button>
                                 </form>
                                 {/* <p className='product-cart-add-button-label'>
@@ -309,7 +332,9 @@ class ProductShow extends React.Component {
                                     Description
                                 </button>
 
-                                <FontAwesomeIcon icon={faCaretDown} className={`fa-caret-down ${this.state.showDescription ? "expanded" : ""}`}/>
+                                <div className='fa-caret-down-container'>
+                                    <FontAwesomeIcon icon={faCaretDown} className={`fa-caret-down ${this.state.showDescription ? "expanded" : ""}`}/>                                    
+                                </div>
                             </h2>
                         </div>
 
@@ -340,7 +365,7 @@ class ProductShow extends React.Component {
                                 Lastly, I need to add the delete button next to the edit review *while making sure the currentUser can only delete their own review* 
                     */}
 
-                    <ReviewIndexContainer
+                    {/* <ReviewIndexContainer
                         reviews={Object.values(this.props.reviews)}
                         currentUserReview={this.props.currentUser !== null ? this.props.reviews[this.props.currentUser.id] : undefined}
                         showReviewModal={this.state.showReviewModal}
@@ -349,7 +374,7 @@ class ProductShow extends React.Component {
                         users={this.props.users}
                         avgRating={this.props.product.avgRating}
                         openReviewModal={this.openReviewModal}
-                    />
+                    /> */}
                     
                     {/* <ReviewIndex 
                         reviews={Object.values(this.props.reviews)}
@@ -363,7 +388,7 @@ class ProductShow extends React.Component {
 
 
 
-                    { (this.props.product.ownerId !== this.props.currentUser?.id ) && ($.isEmptyObject(this.props.reviews[this.props.currentUser?.id])) ? (
+                    {/* { (this.props.product.ownerId !== this.props.currentUser?.id ) && ($.isEmptyObject(this.props.reviews[this.props.currentUser?.id])) ? (
                         <div className='review-form-modal-create-toggle-container'>
                             <button className='review-form-modal-create-toggle' onClick={this.openReviewModal}>
                                 Add a review
@@ -371,7 +396,7 @@ class ProductShow extends React.Component {
                         </div>
                     ) : (
                         null
-                    )}
+                    )} */}
 
                     
                     {/******* Note: The ReviewForm component might need to be renamed to ReviewFormModal ********/}

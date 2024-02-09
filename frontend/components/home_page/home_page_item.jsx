@@ -4,29 +4,31 @@ import { Link } from "react-router-dom";
 class HomePageItem extends React.Component{
     constructor(props){
         super(props);
+
+        this.imgSource = this.imgSource.bind(this)
     }
 
     imgSource(){
         // return ['https://i.etsystatic.com/37862971/r/il/ad8eba/5557104233/il_794xN.5557104233_bzr3.jpg', "mushy badge"]
-        switch(this.props.idx){
-            case 0:
-                return ['https://i.etsystatic.com/28201213/r/il/852767/5700342097/il_794xN.5700342097_kgb4.jpg', 'snake plushie']
-            case 1:
-                return ['https://i.etsystatic.com/28319596/r/il/0b632a/4864776424/il_794xN.4864776424_1dan.jpg', 'strawberry set bags']
-            case 2:
-                return ['https://i.etsystatic.com/26353633/r/il/23653b/5255852841/il_1140xN.5255852841_irhv.jpg', 'cat plant earrings']
-            case 3:
-                return ['https://i.etsystatic.com/37862971/r/il/ad8eba/5557104233/il_794xN.5557104233_bzr3.jpg', "mushy badge"]
-            case 4:
-                return ['https://i.etsystatic.com/29881738/r/il/669a63/5127921020/il_1140xN.5127921020_j0oa.jpg', 'flower cow keychain']
-            case 5:
-                return ['https://i.etsystatic.com/27829035/r/il/ef983b/5697628061/il_794xN.5697628061_6v48.jpg', 'japanese phone cases'] 
-            case 6:                
-                return ['https://i.etsystatic.com/34927393/r/il/5febf7/4986113032/il_794xN.4986113032_5b1h.jpg', 'valley lilly necklace']
-            case 7:
-                return ['https://i.etsystatic.com/37278676/r/il/ccef91/4530389414/il_794xN.4530389414_g3x4.jpg', 'strawberry earrings']
-                // default:
-                //     break;
+        switch(this.props.product.name){
+            case "Kawaii Candy Snake Plushie Set":
+                return ['https://i.etsystatic.com/28201213/r/il/852767/5700342097/il_794xN.5700342097_kgb4.jpg', 'snake plushie', 0]
+            case 'Strawberry Cat Convertible Bag Set':
+                return ['https://i.etsystatic.com/28319596/r/il/0b632a/4864776424/il_794xN.4864776424_1dan.jpg', 'strawberry set bags', 1]
+            case 'Black Cat and Plant Huggie Earrings':
+                return ['https://i.etsystatic.com/26353633/r/il/23653b/5255852841/il_1140xN.5255852841_irhv.jpg', 'cat plant earrings', 2]
+            case 'Crochet Mushroom Crossbody Bag':
+                return ['https://i.etsystatic.com/37862971/r/il/ad8eba/5557104233/il_794xN.5557104233_bzr3.jpg', "mushy badge", 3]
+            case 'Flower Cow Acrylic Keychain Set':
+                return ['https://i.etsystatic.com/29881738/r/il/669a63/5127921020/il_1140xN.5127921020_j0oa.jpg', 'flower cow keychain', 4]
+            case 'Japanese Street Landscape Pink and Green Phone Case Set':
+                return ['https://i.etsystatic.com/27829035/r/il/ef983b/5697628061/il_794xN.5697628061_6v48.jpg', 'japanese phone cases', 5] 
+            case 'Lily of the Valley Jewelry Set':                
+                return ['https://i.etsystatic.com/34927393/r/il/5febf7/4986113032/il_794xN.4986113032_5b1h.jpg', 'valley lilly necklace', 6]
+            case 'Strawberry Earrings':
+                return ['https://i.etsystatic.com/37278676/r/il/ccef91/4530389414/il_794xN.4530389414_g3x4.jpg', 'strawberry earrings', 7]
+            default:
+                return null;
         }
         // switch (this.props.product.name) {
             // case 'Arrow':
@@ -52,18 +54,21 @@ class HomePageItem extends React.Component{
     } 
 
     render(){
-        const imgAndAlt = this.imgSource();
-        return (
-            <div className={`grid-brick grid-brick-${this.props.idx}`}>
+        const imgAltAndPlacement = this.imgSource();
+
+        return imgAltAndPlacement !== null ? (
+            <div className={`grid-brick grid-brick-${imgAltAndPlacement[2]}`}>
                 <Link to={`/products/${this.props.product.id}`}>
                     <div className="grid-image">
-                        <img src={imgAndAlt[0]} alt={imgAndAlt[1]} />
+                        <img src={imgAltAndPlacement[0]} alt={imgAltAndPlacement[1]} />
                     </div>
                     <p className="grid-item-price">
                         {'$'+this.props.product.price}
                     </p>
                 </Link>
             </div>
+        ) : (
+            null
         )
     }
 }

@@ -38,7 +38,39 @@ class Api::ProductsController < ApplicationController
         #   of the products having a review or not. However, it increases
         #   the render time of the views greatly, so there should be quick checks
         #   of *if @reviews.first.nil check* or *if @products.first.nil check*
-        if params.has_key?(:category)
+
+        # byebug
+        if params.has_key?(:home)
+            home_page_products = [
+                'Kawaii Candy Snake Plushie Set',
+                'Strawberry Cat Convertible Bag Set',
+                'Black Cat and Plant Huggie Earrings',
+                'Crochet Mushroom Crossbody Bag',
+                'Flower Cow Acrylic Keychain Set',
+                'Japanese Street Landscape Pink and Green Phone Case Set',
+                'Lily of the Valley Jewelry Set',
+                'Strawberry Earrings',
+                'Sakura Resin Custom Keycaps',
+                'Cute Gameboy Keychain',
+                "Pink Cinnamoroll Phone Case",
+                'Pink Kirby Mouse Pad',
+                'Pink and White Embroidered Floral Canvas Bag Set'
+            ]
+
+
+            
+
+            @products = Product
+                .where(name: home_page_products)
+                .preload(:owner, :user_reviews)
+                
+
+            
+            render :index
+            
+
+
+        elsif params.has_key?(:category)
             @products = Product
                 .where(category: params[:category])
                 .preload(:owner, :user_reviews)

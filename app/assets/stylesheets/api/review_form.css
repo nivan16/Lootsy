@@ -33,8 +33,8 @@
 /* Review Modal Edit and Delete Buttons*/
 .review-edit-and-delete-container{
     display: flex;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: -0.2rem;
+    margin-bottom: 1rem;
 }
 
 /* Review Edit Toggle */
@@ -103,8 +103,11 @@
 /* Review Delete Button */
 .review-delete-button{
     position: relative;
-    
-    border: 2px solid black;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border: 1px solid pink;
     border-radius: 6px;
     background-color: transparent;
     color: white;
@@ -119,9 +122,9 @@
     position: absolute;
     
     inset: -1px;
-    border: 2px solid black;
+    border: 1px solid pink;
     border-radius: 6px;
-    background-color: black;
+    background-color: rgb(134, 37, 118);
     
     transform: scale(1.000000001);
     transition: 225ms ease-in-out;

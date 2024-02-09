@@ -5,31 +5,63 @@ import { Link } from 'react-router-dom';
 class HomePage extends React.Component{
     constructor(props){
         super(props);
+
+        this.productSort = this.productSort.bind(this);
     }
     
     componentDidMount(){
         //should this be specific products?
-        this.props.requestProducts();
+        debugger
+        this.props.requestProducts({
+            home: 'homePageRequest'
+        });
+    }
+
+    productSort() {
+        let sortedProducts = {};
+
+        this.props.products.forEach( product => {
+            sortedProducts[product.name] = product
+        })
+
+        debugger;
+        return sortedProducts;
     }
 
     render(){
-        if (!(this.props.products)){
+        
+        if (!(this.props.products) || this.props.products.length === 0){
             return null;
         }
 
-        /*  I have to change categories, fix formating of the seeds and reviews for the enter key spacing(probably with \n or something),
-                and fix/add more reviews to the new products & changing the names of the lorumepsum & original u1-u10 users!
+        let sortedProducts = this.productSort();
+        /*  
+            **Done!**
+            I have to change categories, 
 
-            **Also, just have the description top automatically be open, while still offering the user the ability to hide it.
+            **Done!**
+            Fix formating of the seeds and reviews for the enter key spacing(probably with \n or something),
 
+            Fix/add more reviews to the new products & changing the names of the lorumepsum & original u1-u10 users!
+
+            **Done!**
+            Also, just have the description to automatically be open, while still offering the user the ability to hide it.
+
+            **Done!**
             I also need to limit the products called by the homepage on both the initial render/refresh as well as component did mount
                 to *ONLY* the products actually being used. Currently, either the totality of the products table is being sent to the front end
                 or the O(n)^2 algorithm (im pretty sure, or O(n)^n ) i currently have for tying the products to the application view is slowing down the initial hard render of the 
                 website immensely
 
+            Change Footer Icon from magic wand to cupcake
+
+            Review Button Colors
+
+            Product Pictures!!!
 
         */
 
+        debugger
 
         return (
             <>
@@ -110,9 +142,13 @@ class HomePage extends React.Component{
 
                     <div className='home-page-grid'>
                         {
-                            this.props.products.slice(0, 8).map( (product, idx) => (
+                            this.props.products.map( (product, idx) => (
                                 <HomePageItem key={product.id} product={product} idx={idx}/>
                             ))
+
+                            // this.props.products.slice(0, 8).map( (product, idx) => (
+                            //     <HomePageItem key={product.id} product={product} idx={idx}/>
+                            // ))
                         }
                     </div>
                 </div>
@@ -126,42 +162,62 @@ class HomePage extends React.Component{
                     </div>
                     <div className='home-page-editor-favorites'>
                         <div className='home-page-favorite'>
-                            <Link to='/'>
+                            <Link to={`/products/${sortedProducts['Sakura Resin Custom Keycaps']?.id}`}>
                                 <div className='home-page-favorite-image-container'>
                                     <img src="https://i.etsystatic.com/15174309/r/il/266d99/3581177974/il_794xN.3581177974_308b.jpg" alt="mushy badge" />
                                 </div>
+
+                                <p className="home-page-favorite-price">
+                                    {'$'+ sortedProducts['Sakura Resin Custom Keycaps']?.price}
+                                </p>
                             </Link>
                         </div>
 
                         <div className='home-page-favorite'>
-                            <Link to='/'>
+                            <Link to={`/products/${sortedProducts['Cute Gameboy Keychain']?.id}`}>
                                 <div className='home-page-favorite-image-container'>
                                     <img src="https://i.etsystatic.com/14085821/r/il/623c62/3215094120/il_794xN.3215094120_ik2q.jpg" alt="mushy badge" />         
                                 </div>
+                                
+                                <p className="home-page-favorite-price">
+                                    {'$'+ sortedProducts['Cute Gameboy Keychain']?.price}
+                                </p>
                             </Link>
                         </div>
                         
                         <div className='home-page-favorite'>
-                            <Link to='/'>
+                            <Link to={`/products/${sortedProducts['Pink Cinnamoroll Phone Case']?.id}`}>
                                 <div className='home-page-favorite-image-container'>
                                     <img src="https://i.etsystatic.com/41582462/r/il/426cf4/5389971410/il_794xN.5389971410_jfu0.jpg" alt="mushy badge" />
                                 </div>
+
+                                <p className="home-page-favorite-price">
+                                    {'$'+ sortedProducts['Pink Cinnamoroll Phone Case']?.price}
+                                </p>
                             </Link>
                         </div>
 
                         <div className='home-page-favorite'>
-                            <Link to='/'>
+                            <Link to={`/products/${sortedProducts['Pink Kirby Mouse Pad']?.id}`}>
                                 <div className='home-page-favorite-image-container'>
                                     <img src="https://i.etsystatic.com/42608576/r/il/69351f/5530269020/il_794xN.5530269020_fyza.jpg" alt="mushy badge" />
                                 </div>
+
+                                <p className="home-page-favorite-price">
+                                    {'$'+ sortedProducts['Pink Kirby Mouse Pad']?.price}
+                                </p>
                             </Link>
                         </div>
 
                         <div className='home-page-favorite home-page-last-favorite'>
-                            <Link to='/'>
+                            <Link to={`/products/${sortedProducts['Pink and White Embroidered Floral Canvas Bag Set']?.id}`}>
                                 <div className='home-page-favorite-image-container'>
                                     <img src="https://i.etsystatic.com/35871599/r/il/ab9a60/5308166034/il_794xN.5308166034_pvim.jpg" alt="mushy badge" /> 
                                 </div>
+
+                                <p className="home-page-favorite-price">
+                                    {'$'+ sortedProducts['Pink and White Embroidered Floral Canvas Bag Set']?.price}
+                                </p>
                             </Link>
                         </div>
                     </div>

@@ -224,7 +224,7 @@ bread_cat_earrings = Product.create!(
     stock: 11
 )
 
-lily_of_valley_earrings= Product.create!(
+lily_of_valley_earrings = Product.create!(
     name: 'Lily of the Valley Jewelry Set',
     description: 'Adorn this gorgeous jewelry set when you want to look elegant and classy, but still want to stand out and 
         be the belle of the ball. This set is handmade. The necklace is made with high-quality glass beads, 
@@ -516,7 +516,7 @@ sakura_resin_keycaps = Product.create!(
         
         ♡ Color varies as it is shown on the listing. Different screens may show different colors.",
     category: 'gaming accessories',
-    price: 25.00,
+    price: 22.99,
     owner_id: u_lorem_gaming1.id,
     stock: 5
 )
@@ -534,7 +534,7 @@ kirby_mouse_pad = Product.create!(
         ✨ Thickness: 3 millimeters
         ✨ Materials: Rubber pad',
     category: 'gaming accessories',
-    price:  40.00,
+    price:  39.99,
     owner_id: u_lorem_gaming2.id,
     stock: 4
 )
@@ -610,8 +610,7 @@ review15 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_keyc
 review16 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming1.id, rating: 1, review: nil)
 review17 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming2.id, rating: 1, review: nil)
 review18 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming3.id, rating: 1, review: nil)
-review19 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming4.id, rating: 1, review: '
-Even so my sun one early morn did shine,
+review19 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming4.id, rating: 1, review: 'Even so my sun one early morn did shine,
 With all triumphant splendour on my brow;
 But out, alack, he was but one hour mine,
 The region cloud hath mask’d him from me now …

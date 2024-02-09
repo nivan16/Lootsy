@@ -8,11 +8,14 @@
 
 /*------------ Index Header -----------*/
 .product-index-header h2{
-    font-size: 1.75rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    color: rgb(99, 15, 85);
+    font-size: 39px;
+    font-weight: 100;
+    letter-spacing: 0.25px;
 }
 
 .product-index{

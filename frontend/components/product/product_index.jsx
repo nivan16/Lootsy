@@ -31,7 +31,7 @@ class ProductIndex extends React.Component{
         return (
             <div className='product-index-container max-body-width'>
                 <div className="product-index-header">
-                    <h2>Find something you'll love</h2>
+                    <h2>find something you'll love</h2>
                 </div>
                 <ul className="product-index">
                     {
@@ -51,6 +51,7 @@ class ProductIndex extends React.Component{
                                             <StarRatings 
                                                 rating={product.avgRating}
                                                 starEmptyColor='lightgray'
+                                                starRatedColor='green'
                                                 className='aggregate-review-rating'
                                                 starDimension='20px'
                                                 starSpacing='1px'

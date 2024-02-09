@@ -24,6 +24,27 @@ class ReviewIndexItemClamper extends React.Component{
         window.addEventListener('resize', this.checkLineClamp);
     }
 
+    componentDidUpdate(prevProps){
+        if(this.props.currentUserReview?.id === this.props.reviewId){
+            if(prevProps.currentUserReview.review !== this.props.currentUserReview.review){
+                debugger
+                const content = this.contentRef.current;
+                if(content && content.scrollHeight > content.clientHeight){
+                    this.setState({
+                        isClamped: true,
+                        isExpanded: false
+                    });
+                }
+                else{
+                    this.setState({
+                        isClamped: false,
+                        isExpanded: false
+                    });
+                }
+            }
+        }
+    }
+
     componentWillUnmount(){
         window.removeEventListener('resize', this.checkLineClamp);
     }
@@ -37,7 +58,7 @@ class ReviewIndexItemClamper extends React.Component{
         }
         else{
             this.setState({
-                isClamped: false
+                isClamped: false,
             });
         }
     }
@@ -78,7 +99,7 @@ class ReviewIndexItemClamper extends React.Component{
                     <StarRatings 
                         rating={this.props.rating}
                         starEmptyColor='lightgray'
-                        starRatedColor='black'
+                        starRatedColor='green'
                         starDimension='20px'
                         starSpacing='1px'                            
                     />
@@ -100,10 +121,12 @@ class ReviewIndexItemClamper extends React.Component{
                         )}
                     </div>
                 )}
-                
+
                 <div className='review-item-reviewer'>
                     {this.props.username}
                 </div>
+                
+                
 
                 { ( (this.props.currentUserReview !== undefined) && (this.props.currentUserReview.reviewerId === this.props.reviewerId)) ? (
                     <div className='review-edit-and-delete-container'>

@@ -3,15 +3,20 @@
 }
 
 /* Product Image & Information */
-.product-image-and-info-container{
+.product-image-info-and-reviews-container{
     display: flex;
 
     margin-top: 1.5rem;
 }
 
 /* ---------- Product Image -------------*/
-.product-image-container {
+.product-image-and-reviews-container{
+    display: flex;
     flex: 1 1 66%;
+    flex-direction: column;
+}
+
+.product-image-container {
     height: 50vw;
     max-height: 80vh;
     margin-bottom: 0.5rem;
@@ -126,7 +131,8 @@
     cursor: pointer;
     width: 100%;
     height: 3rem;
-    background-color: white;
+    background-color: transparent;
+    color: white;
 
     /* 
         removed default button border
@@ -135,7 +141,7 @@
     border: none;
     border-radius: 25px;
 
-    font-size: 1.05rem;
+    font-size: 1.3rem;
     font-weight: 500;
 }
 
@@ -144,9 +150,12 @@
     position: absolute;
     inset: 0;
     width: 100%;
-    border: 2px solid black;
+    background-color: rgb(216, 160, 169);
+    border: 3px solid rgb(191 102 117);
     border-radius: 25px;
     transition: 225ms;
+
+    z-index: -5;
 }
 
 .product-checkout-button:hover::before{
@@ -178,7 +187,7 @@
     border-radius: 25px;
     
     color: white;
-    font-size: 1.05rem;
+    font-size: 1.3rem;
     font-weight: 500;
     transition: 225ms;
 }
@@ -188,17 +197,33 @@
     position: absolute;
     inset: 0;
     width: 100%;
-    background-color: black;
-    border: 2px solid black;
+    background-color: rgb(221, 143, 156);
+    border: 5px solid #d6e3d6;
     border-radius: 25px;
     transform: scale(1.0000000000001);
     transition: 225ms;
     z-index: -5;
+
+    /* Pink */
+    /* background-color: rgb(216, 160, 169);
+    border: 5px solid rgb(221, 143, 156); */
+    /* Updated Pink */
+    /* background-color: rgb(216, 160, 169);
+    border: 3px solid rgb(191 102 117); */
+
+    /* Pyurple */
+    background-color: rgb(178 134 180);
+    border: 3px solid rgb(111 63 146);
+
+    /* Green */
+    /* background-color: rgb(126 168 130 / 75%);
+    border: 3px solid rgb(7 118 14 / 57%); */
 }
 
 .product-cart-add-button:hover::before {
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 2px solid rgba(0, 0, 0, 0.075);
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    /* border: 2px solid rgba(0, 0, 0, 0.075); */
+
     transform: scale(1.03, 1.06);
 }
 
@@ -219,7 +244,7 @@
     background-color: white;
     border: none;
     border-radius: 25px;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 500;
     text-align: left;
 }
@@ -235,42 +260,53 @@
 
 .product-description-header:hover::before {
     top: 0;
-    left: -1.5%;
-    right: -2%;
+    left: -3.5%;
+    right: -4%;
     bottom: 0;
 }
 
 /* the caret symbol */
+.fa-caret-down-container{
+    /* margin-right: 2%; */
+    transform: translateY(4%);
+}
+
 .fa-caret-down {
-    transition: transform 225ms;
+    padding-bottom: 1px;
+    transition: transform 225ms ease;
 }
 
 .fa-caret-down.expanded{
-    transform: rotate(180deg);
+    padding-bottom: 5px;
+    transform: rotate(-180deg);
 }
 
 /* Product Description */
 .product-description {
     max-height: 0;
+    overflow: hidden;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
     /* Note: 
     visibility: hidden; is generally for when you
     want to temp hide an element but still preserve the 
     doc layout! */
-    overflow: hidden;
-    margin-bottom: 2rem;
-    transition: 225ms;
-    margin-left: 1rem;
+    font-size: 1rem;
+    /* font-weight: 200; */
+    line-height: 1.7;
+    white-space: pre-line;
+
+    transition: 225ms ease;
 }
 
 .product-description.expanded {
+    overflow: visible;
     margin-left: 1rem;
     margin-top: 1rem;
-    max-height: 200px;
-    transition: 225ms;
-    line-height: 1.25rem;
-
+    max-height: max-content;
+    
     /* padding bottom prevents letters from getting cut off*/
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
 }
 
 
