@@ -128,7 +128,7 @@ class SessionModal extends React.Component{
                         {
                             this.state.register ? (
                                 <div className='session-modal-register-header-wrap'>
-                                    <h1 className='session-modal-register-header'>Create your account</h1>
+                                    <h1 className='session-modal-register-header'>Create your account.</h1>
                                     <div className='session-modal-register-header-extra'>Registration is easy.</div>
                                 </div>
                             ) : (
@@ -158,7 +158,7 @@ class SessionModal extends React.Component{
                             )
                         }
                         <div className='session-modal-input-wrap'>
-                            <label htmlFor='session-modal-email'>Email address</label>
+                            <label htmlFor='session-modal-email'>Email address{this.state.register ? ':' : ''}</label>
                             <input type="text" 
                                 id='session-modal-email' 
                                 className={`session-modal-email-input ${errorToRender === "Email" ? "session-error" : ""}`}
@@ -170,13 +170,13 @@ class SessionModal extends React.Component{
                         { 
                             emailError ? this.renderErrorMessage(emailError) : null
                         }
-                        
+
                         {/* this is the ---***Name input field***--- that will only render on the register form */}
                         {  
                             this.state.register ? (
                                 <>
                                     <div className='session-modal-input-wrap'>
-                                        <label htmlFor='session-modal-name'>Name</label>
+                                        <label htmlFor='session-modal-name'>Name:</label>
                                         <input type="text"
                                             id='session-modal-name' 
                                             className={`session-modal-name-input ${errorToRender === "Name" ? "session-error" : ""}`}
@@ -191,7 +191,7 @@ class SessionModal extends React.Component{
                         }
                         
                         <div className='session-modal-input-wrap'>
-                            <label htmlFor='session-modal-password'>Password</label>
+                            <label htmlFor='session-modal-password'>Password{this.state.register ? ':' : ''}</label>
                             <input type="password"
                                 id='session-modal-password'
                                 className={`session-modal-password-input ${errorToRender === "Password" ? "session-error" : ""}`}

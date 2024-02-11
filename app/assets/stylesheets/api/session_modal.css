@@ -156,14 +156,15 @@
 
 /* Actual Registration header "Create Your Account" */
 .session-modal-register-header{
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
     font-size: 1.3em;
     font-weight: 520;
 }
 
 .session-modal-register-header-extra{
     margin-top: 0.25em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.3em;
+    /* margin-bottom: 0.5em; */
 }
 
 
@@ -173,7 +174,7 @@
     box-sizing: inherit;
     display: flex;
     flex-direction: column;
-    margin-top: 0.5em;
+    margin-top: 1rem;
 }
 
 .session-modal-input-wrap > label{
@@ -214,7 +215,10 @@
 
 /* This is the form submission button ----------------------------------------------*/
 .session-modal-form-button-container{
-    position: relative;
+    position: absolute;
+    bottom: 7%;
+    left: 7.8%;
+    right: 7.2%;
 }
 
 .session-modal-form-button{
