@@ -5,20 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Review.destroy_all
 CartItem.destroy_all
 Product.destroy_all
 User.destroy_all
 
-u1 = User.create!(email: 'looter@loot.com', name: 'anon', password: 'password')
-u2 = User.create!(email: 'bizarre@adventure.com', name: 'Kars', password: 'ultimatelifeform')
-u3 = User.create!(email: 'roamingseller@hyrule.com', name: 'Beetle', password: 'madeinheaven')
-u4 = User.create!(email: 'doctor@regions.com', name: 'Oak', password: 'ketchup')
-u5 = User.create!(email: 'critic@critics.com', name: 'Garf', password: 'foodies')
-u6 = User.create!(email: 'merc@talon.com', name: 'Commander Jabsco', password:'caps4days')
-u7 = User.create!(email: 'link@hyrule.com', name: 'Link', password: 'princessmipha')
-u8 = User.create!(email: 'justpeachy@shroomdom.com', name: 'Peach', password: 'bffdaisy')
-u9 = User.create!(email: 'wandmaker@ollivanders.com', name: 'Ollivander', password: 'diagonalley')
+u1 = User.create!(email: 'looter@loot.com', name: 'hiroyuki', password: 'password')
+u2 = User.create!(email: 'bizarre@adventure.com', name: 'yoshimitsu', password: 'ultimatelifeform')
+u3 = User.create!(email: 'roamingseller@hyrule.com', name: 'pochiko', password: 'madeinheaven')
+u4 = User.create!(email: 'doctor@regions.com', name: 'dango', password: 'ketchup')
+u5 = User.create!(email: 'critic@critics.com', name: 'mochi', password: 'foodies')
+u6 = User.create!(email: 'merc@talon.com', name: 'saka', password:'caps4days')
+u7 = User.create!(email: 'link@hyrule.com', name: 'kitkat', password: 'princessmipha')
+u8 = User.create!(email: 'justpeachy@shroomdom.com', name: 'peachy', password: 'bffdaisy')
+u9 = User.create!(email: 'wandmaker@ollivanders.com', name: 'doodle', password: 'diagonalley')
 
 u_lorem_phone_case1 = User.create!(email: 'case1@epsum.com', name: 'cinnamoroll_jellybean', password: 'password')
 u_lorem_phone_case2 = User.create!(email: 'case2@epsum.com', name: 'empathy.calm', password: 'password')
@@ -610,14 +610,57 @@ review15 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_keyc
 review16 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming1.id, rating: 1, review: nil)
 review17 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming2.id, rating: 1, review: nil)
 review18 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming3.id, rating: 1, review: nil)
-review19 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming4.id, rating: 1, review: 'Even so my sun one early morn did shine,
-With all triumphant splendour on my brow;
-But out, alack, he was but one hour mine,
-The region cloud hath mask’d him from me now …
+review19 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_gaming4.id, rating: 3, review: 'Very nice!')
 
-‘Full many a glorious morning have I seen’: Sonnet 33 is, without doubt, one of the more famous of Shakespeare’s Sonnets. It is also one of the most beautiful poems in English.
+review1_case1 = Review.create!(product_id: pink_cinna_case.id, reviewer_id: u_lorem_phone_case2.id, rating: 5, review: "I really love the phone case, it looks super cute and it fits my phone perfectly, it's my favorite, thank you Soo much🥰💗")
+review2_case1 = Review.create!(product_id: pink_cinna_case.id, reviewer_id: u_lorem_phone_case3.id, rating: 4, review: "The quality is amazing!! I love it")
 
-The extended metaphor whereby ‘sun = Fair Youth’ in this poem is intended to pay homage to the young man’s beauty: he shines as brightly as that heavenly orb. Shakespeare piles on the flattery, though, with extra touches: the sun has a ‘sovereign eye’ and so, by association, has the Fair Youth – ‘sovereign’ suggesting royalty or at least nobility. The words ‘golden’, ‘gilding’, and ‘alchemy’ all reinforce this association with wealth and nobility.')
+review1_case2 = Review.create!(product_id: japanese_street_phone_cases.id, reviewer_id: u_lorem_phone_case1.id, rating: 3, review: 'Cute cases, am happy with this purchase')
+review2_case2 = Review.create!(product_id: japanese_street_phone_cases.id, reviewer_id: u_lorem_phone_case4.id, rating: 4, review: 'I bought these for me and my best friend! They came in no time and are such good quality and super sturdy yet thin!! Love these cases!')
+
+
+review1_jewelry1 = Review.create!(product_id: strawberry_earrings.id, reviewer_id: u_lorem_jewelry2.id, rating: 5, review: 'Very cute, not overly big to be gaudy, but still noticeable and detailed. Very pretty.')
+review2_jewelry1 = Review.create!(product_id: strawberry_earrings.id, reviewer_id: u_lorem_jewelry3.id, rating: 5, review: 'Cute little strawberry earrings, super light weight so it doesn’t drag your earlobes. Could not recc enough!!')
+
+review1_jewelry2 = Review.create!(product_id: cat_in_plant_earrings.id, reviewer_id: u_lorem_jewelry1.id, rating: 4, review: "Absolutely adorable, love the quality and can't wait to give them to my best friend. ♥️")
+review2_jewelry2 = Review.create!(product_id: cat_in_plant_earrings.id, reviewer_id: u_lorem_jewelry4.id, rating: 4, review: 'Cute earrings! I think they will make a great gift!')
+
+review1_jewelry3 = Review.create!(product_id: lily_of_valley_earrings.id, reviewer_id: u_lorem_jewelry1.id, rating: 5, review: "Beautiful jewelry set and well made! I bought it for a costume but I can see myself wearing it everyday! It's lovely!")
+review2_jewelry3 = Review.create!(product_id: lily_of_valley_earrings.id, reviewer_id: u_lorem_jewelry2.id, rating: 4, review: 'I literally feel like a princess wearing this set, cannot recommend enough ♥️')
+
+
+review1_plushie1 = Review.create!(product_id: candy_snake_plushie_set.id, reviewer_id: u_lorem_plushies1.id, rating: 4, review: "Absolutely adorable. I wasn't sure what I'd find when I searched for valentine's candy and snakes but I was floored to find this cutie. The 6 year old (recent snake lover) in my life is going to LOVE this little guy! <3")
+review2_plushie1 = Review.create!(product_id: candy_snake_plushie_set.id, reviewer_id: u_lorem_plushies2.id, rating: 3, review: 'Cute snake and fast shipping')
+
+
+review1_bag1 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_bags2.id, rating: 5, review: 'My girlfriend absolutely adore this one, if you are like me who has a gf who adores games like Stardew Valley you should definitely buy one of these')
+review2_bag1 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u_lorem_bags3.id, rating: 5, review: 'The crochet bag is beautiful. Love the detailing and the finish, exactly as i saw in the images. Our daughter is overjoyed. Thank you')
+
+review1_bag2 = Review.create!(product_id: floral_bag.id, reviewer_id: u_lorem_bags1.id, rating: 5, review: 'Beautiful product, well crafted and sewn. Embroidery was outstanding.')
+review2_bag2 = Review.create!(product_id: floral_bag.id, reviewer_id: u_lorem_bags4.id, rating: 5, review: 'Beautiful bags! I love that these came in a set because I can choose which color looks better with my outfit that day. These bags are the perfect size for me and they have enough room to put all my stuff from my previous tote bag. 10 out of 10 would recommend!')
+
+review1_bag3 = Review.create!(product_id: convertible_cat_bag.id, reviewer_id: u_lorem_bags1.id, rating: 5, review: 'The quality and size of these bags are amazing! Comes with three straps to adjust and switch from over-the-shoulder to backpack mode. The lining on the inside is so cute, and the seller made sure to let me know of shipping delays due to weather.')
+review2_bag3 = Review.create!(product_id: convertible_cat_bag.id, reviewer_id: u_lorem_bags4.id, rating: 5, review: 'Very cute! There is more space in these purses than I was expecting which was a pleasant surprise. My daughter is going to adore this!')
+
+
+review1_keychain1 = Review.create!(product_id: flower_cow_keychain.id, reviewer_id: u_lorem_keychains1.id, rating: 4, review: 'Bought this for my wife she loved it so much! Adorable moo cows!')
+review2_keychain1 = Review.create!(product_id: flower_cow_keychain.id, reviewer_id: u_lorem_keychains3.id, rating: 5, review: "It looks so adorable on my key chain. The actual hook part a cute flower looking shape. It has some sparkles inside. It looks thick enough I'm comfortable ir will hold up. It also shipped and arrived super quickly.")
+
+review1_keychain2 = Review.create!(product_id: gameboy_keychain.id, reviewer_id: u_lorem_keychains2.id, rating: 5, review: "Wow this keychain is so adorable and cute that I've already gotten compliments on it!! I'm so happy to show it off 😊 Shipping was pretty fast too!! ")
+review2_keychain2 = Review.create!(product_id: gameboy_keychain.id, reviewer_id: u_lorem_keychains5.id, rating: 4, review: 'Incredibly cute keychain! Super happy with the quality. It also got here quicker than I had anticipated, so that was a lovely surprise!')
+
+
+
+review1_gaming1 = Review.create!(product_id: sakura_resin_keycaps.id, reviewer_id: u_lorem_gaming2.id, rating: 5, review: 'Nicely made it’s so pretty and smooth! Great customer service making sure everything is perfect. Thank you')
+review2_gaming1 = Review.create!(product_id: sakura_resin_keycaps.id, reviewer_id: u_lorem_gaming3.id, rating: 5, review: 'Love these key caps! Definitely recommend')
+
+review1_gaming2 = Review.create!(product_id: kirby_mouse_pad.id, reviewer_id: u_lorem_gaming1.id, rating: 4, review: 'A cute upgrade to my desk! The colors look good, and the mat is pretty thick.')
+review2_gaming2 = Review.create!(product_id: kirby_mouse_pad.id, reviewer_id: u_lorem_gaming5.id, rating: 5, review: "As a major fan of the Kirby games this deskmat is perfect, the quality of the material is comfortable and very soft. It is true to the size listed. I'm so happy with my purchase highly recommend")
+
+# pink_cinna_case (u lorem 1 )
+#u_lorem_phone_case2 = User.create!(email: 'case2@epsum.com', name: 'empathy.calm', password: 'password')
+
+# Review.create!(product_id: , reviewer_id: , rating: , review: )
 
 # Harry Potter:
 #   Elder wand

@@ -46,8 +46,8 @@ class Cart extends React.Component{
                     <div className='cart-guarantee-wrapper max-body-width body-padding'>
                         <div className='cart-guarantee empty-cart-guarantee'>
                             <p>
-                                <strong>Lootsy Purchase Protection: </strong>
-                                We work with many established guilds to guarantee your order.
+                                <strong>Cutesy Protection Program: </strong>
+                                We work with many established cuties to guarantee your order.
                                 If something happens, we've got your back!
                             </p>
                         </div>
@@ -59,7 +59,7 @@ class Cart extends React.Component{
                         
                         <Link to='/'>
                             <span className='cart-empty-suggestion'>
-                                Find some loot from our store to fill it up
+                                Find some adorable items from our store to fill it up!
                             </span>
                         </Link>
                     </div>
@@ -93,7 +93,7 @@ class Cart extends React.Component{
                         <div className='cart-index-redirect-button'>
                             <Link to='/'>
                                 <span className='cart-index-redirect-button-text'>
-                                    Keep Shopping
+                                    keep shopping
                                 </span>
                             </Link>
                         </div>
@@ -103,8 +103,8 @@ class Cart extends React.Component{
                 <div className='cart-guarantee-wrapper max-body-width body-padding'>
                     <div className='cart-guarantee'>
                         <p>
-                            <strong>Lootsy Purchase Protection: </strong>
-                            We work with many established guilds to guarantee your order.
+                            <strong>Cutesy Protection Program: </strong>
+                            We work with many established cuties to guarantee your order.
                             If something happens, we've got your back!
                         </p>
                     </div>
@@ -132,7 +132,7 @@ class Cart extends React.Component{
                                 <div className='cart-checkout-subtotal-container'>
 
                                     <span className='cart-checkout-subtotal'>
-                                        Cart subtotal
+                                        cart subtotal:
                                     </span>
 
                                     <span className='cart-checkout-subtotal-price'>
@@ -144,7 +144,7 @@ class Cart extends React.Component{
                                 <div className='cart-checkout-shipping-container'>
 
                                     <span className='cart-checkout-shipping'>
-                                        Shipping
+                                        shipping:
                                     </span>
 
                                     <span className='cart-checkout-shipping-price'>
@@ -156,7 +156,7 @@ class Cart extends React.Component{
                                 <div className='cart-checkout-tax-container'>
                                 
                                     <span className='cart-checkout-tax'>
-                                        Tax
+                                        tax:
                                     </span>
 
                                     <span className='cart-checkout-tax-price'>
@@ -167,11 +167,11 @@ class Cart extends React.Component{
 
                                 <div className='cart-checkout-total-container'>
                                     <span className='cart-checkout-total'>
-                                        Total { cartItemAmount === 1 ? (
+                                        total { cartItemAmount === 1 ? (
                                             "(1 item)"
                                         ) : (
                                             `(${cartItemAmount} items)`
-                                        )}
+                                        )}:
                                     </span>
                                     
                                     <span className='cart-checkout-total-price'>
@@ -182,7 +182,7 @@ class Cart extends React.Component{
                                     <button className='cart-checkout-button'>
                                     </button>
                                     <p className='cart-checkout-button-label'>
-                                        Checkout
+                                        checkout
                                     </p>
                                 </div>
                             </form>

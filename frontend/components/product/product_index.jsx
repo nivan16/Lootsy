@@ -51,7 +51,7 @@ class ProductIndex extends React.Component{
                                             <StarRatings 
                                                 rating={product.avgRating}
                                                 starEmptyColor='lightgray'
-                                                starRatedColor='green'
+                                                starRatedColor='rgb(139 193 124)'
                                                 className='aggregate-review-rating'
                                                 starDimension='20px'
                                                 starSpacing='1px'

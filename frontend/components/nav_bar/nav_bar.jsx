@@ -35,9 +35,9 @@ class NavBar extends React.Component{
                             <div className='nav-bar-session-button-container'>
                                 { //this renders either a Login button or a (soon to be) drop down functional component with unique profile things
                                     this.props.currentUser ? (
-                                        <button className='nav-bar-login' onClick={this.handleLogout}>Log out</button> 
+                                        <button className='nav-bar-login' onClick={this.handleLogout}>Log Out</button> 
                                     ) : (
-                                        <button className='nav-bar-login' onClick={this.handleLogin}>Sign in</button> 
+                                        <button className='nav-bar-login' onClick={this.handleLogin}>Sign In</button> 
                                     )
                                 }
                             </div>

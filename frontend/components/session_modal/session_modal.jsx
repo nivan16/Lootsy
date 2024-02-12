@@ -136,19 +136,19 @@ class SessionModal extends React.Component{
                                     <div className='session-modal-login-header-wrap'>
                                         <h1 className='session-modal-login-header'>
                                             {actionRequired ? (
-                                                    "Sign in to continue"
+                                                    "Sign in to continue."
                                                 ) : (
-                                                    "Sign in"
+                                                    "Please sign in."
                                                 )
                                             }
                                         </h1>
                                         <div className='session-modal-register-button-container'>
-                                            <button className='session-modal-register-button' type='button' onClick={this.handleModalSwitch}>Register</button>
+                                            <button className='session-modal-register-button' type='button' onClick={this.handleModalSwitch}>register</button>
                                         </div>
                                     </div>
                                         {actionRequired ? ( 
                                                 <p className='session-modal-action-required-message'>
-                                                    Sign in or register with your email address
+                                                    Sign in or register with your email address.
                                                 </p>
                                             ) : (
                                                 null
@@ -158,7 +158,7 @@ class SessionModal extends React.Component{
                             )
                         }
                         <div className='session-modal-input-wrap'>
-                            <label htmlFor='session-modal-email'>Email address{this.state.register ? ':' : ''}</label>
+                            <label htmlFor='session-modal-email'>Email address:</label>
                             <input type="text" 
                                 id='session-modal-email' 
                                 className={`session-modal-email-input ${errorToRender === "Email" ? "session-error" : ""}`}
@@ -191,7 +191,7 @@ class SessionModal extends React.Component{
                         }
                         
                         <div className='session-modal-input-wrap'>
-                            <label htmlFor='session-modal-password'>Password{this.state.register ? ':' : ''}</label>
+                            <label htmlFor='session-modal-password'>Password:</label>
                             <input type="password"
                                 id='session-modal-password'
                                 className={`session-modal-password-input ${errorToRender === "Password" ? "session-error" : ""}`}
@@ -210,9 +210,16 @@ class SessionModal extends React.Component{
                             // this.props.errors instanceof Array ? this.props.errors.map( err => this.renderErrorMessage(err)) : null
                         }
                         
-                        <div className='session-modal-form-button-container'>
-                            <button type="submit" className='session-modal-form-button'>{this.state.register ? 'Register' : 'Sign In'}</button>
-                        </div>
+                        {this.state.register ? (
+                                <div className='session-modal-form-button-container'>
+                                    <button type="submit" className='session-modal-form-button session-modal-register-submit-button'>register</button>
+                                </div>
+                            ) : (
+                                <div className='session-modal-form-button-container'>
+                                    <button type="submit" className='session-modal-form-button session-modal-login-submit-button'>sign in</button>
+                                </div>
+                            )
+                        }
                     </form>
                 </div>
             </div>

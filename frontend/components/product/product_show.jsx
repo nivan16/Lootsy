@@ -248,7 +248,7 @@ class ProductShow extends React.Component {
                         { (this.props.product.ownerId !== this.props.currentUser?.id ) && ($.isEmptyObject(this.props.reviews[this.props.currentUser?.id])) ? (
                             <div className='review-form-modal-create-toggle-container'>
                                 <button className='review-form-modal-create-toggle' onClick={this.openReviewModal}>
-                                    Add a review
+                                    add a review
                                 </button>
                             </div>
                         ) : (

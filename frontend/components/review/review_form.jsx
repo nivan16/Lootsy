@@ -201,7 +201,7 @@ class ReviewForm extends React.Component{
                     <div className="review-form-container">
                         <form className="review-form" onSubmit={this.handleSubmit}>
                             <h1 className="review-form-header">
-                                Leave a Review
+                                Leave a review.
                             </h1>
 
                             <div className="review-form-product-info-container">
@@ -227,7 +227,7 @@ class ReviewForm extends React.Component{
                             
                             <div className="review-form-rating-display">
                                 <h2 className="review-form-rating-title">
-                                    My Review
+                                    My review:
                                 </h2>                               
 
                                 <StarRatings 
@@ -236,8 +236,8 @@ class ReviewForm extends React.Component{
                                     numberOfStars={5}
                                     
                                     starEmptyColor='lightgray'
-                                    starRatedColor='black'
-                                    starHoverColor='black'
+                                    starRatedColor='rgb(139 193 124)'
+                                    starHoverColor='rgb(139 193 124)'
                                     starDimension='32px'
                                     starSpacing='3px'
                                 />
@@ -284,11 +284,11 @@ class ReviewForm extends React.Component{
                                 
                                 <div className="review-form-buttons-container">
                                     <div className="review-form-cancel-modal-button" onClick={this.props.closeReviewModal}>
-                                        Cancel
+                                        cancel
                                     </div>
 
                                     <button className="review-form-submit-button" >
-                                        Post Your Review
+                                        post your review
                                     </button>
 
                                 </div>

@@ -25,8 +25,9 @@ class ReviewIndexItemClamper extends React.Component{
     }
 
     componentDidUpdate(prevProps){
+        debugger
         if(this.props.currentUserReview?.id === this.props.reviewId){
-            if(prevProps.currentUserReview.review !== this.props.currentUserReview.review){
+            if(prevProps?.currentUserReview?.review !== this.props.currentUserReview.review){
                 debugger
                 const content = this.contentRef.current;
                 if(content && content.scrollHeight > content.clientHeight){
@@ -99,7 +100,7 @@ class ReviewIndexItemClamper extends React.Component{
                     <StarRatings 
                         rating={this.props.rating}
                         starEmptyColor='lightgray'
-                        starRatedColor='green'
+                        starRatedColor='rgb(139 193 124)'
                         starDimension='20px'
                         starSpacing='1px'                            
                     />
@@ -125,20 +126,20 @@ class ReviewIndexItemClamper extends React.Component{
                 <div className='review-item-reviewer'>
                     {this.props.username}
                 </div>
-                
+               
                 
 
                 { ( (this.props.currentUserReview !== undefined) && (this.props.currentUserReview.reviewerId === this.props.reviewerId)) ? (
                     <div className='review-edit-and-delete-container'>
                         <div className='review-form-modal-edit-toggle-container'>
                             <button className='review-form-modal-edit-toggle' onClick={this.props.openReviewModal}>
-                                Edit your review
+                                edit your review
                             </button>
                         </div>
 
                         <div className='review-delete-button-container'>
                             <button className='review-delete-button' onClick={this.deleteUserReview}>
-                                Delete your review
+                                delete your review
                             </button>
                         </div>
                     </div>
