@@ -497,18 +497,17 @@ class ProductShow extends React.Component {
                                 Thank you for looking at my website!
                             </p>
                             <p className='product-purchased-modal-message-two'>
-                                If would like to look at my portfolio,
-                                or my other socials, click the some of the buttons below. Or if you
-                                would like to continue looking around Lootsy, please feel free to do so!
+                                If would like to look at my portfolio click the some of the buttons below. Or if you
+                                would like to continue looking around Cutesy, please feel free to do so!
                             </p>
 
-                            <div className='portfolio-link'>
+                            {/* <div className='portfolio-link'>
                                 <a href="javascript:;">portfolio (this will be an image prob!)</a>
                                 <p>
                                     portfolio website!
                                 </p>
                             </div>
-                            
+                             */}
                             <div className='social-links'>
                                 <a href="https://www.github.com" target="_blank">
                                     <FontAwesomeIcon className='fa-brand' icon={faGithub} />
