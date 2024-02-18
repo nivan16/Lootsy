@@ -632,9 +632,10 @@
 
 /* messages */
 .product-purchased-modal-message-one {
-    border-bottom: 1px solid grey;
+    border-bottom: 2px solid lightgray;
     text-align: center;
     font-size: 1.5rem;
+    color: rgb(132 50 136);
     /* font-weight: 500; */
 
     /* margin is to make the border have a limited space */
@@ -644,8 +645,10 @@
 }
 
 .product-purchased-modal-message-two {
-    line-height: 1.2;
     padding: 1rem 2rem;
+    letter-spacing: 1.4;
+    line-height: 1.2;
+    text-indent: 1rem;
 }
 
 /* .portfolio-link {
