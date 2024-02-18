@@ -648,7 +648,7 @@
     padding: 1rem 2rem;
 }
 
-.portfolio-link {
+/* .portfolio-link {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -657,13 +657,13 @@
 .portfolio-link > a {
     color: #005eff;
     margin-bottom: 1rem;
-}
+} */
 
 .social-links {
     display: flex;
     justify-content: space-around;
 
-    margin-top: 6rem;
+    margin-top: 13rem;
     padding: 1rem;
 }
 
