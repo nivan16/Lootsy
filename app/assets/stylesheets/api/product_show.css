@@ -673,10 +673,15 @@
 .fa-brand {
     width: 5rem;
     height: 5rem;
+    color: rgb(139, 193, 124);
+}
+
+.fa-github {
+    color: rgb(216, 160, 169);
 }
 
 .fa-linkedin {
-    color: #005eff;
+    color: #40afe3a3;
 }
 
 
