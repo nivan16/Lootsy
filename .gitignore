@@ -27,3 +27,6 @@
 /config/master.key
 
 /public
+
+# Ignore the .env file
+/.env
