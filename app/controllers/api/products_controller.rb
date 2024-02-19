@@ -39,7 +39,6 @@ class Api::ProductsController < ApplicationController
         #   the render time of the views greatly, so there should be quick checks
         #   of *if @reviews.first.nil check* or *if @products.first.nil check*
 
-        # byebug
         if params.has_key?(:home)
             home_page_products = [
                 'Kawaii Candy Snake Plushie Set',

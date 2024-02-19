@@ -25,11 +25,10 @@ class ReviewIndexItemClamper extends React.Component{
     }
 
     componentDidUpdate(prevProps){
-        debugger
         if(this.props.currentUserReview?.id === this.props.reviewId){
             if(prevProps?.currentUserReview?.review !== this.props.currentUserReview.review){
-                debugger
                 const content = this.contentRef.current;
+                
                 if(content && content.scrollHeight > content.clientHeight){
                     this.setState({
                         isClamped: true,

@@ -11,7 +11,6 @@ class HomePage extends React.Component{
     
     componentDidMount(){
         //should this be specific products?
-        debugger
         this.props.requestProducts({
             home: 'homePageRequest'
         });
@@ -24,7 +23,6 @@ class HomePage extends React.Component{
             sortedProducts[product.name] = product
         })
 
-        debugger;
         return sortedProducts;
     }
 
@@ -60,8 +58,6 @@ class HomePage extends React.Component{
             Product Pictures!!!
 
         */
-
-        debugger
 
         return (
             <>
