@@ -3,6 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
+
 const Footer = props => {
     if(props.location.pathname === '/cart') return null;
 
@@ -55,17 +56,17 @@ const Footer = props => {
                         <ul className='info-list'>
                             <li className='footer-social-links'>
                                <a href="#">
-                                    <FontAwesomeIcon className='fa-brand' icon={faGithub} />
+                                    <FontAwesomeIcon icon={faGithub} />
                                </a>
                             </li>
                             <li className='footer-social-links'>
                                <a href="#">
-                                    <FontAwesomeIcon className='fa-brand' icon={faLinkedin} />
+                                    <FontAwesomeIcon icon={faLinkedin} />
                                </a>
                             </li>
                             <li className='footer-social-links'>
                                <a href="#">
-                                    <FontAwesomeIcon className='fa-brand' icon={faAngellist} />
+                                    <FontAwesomeIcon icon={faAngellist} />
                                 </a>
                             </li>
                         </ul>
