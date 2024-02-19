@@ -1,6 +1,8 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+
+import { FaXmark } from "react-icons/fa6";
+
+
 
 class SessionModal extends React.Component{
     constructor(props){
@@ -122,7 +124,7 @@ class SessionModal extends React.Component{
                
                         
                         <span className='session-modal-close-button'>
-                            <FontAwesomeIcon icon={faXmark} className='fa-session-modal-close-button-icon'/>
+                            <FaXmark className='fa-session-modal-close-button-icon'/>
                         </span>
                      
                         {

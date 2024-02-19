@@ -268,17 +268,16 @@
 /* the caret symbol */
 .fa-caret-down-container{
     /* margin-right: 2%; */
-    transform: translateY(4%);
+    transform: translateY(16%);
 }
 
 .fa-caret-down {
-    padding-bottom: 1px;
+    transform: rotate(0deg) scale(1.4);
     transition: transform 225ms ease;
 }
 
 .fa-caret-down.expanded{
-    padding-bottom: 5px;
-    transform: rotate(-180deg);
+    transform: rotate(-180deg) scale(1.4);
 }
 
 /* Product Description */
@@ -491,7 +490,7 @@
 
 /* "Keep Shopping" Close Button */
 .product-cart-added-modal-close-button-container {
-    /* vvv These might be necessary if I include an arrow symbol from FontAwesome vvv */
+    /* vvv These might be necessary if I include an arrow icon vvv */
     display: inline-flex;
     justify-content: center;
     /* align-items: center; */
@@ -532,10 +531,10 @@
     /* transform: scale(1.03,1.06); */
 }
 
-.product-cart-added-modal-close-button > .fa-arrow-right {
+.product-cart-added-modal-close-button > .fa-arrow-right-long {
     position: absolute;
-    right: 32%;
-    transform: translateY(10%);
+    right: 31.5%;
+    transform: translateY(15%);
     transition: right 160ms ease-in-out;
     /* The z-index is so that the button still closes the modal
         in the event that the icon itself is clicked on (refer
@@ -544,8 +543,8 @@
     z-index: -5;
 }
 
-.product-cart-added-modal-close-button:hover .fa-arrow-right {
-    right: 30.5%;
+.product-cart-added-modal-close-button:hover .fa-arrow-right-long {
+    right: 29.5%;
 }
 
 /* ---------- Immediate Purchase Modal -------------*/
@@ -676,7 +675,6 @@
 .social-links .fa-brand {
     width: 5rem;
     height: 5rem;
-    color: rgb(139, 193, 124);
 }
 
 .social-links .fa-github {
@@ -687,6 +685,9 @@
     color: #40afe3a3;
 }
 
+.social-links .fa-angellist {
+    color: rgb(139, 193, 124);
+}
 
 
 
@@ -709,9 +710,10 @@
     
     border: 1px solid lightgrey;
     border-radius: 5px;
-    background-color: rgb(243, 243, 243);
+    background-color: #f1caf1;
 
     margin-top: 1rem;
+    margin-bottom: 27vh;
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 1rem;
@@ -721,6 +723,7 @@
 .fa-face-frown {
     height: 2rem;
     width: 2rem;
+    color: white;
 }
 
 .product-show-unavailable {

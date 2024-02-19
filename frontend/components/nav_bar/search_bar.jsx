@@ -1,7 +1,6 @@
 import React from "react";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { FaMagnifyingGlass } from "react-icons/fa6";
 
 class SearchBar extends React.Component{
     constructor(props){
@@ -82,7 +81,7 @@ class SearchBar extends React.Component{
 
                     <div className="nav-bar-search-button-container">
                         <button className='nav-bar-search-button'>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} className='nav-bar-search-icon'/>
+                            <FaMagnifyingGlass className='nav-bar-search-icon'/>
                         </button>
                     </div>
                 </form>

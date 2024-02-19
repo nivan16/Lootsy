@@ -1,8 +1,8 @@
 import React from "react";
 import StarRatings from "react-star-ratings";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { FaEllipsis } from "react-icons/fa6";
+
 
 class ReviewIndexItemClamper extends React.Component{
     constructor(props){
@@ -116,7 +116,7 @@ class ReviewIndexItemClamper extends React.Component{
                                 className='review-item-text-clamp-toggle'
                                 onClick={this.toggleClamp}
                             >
-                                <FontAwesomeIcon icon={faEllipsis} style={{color: "#000000",}}/>
+                                <FaEllipsis className='fa-ellipsis' style={{color: "#000000",}}/>
                             </button>
                         )}
                     </div>

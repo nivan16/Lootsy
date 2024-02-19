@@ -1,9 +1,9 @@
 import React from 'react';
 import ReviewIndexContainer from '../review/review_index';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faCaretDown, faFaceFrown, faXmark} from '@fortawesome/free-solid-svg-icons';
-import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { FaCaretDown } from "react-icons/fa";
+import { FaArrowRightLong, FaFaceFrown, FaXmark, FaAngellist, FaGithub, FaLinkedin } from "react-icons/fa6";
+
 import ReviewFormContainer from '../review/review_form';
 
 class ProductShow extends React.Component {
@@ -179,7 +179,7 @@ class ProductShow extends React.Component {
         if(!this.props.product) return (
             <div className='max-body-width body-padding'>
                 <div className="product-show-unavailable-container">
-                    <FontAwesomeIcon icon={faFaceFrown} style={{color: "#878787",}} />
+                    <FaFaceFrown className='fa-face-frown' />
                     <p className='product-show-unavailable'>
                         Sorry, this item is unavailable.
                     </p>
@@ -333,7 +333,7 @@ class ProductShow extends React.Component {
                                 </button>
 
                                 <div className='fa-caret-down-container'>
-                                    <FontAwesomeIcon icon={faCaretDown} className={`fa-caret-down ${this.state.showDescription ? "expanded" : ""}`}/>                                    
+                                    <FaCaretDown className={`fa-caret-down ${this.state.showDescription ? "expanded" : ""}`}/>                                    
                                 </div>
                             </h2>
                         </div>
@@ -445,7 +445,7 @@ class ProductShow extends React.Component {
                     >
                         <div className='product-cart-added-modal-container'>
                             <span className='product-cart-added-close-button'>
-                                <FontAwesomeIcon className='fa-cart-added-modal-close-button' icon={faXmark} />
+                                <FaXmark className='fa-cart-added-modal-close-button' />
                             </span>
 
                             <div className='product-cart-added-modal-image-and-description-container'>
@@ -474,7 +474,7 @@ class ProductShow extends React.Component {
 
                             <div className='product-cart-added-modal-close-button-container'>
                                 <button className='product-cart-added-modal-close-button'>
-                                    Keep shopping <FontAwesomeIcon icon={faArrowRight} />
+                                    Keep shopping <FaArrowRightLong className='fa-arrow-right-long'/>
                                 </button>
                             </div>
                         </div>
@@ -489,7 +489,7 @@ class ProductShow extends React.Component {
                     >
                         <div className='product-purchased-modal-container'>
                             <span className='product-purchased-modal-close-button'>
-                                <FontAwesomeIcon className='fa-product-purchased-modal-close-button' icon={faXmark} />
+                                <FaXmark className='fa-product-purchased-modal-close-button' />
                             </span>
 
                             {/* Should find an image to put inside/beside the thank you msg */}
@@ -510,13 +510,13 @@ class ProductShow extends React.Component {
                              */}
                             <div className='social-links'>
                                 <a href="https://www.github.com" target="_blank">
-                                    <FontAwesomeIcon className='fa-brand' icon={faGithub} />
+                                    <FaGithub className='fa-brand fa-github' />
                                 </a>
                                 <a href="https://www.linkedin.com" target="_blank">
-                                    <FontAwesomeIcon className='fa-brand' icon={faLinkedin} />
+                                    <FaLinkedin className='fa-brand fa-linkedin' />
                                 </a>
                                 <a href="https://www.angellist.com" target="_blank">
-                                    <FontAwesomeIcon className='fa-brand' icon={faAngellist} />
+                                    <FaAngellist className='fa-brand fa-angellist' />
                                 </a>
                             </div>
                         </div>

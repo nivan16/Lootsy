@@ -50,6 +50,7 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 /* Menu Trigger Button */
 .reviews-sorting-button {
     position: relative;
+    display: flex;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     padding-left: 1.1rem;
@@ -68,8 +69,19 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
     background-color: rgb(236, 236, 236);
 }
 
+.review-sort-caret-down-container {
+    margin-left: 12px;
+    transform: translateY(13%);
+
+}
+
 .review-sort-caret-down {
-    margin-left: 0.5rem;
+    transform: rotate(0deg) scale(1.2);
+    transition: transform 225ms ease;
+}
+
+.reviews-sorting-button.expanded .review-sort-caret-down {
+    transform: rotate(-180deg) scale(1.2);
 }
 
 /* Dropdown Menu */
@@ -150,6 +162,7 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 
 .reviews-sorting-option.selected .reviews-option-check-symbol{
     display: block;
+    transform: translateY(2.5px);
 }
 
 /* ----------- Review Details ----------- */
@@ -222,7 +235,7 @@ You can use Sass (SCSS) here: http://sass-lang.com/ */
 .review-item-text-clamp-toggle .fa-ellipsis{
     height: 24px;
     width: 25px;
-    transform: translateY(1px);
+    transform: translateY(2px);
 }
 
 .review-item-text-clamp-toggle::after{

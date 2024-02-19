@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngellist, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { FaAngellist, FaGithub, FaLinkedin } from "react-icons/fa";
 
 
 const Footer = props => {
@@ -56,17 +55,17 @@ const Footer = props => {
                         <ul className='info-list'>
                             <li className='footer-social-links'>
                                <a href="#">
-                                    <FontAwesomeIcon icon={faGithub} />
+                                    <FaGithub />
                                </a>
                             </li>
                             <li className='footer-social-links'>
                                <a href="#">
-                                    <FontAwesomeIcon icon={faLinkedin} />
+                                    <FaLinkedin />
                                </a>
                             </li>
                             <li className='footer-social-links'>
                                <a href="#">
-                                    <FontAwesomeIcon icon={faAngellist} />
+                                    <FaAngellist />
                                 </a>
                             </li>
                         </ul>

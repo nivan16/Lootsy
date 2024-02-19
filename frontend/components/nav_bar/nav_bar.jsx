@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 import SearchBar from './search_bar';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { FaCartShopping } from "react-icons/fa6";
 
 class NavBar extends React.Component{
     constructor(props){
@@ -43,7 +42,7 @@ class NavBar extends React.Component{
                             </div>
                             <div className='nav-bar-cart'>
                                 <Link to='/cart'>
-                                    <FontAwesomeIcon icon={faCartShopping} className='nav-bar-cart-icon' />
+                                    <FaCartShopping className='nav-bar-cart-icon' />
                                 </Link>
                             </div>
                         </div>

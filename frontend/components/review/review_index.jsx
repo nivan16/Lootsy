@@ -5,8 +5,8 @@ import React from 'react';
 import ReviewIndexItemClamper from './review_index_item_clamper';
 import StarRatings from 'react-star-ratings';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { FaCaretDown } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa6";
 
 /*
     What properties (props) will this need?
@@ -365,7 +365,9 @@ class ReviewIndex extends React.Component{
                                     this.state.sortReviewsBy === 'suggested' ? 'Sort by: Suggested' : 'Sort by: Highest rated'
                                 }
 
-                                <FontAwesomeIcon icon={faCaretDown} className='review-sort-caret-down' />
+                                <div className='review-sort-caret-down-container' >
+                                    <FaCaretDown className='review-sort-caret-down' />
+                                </div>
                             </button>
 
                             <div className={`reviews-sort-menu ${this.state.showSortMenu ? 'expanded': ''}`}>
@@ -376,7 +378,7 @@ class ReviewIndex extends React.Component{
                                     Suggested
                                     
                                     <div className='reviews-option-check-symbol'>
-                                        <FontAwesomeIcon icon={faCheck} style={{color: "#000000",}} /> 
+                                        <FaCheck style={{color: "#000000",}} /> 
                                     </div>
                                 </button>
 
@@ -387,7 +389,7 @@ class ReviewIndex extends React.Component{
                                     Highested rated
 
                                     <div className='reviews-option-check-symbol'>
-                                        <FontAwesomeIcon icon={faCheck} style={{color: "#000000",}} /> 
+                                        <FaCheck style={{color: "#000000",}} />
                                     </div>
                                 </button>
                             </div>

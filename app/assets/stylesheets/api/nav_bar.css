@@ -115,6 +115,7 @@
 .nav-bar-search-icon{
     /* height: 100%; */
     font-size: 1.5em;
+    transform: scale(1.05) translate(-10%, 10%);
 }
 
 /* Sign In and Cart button!-------------------------------------------------------------------*/
@@ -176,11 +177,15 @@
     display: block;
     position: absolute;
 
-    top: 0;
+    /* top: 0;
     height: 100%;
     left: 1px;
-    width: 100%;
-    
+    width: 100%; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -2px;
+
     background-color: white;
     border-radius: 20px;
 
@@ -194,18 +199,19 @@
     border-color: rgba(200, 200, 200, 0.4);
     background-color: rgba(200, 200, 200, 0.4);
     
-    transform: scale(1);
+    transform: scale(1.8);
     transition: transform 75ms ease-in-out, border-color 50ms ease, background-color 50ms ease;
 }
 
 .nav-bar-cart-icon{
     position: relative;
-    padding: 0.5em;
+    height: 23px !important;
+    width: 23px !important;
 
     background-color: transparent;
     color: rgb(221, 143, 156);
-    border-radius: 20px;
-    font-size: 1.25em;
+    /* border-radius: 20px; */
+    
     cursor: pointer;
 }
 
