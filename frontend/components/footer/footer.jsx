@@ -10,7 +10,7 @@ const Footer = props => {
         <footer>
             <div className='footer-top-container'>
                 <div className='footer-top max-body-width'>                    
-                        <img src="https://cdn-icons-png.flaticon.com/64/4001/4001496.png " width="64" height="64" alt="" title="" class="img-small"></img>
+                        <img src="https://cdn-icons-png.flaticon.com/64/4001/4001496.png " width="64" height="64" alt="" title="" className="img-small"></img>
 
                         
                     <p>
