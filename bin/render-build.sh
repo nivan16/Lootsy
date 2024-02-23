@@ -4,10 +4,10 @@
 set -o errexit
 
 # Precompile assets for production
-RAILS_ENV=production bin/rails assets:precompile
+RAILS_ENV=production rails assets:precompile
 
 
 npm run build
 bundle install
-bin/rails db:migrate
-bin/rails db:seed #if needed
+rails db:migrate
+rails db:seed #if needed
