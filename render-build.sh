@@ -3,11 +3,11 @@
 # exit on error
 set -o errexit
 
-# Precompile assets for production
-bundle exec rake assets:precompile
-
 # Install gems
 bundle install
+
+# Precompile assets for production
+bundle exec rake assets:precompile
 
 # Run webpack to bundle frontend assets
 npm run build
