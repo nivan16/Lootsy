@@ -9,8 +9,7 @@ cd ..
 # Precompile assets for production
 npm run build
 
-
 # Install gems and run database migrations and seeds
 bundle install
-bin/rails db:migrate
-bin/rails db:seed #if needed
+rails db:migrate
+rails db:seed #if needed
