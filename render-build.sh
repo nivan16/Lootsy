@@ -4,8 +4,6 @@
 set -o errexit
 
 # Precompile assets for production
-bin/rails assets:precompile
-
 
 npm run build
 bundle install
