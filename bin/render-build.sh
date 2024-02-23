@@ -10,6 +10,11 @@ cd ..
 npm run build
 
 # Install gems and run database migrations and seeds
+cd ..
 bundle install
+
+cd ..
 rails db:migrate
+
+cd ..
 rails db:seed #if needed
