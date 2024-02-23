@@ -3,18 +3,20 @@
 # exit on error
 set -o errexit
 
-#change the context of the script to be the root directory
-cd ..
+ls
 
 # Precompile assets for production
 npm run build
 
 # Install gems and run database migrations and seeds
-cd ..
 bundle install
 
-cd ..
+cd ./bin
 rails db:migrate
+rails db:seed #if needed
+
+ls
 
 cd ..
-rails db:seed #if needed
+
+ls
