@@ -17,7 +17,4 @@ Rails.application.routes.draw do
     delete "/cart_item", to: "cart_items#destroy"
     delete "/cart", to: "cart_items#destroy_cart"
   end
-
-  
-  get '*path', to: "static_pages#frontend_index"
 end
