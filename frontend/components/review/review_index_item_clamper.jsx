@@ -99,7 +99,7 @@ class ReviewIndexItemClamper extends React.Component{
                     <StarRatings 
                         rating={this.props.rating}
                         starEmptyColor='lightgray'
-                        starRatedColor='rgb(139 193 124)'
+                        starRatedColor='rgb(139, 193, 124)'
                         starDimension='20px'
                         starSpacing='1px'                            
                     />

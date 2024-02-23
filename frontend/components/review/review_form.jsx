@@ -236,8 +236,8 @@ class ReviewForm extends React.Component{
                                     numberOfStars={5}
                                     
                                     starEmptyColor='lightgray'
-                                    starRatedColor='rgb(139 193 124)'
-                                    starHoverColor='rgb(139 193 124)'
+                                    starRatedColor='rgb(139, 193, 124)'
+                                    starHoverColor='rgb(139, 193, 124)'
                                     starDimension='32px'
                                     starSpacing='3px'
                                 />

@@ -151,7 +151,7 @@
     inset: 0;
     width: 100%;
     background-color: rgb(216, 160, 169);
-    border: 3px solid rgb(191 102 117);
+    border: 3px solid rgb(191, 102, 117);
     border-radius: 25px;
     transition: 225ms;
 
@@ -212,8 +212,8 @@
     border: 3px solid rgb(191 102 117); */
 
     /* Purple */
-    background-color: rgb(178 134 180);
-    border: 3px solid rgb(111 63 146);
+    background-color: rgb(178, 134, 180);
+    border: 3px solid rgb(111, 63, 146);
 
     /* Green */
     /* background-color: rgb(126 168 130 / 75%);
@@ -634,7 +634,7 @@
     border-bottom: 2px solid lightgray;
     text-align: center;
     font-size: 1.5rem;
-    color: rgb(132 50 136);
+    color: rgb(132, 50, 136);
     /* font-weight: 500; */
 
     /* margin is to make the border have a limited space */

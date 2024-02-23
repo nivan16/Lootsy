@@ -109,8 +109,8 @@
     width: 5.25rem;
     height: 2.5em;
     
-    background-color: rgb(122 187 220);
-    border: 3px solid rgb(44 102 118);
+    background-color: rgb(122, 187, 220);
+    border: 3px solid rgb(44, 102, 118);
     border-radius: 2em;
     color: white;
     cursor: pointer;
@@ -252,13 +252,13 @@
 }
 
 .session-modal-login-submit-button::after{
-    background-color: rgb(126 168 130 / 75%);
-    border: 3px solid rgb(7 118 14 / 57%);
+    background-color: rgba(126, 168, 130, 0.75);
+    border: 3px solid rgba(7, 118, 14, 0.57);
 }
 
 .session-modal-register-submit-button::after{
-    background-color: rgb(122 187 220 / 84%);
-    border: 3px solid rgb(20 141 174);
+    background-color: rgba(122, 187, 220, 0.84);
+    border: 3px solid rgb(20, 141, 174);
 }
 
 .session-modal-register-submit-button:hover::after,
