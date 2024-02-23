@@ -3,14 +3,14 @@
 # exit on error
 set -o errexit
 
+# Run webpack to bundle frontend assets
+npm run build
+
 # Install gems
 bundle install
 
 # Precompile assets for production
-bundle exec rake assets:precompile
-
-# Run webpack to bundle frontend assets
-npm run build
+rails assets:precompile
 
 # Run database migrations and seeds
 rails db:migrate
