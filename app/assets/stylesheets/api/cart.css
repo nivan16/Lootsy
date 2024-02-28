@@ -464,7 +464,7 @@ than zero) */
 
 .checkout-modal-purchase-confirmation-button::after{
     background-color: rgb(216, 160, 169);
-    border: 3px solid rgb(191 102 117);
+    border: 3px solid rgb(191, 102, 117);
 }
 
 .checkout-modal-purchase-shopping-return-button::after{
