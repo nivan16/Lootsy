@@ -18,6 +18,7 @@ class SessionModal extends React.Component{
 
         //binding methods that are invoked functional style
         this.handleChange = this.handleChange.bind(this);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
         this.handleModalSwitch = this.handleModalSwitch.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.closeSessionModal = this.closeSessionModal.bind(this);
@@ -32,6 +33,41 @@ class SessionModal extends React.Component{
                 password: ""
             }
         });
+    }
+
+    async handleDemoLogin(e){
+        e.preventDefault();
+
+        if(!($.isEmptyObject(this.props.errors))){
+            await this.props.clearSessionErrors();
+        }
+
+        if(this.state.register){
+            await this.resetState();
+        }
+        else{//login
+            const { email, name, password } = this.state.user;
+            const allFieldsDefault = (email === '' && name === '' && password === '');
+
+            if(!allFieldsDefault){
+                await this.resetState();
+            }
+        }
+        
+        await this.setState(({
+            user: {
+                email: 'demo@aa.io',
+                password: 'password'
+            }
+        }))
+        debugger
+
+        await this.props.loginCurrentUser(this.state.user) 
+        
+        this.props.closeModal();
+        this.resetState();
+        
+
     }
 
     handleSubmit(e){
@@ -105,7 +141,7 @@ class SessionModal extends React.Component{
 
     render(){
 
-        const actionRequired = this.props.isOpen === "actionRequired";
+        const actionRequired = typeof this.props.isOpen === 'string';
         const emailError = this.props.errors['email'];
         const passwordError = this.props.errors['password'];
         const nameError = this.props.errors['name'];
@@ -119,7 +155,7 @@ class SessionModal extends React.Component{
         //  as it will either render a signing/signup button or one specific to the user with a drop down
         return !!this.props.isOpen ? (
             <div className='session-modal-background' onMouseDown={this.closeSessionModal}>
-                <div className='session-modal-wrapper'>
+                <div className={`session-modal-wrapper ${this.state.register ? 'session-modal-wrapper-registration' : ''}`}>
                     <form className='session-modal-form' onSubmit={this.handleSubmit}>
                
                         
@@ -211,14 +247,30 @@ class SessionModal extends React.Component{
                         {
                             // this.props.errors instanceof Array ? this.props.errors.map( err => this.renderErrorMessage(err)) : null
                         }
-                        
+
                         {this.state.register ? (
-                                <div className='session-modal-form-button-container'>
-                                    <button type="submit" className='session-modal-form-button session-modal-register-submit-button'>register</button>
+                                <div className='session-modal-form-buttons-container'>
+                                    <div className='session-modal-form-button-container'>
+                                        <button type="submit" className='session-modal-form-button session-modal-register-submit-button'>register</button>
+                                    </div>
+
+                                    <div className='session-modal-demo-user-button-container'>
+                                        <button type='button' className='session-modal-demo-user-login-button' onClick={this.handleDemoLogin}>
+                                            sign in as a demo user
+                                        </button>
+                                    </div>
                                 </div>
                             ) : (
-                                <div className='session-modal-form-button-container'>
-                                    <button type="submit" className='session-modal-form-button session-modal-login-submit-button'>sign in</button>
+                                <div className='session-modal-form-buttons-container'>
+                                    <div className='session-modal-form-button-container'>
+                                        <button type="submit" className='session-modal-form-button session-modal-login-submit-button'>sign in</button>
+                                    </div>
+
+                                    <div className='session-modal-demo-user-button-container'>
+                                        <button type='button' className='session-modal-demo-user-login-button' onClick={this.handleDemoLogin}>
+                                            sign in as a demo user
+                                        </button>
+                                    </div>
                                 </div>
                             )
                         }

@@ -359,6 +359,7 @@
     width: 30rem;
     height: 20rem;
     background-color: white;
+    border-radius: 15px;
 }
 
 .product-cart-added-modal-image-and-description-container {

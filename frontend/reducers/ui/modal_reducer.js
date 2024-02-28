@@ -13,7 +13,7 @@ const modalReducer = ( state = _closedModal, action) => {
         case CLOSE_MODAL:
             return { isOpen: false };
         case OPEN_MODAL_ACTION_REQUIRED:
-            return { isOpen: "actionRequired" };
+            return { isOpen: action.modalType };
         default:
             return state;
     };

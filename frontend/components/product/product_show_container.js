@@ -18,8 +18,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
     requestProduct: productId => dispatch(requestProduct(productId)),
     updateCartItem: cartItem => dispatch(updateCartItem(cartItem)),
-    openModalActionRequired: () => dispatch(openModalActionRequired()),
-
+    openModalActionRequired: (modalType) => dispatch(openModalActionRequired(modalType)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductShow);

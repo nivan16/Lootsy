@@ -37,15 +37,40 @@ class ProductShow extends React.Component {
         //if the session modal was opened
         //Nevermind. Its the second condition for some reason!!!!!!
         //  **Its because either the first if statement or the else statement isnt clear enough
-        if ( (prevProps.isOpen === 'actionRequired') && (this.props.isOpen === false) ) {
+        if ( (typeof prevProps.isOpen === 'string') && (this.props.isOpen === false) ) {
             //if it was opened due to the add review button &
             //  if it was only opened on the prior component update
             // debugger
             // if the user logged in or registered when they opened the session modal
             if (this.props.currentUser !== null) {
-                this.setState({
-                    showReviewModal: true
-                });
+                
+                switch (prevProps.isOpen) {
+                    case 'productShowReviewModal':
+                        this.setState({
+                            showReviewModal: true
+                        });
+                    case 'productShowCartModal':
+                        this.props.updateCartItem({
+                            productId: this.props.productId,
+                            shopperId: this.props.currentUser.id,
+                            quantity: this.state.quantity
+                        })
+                        .then( data => this.setState({
+                            showAddedToCartModal: true
+                        }));
+                    case 'productShowPurchased':
+                        this.props.updateCartItem({
+                            productId: this.props.productId,
+                            shopperId: this.props.currentUser.id,
+                            quantity: this.state.quantity
+                        }).then( data => {
+                            this.props.history.push('/cart');
+                        });
+                    default:
+                        break;
+                }
+
+                
             };
             
         };
@@ -55,7 +80,7 @@ class ProductShow extends React.Component {
         e.stopPropagation();
         e.preventDefault();
 
-        if(['product-cart-added-modal-background', 'product-cart-added-modal-close-button'].includes(e.target.className)){
+        if(['product-cart-added-modal-background', 'product-cart-added-modal-close-button', 'product-cart-added-close-button'].includes(e.target.className)){
             this.setState({
                 showAddedToCartModal: false
             });
@@ -99,9 +124,18 @@ class ProductShow extends React.Component {
         e.stopPropagation();
         e.preventDefault();
 
-        this.setState({
-            showPurchasedModal: true
-        });
+        if(this.props.currentUser === null){   
+            this.props.openModalActionRequired('productShowPurchased');
+        }
+        else{
+            this.props.updateCartItem({
+                productId: this.props.productId,
+                shopperId: this.props.currentUser.id,
+                quantity: this.state.quantity
+            }).then( data => {
+                this.props.history.push('/cart');
+            });
+        }
     }
 
     handleQuantityChange(e){
@@ -125,7 +159,7 @@ class ProductShow extends React.Component {
         else if(this.props.currentUser === null){
             //Open session modal and pass a message from here
             //  to let it know to render title "Sign in to continue" instead     
-            this.props.openModalActionRequired();
+            this.props.openModalActionRequired('productShowReviewModal');
         };
     }
 
@@ -134,7 +168,7 @@ class ProductShow extends React.Component {
         e.preventDefault();
     
         if(this.props.currentUser === null){
-
+            this.props.openModalActionRequired('productShowCartModal');
         }
         else {
             this.props.updateCartItem({

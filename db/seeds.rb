@@ -10,6 +10,9 @@ CartItem.destroy_all
 Product.destroy_all
 User.destroy_all
 
+demo_user = User.create!(email: 'demo@aa.io', name: 'Demo User', password: 'password')
+
+
 u1 = User.create!(email: 'looter@loot.com', name: 'hiroyuki', password: 'password')
 u2 = User.create!(email: 'bizarre@adventure.com', name: 'yoshimitsu', password: 'ultimatelifeform')
 u3 = User.create!(email: 'roamingseller@hyrule.com', name: 'pochiko', password: 'madeinheaven')
@@ -592,6 +595,20 @@ cart_item4 = CartItem.create!(shopper_id: u1.id, product_id: mushroom_bag.id, qu
 # review1 = Review.create!(product_id: stand_arrow.id, reviewer_id: u5.id, rating: 4, review: "This is an awesome collectable, but I feel sick after i nicked my skin with it")
 
 # review2 = Review.create!(product_id: pokeball.id, reviewer_id: u5.id, rating: 5, review: nil)
+
+products_demo_user_reviews = Product.limit(10)
+sample_reviews = ['This product is solid', 'Great product!', 'I really love this product!']
+
+products_demo_user_reviews.each do |product|
+    rating = rand(3..5)
+
+    Review.create!(
+        product_id: product.id,
+        reviewer_id: demo_user.id,
+        rating: rating,
+        review: sample_reviews[rating - 3]
+    )
+end
 
 review3 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u1.id, rating: 2, review: nil)
 review4 = Review.create!(product_id: mushroom_bag.id, reviewer_id: u2.id, rating: 5, review: nil)

@@ -291,7 +291,7 @@ than zero) */
     pointer-events: none;
 }
 
-/* Empty Cart Page*/
+/* Empty Cart Page */
 .empty-cart-guarantee{
     margin-top: 1rem;
     background-color: #ffd9e096;
@@ -311,6 +311,171 @@ than zero) */
 
     text-align: center;
     text-decoration: underline !important;
+}
+
+
+/* Cart Checkout Modal */
+.cart-checkout-modal-wrapper{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 225ms ease-in-out;
+}
+
+.cart-checkout-modal-wrapper.open{
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s, opacity 225ms ease-in-out;
+}
+
+.cart-checkout-modal-wrapper.closed{
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s 225ms, opacity 225ms ease-in-out;
+}
+
+/* Checkout background */
+.cart-checkout-modal-background {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+
+/* -------Modal------- */
+.checkout-modal-container {    
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 31rem;
+    height: 20rem;
+    background-color: white;
+    border-radius: 15px;
+}
+
+/* Top Right "x" Close Button */
+.checkout-modal-outside-close-button {
+    position: absolute;
+    top: 0.25rem;
+    right: -3rem;
+    
+    height: 2.4rem;
+    width: 2.4rem;
+    background-color: transparent;
+    /* color: white; */
+    cursor: pointer;
+
+    transition: 225ms ease-in-out;
+    z-index: 20;
+}
+
+.checkout-modal-outside-close-button::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 2.4rem;
+    width: 2.4rem;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    transform: scale(0.01);
+    transition: 225ms ease-in-out;
+}
+
+.checkout-modal-outside-close-button:hover::after {
+    transform: scale(1.2);
+}
+
+.fa-checkout-modal-close-button {
+    position: relative;
+    height: 2.4rem;
+    width: 2.4rem;
+    
+    color: white;
+}
+
+/* Purchase Confirmation*/
+.checkout-modal-title{
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Price */
+.checkout-modal-price-total{
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Checkout Modal Message*/
+.checkout-modal-message-container{
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-modal-message{
+    margin-top: 0.75rem;
+    padding: 1rem 1.5rem;
+    letter-spacing: 0.1px;
+    line-height: 1.2;
+}
+
+/* Checkout Modal Buttons */
+.checkout-modal-buttons-container{
+    position: absolute;
+    top: 71%;
+    /* bottom: 20%; */
+    left: 5%;
+    right: 4.5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.checkout-modal-purchase-confirmation-button, .checkout-modal-purchase-shopping-return-button{
+    height: 3.1rem;
+    width: 100%;
+    margin-top: 1em;
+    border-color: transparent;
+    border-radius: 2em;
+    background-color: transparent; /* This is pretty close to the perfect color */
+    cursor: pointer;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 500;
+    /* font-family: sans-serif; */
+    /* font-weight: 500; */
+    transform: scale(1.0000000000001);
+    transition: 225ms ease-in-out;
+}
+
+.checkout-modal-purchase-confirmation-button::after, .checkout-modal-purchase-shopping-return-button::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    border-radius: 2em;
+    transition: 150ms ease-in-out;
+    z-index: -5;
+}
+
+.checkout-modal-purchase-confirmation-button::after{
+    background-color: rgb(216, 160, 169);
+    border: 3px solid rgb(191 102 117);
+}
+
+.checkout-modal-purchase-shopping-return-button::after{
+    background-color: rgb(178, 134, 180);
+    border: 3px solid rgb(111, 63, 146);
+}
+
+
+.checkout-modal-purchase-confirmation-button:hover::after,
+.checkout-modal-purchase-shopping-return-button:hover::after{
+    transform: scale(1.03, 1.06) !important;
 }
 
 

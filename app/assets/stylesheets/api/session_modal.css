@@ -20,15 +20,19 @@
 .session-modal-wrapper{
     box-sizing: border-box;
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 30em;
-    width: 24em;
+    height: 30rem;
+    width: 24rem;
     background-color: white;
     padding: 2em;
     border-radius: 1em;
     transition: 300ms;
+}
+
+.session-modal-wrapper.session-modal-wrapper-registration{
+    height: 32rem;
 }
 
 /* The beginning of the magic */
@@ -217,14 +221,14 @@
 
 
 /* This is the form submission button ----------------------------------------------*/
-.session-modal-form-button-container{
+.session-modal-form-buttons-container{
     position: absolute;
     bottom: 7%;
     left: 7.8%;
     right: 7.2%;
 }
 
-.session-modal-form-button{
+.session-modal-form-button, .session-modal-demo-user-login-button{
     height: 3.1rem;
     width: 100%;
     margin-top: 1em;
@@ -241,7 +245,11 @@
     transition: 225ms ease-in-out;
 }
 
-.session-modal-form-button::after{
+.session-modal-demo-user-login-button{
+    margin-top: 0.5rem !important;
+}
+
+.session-modal-form-button::after, .session-modal-demo-user-login-button::after{
     content: "";
     position: absolute;
     inset: 0;
@@ -261,7 +269,13 @@
     border: 3px solid rgb(20, 141, 174);
 }
 
+.session-modal-demo-user-login-button::after{
+    background-color: rgb(178, 134, 180);
+    border: 3px solid rgb(111, 63, 146);
+}
+
 .session-modal-register-submit-button:hover::after,
-.session-modal-login-submit-button:hover::after{
+.session-modal-login-submit-button:hover::after,
+.session-modal-demo-user-login-button:hover::after{
     transform: scale(1.03, 1.06) !important;
 }

@@ -11,6 +11,7 @@ export const closeModal = () => ({
     type: CLOSE_MODAL
 });
 
-export const openModalActionRequired = () => ({
-    type: OPEN_MODAL_ACTION_REQUIRED
+export const openModalActionRequired = (modalType) => ({
+    type: OPEN_MODAL_ACTION_REQUIRED,
+    modalType
 })
