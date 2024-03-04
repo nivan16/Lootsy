@@ -39,7 +39,7 @@ class ProductIndex extends React.Component{
                             <li className='index-product' key={idx}>
                                 <Link to={`/products/${product.id}`}>
                                     <div className="index-product-image-container">
-                                        <img className="index-product-image" src={`https://picsum.photos/90${idx}`}>
+                                        <img className="index-product-image" src={product.image === '' ? `https://picsum.photos/90${idx}` : product.image}>
                                         </img>
                                     </div>
                                     <div className="index-product-info-container">

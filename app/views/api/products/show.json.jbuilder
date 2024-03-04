@@ -1,6 +1,6 @@
 json.product do 
     json.set! @product.id do
-        json.extract! @product, :id, :name, :category, :description, :owner_id, :stock
+        json.extract! @product, :id, :name, :category, :image, :description, :owner_id, :stock
         json.price @product.price_string
         json.avg_rating @product.avg_rating
     end

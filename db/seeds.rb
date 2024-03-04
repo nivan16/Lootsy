@@ -82,6 +82,7 @@ pink_cinna_case = Product.create!(
         ❀ Easy to install and remove.
         
         The phone case is flexible and durable, dirt-resistant, to protect your mobile phone against any drops or bumps.",
+    image: 'https://i.etsystatic.com/41582462/r/il/426cf4/5389971410/il_794xN.5389971410_jfu0.jpg',
     category: 'phone cases', 
     price: 14.99,
     owner_id: u_lorem_phone_case1.id,
@@ -95,6 +96,7 @@ japanese_street_phone_cases = Product.create!(
         Immerse yourself in the picturesque scenery of cherry blossom trees, traditional lanterns, and vibrant storefronts, creating a harmonious blend of urban energy and natural tranquility. Crafted with precision and care, this durable case offers optimal protection against everyday bumps and scratches while maintaining a slim and lightweight design.
         
         The pink and green colour scheme adds a fresh and playful touch, perfectly complementing your personal style. Elevate your phone's aesthetic with our Japanese Street Landscape Phone Case and embark on a journey through the vibrant streets of Japan wherever you go.",
+    image: 'https://i.etsystatic.com/27829035/r/il/ca1398/5649562662/il_794xN.5649562662_9ct5.jpg',
     category: 'phone cases',
     price: 24.99,
     owner_id: u_lorem_phone_case2.id,
@@ -122,6 +124,7 @@ cartoon_bear_case = Product.create!(
         🌸 Colours may differ slightly from product photos due to lighting.
         
         Thank you so much for purchasing from us!!!',
+    image: '',
     category: 'phone cases',
     price: 19.99,
     owner_id: u_lorem_phone_case3.id,
@@ -135,6 +138,7 @@ three_d_bear_case = Product.create!(
         2. Delays are inevitable sometimes. Items will be shipped within 1-3 days. Once we shipped the item, we make sure that we are coordinating with the courier to ensure the safeness of the item upon transit. In case you prefer to rush orders, we will request you to pay for extra shipping fee.
         
         All of our products are custom-made with love and care in our workshop. We hope you will enjoy them!',
+    image: '',
     category: 'phone cases',
     price: 22.99,
     owner_id: u_lorem_phone_case4.id,
@@ -148,6 +152,7 @@ cat_case_with_wristband = Product.create!(
         – Made from premium quality soft silicone.
         – Possesses soft button covers that protect from dust and/or dirt.
         – Precision cut ports provide easy access.',
+    image: '',
     category: 'phone cases',
     price: 21.49,
     owner_id: u_lorem_phone_case5.id,
@@ -170,6 +175,7 @@ strawberry_earrings = Product.create!(
         
         As a thank you for your support, we will provide you with a coupon for your next purchase. ❤',
     category: 'jewelry',
+    image: 'https://i.etsystatic.com/37278676/r/il/1fb937/5106461689/il_1140xN.5106461689_dunw.jpg',
     price:  17.99,
     owner_id: u_lorem_jewelry1.id,
     stock: 14
@@ -193,6 +199,7 @@ macaron_earrings = Product.create!(
         
         *Each are also unique and were carefully made by hand, so, the item you receive could be look a little bit different from the photos.*',
     category: 'jewelry',
+    image: 'https://i.etsystatic.com/7999062/r/il/0d9475/4655496141/il_1140xN.4655496141_m6vi.jpg',
     price: 27.99,
     owner_id: u_lorem_jewelry2.id,
     stock: 14
@@ -206,6 +213,7 @@ cat_in_plant_earrings = Product.create!(
         add a playful yet sophisticated touch to your ensemble. Whether you're heading to a casual outing or a garden party, these earrings celebrate 
         both companionship and flora, allowing you to express your style with a touch of charm and originality.",
     category: 'jewelry',
+    image: 'https://i.etsystatic.com/26353633/r/il/23653b/5255852841/il_1140xN.5255852841_irhv.jpg',
     price: 16.99,
     owner_id: u_lorem_jewelry3.id,
     stock: 9
@@ -222,6 +230,7 @@ bread_cat_earrings = Product.create!(
         ☆ Earring hooks are 925 sterling silver.
         ☆ For the longevity of your earrings, please do not shower while wearing them or expose them to water for long periods of time.",
     category: 'jewelry',
+    image: 'https://i.etsystatic.com/32424698/r/il/7377b8/4576817167/il_1140xN.4576817167_knqf.jpg',
     price:  9.99,
     owner_id: u_lorem_jewelry4.id,
     stock: 11
@@ -235,6 +244,7 @@ lily_of_valley_earrings = Product.create!(
         Earrings are made with the same high-quality glass beads and are of a classic dangle 
         style with a roughly 4cm drop (this length cannot be changed), featuring a fish hook back.',
     category: 'jewelry',
+    image: 'https://i.etsystatic.com/34927393/r/il/5febf7/4986113032/il_1140xN.4986113032_5b1h.jpg',
     price: 31.99,
     owner_id: u_lorem_jewelry5.id,
     stock: 5
@@ -247,6 +257,7 @@ ruby_the_cow = Product.create!(
     name: 'Ruby the Strawberry Cow',
     description: "This is Ruby, the Strawberry Cow. She's handmade, adorable, and has a magnetic/removable strawberry on top of her wittle precious head. Measures approximately 8 inches tall.",
     category: 'plushies',
+    image: 'https://i.etsystatic.com/24285148/r/il/475987/5262154927/il_1140xN.5262154927_8mlu.jpg',
     price: 31.99,
     owner_id: u_lorem_plushies1.id,
     stock: 4
@@ -258,6 +269,7 @@ milkshake_the_cow = Product.create!(
         She's made with medium length faux fur that is super soft, and is a sweet pink color. She has embroidered 
         features, and a minky fabric for her belly and inside of her ears.",
     category: 'plushies',
+    image: 'https://i.etsystatic.com/13983151/r/il/4bdbac/5688342303/il_1140xN.5688342303_9guu.jpg',
     price: 32.99,
     owner_id: u_lorem_plushies1.id,
     stock: 8
@@ -269,6 +281,7 @@ buff_hello_kitty = Product.create!(
     name: 'Buff Hello Kitty',
     description: 'A big buff Hello Kitty to protect you from evil. Can also act as a boyfriend replacement.',
     category: 'plushies',
+    image: '',
     price: 28.99,
     owner_id: u_lorem_plushies2.id,
     stock: 19
@@ -285,6 +298,7 @@ chonky_bunny = Product.create!(
         
         DISCLAIMER: Colors may vary between your screen and the actual product. As all products are handmade, minor flaws and slight differences may still be possible.",
     category: 'plushies',
+    image: 'https://i.etsystatic.com/27845741/r/il/02257f/5543412911/il_1140xN.5543412911_o54t.jpg',
     price: 42.99,
     owner_id: u_lorem_plushies3.id,
     stock: 11
@@ -297,6 +311,7 @@ candy_snake_plushie_set = Product.create!(
         
         Perfect for any plush collector! 💖",
     category: 'plushies',
+    image: 'https://i.etsystatic.com/28201213/r/il/f9d7b7/5700342817/il_1140xN.5700342817_qc6c.jpg',
     price:  45.99,
     owner_id: u_lorem_plushies4.id,
     stock: 2
@@ -315,6 +330,7 @@ mushroom_bag = Product.create!(
         The bottom width of this bag is approximately 4.5 inches, the widest part of the mushroom cap is about 7 inches, the height is around 6 inches, and the strap length is usually about 43 inches. 
         However, as you know, handmade products may have slight variations, but the actual size won't differ too much!",
     category: 'bags',
+    image: 'https://i.etsystatic.com/37862971/r/il/ad8eba/5557104233/il_1140xN.5557104233_bzr3.jpg',
     price:  22.99,
     owner_id: u_lorem_bags1.id,
     stock: 12
@@ -338,6 +354,7 @@ floral_bag = Product.create!(
         
         Care instructions: hand wash/wash on delicate at a temperature no higher than 86 ºF (or 30°С)',
     category: 'bags',
+    image: 'https://i.etsystatic.com/35871599/r/il/ad38dc/5308167088/il_1140xN.5308167088_ovf2.jpg',
     price: 44.99,
     owner_id: u_lorem_bags2.id,
     stock: 21
@@ -359,6 +376,7 @@ strawberry_crossbody_bag = Product.create!(
         
         Note: To increase bag life, make sure not to overstuff the bag and keep out of prolonged exposure to direct sunlight/any extreme weather!',
     category: 'bags',
+    image: 'https://i.etsystatic.com/24895517/r/il/d5eb2b/5355305096/il_1140xN.5355305096_t36q.jpg',
     price: 34.99,
     owner_id: u_lorem_bags3.id,
     stock: 6
@@ -383,6 +401,7 @@ cat_potion_bag = Product.create!(
         *WASHING INSTRUCTION: Handwash recommended, and it is highly recommended to air dry only. You can machine wash in cold water, but fabric discoloration is at your own risk. 
         Additionally, if you plan to iron the bag, flip the pattern to the back or place an extra layer of fabric over the design to protect it from heat damage.*",
     category: 'bags',
+    image: 'https://i.etsystatic.com/40679511/r/il/8ae590/5433409083/il_1140xN.5433409083_100k.jpg',
     price:  25.99,
     owner_id: u_lorem_bags4.id,
     stock: 14
@@ -410,6 +429,7 @@ convertible_cat_bag = Product.create!(
         - Sometimes PU leather can be mishapened during shipping, especially during the warmer months and longer shipping routes. Regular use/wear will usually fill out and mishapening of the center 
         of the bag; for the free edges (like the ears and bottom of the bag,) the material can be warmed gently with a hair dryer or heating pad and smoothed into place!',
     category: 'bags',
+    image: 'https://i.etsystatic.com/28319596/r/il/0b632a/4864776424/il_1140xN.4864776424_1dan.jpg',
     price: 43.99,
     owner_id: u_lorem_bags5.id,
     stock: 1
@@ -431,6 +451,7 @@ cat_and_dog_keychain = Product.create!(
         🌸 NOTES 🌸
         Please note that the colour of images may vary from screen to screen due to photography, lighting and screen settings. Minor errors may be possible as these products are handmade.',
     category: 'keychains',
+    image: 'https://i.etsystatic.com/11254697/r/il/dae07c/5429331842/il_1140xN.5429331842_r48z.jpg',
     price: 12.99,
     owner_id: u_lorem_keychains1.id,
     stock: 17
@@ -449,6 +470,7 @@ flower_cow_keychain = Product.create!(
         
         Please note that colors may vary from different screens.',
     category: 'keychains',
+    image: 'https://i.etsystatic.com/29881738/r/il/c29cdb/5180016549/il_794xN.5180016549_pc4s.jpg',
     price:  8.99,
     owner_id: u_lorem_keychains2.id,
     stock: 10
@@ -458,6 +480,7 @@ cinnamoroll_swirlcake_keychain = Product.create!(
     name: 'Cinnamoroll Swirlcake Keychain',
     description: "Looking for a fun way to show off your love for Sanrio characters? Our Cinnamoroll keychain is perfect for you! With its adorable features, it's sure to bring a smile to your face every time you see it.",
     category: 'keychains',
+    image: 'https://i.etsystatic.com/16719710/r/il/37af93/5659111698/il_794xN.5659111698_dvjl.jpg',
     price: 4.99,
     owner_id: u_lorem_keychains3.id,
     stock: 24
@@ -480,6 +503,7 @@ gameboy_keychain = Product.create!(
         ♦ We create our products with love and passion.
         ♦ All items are quality assured, to make sure you receive the best quality product possible!',
     category: 'keychains',
+    image: 'https://i.etsystatic.com/14085821/r/il/623c62/3215094120/il_1140xN.3215094120_ik2q.jpg',
     price:  9.99,
     owner_id: u_lorem_keychains4.id,
     stock: 2
@@ -496,6 +520,7 @@ cherry_keychain_set = Product.create!(
         Whether you're looking for a fun and playful accessory to brighten up your day or a unique gift for a friend or family member, this cherry keychain is 
         sure to delight and bring a smile to your face. Order now and add some fruity charm to your everyday life!",
     category: 'keychains',
+    image: 'https://i.etsystatic.com/16719710/r/il/de5cf4/5709739461/il_1140xN.5709739461_r4d1.jpg',
     price: 7.99,
     owner_id: u_lorem_keychains5.id,
     stock: 1
@@ -519,6 +544,7 @@ sakura_resin_keycaps = Product.create!(
         
         ♡ Color varies as it is shown on the listing. Different screens may show different colors.",
     category: 'gaming accessories',
+    image: 'https://i.etsystatic.com/15174309/r/il/266d99/3581177974/il_1140xN.3581177974_308b.jpg',
     price: 22.99,
     owner_id: u_lorem_gaming1.id,
     stock: 5
@@ -537,6 +563,7 @@ kirby_mouse_pad = Product.create!(
         ✨ Thickness: 3 millimeters
         ✨ Materials: Rubber pad',
     category: 'gaming accessories',
+    image: '',
     price:  39.99,
     owner_id: u_lorem_gaming2.id,
     stock: 4
@@ -551,6 +578,7 @@ forest_switch_case = Product.create!(
         🐰The card storage boxes can be detached and attached easily. Each box can hold one game card.
         🐰THERE ARE 4 CLIP/BUCKLES ON THE BOTTOM SIDE OF THE CASE, MAKE SURE YOU INSTALL THE BOTTOM SIDE FIRST, AND PUSH HARD TO HEAR 4 'CLICK' SOUNDS TO FASTEN IT TO THE CORRECT POSITION.",
     category: 'gaming accessories',
+    image: 'https://i.etsystatic.com/35721451/r/il/c42ca8/4629695532/il_1140xN.4629695532_qua1.jpg',
     price: 17.99,
     owner_id: u_lorem_gaming3.id,
     stock: 7
@@ -560,6 +588,7 @@ strawberry_switch_thumbgrips = Product.create!(
     name: '2pc Strawberry Nintendo Switch JoyCon Thumb Grips',
     description: '2pc Strawberry Nintendo Switch JoyCon Thumb Grips',
     category: 'gaming accessories',
+    image: 'https://i.etsystatic.com/15150961/r/il/c9bc80/4946103249/il_1140xN.4946103249_sup0.jpg',
     price: 5.99,
     owner_id: u_lorem_gaming4.id,
     stock: 11
@@ -581,6 +610,7 @@ sakura_pc_fan_cover = Product.create!(
         
         I hope you enjoy this item.',
     category: 'gaming accessories',
+    image: 'https://i.etsystatic.com/23051037/r/il/7f2c58/3050567058/il_1140xN.3050567058_gcer.jpg',
     price: 38.99,
     owner_id: u_lorem_gaming5.id,
     stock: 1

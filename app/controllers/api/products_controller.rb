@@ -56,19 +56,12 @@ class Api::ProductsController < ApplicationController
                 'Pink and White Embroidered Floral Canvas Bag Set'
             ]
 
-
-            
-
             @products = Product
                 .where(name: home_page_products)
                 .preload(:owner, :user_reviews)
-                
-
-            
+                  
             render :index
             
-
-
         elsif params.has_key?(:category)
             @products = Product
                 .where(category: params[:category])

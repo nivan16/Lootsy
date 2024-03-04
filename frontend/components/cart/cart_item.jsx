@@ -51,7 +51,7 @@ class CartItem extends React.Component{
                     
                     <div className='cart-item-wrapper'>
                         <div className='cart-item-image'>
-                            <img className="index-product-image" src={`https://picsum.photos/90${Math.floor(Math.random()*9)}`}>
+                            <img className="index-product-image" src={this.props.cartItem.image === '' ? `https://picsum.photos/90${Math.floor(Math.random()*9)}` : this.props.cartItem.image}>
                             </img>
                         </div>
 

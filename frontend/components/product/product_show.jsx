@@ -231,7 +231,7 @@ class ProductShow extends React.Component {
             </option>    
         ));
 
-        
+        const productImage = this.props.product.image === '' ? 'https://picsum.photos/900' : this.props.product.image;
         
         https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg
         return (
@@ -263,7 +263,7 @@ class ProductShow extends React.Component {
                                 }
                                 {/* <img src={"https://i.etsystatic.com/26339184/r/il/672aaf/5609400017/il_794xN.5609400017_tglw.jpg"}>
                                 </img> */}
-                                <img src='https://i.etsystatic.com/37862971/r/il/ad8eba/5557104233/il_794xN.5557104233_bzr3.jpg' alt='mushroom bag'>
+                                <img src={productImage}>
                                 </img>
                             </div>
                         </div>
@@ -484,7 +484,7 @@ class ProductShow extends React.Component {
 
                             <div className='product-cart-added-modal-image-and-description-container'>
                                 <div className='product-modal-image-container'>
-                                    <img className="product-modal-image" src={"https://i.pinimg.com/originals/33/9e/1b/339e1b7693b8132ed5393d34eaddb52b.jpg"}>
+                                    <img className="product-modal-image" src={productImage}>
                                     </img>
                                 </div>
                                 
