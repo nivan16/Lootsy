@@ -489,7 +489,7 @@ class ProductShow extends React.Component {
                                 </div>
                                 
                                 <p className='product-cart-added-modal-description'>
-                                    1 item added to cart
+                                    {this.state.quantity} item(s) added to cart!
                                 </p>
                             </div>
 
