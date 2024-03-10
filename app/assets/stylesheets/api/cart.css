@@ -432,7 +432,7 @@ than zero) */
     left: 5%;
     right: 4.5%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .checkout-modal-purchase-confirmation-button, .checkout-modal-purchase-shopping-return-button{
@@ -461,6 +461,8 @@ than zero) */
     transition: 150ms ease-in-out;
     z-index: -5;
 }
+
+
 
 .checkout-modal-purchase-confirmation-button::after{
     background-color: rgb(216, 160, 169);

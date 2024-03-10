@@ -36,7 +36,7 @@ class Cart extends React.Component{
     closeCheckoutModal(e){
         e.preventDefault();
 
-        if(['cart-checkout-modal-background', 'checkout-modal-outside-close-button'].includes(e.target.className)){
+        if(['cart-checkout-modal-background', 'checkout-modal-outside-close-button','checkout-modal-purchase-shopping-return-button'].includes(e.target.className)){
             this.setState({
                 checkoutModal: false
             });
@@ -247,7 +247,7 @@ class Cart extends React.Component{
                                 </button>
 
                                 <button className='checkout-modal-purchase-shopping-return-button'>
-                                    continue shopping
+                                    keep shopping
                                 </button>
                             </div>
                         </div>
