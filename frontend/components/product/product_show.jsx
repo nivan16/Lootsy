@@ -502,13 +502,13 @@ class ProductShow extends React.Component {
                                 <button className='product-cart-added-modal-redirect-to-cart-button'
                                     onClick={this.redirectToCart}    
                                 >
-                                    View cart & check out
+                                    view cart & check out
                                 </button>
                             </div>
 
                             <div className='product-cart-added-modal-close-button-container'>
                                 <button className='product-cart-added-modal-close-button'>
-                                    Keep shopping <FaArrowRightLong className='fa-arrow-right-long'/>
+                                    keep shopping <FaArrowRightLong className='fa-arrow-right-long'/>
                                 </button>
                             </div>
                         </div>
