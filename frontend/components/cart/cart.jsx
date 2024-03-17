@@ -106,7 +106,7 @@ class Cart extends React.Component{
                         <h1 className='cart-product-amount'>
                             {
                                 cartItemAmount === 1 ? ( 
-                                    cartItemAmount + ' items in your cart'
+                                    cartItemAmount + ' item in your cart'
                                 ) : (
                                     cartItemAmount + ' items in your cart'
                                 )

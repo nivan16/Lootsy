@@ -563,7 +563,7 @@ kirby_mouse_pad = Product.create!(
         ✨ Thickness: 3 millimeters
         ✨ Materials: Rubber pad',
     category: 'gaming accessories',
-    image: '',
+    image: 'https://i.etsystatic.com/42608576/r/il/69351f/5530269020/il_794xN.5530269020_fyza.jpg',
     price:  39.99,
     owner_id: u_lorem_gaming2.id,
     stock: 4
