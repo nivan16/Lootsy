@@ -444,6 +444,7 @@ class ProductShow extends React.Component {
                     {/* Should it just be like this, passing the showReviewModal condition here so everything has a more proper seperation of concern? */}
                     <ReviewFormContainer
                         product={this.props.product}
+                        productImage={productImage}
                         productOwnerName={this.props.users[this.props.product.ownerId].name}
                         review={this.props.currentUser !== null ? this.props.reviews[this.props.currentUser.id] : undefined}
                         showReviewModal={this.state.showReviewModal}

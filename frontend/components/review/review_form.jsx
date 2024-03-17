@@ -206,7 +206,7 @@ class ReviewForm extends React.Component{
 
                             <div className="review-form-product-info-container">
                                 <div className="review-form-product-image-container">
-                                    <img src="https://i.etsystatic.com/26339184/r/il/672aaf/5609400017/il_794xN.5609400017_tglw.jpg" alt="thecutekirbster" />
+                                    <img src={this.props.productImage} />
                                 </div>
 
                                 <div className="review-form-product-name-and-owner-container">
