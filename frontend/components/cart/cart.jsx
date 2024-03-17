@@ -51,7 +51,7 @@ class Cart extends React.Component{
         //Or a separate page that gives thanks while also being a
         // pretty pseudo application page?
         this.props.deleteCart(this.props.currentUser.id)
-            .then( () => this.props.history.push('/'));
+            .then( () => this.props.history.push('/cart'));
     }
 
 
@@ -242,11 +242,11 @@ class Cart extends React.Component{
                             </div>
 
                             <div className='checkout-modal-buttons-container'>
-                                <button className='checkout-modal-purchase-confirmation-button'>
+                                <button className='checkout-modal-purchase-confirmation-button' onClick={this.handleCheckout}>
                                     purchase items
                                 </button>
 
-                                <button className='checkout-modal-purchase-shopping-return-button'>
+                                <button className='checkout-modal-purchase-shopping-return-button' >
                                     keep shopping
                                 </button>
                             </div>

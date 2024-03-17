@@ -44,6 +44,8 @@ class ProductShow extends React.Component {
             // if the user logged in or registered when they opened the session modal
             if (this.props.currentUser !== null) {
                 
+                //for some reason, regardless of whatever the case i set,
+                //using a switch case below would cause all three cases to run
                 if(prevProps.isOpen === 'productShowReviewModal'){
                     this.setState({
                         showReviewModal: true
