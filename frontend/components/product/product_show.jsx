@@ -44,35 +44,32 @@ class ProductShow extends React.Component {
             // if the user logged in or registered when they opened the session modal
             if (this.props.currentUser !== null) {
                 
-                switch (prevProps.isOpen) {
-                    case 'productShowReviewModal':
-                        this.setState({
-                            showReviewModal: true
-                        });
-                    case 'productShowCartModal':
-                        this.props.updateCartItem({
-                            productId: this.props.productId,
-                            shopperId: this.props.currentUser.id,
-                            quantity: this.state.quantity
-                        })
-                        .then( data => this.setState({
-                            showAddedToCartModal: true
-                        }));
-                    case 'productShowPurchased':
-                        this.props.updateCartItem({
-                            productId: this.props.productId,
-                            shopperId: this.props.currentUser.id,
-                            quantity: this.state.quantity
-                        }).then( data => {
-                            this.props.history.push('/cart');
-                        });
-                    default:
-                        break;
+                if(prevProps.isOpen === 'productShowReviewModal'){
+                    this.setState({
+                        showReviewModal: true
+                    });
                 }
-
-                
-            };
-            
+                else if( prevProps.isOpen === 'productShowCartModal'){
+                    this.props.updateCartItem({
+                        productId: this.props.productId,
+                        shopperId: this.props.currentUser.id,
+                        quantity: this.state.quantity
+                    })
+                    .then( data => this.setState({
+                        showAddedToCartModal: true
+                    }));
+                }
+                else if (prevProps.isOpen === 'productShowPurchased'){
+                    this.props.updateCartItem({
+                        productId: this.props.productId,
+                        shopperId: this.props.currentUser.id,
+                        quantity: this.state.quantity
+                    }).then( data => {
+                        
+                        this.props.history.push('/cart');
+                    });
+                }                
+            };            
         };
     }
 
